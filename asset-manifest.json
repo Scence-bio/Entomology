@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Entomology/static/css/main.f3ace1aa.css",
-    "main.js": "/Entomology/static/js/main.1321ea4d.js",
+    "main.js": "/Entomology/static/js/main.a09ed690.js",
     "index.html": "/Entomology/index.html",
     "main.f3ace1aa.css.map": "/Entomology/static/css/main.f3ace1aa.css.map",
-    "main.1321ea4d.js.map": "/Entomology/static/js/main.1321ea4d.js.map"
+    "main.a09ed690.js.map": "/Entomology/static/js/main.a09ed690.js.map"
   },
   "entrypoints": [
     "static/css/main.f3ace1aa.css",
-    "static/js/main.1321ea4d.js"
+    "static/js/main.a09ed690.js"
   ]
 }
