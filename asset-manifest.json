@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Entomology/static/css/main.f3ace1aa.css",
+    "main.js": "/Entomology/static/js/main.c2debc02.js",
+    "index.html": "/Entomology/index.html",
+    "main.f3ace1aa.css.map": "/Entomology/static/css/main.f3ace1aa.css.map",
+    "main.c2debc02.js.map": "/Entomology/static/js/main.c2debc02.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f3ace1aa.css",
+    "static/js/main.c2debc02.js"
+  ]
+}
