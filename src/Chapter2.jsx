@@ -366,6 +366,7 @@ function SectionCard({ section, delay = 0, lang }) {
             src={section.mapImg}
             alt="Kurdistan Ecological Zones & Ant Habitats"
             className="ento-map-img"
+            loading="lazy"
           />
           <p className="ento-map-caption">
             {lang === "ku"

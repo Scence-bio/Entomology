@@ -512,6 +512,7 @@ function ButterflyGallery({ lang }) {
               <img
                 src={selected.img}
                 alt={selected.name}
+                loading="lazy"
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 onError={e => { e.target.style.display = "none"; }}
               />

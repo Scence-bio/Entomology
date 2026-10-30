@@ -1,11 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Mark } from "./marks";
 
-const LANG_CONFIG = {
-  ku: { label: "کوردی", dir: "rtl", flag: "🟡" },
-  ar: { label: "عربی",  dir: "rtl", flag: "🟢" },
-  en: { label: "English", dir: "ltr", flag: "🔵" },
-};
 const VIDEOS = [
   {
     id: "QL906_79HJM",

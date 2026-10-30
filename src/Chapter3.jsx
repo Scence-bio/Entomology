@@ -89,12 +89,6 @@ function ChapterHeroMedia({ lang, numKu, numAr, numEn, icon, titleKu, titleAr, t
   );
 }
 
-const LANG_CONFIG = {
-  ku: { dir: "rtl" },
-  ar: { dir: "rtl" },
-  en: { dir: "ltr" },
-};
-
 function useInView(ref, { threshold = 0.07, rootMargin = "0px 0px -20px 0px" } = {}) {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -114,7 +108,7 @@ const ARTHROPODA_SECTIONS = [
     num: "٠١",
     numEn: "01",
     icon: "🫁",
-    image: "/images/arthropoda/image1.png",
+    image: "/images/arthropoda/image1.webp",
     titles: {
       ku: "سیستەمی هەناسەدان",
       ar: "الجهاز التنفسي",
@@ -132,7 +126,7 @@ const ARTHROPODA_SECTIONS = [
     num: "٠٢",
     numEn: "02",
     icon: "🛡️",
-    image: "/images/arthropoda/image4.png",
+    image: "/images/arthropoda/image4.webp",
     titles: {
       ku: "پەیەکەری دەرەکی",
       ar: "الهيكل الخارجي",
@@ -150,7 +144,7 @@ const ARTHROPODA_SECTIONS = [
     num: "٠٣",
     numEn: "03",
     icon: "💧",
-    image: "/images/arthropoda/image2.png",
+    image: "/images/arthropoda/image2.webp",
     titles: {
       ku: "سوڕی خوێنی کراوە",
       ar: "جهاز الدوران المفتوح",
@@ -168,7 +162,7 @@ const ARTHROPODA_SECTIONS = [
     num: "٠٤",
     numEn: "04",
     icon: "👁️",
-    image: "/images/arthropoda/image3.png",
+    image: "/images/arthropoda/image3.webp",
     titles: {
       ku: "چاوە ئاڵۆزەکان",
       ar: "العيون المركبة",

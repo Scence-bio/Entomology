@@ -1,37 +1,18 @@
-# Atlas of Entomology — ئەتلەسی مێرووناسی
+# Atlas of Entomology — ئەتڵەسی مێرووناسی
 
-## 🚀 GitHub Pages Deployment Guide
+ماڵپەڕەکە لە [www.entomo.online](https://www.entomo.online) بڵاو دەبێتەوە.
 
-### Step 1 — Create GitHub Repo
-1. Go to github.com → New repository
-2. Name it: `atlas-entomology`
-3. Set to Public → Create
+## دیپلۆی خۆکار
 
-### Step 2 — Edit package.json
-Replace `YOUR-USERNAME` with your actual GitHub username:
-```json
-"homepage": "https://YOUR-USERNAME.github.io/atlas-entomology"
-```
+هەر پوشێک بۆ لقێ `master` لە GitHub Actions دا build دەکرێت و دەخرێتە لقێ `gh-pages`. ڕێکخستنەکە لە `.github/workflows/deploy.yml` ـە.
 
-### Step 3 — Setup & Deploy
-```bash
-# Install dependencies
-npm install
+پێویستە لە ڕێکخستنی ڕیپۆکەدا GitHub Pages لەسەر لقێ `gh-pages` بێت. `public/CNAME` ناونیشانی `www.entomo.online` دەپارێزێت.
 
-# Deploy to GitHub Pages (auto builds + publishes)
-npm run deploy
-```
+## کارکردن لەسەر کۆمپیوتەر
 
-### Step 4 — Enable GitHub Pages
-- Go to your repo Settings → Pages
-- Source: Deploy from `gh-pages` branch → Save
-
-### ✅ Your site will be live at:
-`https://YOUR-USERNAME.github.io/atlas-entomology`
-
----
-## Local Development
 ```bash
 npm install
 npm start
 ```
+
+سایتی ناوخۆیی لە `http://localhost:3017` دەکرێتەوە.
