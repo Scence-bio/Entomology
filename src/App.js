@@ -1286,6 +1286,7 @@ const CSS = `
   border-radius:20px;
   padding:clamp(22px,4vw,36px) clamp(18px,3vw,28px);
   cursor:pointer;
+  color:inherit; text-decoration:none;
   text-align:start;
   display:flex; flex-direction:column; align-items:flex-start; gap:14px;
   transition:transform .25s, box-shadow .25s, border-color .25s;
@@ -2360,7 +2361,7 @@ const CHAPTERS = [
 ];
 
 /* ── Home Screen ── */
-function HomeScreen({ lang, onChapter }) {
+function HomeScreen({ lang }) {
   return (
     <div className="ento-home" id="chapters" dir={lang === "en" ? "ltr" : "rtl"}>
       <h2 className="ento-home-label">
@@ -2368,15 +2369,15 @@ function HomeScreen({ lang, onChapter }) {
       </h2>
       <div className="ento-chapters-grid">
         {CHAPTERS.map((ch, i) => (
-          <div key={ch.id} className="ento-chapter-card" onClick={() => onChapter(ch.id)}
-               style={{ animationDelay: `${i * 80}ms` }}>
+          <a key={ch.id} className="ento-chapter-card" href={`#/${ch.id}`}
+             style={{ animationDelay: `${i * 80}ms` }}>
             <div className="ento-ch-num">{ch.num.en}</div>
             <div className="ento-ch-icon"><Mark name={ch.icon} /></div>
             <div className="ento-ch-title">{ch.title[lang]}</div>
             {ch.latin && <div className="ento-binomial">{ch.latin}</div>}
             <div className="ento-ch-desc">{ch.desc[lang]}</div>
             <div className="ento-ch-arrow">{lang === "en" ? "→" : "←"}</div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
@@ -2602,10 +2603,21 @@ function AppFooter({ lang }) {
 /* ═══════════════════════════════════════════════
    MAIN APP
 ═══════════════════════════════════════════════ */
+const CHAPTER_ROUTES = new Set(["ch1", "ch2", "ch3", "ch4", "ch5"]);
+
+function pageFromHash() {
+  const hash = window.location.hash;
+  if (!hash.startsWith("#/")) return null;
+  const id = decodeURIComponent(hash.slice(2).split(/[/?#]/)[0]);
+  if (!id || id === "home") return "home";
+  return CHAPTER_ROUTES.has(id) ? id : "home";
+}
+
 export default function EntomologyPage() {
   const { isDark, icon, cycle } = useTheme();
   const [lang, setLang] = useState("ku");
-  const [page, setPage] = useState("home");
+  const [page, setPage] = useState(() => pageFromHash() || "home");
+  const skipFirstScroll = useRef(true);
 
   useEffect(() => {
     const id = "ento-styles";
@@ -2629,6 +2641,19 @@ export default function EntomologyPage() {
   }, [lang]);
 
   useEffect(() => {
+    const sync = () => {
+      const next = pageFromHash();
+      if (next) setPage(next);
+    };
+    window.addEventListener("hashchange", sync);
+    return () => window.removeEventListener("hashchange", sync);
+  }, []);
+
+  useEffect(() => {
+    if (skipFirstScroll.current) {
+      skipFirstScroll.current = false;
+      return;
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [page]);
 
@@ -2637,11 +2662,11 @@ export default function EntomologyPage() {
       <header className="ento-topbar" style={{ direction: "ltr" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           {page !== "home" && (
-            <button className="ento-topbar-back" onClick={() => setPage("home")}>
+            <a className="ento-topbar-back" href="#/">
               {lang === "en" ? "← Home" : lang === "ar" ? "← الرئيسية" : "← سەرەکی"}
-            </button>
+            </a>
           )}
-          <a className="ento-brand" href="./"><Mark name="beetle" /> Atlas of <span>Entomology</span></a>
+          <a className="ento-brand" href="#/"><Mark name="beetle" /> Atlas of <span>Entomology</span></a>
         </div>
         <div className="ento-topbar-right">
           <LangSwitcher lang={lang} setLang={setLang} />
@@ -2652,7 +2677,7 @@ export default function EntomologyPage() {
       {page === "home" && (
         <>
           <Hero lang={lang} />
-          <HomeScreen lang={lang} onChapter={setPage} />
+          <HomeScreen lang={lang} />
         </>
       )}
       {page === "ch1" && <Chapter1File lang={lang} />}
