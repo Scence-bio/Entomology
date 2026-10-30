@@ -852,66 +852,72 @@ const CSS = `
   *,*::before,*::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
 }
 
-/* ══ HOME SCREEN ══ */
+/* ══ HOME SCREEN — specimen plates on ivory, in both themes ══ */
 .ento-home {
   display:flex; flex-direction:column;
   align-items:center; justify-content:flex-start;
-  padding: clamp(28px,4vw,48px) clamp(16px,5vw,48px) clamp(48px,7vw,88px);
-  background:var(--bg-page);
+  padding: clamp(36px,5vw,64px) clamp(16px,5vw,48px) clamp(56px,8vw,96px);
+  background:#f3efe4;
+  color:#1a2418;
   text-align:center;
 }
+.ento-dark .ento-home { background:#f3efe4; color:#1a2418; }
 .ento-home-label {
   font-size:clamp(1.35rem,3vw,1.8rem); font-weight:700;
-  color:var(--text-primary); line-height:1.2;
-  margin:0 0 clamp(18px,3vw,28px);
-}
-.ento-home-sub {
-  font-size:clamp(.9rem,2.5vw,1.1rem); color:var(--text-muted);
-  margin-bottom:clamp(32px,6vw,60px);
+  color:#1a2418; line-height:1.2;
+  margin:0 0 clamp(22px,3vw,36px);
 }
 .ento-chapters-grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:clamp(14px,3vw,28px);
-  width:100%; max-width:1000px;
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));
+  gap:clamp(16px,2.4vw,24px);
+  width:100%; max-width:1080px;
 }
 .ento-chapter-card {
-  background:var(--bg-card);
-  border:2px solid var(--border-card);
-  border-radius:20px;
-  padding:clamp(22px,4vw,36px) clamp(18px,3vw,28px);
+  background:#fbf8f1;
+  border:1px solid rgba(26,36,24,.16);
+  border-radius:2px;
+  padding:0;
   cursor:pointer;
-  color:inherit; text-decoration:none;
+  color:#1a2418; text-decoration:none;
   text-align:start;
-  display:flex; flex-direction:column; align-items:flex-start; gap:14px;
-  transition:transform .25s, box-shadow .25s, border-color .25s;
-  box-shadow:var(--shadow-card);
-  position:relative; overflow:hidden;
+  display:flex; flex-direction:column; align-items:stretch;
+  transition:transform .25s, box-shadow .25s;
+  box-shadow:0 12px 28px rgba(48,36,18,.08);
+  overflow:hidden;
 }
-.ento-chapter-card:hover { transform:translateY(-4px); box-shadow:0 16px 36px rgba(48,36,18,.12); border-color:rgba(138,78,18,.45); }
+.ento-chapter-card:hover { transform:translateY(-4px); box-shadow:0 18px 36px rgba(48,36,18,.14); }
 .ento-chapter-card:active { transform:translateY(-1px); }
+.ento-chapter-card:focus-visible { outline:2px solid #8a4e12; outline-offset:3px; }
+.ento-plate-photo {
+  aspect-ratio:4/3; overflow:hidden; background:#e6e0d2;
+}
+.ento-plate-photo img {
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+.ento-plate-label {
+  display:flex; flex-direction:column; gap:6px; flex:1;
+  padding:14px 16px 16px;
+  background:#fbf8f1;
+}
 .ento-ch-num {
   font-family:var(--font-mono); font-size:.72rem; letter-spacing:.08em;
-  color:var(--accent); font-weight:700; text-align:start;
+  color:#8a4e12; font-weight:700;
+  direction:ltr; unicode-bidi:isolate; text-align:end;
 }
+.ento-home[dir="ltr"] .ento-ch-num { text-align:start; }
 .ento-ch-icon { width:34px; height:34px; color:var(--accent); }
 .ento-ch-icon svg, .ento-chapter-hero-icon svg { width:100%; height:100%; display:block; }
-.ento-ch-title {
-  font-size:clamp(1rem,2.5vw,1.3rem); font-weight:800;
-  color:var(--text-primary); line-height:1.25;
+.ento-home .ento-ch-title {
+  font-size:clamp(1.05rem,2vw,1.22rem); font-weight:800;
+  color:#1a2418; line-height:1.3;
 }
-.ento-ch-desc {
-  font-size:clamp(.78rem,2vw,.88rem); color:var(--text-muted);
-  line-height:1.6;
+.ento-home .ento-binomial { color:#8a4e12; font-size:.95rem; margin:0; text-align:end; width:100%; }
+.ento-home[dir="ltr"] .ento-binomial { text-align:start; }
+.ento-home .ento-ch-desc {
+  font-size:.84rem; color:#3e4a3a;
+  line-height:1.55;
 }
-.ento-ch-arrow {
-  display:inline-flex; align-items:center; justify-content:center;
-  width:auto; height:auto; border-radius:0; margin-top:auto;
-  background:none; color:var(--accent); font-size:1.05rem; align-self:flex-start;
-  transition:transform .25s;
-}
-.ento-chapter-card:hover .ento-ch-arrow { transform:translateX(-5px); }
-[dir="ltr"] .ento-chapter-card:hover .ento-ch-arrow { transform:translateX(5px); }
 
 /* ══ CHAPTER PAGE WRAPPER ══ */
 .ento-chapter-page {
@@ -963,7 +969,6 @@ const CSS = `
   .ento-theme-btn { width:32px; height:32px; flex-shrink:0; }
   .ento-topbar-right { gap:4px; flex-shrink:0; }
   .ento-chapters-grid { grid-template-columns:1fr; }
-  .ento-chapter-card { padding:18px 16px; gap:10px; }
   .ento-section-nav {
     flex-wrap:nowrap; justify-content:flex-start;
     overflow-x:auto; padding-bottom:10px;
@@ -1063,6 +1068,7 @@ const CHAPTERS = [
     id: "ch1",
     num: { ku: "چاپتەری یەکەم", en: "Chapter 1", ar: "الفصل الأول" },
     icon: "pin",
+    image: "/images/butterflies/red-admiral-1.jpg",
     title: { ku: "زانیاری زیادە", en: "Additional Information", ar: "معلومات إضافية" },
     desc: { ku: "دەربارەی پرۆژە، تیم و زانکۆ", en: "About the project, team & university", ar: "عن المشروع والفريق والجامعة" },
   },
@@ -1070,6 +1076,7 @@ const CHAPTERS = [
     id: "ch2",
     num: { ku: "چاپتەری دووەم", en: "Chapter 2", ar: "الفصل الثاني" },
     icon: "beetle",
+    image: "/images/butterflies/old-world-swallowtail-1.jpg",
     title: { ku: "دەستپێکی ئێنتۆمۆلۆجی", en: "Introduction to Entomology", ar: "مقدمة علم الحشرات" },
     desc: { ku: "پێناسە، مێژوو و گرنگیی مێرووناسی", en: "Definition, history & importance of entomology", ar: "تعريف التاريخ وأهمية علم الحشرات" },
   },
@@ -1077,6 +1084,9 @@ const CHAPTERS = [
     id: "ch3",
     num: { ku: "چاپتەری سێیەم", en: "Chapter 3", ar: "الفصل الثالث" },
     icon: "legs",
+    image: "/images/arthropoda/image4.webp",
+    focus: "center 32%",
+    latin: "Arthropoda",
     title: { ku: "فایلەمی جومگەپێیەکان", en: "Phylum Arthropoda", ar: "شعبة مفصليات الأرجل" },
     desc: { ku: "سیستەمی هەناسەدان، پەیەکەری دەرەکی، چاوی ئاڵۆز و فەرهەنگ", en: "Respiratory system, exoskeleton, compound eyes & glossary", ar: "الجهاز التنفسي والهيكل الخارجي والعيون المركبة والمصطلحات" },
   },
@@ -1084,17 +1094,19 @@ const CHAPTERS = [
     id: "ch4",
     num: { ku: "چاپتەری چوارەم", en: "Chapter 4", ar: "الفصل الرابع" },
     icon: "card",
+    image: "/images/butterflies/painted-lady.jpg",
     title: { ku: "کویز", en: "Quiz", ar: "اختبار" },
     desc: { ku: "تاقیکردنەوەی زانیاریت بە پرسیار و ڤیدیۆ", en: "Test your knowledge with questions & videos", ar: "اختبر معلوماتك بالأسئلة والفيديوهات" },
   },
   {
-  id: "ch5",
-  num: { ku: "چاپتەری پێنجەم", en: "Chapter 5", ar: "الفصل الخامس" },
-  icon: "butterfly",
-  latin: "Lepidoptera",
-  title: { ku: "پەپوولەکان", en: "Butterflies", ar: "الفراشات" },
-  desc: { ku: "ناسنامە، بایۆلۆجی و جۆرە کوردستانییەکان", en: "Identity, biology & Kurdistan species", ar: "الهوية والبيولوجيا وأنواع كردستان" },
-},
+    id: "ch5",
+    num: { ku: "چاپتەری پێنجەم", en: "Chapter 5", ar: "الفصل الخامس" },
+    icon: "butterfly",
+    image: "/images/butterflies/atlas-moth-2.jpg",
+    latin: "Lepidoptera",
+    title: { ku: "پەپوولەکان", en: "Butterflies", ar: "الفراشات" },
+    desc: { ku: "ناسنامە، بایۆلۆجی و جۆرە کوردستانییەکان", en: "Identity, biology & Kurdistan species", ar: "الهوية والبيولوجيا وأنواع كردستان" },
+  },
 ];
 
 /* ── Home Screen ── */
@@ -1105,15 +1117,17 @@ function HomeScreen({ lang }) {
         {lang === "ku" ? "بەشەکان" : lang === "ar" ? "الفصول" : "Chapters"}
       </h2>
       <div className="ento-chapters-grid">
-        {CHAPTERS.map((ch, i) => (
-          <a key={ch.id} className="ento-chapter-card" href={`#/${ch.id}`}
-             style={{ animationDelay: `${i * 80}ms` }}>
-            <div className="ento-ch-num">{ch.num.en}</div>
-            <div className="ento-ch-icon"><Mark name={ch.icon} /></div>
-            <div className="ento-ch-title">{ch.title[lang]}</div>
-            {ch.latin && <div className="ento-binomial">{ch.latin}</div>}
-            <div className="ento-ch-desc">{ch.desc[lang]}</div>
-            <div className="ento-ch-arrow">{lang === "en" ? "→" : "←"}</div>
+        {CHAPTERS.map((ch) => (
+          <a key={ch.id} className="ento-chapter-card" href={`#/${ch.id}`}>
+            <div className="ento-plate-photo">
+              <img src={ch.image} alt="" loading="lazy" style={{ objectPosition: ch.focus || "center" }} />
+            </div>
+            <div className="ento-plate-label">
+              <div className="ento-ch-num">{ch.num.en}</div>
+              <div className="ento-ch-title">{ch.title[lang]}</div>
+              {ch.latin && <div className="ento-binomial">{ch.latin}</div>}
+              <div className="ento-ch-desc">{ch.desc[lang]}</div>
+            </div>
           </a>
         ))}
       </div>
