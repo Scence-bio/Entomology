@@ -1247,6 +1247,17 @@ function HomeScreen({ lang }) {
 /* ═══════════════════════════════════════════════
    MAIN APP
 ═══════════════════════════════════════════════ */
+// Injected before the first render so the page never paints unstyled.
+(function injectStyles() {
+  let el = document.getElementById("ento-styles");
+  if (!el) {
+    el = document.createElement("style");
+    el.id = "ento-styles";
+    document.head.appendChild(el);
+  }
+  el.textContent = CSS;
+})();
+
 function pageFromHash() {
   const hash = window.location.hash;
   if (!hash.startsWith("#/")) return null;
@@ -1273,17 +1284,6 @@ export default function EntomologyPage() {
   const setLang = useCallback((value) => {
     setLangState(value);
     try { localStorage.setItem("lang", value); } catch {}
-  }, []);
-
-  useEffect(() => {
-    const id = "ento-styles";
-    let el = document.getElementById(id);
-    if (!el) {
-      el = document.createElement("style");
-      el.id = id;
-      document.head.appendChild(el);
-    }
-    el.textContent = CSS;
   }, []);
 
   useEffect(() => {
