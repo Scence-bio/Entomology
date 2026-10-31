@@ -181,6 +181,102 @@ const QUIZ = [
     correct: 2,
     why: { ku: "Papilio machaon لە لیستی ناوچەکەدایە. Morpho و Atlas Moth و Monarch نمونەی جیهانین.", ar: "Papilio machaon في قائمة المنطقة. مورفو وعثة الأطلس والملكة نماذج عالمية.", en: "Papilio machaon is on the regional list. Morpho, the atlas moth, and the monarch are world examples." },
   },
+  {
+    id: 21,
+    section: { ku: "بەشی حەوتەم: Hymenoptera", ar: "القسم السابع: Hymenoptera", en: "Section 7: Hymenoptera" },
+    q: { ku: "ناوی Hymenoptera لە چییەوە هاتووە؟", ar: "من أين جاء اسم Hymenoptera؟", en: "What does the name Hymenoptera refer to?" },
+    opts: { ku: ["پەردە و باڵ", "قاو و باڵ", "یەک جووت باڵ", "بێ باڵ"], ar: ["غشاء وجناح", "حرشفة وجناح", "زوج أجنحة", "بلا أجنحة"], en: ["Membrane and wing", "Scale and wing", "One pair of wings", "No wings"] },
+    correct: 0,
+    why: { ku: "hymen پەردەیە و pteron باڵە. دوو جووت باڵی پەردەیی بە hamuli بە یەکەوە دەبەسترێن.", ar: "hymen غشاء وpteron جناح. زوجان غشائيان يربطهما hamuli.", en: "Hymen is a membrane and pteron is a wing. Two membranous pairs are locked by hamuli." },
+  },
+  {
+    id: 22,
+    section: { ku: "بەشی حەوتەم: Hymenoptera", ar: "القسم السابع: Hymenoptera", en: "Section 7: Hymenoptera" },
+    q: { ku: "هەنگی هەنگوین، Apis mellifera، سەر بە کام خێزانە؟", ar: "إلى أي فصيلة ينتمي نحل العسل Apis mellifera؟", en: "The honey bee, Apis mellifera, belongs to which family?" },
+    opts: { ku: ["Formicidae", "Apidae", "Culicidae", "Coccinellidae"], ar: ["Formicidae", "Apidae", "Culicidae", "Coccinellidae"], en: ["Formicidae", "Apidae", "Culicidae", "Coccinellidae"] },
+    correct: 1,
+    why: { ku: "Apidae خێزانی هەنگە. Formicidae مێروولەیە و Coccinellidae خاڵخاڵۆکەیە.", ar: "Apidae فصيلة النحل. Formicidae النمل وCoccinellidae الدعسوقة.", en: "Apidae is the bee family. Formicidae is ants and Coccinellidae is ladybirds." },
+  },
+  {
+    id: 23,
+    section: { ku: "بەشی حەوتەم: Hymenoptera", ar: "القسم السابع: Hymenoptera", en: "Section 7: Hymenoptera" },
+    q: { ku: "کامەیان جۆرێکی باوی ئەم ناوچەیەیە؟", ar: "أيها نوع شائع في هذه المنطقة؟", en: "Which is a common species of this region?" },
+    opts: { ku: ["مێروولەی گەڵابڕ", "Morpho menelaus", "Vespa orientalis", "Attacus atlas"], ar: ["نمل قاطع الأوراق", "Morpho menelaus", "Vespa orientalis", "Attacus atlas"], en: ["A leafcutter ant", "Morpho menelaus", "Vespa orientalis", "Attacus atlas"] },
+    correct: 2,
+    why: { ku: "زەنبووری ڕۆژهەڵاتی لە شار و باخی ناوچەکەدا دەبینرێت. ئەوانی تر هی ئەمریکا یان ئاسیای باشوورن.", ar: "الدبور الشرقي يُرى في مدن المنطقة وبساتينها. الباقي أمريكي أو من جنوب آسيا.", en: "The oriental hornet is seen in the towns and orchards here. The others are American or from South Asia." },
+  },
+  {
+    id: 24,
+    section: { ku: "بەشی هەشتەم: Coleoptera", ar: "القسم الثامن: Coleoptera", en: "Section 8: Coleoptera" },
+    q: { ku: "باڵی پێشەوەی قوڕقوڕە بووە بە چی؟", ar: "ماذا صار الجناح الأمامي للخنفساء؟", en: "What have a beetle’s forewings become?" },
+    opts: { ku: ["هەڵتەر", "قاوغی ڕەق (elytra)", "قاوی پەپوولە", "بێ باڵ"], ar: ["دبوس توازن", "غمد صلب (elytra)", "حرشفة فراشة", "بلا جناح"], en: ["Halteres", "Hard covers (elytra)", "Butterfly scales", "No wings"] },
+    correct: 1,
+    why: { ku: "elytra لە ناوەڕاستدا یەک دەگرن و باڵی ناسکی فڕین دەپارێزن.", ar: "تلتقي الأغماد على خط في الظهر وتحمي جناح الطيران الرقيق.", en: "The elytra meet down the back and protect the thin flying wings." },
+  },
+  {
+    id: 25,
+    section: { ku: "بەشی هەشتەم: Coleoptera", ar: "القسم الثامن: Coleoptera", en: "Section 8: Coleoptera" },
+    q: { ku: "خاڵخاڵۆکە سەر بە کام خێزانە و چی دەخوات؟", ar: "إلى أي فصيلة تنتمي الدعسوقة وماذا تأكل؟", en: "Which family is the ladybird, and what does it eat?" },
+    opts: { ku: ["Coccinellidae، شەتەک", "Apidae، هەڵاڵە", "Culicidae، خوێن", "Formicidae، تۆو"], ar: ["Coccinellidae، المن", "Apidae، اللقاح", "Culicidae، الدم", "Formicidae، البذور"], en: ["Coccinellidae, aphids", "Apidae, pollen", "Culicidae, blood", "Formicidae, seeds"] },
+    correct: 0,
+    why: { ku: "هەر بۆیە خاڵخاڵۆکە لە کۆنترۆڵی بایۆلۆجیدا بەکاردێت.", ar: "لهذا تُستخدم الدعسوقة في المكافحة الحيوية.", en: "That is why a ladybird is used in biological control." },
+  },
+  {
+    id: 26,
+    section: { ku: "بەشی هەشتەم: Coleoptera", ar: "القسم الثامن: Coleoptera", en: "Section 8: Coleoptera" },
+    q: { ku: "Coccinella septempunctata چەند خاڵی هەیە؟", ar: "كم نقطة لدى Coccinella septempunctata؟", en: "How many spots does Coccinella septempunctata have?" },
+    opts: { ku: ["٢", "٥", "٧", "١٠"], ar: ["٢", "٥", "٧", "١٠"], en: ["2", "5", "7", "10"] },
+    correct: 2,
+    why: { ku: "septem حەوتە و punctata خاڵە. جۆرێکی باوی کێڵگە و باخچەی ناوچەکەیە.", ar: "septem سبعة وpunctata نقطة. نوع شائع في حقول المنطقة وحدائقها.", en: "Septem is seven and punctata is spotted. It is common in the fields and gardens here." },
+  },
+  {
+    id: 27,
+    section: { ku: "بەشی نۆیەم: Diptera", ar: "القسم التاسع: Diptera", en: "Section 9: Diptera" },
+    q: { ku: "Diptera لە ئۆردەرەکانی تر بە چی جیا دەبێتەوە؟", ar: "بماذا تتميز Diptera عن الرتب الأخرى؟", en: "What sets Diptera apart from the other orders?" },
+    opts: { ku: ["قاوغی ڕەق", "قاوی باڵ", "یەک جووت باڵ و هەڵتەر", "هەشت قاچ"], ar: ["غمد صلب", "حراشف الجناح", "زوج أجنحة ودبوسا توازن", "ثماني أرجل"], en: ["Hard elytra", "Wing scales", "One pair of wings and halteres", "Eight legs"] },
+    correct: 2,
+    why: { ku: "جووتی دواوەی باڵ بووە بە هەڵتەر بۆ هاوسەنگی.", ar: "صار الزوج الخلفي دبابيس توازن.", en: "The hind pair of wings has become halteres for balance." },
+  },
+  {
+    id: 28,
+    section: { ku: "بەشی نۆیەم: Diptera", ar: "القسم التاسع: Diptera", en: "Section 9: Diptera" },
+    q: { ku: "مەلاریا لە ڕێگەی کام مێشوولە دەگوازرێتەوە؟", ar: "أي بعوض ينقل الملاريا؟", en: "Which mosquito carries malaria?" },
+    opts: { ku: ["Anopheles", "هەنگی هەنگوین", "خاڵخاڵۆکە", "مێشی گوڵ"], ar: ["Anopheles", "نحل العسل", "الدعسوقة", "ذبابة الأزهار"], en: ["Anopheles", "The honey bee", "A ladybird", "A hoverfly"] },
+    correct: 0,
+    why: { ku: "Anopheles لە Culicidae ـە. زیکا و دێنگ زیاتر لەگەڵ Aedes دەگوازرێنەوە، نەک هەر ئەم مێشوولەیە.", ar: "Anopheles من Culicidae. زيكا والضنك أقرب إلى Aedes، لا إلى هذه البعوضة نفسها.", en: "Anopheles is in Culicidae. Zika and dengue travel more with Aedes, not with this same mosquito." },
+  },
+  {
+    id: 29,
+    section: { ku: "بەشی نۆیەم: Diptera", ar: "القسم التاسع: Diptera", en: "Section 9: Diptera" },
+    q: { ku: "مێشی گوڵ (Syrphidae) چی دەکات؟", ar: "ماذا يفعل ذباب الأزهار (Syrphidae)؟", en: "What does a hoverfly (Syrphidae) do?" },
+    opts: { ku: ["مەلاریا دەگوازێتەوە", "لە هەنگ دەچێت و گوڵ سەردان دەکات", "قاوغی ڕەقی هەیە", "هەشت قاچی هەیە"], ar: ["ينقل الملاريا", "يشبه النحلة ويزور الزهر", "لها غمد صلب", "لها ثماني أرجل"], en: ["It carries malaria", "It looks like a bee and visits flowers", "It has hard elytra", "It has eight legs"] },
+    correct: 1,
+    why: { ku: "یەک جووت باڵی هەیە، بۆیە Diptera ـە. لارڤای زۆریان شەتەک دەخوات.", ar: "له زوج أجنحة، فهو من Diptera. كثير من يرقاته تأكل المن.", en: "It has one pair of wings, so it is a fly. Many of its larvae eat aphids." },
+  },
+  {
+    id: 30,
+    section: { ku: "بەشی دەیەم: لەیبڵ", ar: "القسم العاشر: البطاقة", en: "Section 10: The label" },
+    q: { ku: "لەیبڵی نموونە دەبێت کام دوو شت لەسەر بێت؟", ar: "ماذا يجب أن تحمله بطاقة العينة من الأمرين؟", en: "Which two things must a specimen label carry?" },
+    opts: { ku: ["تەنها ڕەنگ", "شوێن و بەروار", "نرخی فرۆشتن", "تەنها ناوی کۆکەرەوە"], ar: ["اللون فقط", "المكان والتاريخ", "ثمن البيع", "اسم الجامع فقط"], en: ["Only the colour", "Place and date", "A sale price", "Only the collector’s name"] },
+    correct: 1,
+    why: { ku: "بەبێ شوێن و بەروار، نموونەکە تۆمار نییە.", ar: "بلا مكان وتاريخ ليست العينة سجلاً.", en: "Without a place and a date, the specimen is not a record." },
+  },
+  {
+    id: 31,
+    section: { ku: "بەشی دەیەم: لەیبڵ", ar: "القسم العاشر: البطاقة", en: "Section 10: The label" },
+    q: { ku: "دەرزەی قوڕقوڕە لە کوێ دەچێت؟", ar: "أين يُغرز دبوس الخنفساء؟", en: "Where does the pin go in a beetle?" },
+    opts: { ku: ["لە باڵی پەپوولە", "لە ئیلیترۆنی ڕاست", "لە ئەنتێنا", "لە قاچ"], ar: ["في جناح فراشة", "في الغمد الأيمن", "في القرن", "في الرجل"], en: ["Through a butterfly wing", "Through the right elytron", "Through an antenna", "Through a leg"] },
+    correct: 1,
+    why: { ku: "ئیلیترۆنی ڕاست، نزیک شانە، تا هێڵی ناوەڕاست و ناوەکە نەشاردرێتەوە.", ar: "الغمد الأيمن قرب الكتف، حتى لا يُخفى الخط الأوسط ولا الاسم.", en: "The right elytron, near the shoulder, so the midline and the name stay visible." },
+  },
+  {
+    id: 32,
+    section: { ku: "بەشی دەیەم: لەیبڵ", ar: "القسم العاشر: البطاقة", en: "Section 10: The label" },
+    q: { ku: "ناوی زانستی لەسەر لەیبڵ چۆن دەنووسرێت؟", ar: "كيف يُكتب الاسم العلمي على البطاقة؟", en: "How is the scientific name written on the label?" },
+    opts: { ku: ["بە کوردی و ئەستوور", "بە لاتینی و لار", "بە ژمارە", "بە ڕەنگ"], ar: ["بالكردية وعريض", "باللاتينية ومائل", "برقم", "بلون"], en: ["In Kurdish and bold", "In Latin and italic", "As a number", "As a colour"] },
+    correct: 1,
+    why: { ku: "وەک Papilio machaon لە نموونەی فێرکارییەکەدا. خێزانەکەشی Papilionidae ـە.", ar: "كما Papilio machaon في المثال التعليمي. وفصيلته Papilionidae.", en: "As Papilio machaon on the teaching label. Its family is Papilionidae." },
+  },
 ];
 
 function useInView(ref, { threshold = 0.07, rootMargin = "0px 0px -20px 0px" } = {}) {
@@ -276,10 +372,10 @@ function QuizSection({ lang }) {
         <div className="ento-quiz-idle">
           <p className="ento-quiz-idle-desc">
             {lang === "ku"
-              ? "تاقیکردنەوەکە ٦ بەش و ٢٠ پرسیاری تێدایە. هەر وەڵامی ڕاست ١ نمرە."
+              ? `تاقیکردنەوەکە ${new Set(QUIZ.map((item) => item.section.ku)).size} بەش و ${QUIZ.length} پرسیاری تێدایە. هەر وەڵامی ڕاست ١ نمرە.`
               : lang === "ar"
-              ? "يحتوي الاختبار على ٦ أقسام و٢٠ سؤالاً. كل إجابة صحيحة = نقطة واحدة."
-              : "The quiz has 6 sections and 20 questions. Each correct answer = 1 point."}
+              ? `يحتوي الاختبار على ${new Set(QUIZ.map((item) => item.section.ar)).size} أقسام و${QUIZ.length} سؤالاً. كل إجابة صحيحة = نقطة واحدة.`
+              : `The quiz has ${new Set(QUIZ.map((item) => item.section.en)).size} sections and ${QUIZ.length} questions. Each correct answer = 1 point.`}
           </p>
           <button className="ento-quiz-start-btn" onClick={start}>
             {lang === "ku" ? "▶ دەستپێکردن" : lang === "ar" ? "▶ ابدأ الاختبار" : "▶ Start Quiz"}

@@ -4,6 +4,7 @@ import Chapter2File from "./Chapter2";
 import Chapter3File from "./Chapter3";
 import Chapter4File from "./Chapter4";
 import Chapter5 from "./Chapter5";
+import { Chapter6, Chapter7, Chapter8, Chapter9 } from "./LaterChapters";
 import { Mark } from "./marks";
 
 /* ═══════════════════════════════════════════════
@@ -1142,6 +1143,43 @@ const CHAPTERS = [
     title: { ku: "پەپوولەکان", en: "Butterflies", ar: "الفراشات" },
     desc: { ku: "ناسنامە، بایۆلۆجی و جۆرە کوردستانییەکان", en: "Identity, biology & Kurdistan species", ar: "الهوية والبيولوجيا وأنواع كردستان" },
   },
+  {
+    id: "ch6",
+    num: { ku: "چاپتەری شەشەم", en: "Chapter 6", ar: "الفصل السادس" },
+    icon: "bee",
+    image: "/images/plates/ch6-bee.jpg",
+    latin: "Hymenoptera",
+    title: { ku: "مێروولە، هەنگ و زەنبوور", en: "Ants, bees and wasps", ar: "النمل والنحل والزنابير" },
+    desc: { ku: "سێ خێزان و جۆرە باوەکانی ناوچەکە", en: "Three families and common species of the region", ar: "ثلاث فصائل وأنواع شائعة في المنطقة" },
+  },
+  {
+    id: "ch7",
+    num: { ku: "چاپتەری حەوتەم", en: "Chapter 7", ar: "الفصل السابع" },
+    icon: "beetle",
+    image: "/images/plates/ch7-ladybird.jpg",
+    focus: "center 42%",
+    latin: "Coleoptera",
+    title: { ku: "قوڕقوڕەکان", en: "Beetles", ar: "الخنافس" },
+    desc: { ku: "قاوغی باڵ، خاڵخاڵۆکە و جۆرەکانی ناوچەکە", en: "Elytra, ladybirds and regional species", ar: "الأغماد والدعسوقة وأنواع المنطقة" },
+  },
+  {
+    id: "ch8",
+    num: { ku: "چاپتەری هەشتەم", en: "Chapter 8", ar: "الفصل الثامن" },
+    icon: "fly",
+    image: "/images/plates/ch8-mosquito.jpg",
+    latin: "Diptera",
+    title: { ku: "مێش و مێشوولە", en: "Flies and mosquitoes", ar: "الذباب والبعوض" },
+    desc: { ku: "یەک جووت باڵ، مەلاریا و مێشی گوڵ", en: "One pair of wings, malaria and hoverflies", ar: "زوج أجنحة والملاريا وذباب الأزهار" },
+  },
+  {
+    id: "ch9",
+    num: { ku: "چاپتەری نۆیەم", en: "Chapter 9", ar: "الفصل التاسع" },
+    icon: "net",
+    image: "/images/plates/ch9-net.jpg",
+    focus: "center 62%",
+    title: { ku: "کێڵگە و لەیبڵ", en: "Field and label", ar: "الحقل والبطاقة" },
+    desc: { ku: "کۆکردنەوە، شوێنی دەرزە و لەیبڵی نموونە", en: "Collecting, where to pin, and the specimen label", ar: "الجمع وموضع الدبوس وبطاقة العينة" },
+  },
 ];
 
 /* ── Home Screen ── */
@@ -1173,7 +1211,7 @@ function HomeScreen({ lang }) {
 /* ═══════════════════════════════════════════════
    MAIN APP
 ═══════════════════════════════════════════════ */
-const CHAPTER_ROUTES = new Set(["ch1", "ch2", "ch3", "ch4", "ch5"]);
+const CHAPTER_ROUTES = new Set(["ch1", "ch2", "ch3", "ch4", "ch5", "ch6", "ch7", "ch8", "ch9"]);
 
 function pageFromHash() {
   const hash = window.location.hash;
@@ -1255,6 +1293,10 @@ export default function EntomologyPage() {
       {page === "ch3" && <Chapter3File lang={lang} />}
       {page === "ch4" && <Chapter4File lang={lang} />}
       {page === "ch5" && <Chapter5 lang={lang} />}
+      {page === "ch6" && <Chapter6 lang={lang} />}
+      {page === "ch7" && <Chapter7 lang={lang} />}
+      {page === "ch8" && <Chapter8 lang={lang} />}
+      {page === "ch9" && <Chapter9 lang={lang} />}
     </div>
   );
 }
