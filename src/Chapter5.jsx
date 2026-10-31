@@ -102,7 +102,7 @@ const LEPIDO_SECTIONS = [
       en: "Scientific Classification",
     },
     body: {
-      ku: "Lepidoptera لە زیاتر لە ١٨٠٠٠٠ جۆر پێکدێت، کە دابەشبووە بۆ چەندین Superfamily گرنگ. جیاوازی بنەڕەتی نێوان پەپوولە و فراشە لە کاتی چالاکی، شێوەی ئەنتێنا، و شێوازی وەستانی باڵیاندایە.",
+      ku: "Lepidoptera لە زیاتر لە ١٨٠٠٠٠ جۆر پێک دێت، کە دابەشبووە بۆ چەندین Superfamily گرنگ. جیاوازیی بنەڕەتی نێوان پەپوولە و فراشە لە کاتی چالاکی، شێوەی ئەنتێنا، و شێوازی وەستانی باڵیاندایە.",
       ar: "يضم نظام Lepidoptera أكثر من 180,000 نوع تُصنَّف ضمن عائلات عليا (Superfamilies). الفرق الجوهري بين الفراشات والعثة يكمن في توقيت نشاطها وشكل قرونها الاستشعارية وطريقة طي أجنحتها.",
       en: "Lepidoptera encompasses over 180,000 species across many Superfamilies. The fundamental distinction between butterflies and moths lies in their activity timing, antenna morphology, and resting wing posture.",
     },
@@ -126,7 +126,7 @@ const LEPIDO_SECTIONS = [
       en: "Biology & Mechanisms",
     },
     body: {
-      ku: "ڕووپۆشی باڵی پەپوولە لە قاو پێکهاتووە، و قاوەکان لە کایتین دروست بوون. ڕەنگی درەوشاوە، وەک ئەوەی لە Blue Morpho دا دەبینرێت، لە شکاندنەوەی ڕووناکی دروست دەبێت، نەک لە بۆیە. Proboscis وەک لوولەیەکی سووک شیلەی گوڵ دەمژێت. ئەنتێنا ڕۆڵی سەرەکی هەیە لە دۆزینەوەی هاوسەر و خۆراکدا.",
+      ku: "ڕووپۆشی باڵی پەپوولە لە قاو پێک هاتووە، و قاوەکان لە کایتین دروست بوون. ڕەنگی درەوشاوە، وەک ئەوەی لە Blue Morpho دا دەبینرێت، لە شکاندنەوەی ڕووناکی دروست دەبێت، نەک لە بۆیە. Proboscis وەک لوولەیەکی سووک شیلەی گوڵ دەمژێت. ئەنتێنا ڕۆڵی سەرەکی هەیە لە دۆزینەوەی هاوسەر و خۆراکدا.",
       ar: "تتكوّن أجنحة الفراشات من حراشف كيتينية تعكس الضوء بأنماط فريدة. اللون البنيوي (Structural Colour) — كما في فراشة المورفو الزرقاء — ناتجٌ عن انكسار الضوء لا الصبغة. الخرطوم (Proboscis) أداة شرب أنبوبية ملتفة. تؤدي القرون الاستشعارية دوراً محورياً في البحث عن الأزواج ومصادر الرحيق.",
       en: "Butterfly wings are composed of chitin scales that interact with light in unique ways. Structural Colour — as seen in the Blue Morpho — results from light diffraction rather than pigment. The Proboscis is a coiled tubular drinking apparatus. Antennae are pivotal in locating mates and nectar sources.",
     },

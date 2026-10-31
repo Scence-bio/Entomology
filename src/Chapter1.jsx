@@ -178,7 +178,7 @@ const GOALS = [
     ku: "پێوەرە ژینگەییەکان",
     ar: "المؤشرات البيئية",
     en: "Environmental Indicators",
-    descKu: "ئاشناکردنی خەڵک بە مێرووەکان وەک نیشاندەری پاکی ژینگە.",
+    descKu: "ئاشناکردنی خەڵک بە مێرووەکان وەک نیشاندەری پاکیی ژینگە.",
     descAr: "تعريف الناس بالحشرات كمؤشرات لنقاء البيئة.",
     descEn: "Acquainting people with insects as indicators of environmental health.",
   },
@@ -244,7 +244,7 @@ function GoalsSection({ lang }) {
              : "Strategic Goals"}
           </h2>
           <p className="ento-goals-sub">
-            {lang === "ku" ? "١٠ ئامانجی بنەڕەتی ئەتڵەسی ئێنتۆمۆلۆجی"
+            {lang === "ku" ? "١٠ ئامانجی بنەڕەتیی ئەتڵەسی ئێنتۆمۆلۆجی"
              : lang === "ar" ? "١٠ أهداف أساسية لأطلس علم الحشرات"
              : "10 core goals of the Atlas of Entomology"}
           </p>

@@ -169,7 +169,7 @@ const ARTHROPODA_SECTIONS = [
       en: "Compound Eyes",
     },
     body: {
-      ku: "زۆربەی جومگەپێیەکان چاوێکی ئاڵۆزیان هەیە. ئەم چاوە لە هەزاران یەکەی بینینی بچووک پێکدێت، بۆیە مەودای بینینیان فراوانە و جووڵەی خێرا دەبینن.",
+      ku: "زۆربەی جومگەپێیەکان چاوێکی ئاڵۆزیان هەیە. ئەم چاوە لە هەزاران یەکەی بینینی بچووک پێک دێت، بۆیە مەودای بینینیان فراوانە و جووڵەی خێرا دەبینن.",
       en: "Most arthropods have Compound Eyes consisting of thousands of tiny visual units, providing them with a wide field of view to detect the fastest movements.",
       ar: "تمتلك معظم مفصليات الأرجل عيونًا مركبة تتكون من آلاف الوحدات البصرية الصغيرة، مما يمنحها مجال رؤية واسعًا للكشف عن أسرع الحركات.",
     },
@@ -192,7 +192,7 @@ const ARTHROPODA_SECTIONS = [
       { term: "Hemolymph", ku: "ئەو شلەیەیە کە لە ناو سوڕی خوێنی کراوەی جومگەپێیەکاندا دەگەڕێت و هاوتای خوێن و لیمفە لە بڕبڕەدارەکاندا.", en: "The fluid that circulates in the open circulatory system of arthropods, equivalent to blood and lymph.", ar: "السائل الذي يدور في جهاز الدوران المفتوح لمفصليات الأرجل، ويعادل الدم واللمف في الفقاريات." },
       { term: "Spiracles", ku: "کونە وردەکان لەسەر دیواری جەستەی مێروو، کە ڕێگە بە هەوا دەدەن بچێتە ناو بۆرییەکانی هەوا.", en: "Small openings on the body wall of insects that allow air to enter the tracheal system.", ar: "فتحات صغيرة على جدار جسم الحشرات تسمح بدخول الهواء إلى جهاز القصبات الهوائية." },
       { term: "Ommatidia", ku: "یەکە بچووکەکانی چاوی ئاڵۆز. هەر یەکێکیان وەک چاوێکی سەربەخۆ کار دەکات.", en: "The individual optical units that make up a compound eye.", ar: "الوحدات البصرية الفردية التي تشكل العين المركبة." },
-      { term: "Jointed Appendages", ku: "قاچ، ئەنتێنا و ئەو لقانەی کە لە جەستە دەردەچن و جومگەیان هەیە بۆ جووڵە.", en: "Structures such as legs and antennae that extend from the body and have joints for flexibility.", ar: "الهياكل مثل الأرجل وقرون الاستشعار التي تمتد من الجسم ولها مفاصل للحركة." },
+      { term: "Jointed Appendages", ku: "قاچ، ئەنتێنا و ئەو لقانەی کە لە جەستە دەر دەچن و جومگەیان هەیە بۆ جووڵە.", en: "Structures such as legs and antennae that extend from the body and have joints for flexibility.", ar: "الهياكل مثل الأرجل وقرون الاستشعار التي تمتد من الجسم ولها مفاصل للحركة." },
       { term: "Exoskeleton", ku: "توێژێکی ڕەق و پارێزەرە لە دەرەوەی جەستە، و جەستەکە ڕادەگرێت.", en: "A hard, protective outer layer that supports and protects the body of an arthropod.", ar: "طبقة خارجية صلبة واقية تدعم وتحمي جسم مفصليات الأرجل." },
     ],
   },
@@ -251,7 +251,7 @@ function ClassExplorer({ lang }) {
       </div>
       <p className="ento-body">
         {lang === "ku"
-          ? "چوار گروپی سەرەکی جومگەپێیەکان. گروپێک هەڵبژێرە تا قاچ و ئەنتێنا و جەستەکەی ببینیت."
+          ? "چوار گروپی سەرەکیی جومگەپێیەکان. گروپێک هەڵبژێرە تا قاچ و ئەنتێنا و جەستەکەی ببینیت."
           : lang === "ar"
           ? "أربع مجموعات رئيسية من مفصليات الأرجل. اختر مجموعة لترى أرجلها وقرون استشعارها وجسمها."
           : "Four main arthropod groups. Choose one to see its legs, antennae, and body."}
@@ -288,7 +288,7 @@ function BodyPlate({ lang }) {
       id: "thorax",
       title: { ku: "سنگ", ar: "الصدر", en: "Thorax" },
       body: {
-        ku: "سێ جووت قاچ و، لە زۆربەی مێرووەکاندا، باڵەکان لە سنگەوە دەردەچن.",
+        ku: "سێ جووت قاچ و، لە زۆربەی مێرووەکاندا، باڵەکان لە سنگەوە دەر دەچن.",
         ar: "تخرج من الصدر ثلاثة أزواج من الأرجل، وعند معظم الحشرات الأجنحة أيضاً.",
         en: "Three pairs of legs, and in most insects the wings, attach to the thorax.",
       },
