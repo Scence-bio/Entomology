@@ -81,9 +81,9 @@ function ChapterHeroMedia({ lang, numKu, numAr, numEn, icon, titleKu, titleAr, t
       >
         <div className="ento-chapter-hero-num">{lang === "ku" ? numKu : lang === "ar" ? numAr : numEn}</div>
         <span className="ento-chapter-hero-icon"><Mark name={icon} /></span>
-        <div className="ento-chapter-hero-title">
+        <h1 className="ento-chapter-hero-title">
           {lang === "ku" ? titleKu : lang === "ar" ? titleAr : titleEn}
-        </div>
+        </h1>
         <div className="ento-chapter-hero-en">{sub}</div>
       </div>
     </div>
@@ -401,7 +401,7 @@ export default function Chapter3({ lang }) {
         titleAr="شعبة مفصليات الأرجل"
         titleEn="Phylum Arthropods"
         sub="Phylum Arthropoda · جومگەپێیەکان · مفصليات الأرجل"
-        video="/videos/arthropoda.mp4"
+        image="/images/plates/ch3-dragonfly.jpg"
       />
       <div className="ento-container">
         {ARTHROPODA_SECTIONS.map((s, i) => (

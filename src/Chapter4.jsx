@@ -379,12 +379,19 @@ function QuizSection({ lang }) {
 
   const q = QUIZ[idx];
 
+  const nextRef                 = useRef(null);
+
+  useEffect(() => () => clearTimeout(nextRef.current), []);
+
+  // chosen is null when the timer runs out; selected then becomes -1 so the
+  // options lock and the answer shows, exactly as after a click.
   const advance = useCallback((chosen) => {
+    if (selected !== null) return;
     clearInterval(timerRef.current);
     const next = [...answers, chosen];
     setAnswers(next);
-    setSelected(chosen);
-    setTimeout(() => {
+    setSelected(chosen === null ? -1 : chosen);
+    nextRef.current = setTimeout(() => {
       if (idx + 1 < QUIZ.length) {
         setIdx(i => i + 1);
         setSelected(null);
@@ -393,21 +400,23 @@ function QuizSection({ lang }) {
         setPhase("result");
       }
     }, 2400);
-  }, [idx, answers]);
+  }, [idx, answers, selected]);
 
   useEffect(() => {
     if (phase !== "active") return;
     setTimer(TIMER_SEC);
     timerRef.current = setInterval(() => {
-      setTimer(t => {
-        if (t <= 1) { advance(null); return TIMER_SEC; }
-        return t - 1;
-      });
+      setTimer(t => Math.max(t - 1, 0));
     }, 1000);
     return () => clearInterval(timerRef.current);
-  }, [phase, idx, advance]);
+  }, [phase, idx]);
+
+  useEffect(() => {
+    if (phase === "active" && timer === 0 && selected === null) advance(null);
+  }, [phase, timer, selected, advance]);
 
   const start = () => {
+    clearTimeout(nextRef.current);
     setIdx(0); setSelected(null); setAnswers([]);
     setTimer(TIMER_SEC); setPhase("active");
     setTimeout(() => sectionRef.current?.scrollIntoView({ behavior:"smooth", block:"start" }), 100);
@@ -479,7 +488,7 @@ function QuizSection({ lang }) {
           <div className="ento-quiz-timer-row">
             <div className="ento-quiz-timer-ring">
               <svg viewBox="0 0 44 44">
-                <circle cx="22" cy="22" r="18" fill="none" stroke="rgba(255,255,255,.12)" strokeWidth="4"/>
+                <circle cx="22" cy="22" r="18" fill="none" stroke="var(--accent-dim)" strokeWidth="4"/>
                 <circle cx="22" cy="22" r="18" fill="none" stroke={timerColor} strokeWidth="4"
                   strokeDasharray={`${2*Math.PI*18}`}
                   strokeDashoffset={`${2*Math.PI*18*(1-timerPct/100)}`}
@@ -529,7 +538,7 @@ function QuizSection({ lang }) {
                 style={{ transition:"stroke-dashoffset 1.2s ease" }}
               />
               <text x="60" y="52" textAnchor="middle" fontSize="26" fill="var(--accent-bright)" fontWeight="900">{score}</text>
-              <text x="60" y="70" textAnchor="middle" fontSize="13" fill="rgba(255,255,255,.5)">/ {QUIZ.length}</text>
+              <text x="60" y="70" textAnchor="middle" fontSize="13" fill="var(--text-muted)">/ {QUIZ.length}</text>
             </svg>
           </div>
           <div className="ento-quiz-grade">{grade[lang]}</div>
@@ -638,9 +647,9 @@ export default function Chapter4({ lang }) {
       <div className="ento-chapter-hero">
         <div className="ento-chapter-hero-num">{lang === "ku" ? "چاپتەری چوارەم" : lang === "ar" ? "الفصل الرابع" : "Chapter 4"}</div>
         <span className="ento-chapter-hero-icon"><Mark name="card" /></span>
-        <div className="ento-chapter-hero-title">
+        <h1 className="ento-chapter-hero-title">
           {lang === "ku" ? "کویز" : lang === "ar" ? "اختبار" : "Quiz"}
-        </div>
+        </h1>
         <div className="ento-chapter-hero-en">Quiz · کویز · اختبار</div>
       </div>
       <QuizSection lang={lang} />

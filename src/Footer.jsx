@@ -43,7 +43,7 @@ export function AppFooter({ lang, sections }) {
                 },
                 {
                   labelKu: "زمان", labelAr: "اللغة", labelEn: "Language",
-                  value: "کوردی · عربی · English",
+                  value: "کوردی · العربية · English",
                 },
               ].map(item => (
                 <div key={item.labelEn} className="ento-footer-info-item" dir={lang === "en" ? "ltr" : "rtl"} style={{ justifyContent: "space-between", width: "100%" }}>

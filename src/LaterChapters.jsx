@@ -18,7 +18,7 @@ function Hero({ lang, chapter }) {
       <div style={{ position: "relative", zIndex: 2, minHeight: 420, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "clamp(36px,6vw,64px) 20px" }}>
         <div className="ento-chapter-hero-num">{text(lang, chapter.num)}</div>
         <span className="ento-chapter-hero-icon"><Mark name={chapter.icon} /></span>
-        <div className="ento-chapter-hero-title">{text(lang, chapter.title)}</div>
+        <h1 className="ento-chapter-hero-title">{text(lang, chapter.title)}</h1>
         {chapter.latin && <div className="ento-binomial" style={{ color: "#e8d7b0", fontSize: "1.15rem", marginTop: 6 }}>{chapter.latin}</div>}
       </div>
     </div>
@@ -33,7 +33,7 @@ function FamilyPicker({ lang, families }) {
     <>
       <div className="ento-pick-row">
         {families.map((item) => (
-          <button key={item.id} type="button" className={`ento-pick ${item.id === id ? "active" : ""}`} onClick={() => setId(item.id)}>
+          <button key={item.id} type="button" className={`ento-pick ${item.id === id ? "active" : ""}`} aria-pressed={item.id === id} onClick={() => setId(item.id)}>
             <span className="ento-binomial">{item.name}</span>
             <span>{text(lang, item.title)}</span>
           </button>
@@ -382,7 +382,7 @@ function FieldChapter({ lang }) {
           </p>
           <div className="ento-pick-row">
             {pins.map((item) => (
-              <button key={item.id} type="button" className={`ento-pick ${item.id === pin ? "active" : ""}`} onClick={() => setPin(item.id)}>
+              <button key={item.id} type="button" className={`ento-pick ${item.id === pin ? "active" : ""}`} aria-pressed={item.id === pin} onClick={() => setPin(item.id)}>
                 <span className="ento-binomial">{item.name}</span>
               </button>
             ))}
@@ -646,7 +646,7 @@ function MetaChapter({ lang }) {
           </p>
           <div className="ento-pick-row">
             {META_PATHS.map((item) => (
-              <button key={item.id} type="button" className={`ento-pick ${item.id === id ? "active" : ""}`} onClick={() => setId(item.id)}>
+              <button key={item.id} type="button" className={`ento-pick ${item.id === id ? "active" : ""}`} aria-pressed={item.id === id} onClick={() => setId(item.id)}>
                 <span>{text(lang, item.name)}</span>
               </button>
             ))}

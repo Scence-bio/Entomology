@@ -454,7 +454,7 @@ function ButterflyGallery({ lang }) {
   const labelLocal   = { ku: "کوردستان", ar: "كردستان", en: "Kurdistan" };
   const labelWorld   = { ku: "جیهان", ar: "العالم", en: "World" };
   const labelBfly    = { ku: "پەپوولە", ar: "فراشة", en: "butterfly" };
-  const labelMoth    = { ku: "فراشە", ar: "عثة", en: "moth" };
+  const labelMoth    = { ku: "پەپوولەی شەو", ar: "عثة", en: "moth" };
 
   const fam = selected ? (FAMILY_COLORS[selected.family] || FAMILY_COLORS.Nymphalidae) : null;
 
@@ -482,6 +482,7 @@ function ButterflyGallery({ lang }) {
           value={search}
           onChange={e => setSearch(e.target.value)}
           placeholder={labelSearch[lang]}
+          aria-label={labelSearch[lang]}
           style={{
             background: "var(--card-bg)", border: "1.5px solid var(--border-card)",
             borderRadius: 10, padding: "8px 14px", color: "var(--text-primary)",
@@ -517,7 +518,7 @@ function ButterflyGallery({ lang }) {
         </div>
         {filtered.length !== SPECIMENS.length && (
           <span style={{ color: "var(--accent)", fontSize: ".78rem", fontFamily: "var(--font-mono)", marginInlineStart: "auto" }}>
-            {filtered.length} shown
+            {lang === "ku" ? `${filtered.length} دانە` : lang === "ar" ? `${filtered.length} نتيجة` : `${filtered.length} shown`}
           </span>
         )}
       </div>
@@ -536,6 +537,9 @@ function ButterflyGallery({ lang }) {
       {/* Modal */}
       {selected && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={selected.name}
           onClick={() => setSelected(null)}
           style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,.8)", zIndex: 999, display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}
         >
@@ -544,6 +548,9 @@ function ButterflyGallery({ lang }) {
             style={{ background: "var(--card-bg)", border: "2px solid var(--border-card)", borderRadius: 20, maxWidth: 540, width: "100%", maxHeight: "90vh", overflow: "auto", position: "relative", boxShadow: "0 16px 60px rgba(0,0,0,.4)" }}
           >
             <button
+              type="button"
+              autoFocus
+              aria-label={lang === "ku" ? "داخستن" : lang === "ar" ? "إغلاق" : "Close"}
               onClick={() => setSelected(null)}
               style={{ position: "absolute", top: 14, insetInlineEnd: 14, background: "rgba(0,0,0,.45)", border: "none", borderRadius: "50%", width: 32, height: 32, color: "#fff", cursor: "pointer", fontSize: 15, zIndex: 10, display: "flex", alignItems: "center", justifyContent: "center" }}
             >✕</button>
@@ -571,7 +578,7 @@ function ButterflyGallery({ lang }) {
                   border: selected.type === "moth" ? "1px solid rgba(167,139,250,.3)" : "1px solid rgba(52,211,153,.3)",
                   borderRadius: 20, padding: "3px 12px", fontSize: ".75rem", fontFamily: "var(--font-mono)",
                 }}>
-                  {selected.type}
+                  {selected.type === "moth" ? labelMoth[lang] : labelBfly[lang]}
                 </span>
               </div>
 
@@ -579,8 +586,8 @@ function ButterflyGallery({ lang }) {
               <p className="ento-binomial" style={{ fontSize: "1rem", color: "var(--accent)", margin: "0 0 1.2rem" }}>{selected.sci}</p>
 
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-                <InfoBox label="Region" value={selected.region} />
-                <InfoBox label="Family" value={selected.family} />
+                <InfoBox label={lang === "ku" ? "ناوچە" : lang === "ar" ? "المنطقة" : "Region"} value={selected.region} />
+                <InfoBox label={lang === "ku" ? "خێزان" : lang === "ar" ? "الفصيلة" : "Family"} value={selected.family} />
               </div>
             </div>
           </div>
@@ -601,10 +608,14 @@ function InfoBox({ label, value }) {
 
 function SpecCard({ s, onClick, lang, local }) {
   const [hover, setHover] = useState(false);
+  const [broken, setBroken] = useState(false);
   const fam = FAMILY_COLORS[s.family] || FAMILY_COLORS.Nymphalidae;
   return (
     <div
+      role="button"
+      tabIndex={0}
       onClick={onClick}
+      onKeyDown={e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick(); } }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       style={{
@@ -617,27 +628,24 @@ function SpecCard({ s, onClick, lang, local }) {
     >
       {/* Image or colour fallback */}
       <div style={{ width: "100%", height: 150, background: s.color + "22", overflow: "hidden", position: "relative" }}>
+        {broken ? (
+          <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3.5rem" }}>🦋</div>
+        ) : (
         <img
           src={s.img}
           alt={s.name}
           loading="lazy"
           style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform .35s", transform: hover ? "scale(1.06)" : "scale(1)" }}
-          onError={e => {
-            e.target.style.display = "none";
-            e.target.parentElement.style.display = "flex";
-            e.target.parentElement.style.alignItems = "center";
-            e.target.parentElement.style.justifyContent = "center";
-            e.target.parentElement.style.fontSize = "3.5rem";
-            e.target.parentElement.textContent = "🦋";
-          }}
+          onError={() => setBroken(true)}
         />
+        )}
         {local && (
           <span style={{ position: "absolute", top: 8, left: 8, background: "#1a2418", color: "#f3efe4", borderRadius: 2, padding: "2px 8px", fontSize: ".68rem" }}>
             {lang === "ku" ? "کوردستان" : lang === "ar" ? "كردستان" : "Kurdistan"}
           </span>
         )}
         {s.type === "moth" && (
-          <span style={{ position: "absolute", top: 8, right: 8, background: "rgba(0,0,0,.55)", color: "#a78bfa", borderRadius: 10, padding: "2px 8px", fontSize: ".7rem", fontFamily: "var(--font-mono)", backdropFilter: "blur(4px)" }}>moth</span>
+          <span style={{ position: "absolute", top: 8, right: 8, background: "rgba(0,0,0,.55)", color: "#a78bfa", borderRadius: 10, padding: "2px 8px", fontSize: ".7rem", backdropFilter: "blur(4px)" }}>{lang === "ku" ? "پەپوولەی شەو" : lang === "ar" ? "عثة" : "moth"}</span>
         )}
       </div>
       <div style={{ padding: "10px 12px" }}>
@@ -685,10 +693,10 @@ export default function Chapter5({ lang }) {
           {lang === "ku" ? "چاپتەری پێنجەم" : lang === "ar" ? "الفصل الخامس" : "Chapter 5"}
         </div>
         <span className="ento-chapter-hero-icon"><Mark name="butterfly" /></span>
-        <div className="ento-chapter-hero-title">
+        <h1 className="ento-chapter-hero-title">
           {lang === "ku" ? "پەپوولەکان" : lang === "ar" ? "الفراشات" : "Butterflies"}
-          <div className="ento-binomial">Lepidoptera</div>
-        </div>
+          <span className="ento-binomial" style={{ display: "block" }}>Lepidoptera</span>
+        </h1>
         <div className="ento-chapter-hero-en">
           Lepidoptera · پەپوولەکان · حرشفيات الأجنحة
         </div>

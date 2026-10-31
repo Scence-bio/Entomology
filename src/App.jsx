@@ -1,11 +1,21 @@
-import { useState, useEffect, useRef, useCallback } from "react";
-import Chapter1File from "./Chapter1";
-import Chapter2File from "./Chapter2";
-import Chapter3File from "./Chapter3";
-import Chapter4File from "./Chapter4";
-import Chapter5 from "./Chapter5";
-import { Chapter6, Chapter7, Chapter8, Chapter9, Chapter10, Chapter11, Chapter12 } from "./LaterChapters";
+import { useState, useEffect, useRef, useCallback, lazy, Suspense } from "react";
 import { Mark } from "./marks";
+
+const later = (name) => lazy(() => import("./LaterChapters").then((m) => ({ default: m[name] })));
+const CHAPTER_PAGES = {
+  ch1: lazy(() => import("./Chapter1")),
+  ch2: lazy(() => import("./Chapter2")),
+  ch3: lazy(() => import("./Chapter3")),
+  ch4: lazy(() => import("./Chapter4")),
+  ch5: lazy(() => import("./Chapter5")),
+  ch6: later("Chapter6"),
+  ch7: later("Chapter7"),
+  ch8: later("Chapter8"),
+  ch9: later("Chapter9"),
+  ch10: later("Chapter10"),
+  ch11: later("Chapter11"),
+  ch12: later("Chapter12"),
+};
 
 /* ═══════════════════════════════════════════════
    LANGUAGE DATA
@@ -13,7 +23,7 @@ import { Mark } from "./marks";
 
 const LANG_CONFIG = {
   ku: { label: "کوردی", dir: "rtl", flag: "🟡" },
-  ar: { label: "عربی",  dir: "rtl", flag: "🟢" },
+  ar: { label: "العربية", dir: "rtl", flag: "🟢" },
   en: { label: "English", dir: "ltr", flag: "🔵" },
 };
 
@@ -21,7 +31,6 @@ const LANG_CONFIG = {
    STYLES
 ═══════════════════════════════════════════════ */
 const CSS = `
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;1,8..60,500;1,8..60,600&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
   --ocean-1:#1f4d32; --ocean-2:#2c6244; --ocean-3:#244e34; --ocean-4:#3e6b4e;
@@ -89,7 +98,7 @@ const CSS = `
   font-size:clamp(.92rem,2.5vw,1.1rem); color:#fff;
 }
 .ento-brand svg { width:22px; height:22px; color:#e0b56a; flex-shrink:0; }
-.ento-brand span { color:#e0b56a; }
+.ento-brand-text span { color:#e0b56a; }
 .ento-topbar-right { display:flex; align-items:center; gap:8px; }
 
 /* ── LANGUAGE SWITCHER ── */
@@ -1001,6 +1010,7 @@ const CSS = `
 @media(max-width:640px){
   .ento-topbar { padding:0 10px; gap:6px; }
   .ento-brand { font-size:.82rem; gap:6px; min-width:0; }
+  .ento-topbar-back + .ento-brand .ento-brand-text { display:none; }
   .ento-lang-switcher { gap:2px; padding:2px; }
   .ento-lang-btn { padding:4px 7px; font-size:.68rem; }
   .ento-theme-btn { width:32px; height:32px; flex-shrink:0; }
@@ -1019,24 +1029,23 @@ function useTheme() {
   const [mode, setMode] = useState(() => {
     try { return localStorage.getItem("themeMode") || "auto"; } catch { return "auto"; }
   });
-  const apply = useCallback((m) => {
-    const dark = m === "dark" || (m === "auto" && window.matchMedia("(prefers-color-scheme:dark)").matches);
-    document.documentElement.classList.toggle("dark", dark);
-    try { localStorage.setItem("themeMode", m); } catch {}
-    setMode(m);
-  }, []);
+  const [systemDark, setSystemDark] = useState(() => window.matchMedia("(prefers-color-scheme:dark)").matches);
   useEffect(() => {
-    apply(mode);
     const mq = window.matchMedia("(prefers-color-scheme:dark)");
-    const h = () => { try { if ((localStorage.getItem("themeMode") || "auto") === "auto") apply("auto"); } catch {} };
+    const h = () => setSystemDark(mq.matches);
     mq.addEventListener("change", h);
     return () => mq.removeEventListener("change", h);
-  }, [apply, mode]);
+  }, []);
+  const isDark = mode === "dark" || (mode === "auto" && systemDark);
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDark);
+  }, [isDark]);
   const cycle = () => {
     const cyc = ["auto", "dark", "light"];
-    apply(cyc[(cyc.indexOf(mode) + 1) % cyc.length]);
+    const next = cyc[(cyc.indexOf(mode) + 1) % cyc.length];
+    try { localStorage.setItem("themeMode", next); } catch {}
+    setMode(next);
   };
-  const isDark = mode === "dark" || (mode === "auto" && window.matchMedia("(prefers-color-scheme:dark)").matches);
   return { mode, isDark, cycle };
 }
 
@@ -1115,7 +1124,7 @@ const CHAPTERS = [
     icon: "beetle",
     image: "/images/plates/ch2-drawer.jpg",
     title: { ku: "دەستپێکی ئێنتۆمۆلۆجی", en: "Introduction to Entomology", ar: "مقدمة علم الحشرات" },
-    desc: { ku: "پێناسە، مێژوو و گرنگیی مێرووناسی", en: "Definition, history & importance of entomology", ar: "تعريف التاريخ وأهمية علم الحشرات" },
+    desc: { ku: "پێناسە، مێژوو و گرنگیی مێرووناسی", en: "Definition, history & importance of entomology", ar: "التعريف والتاريخ وأهمية علم الحشرات" },
   },
   {
     id: "ch3",
@@ -1238,21 +1247,33 @@ function HomeScreen({ lang }) {
 /* ═══════════════════════════════════════════════
    MAIN APP
 ═══════════════════════════════════════════════ */
-const CHAPTER_ROUTES = new Set(["ch1", "ch2", "ch3", "ch4", "ch5", "ch6", "ch7", "ch8", "ch9", "ch10", "ch11", "ch12"]);
-
 function pageFromHash() {
   const hash = window.location.hash;
   if (!hash.startsWith("#/")) return null;
   const id = decodeURIComponent(hash.slice(2).split(/[/?#]/)[0]);
   if (!id || id === "home") return "home";
-  return CHAPTER_ROUTES.has(id) ? id : "home";
+  return CHAPTER_PAGES[id] ? id : "home";
+}
+
+function savedLang() {
+  try {
+    const value = localStorage.getItem("lang");
+    return LANG_CONFIG[value] ? value : "ku";
+  } catch {
+    return "ku";
+  }
 }
 
 export default function EntomologyPage() {
   const { isDark, cycle } = useTheme();
-  const [lang, setLang] = useState("ku");
+  const [lang, setLangState] = useState(savedLang);
   const [page, setPage] = useState(() => pageFromHash() || "home");
   const skipFirstScroll = useRef(true);
+
+  const setLang = useCallback((value) => {
+    setLangState(value);
+    try { localStorage.setItem("lang", value); } catch {}
+  }, []);
 
   useEffect(() => {
     const id = "ento-styles";
@@ -1263,17 +1284,30 @@ export default function EntomologyPage() {
       document.head.appendChild(el);
     }
     el.textContent = CSS;
-    if (!window.THREE) {
-      const script = document.createElement("script");
-      script.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
-      document.head.appendChild(script);
-    }
   }, []);
 
   useEffect(() => {
     document.documentElement.dir = LANG_CONFIG[lang].dir;
     document.documentElement.lang = lang === "ku" ? "ckb" : lang;
   }, [lang]);
+
+  // Links like "#team" scroll inside the chapter; letting them change the
+  // hash would drop "#/ch1" and a reload would land on the home page.
+  useEffect(() => {
+    const onClick = (e) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const link = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!link) return;
+      const href = link.getAttribute("href");
+      if (href.startsWith("#/")) return;
+      const target = document.getElementById(decodeURIComponent(href.slice(1)));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
 
   useEffect(() => {
     const sync = () => {
@@ -1292,6 +1326,8 @@ export default function EntomologyPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [page]);
 
+  const ChapterPage = page === "home" ? null : CHAPTER_PAGES[page];
+
   return (
     <div className={`ento-root ${isDark ? "ento-dark" : ""}`}>
       <header className="ento-topbar" style={{ direction: "ltr" }}>
@@ -1301,7 +1337,7 @@ export default function EntomologyPage() {
               {lang === "en" ? "← Home" : lang === "ar" ? "← الرئيسية" : "← سەرەکی"}
             </a>
           )}
-          <a className="ento-brand" href="#/"><Mark name="beetle" /> Atlas of <span>Entomology</span></a>
+          <a className="ento-brand" href="#/" aria-label="Atlas of Entomology"><Mark name="beetle" /> <span className="ento-brand-text">Atlas of <span>Entomology</span></span></a>
         </div>
         <div className="ento-topbar-right">
           <LangSwitcher lang={lang} setLang={setLang} />
@@ -1315,18 +1351,11 @@ export default function EntomologyPage() {
           <HomeScreen lang={lang} />
         </>
       )}
-      {page === "ch1" && <Chapter1File lang={lang} />}
-      {page === "ch2" && <Chapter2File lang={lang} />}
-      {page === "ch3" && <Chapter3File lang={lang} />}
-      {page === "ch4" && <Chapter4File lang={lang} />}
-      {page === "ch5" && <Chapter5 lang={lang} />}
-      {page === "ch6" && <Chapter6 lang={lang} />}
-      {page === "ch7" && <Chapter7 lang={lang} />}
-      {page === "ch8" && <Chapter8 lang={lang} />}
-      {page === "ch9" && <Chapter9 lang={lang} />}
-      {page === "ch10" && <Chapter10 lang={lang} />}
-      {page === "ch11" && <Chapter11 lang={lang} />}
-      {page === "ch12" && <Chapter12 lang={lang} />}
+      {ChapterPage && (
+        <Suspense fallback={<div className="ento-chapter-page" />}>
+          <ChapterPage lang={lang} />
+        </Suspense>
+      )}
     </div>
   );
 }
