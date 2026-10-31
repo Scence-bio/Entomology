@@ -4,7 +4,7 @@ import Chapter2File from "./Chapter2";
 import Chapter3File from "./Chapter3";
 import Chapter4File from "./Chapter4";
 import Chapter5 from "./Chapter5";
-import { Chapter6, Chapter7, Chapter8, Chapter9 } from "./LaterChapters";
+import { Chapter6, Chapter7, Chapter8, Chapter9, Chapter10, Chapter11, Chapter12 } from "./LaterChapters";
 import { Mark } from "./marks";
 
 /* ═══════════════════════════════════════════════
@@ -1180,6 +1180,33 @@ const CHAPTERS = [
     title: { ku: "کێڵگە و لەیبڵ", en: "Field and label", ar: "الحقل والبطاقة" },
     desc: { ku: "کۆکردنەوە، شوێنی دەرزە و لەیبڵی نموونە", en: "Collecting, where to pin, and the specimen label", ar: "الجمع وموضع الدبوس وبطاقة العينة" },
   },
+  {
+    id: "ch10",
+    num: { ku: "چاپتەری دەیەم", en: "Chapter 10", ar: "الفصل العاشر" },
+    icon: "bug",
+    image: "/images/plates/ch10-bug.jpg",
+    latin: "Hemiptera",
+    title: { ku: "شەتەک و سنە", en: "Aphids and true bugs", ar: "المن والبق" },
+    desc: { ku: "دەمی کونکەر، و ئەو مێرووەی خاڵخاڵۆکە دەیخوات", en: "A piercing beak, and the insect a ladybird eats", ar: "فم ثاقب، والحشرة التي تأكلها الدعسوقة" },
+  },
+  {
+    id: "ch11",
+    num: { ku: "چاپتەری یازدەهەم", en: "Chapter 11", ar: "الفصل الحادي عشر" },
+    icon: "dragon",
+    image: "/images/plates/ch11-dragon.jpg",
+    latin: "Orthoptera · Odonata",
+    title: { ku: "کوللە و مێرووی ئاو", en: "Grasshoppers and dragonflies", ar: "الجنادب والرعاشات" },
+    desc: { ku: "بازدان، چاوی گەورە، و بچووکێک لە ناو ئاو", en: "A jump, a large eye, and a nymph in the water", ar: "قفزة وعين كبيرة وحورية في الماء" },
+  },
+  {
+    id: "ch12",
+    num: { ku: "چاپتەری دوازدەهەم", en: "Chapter 12", ar: "الفصل الثاني عشر" },
+    icon: "butterfly",
+    image: "/images/plates/ch12-chrysalis.jpg",
+    focus: "center 42%",
+    title: { ku: "دوو گۆڕانەپەڕە", en: "Two metamorphoses", ar: "تحولان" },
+    desc: { ku: "پیت هەیە، یان نییە", en: "A pupa, or none", ar: "شرنقة أو لا شرنقة" },
+  },
 ];
 
 /* ── Home Screen ── */
@@ -1211,7 +1238,7 @@ function HomeScreen({ lang }) {
 /* ═══════════════════════════════════════════════
    MAIN APP
 ═══════════════════════════════════════════════ */
-const CHAPTER_ROUTES = new Set(["ch1", "ch2", "ch3", "ch4", "ch5", "ch6", "ch7", "ch8", "ch9"]);
+const CHAPTER_ROUTES = new Set(["ch1", "ch2", "ch3", "ch4", "ch5", "ch6", "ch7", "ch8", "ch9", "ch10", "ch11", "ch12"]);
 
 function pageFromHash() {
   const hash = window.location.hash;
@@ -1297,6 +1324,9 @@ export default function EntomologyPage() {
       {page === "ch7" && <Chapter7 lang={lang} />}
       {page === "ch8" && <Chapter8 lang={lang} />}
       {page === "ch9" && <Chapter9 lang={lang} />}
+      {page === "ch10" && <Chapter10 lang={lang} />}
+      {page === "ch11" && <Chapter11 lang={lang} />}
+      {page === "ch12" && <Chapter12 lang={lang} />}
     </div>
   );
 }

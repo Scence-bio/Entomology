@@ -425,6 +425,259 @@ function FieldChapter({ lang }) {
   );
 }
 
+const HEMIPTERA = {
+  image: "/images/plates/ch10-bug.jpg",
+  icon: "bug",
+  latin: "Hemiptera",
+  num: { ku: "چاپتەری دەیەم", ar: "الفصل العاشر", en: "Chapter 10" },
+  title: { ku: "شەتەک و سنە", ar: "المن والبق", en: "Aphids and true bugs" },
+  blocks: [
+    {
+      id: "hem-def",
+      num: "٠١ · 01",
+      title: { ku: "پێناسە", ar: "التعريف", en: "What they are" },
+      body: {
+        ku: "Hemiptera شەتەک، سنە، زنجرە و هاوشێوەکانیانی تێدایە. هەموویان دەمێکی کونیان هەیە کە شیلەی ڕووەک، یان هەندێک جار خوێن، دەمژێت. ناوەکە لە hemi (نیوە) و pteron (باڵ)ەوەیە: لە سنەدا نیوەی باڵی پێشەوە قاوغە و نیوەکەی تری پەردەیە. شەتەک زۆرجار بێباڵە. گۆڕانەپەڕەیان ناتەواوە: هێلکە، بچووک، گەورە، بەبێ پیت. شەتەک هەر ئەو مێرووەیە کە خاڵخاڵۆکە و لارڤای زۆرێک لە مێشە گوڵەکان دەیخۆن.",
+        ar: "تضم Hemiptera المن والبق والزيز وما شابهها. لفمها جميعاً خرطوم يثقب ويمتص عصارة النبات، وأحياناً الدم. الاسم من hemi (نصف) وpteron (جناح): في البق نصف الجناح الأمامي غمد ونصفه غشاء. المن غالباً بلا أجنحة. تحولها ناقص: بيضة وحورية وبالغة، بلا شرنقة. المن هو الحشرة التي تأكلها الدعسوقة ويرقات كثير من ذباب الأزهار.",
+        en: "Hemiptera holds aphids, true bugs, cicadas and their kin. All of them have a beak that pierces and sucks plant sap, and sometimes blood. The name is hemi (half) and pteron (wing): in a true bug the forewing is leathery at the base and membranous at the tip. Aphids are often wingless. Metamorphosis is incomplete: egg, nymph, adult, and no pupa. The aphid is the insect that ladybirds and many hoverfly larvae eat.",
+      },
+    },
+    {
+      id: "hem-families",
+      num: "٠٢ · 02",
+      title: { ku: "سێ خێزان", ar: "ثلاث فصائل", en: "Three families" },
+      body: {
+        ku: "دەمەکە یەکە. باڵ و قەبارەکە جیاوازە.",
+        ar: "الفم واحد. الجناح والحجم يختلفان.",
+        en: "The beak is shared. Wings and size are not.",
+      },
+      families: [
+        {
+          id: "aphididae",
+          name: "Aphididae",
+          title: { ku: "شەتەک", ar: "المن", en: "Aphids" },
+          rows: {
+            ku: [["قەبارە", "بچووک، زۆرجار بێباڵ"], ["خۆراک", "شیلەی ڕووەک، و شیلەیەکی شیرین دادەنێن"], ["زۆربوون", "مێینە دەتوانێت بەبێ نێر منداڵی ببێت"]],
+            ar: [["الحجم", "صغير، وغالباً بلا أجنحة"], ["الطعام", "عصارة النبات، ويطرح ندوة عسلية"], ["التكاثر", "الأنثى تستطيع الولادة بلا ذكر"]],
+            en: [["Size", "small, and often wingless"], ["Food", "plant sap, and they leave honeydew"], ["Increase", "a female can bear young without a male"]],
+          },
+        },
+        {
+          id: "pentatomidae",
+          name: "Pentatomidae",
+          title: { ku: "سنەی قەڵغان", ar: "البق الدرعي", en: "Shield bugs" },
+          rows: {
+            ku: [["شێوە", "قەڵغانێکی پێنج لایەن"], ["باڵ", "نیوە قاوغ، نیوە پەردە"], ["بۆن", "کاتێک دەترسن بۆنێکی تیژ دەردەدەن"]],
+            ar: [["الشكل", "درع خماسي"], ["الجناح", "نصفه غمد ونصفه غشاء"], ["الرائحة", "تفرز رائحة حادة حين تخاف"]],
+            en: [["Shape", "a five-sided shield"], ["Wing", "half sheath, half membrane"], ["Scent", "a sharp smell when they are alarmed"]],
+          },
+        },
+        {
+          id: "cicadellidae",
+          name: "Cicadellidae",
+          title: { ku: "مێرووی گەڵا", ar: "نطاطات الأوراق", en: "Leafhoppers" },
+          rows: {
+            ku: [["جووڵە", "باز دەدەن"], ["خۆراک", "شیلەی گەڵا"], ["زیان", "هەندێکیان نەخۆشی ڕووەک دەگوازنەوە"]],
+            ar: [["الحركة", "تقفز"], ["الطعام", "عصارة الورق"], ["الضرر", "بعضها ينقل مرض النبات"]],
+            en: [["Movement", "they hop"], ["Food", "leaf sap"], ["Harm", "some carry plant disease"]],
+          },
+        },
+      ],
+    },
+    {
+      id: "hem-species",
+      num: "٠٣ · 03",
+      title: { ku: "جۆرە باوەکانی ناوچەکە", ar: "أنواع شائعة في المنطقة", en: "Common species of the region" },
+      body: {
+        ku: "ئەمانە زیانبەخشی باوی کێڵگە و باخن، نەک ئەنجامی ژمارەیەکی تۆمار. وێنەی سەرەوە Nezara viridula ـە.",
+        ar: "هذه آفات شائعة في الحقل والبستان، لا حصيلة تعداد. الصورة أعلاه Nezara viridula.",
+        en: "These are common pests of field and garden, not a counted survey. The picture above is Nezara viridula.",
+      },
+      species: [
+        { name: "Myzus persicae", family: "Aphididae", common: { ku: "شەتەکی قۆخ", ar: "من الدراق", en: "Green peach aphid" }, where: { ku: "باخ و کێڵگە", ar: "بساتين وحقول", en: "Gardens and fields" } },
+        { name: "Aphis fabae", family: "Aphididae", common: { ku: "شەتەکی ڕەش", ar: "من الفول الأسود", en: "Black bean aphid" }, where: { ku: "فاسۆلیا و باخچە", ar: "فول وحدائق", en: "Beans and gardens" } },
+        { name: "Nezara viridula", family: "Pentatomidae", common: { ku: "سنەی سەوزی باشوور", ar: "البق الأخضر الجنوبي", en: "Southern green stink bug" }, where: { ku: "کێڵگەی سەوزە", ar: "حقول الخضار", en: "Vegetable fields" } },
+      ],
+    },
+  ],
+};
+
+const JUMPERS = {
+  image: "/images/plates/ch11-dragon.jpg",
+  icon: "dragon",
+  latin: "Orthoptera · Odonata",
+  num: { ku: "چاپتەری یازدەهەم", ar: "الفصل الحادي عشر", en: "Chapter 11" },
+  title: { ku: "کوللە و مێرووی ئاو", ar: "الجنادب والرعاشات", en: "Grasshoppers and dragonflies" },
+  blocks: [
+    {
+      id: "jump-def",
+      num: "٠١ · 01",
+      title: { ku: "دوو ئۆردەر، یەک گۆڕان", ar: "رتبتان وتحول واحد", en: "Two orders, one kind of change" },
+      body: {
+        ku: "هەردووکیان گۆڕانەپەڕەی ناتەواویان هەیە: پیت نییە. کوللە بچووکەکەی لە گەورەکەی دەچێت، تەنها باڵەکانی کورتترن. مێرووی ئاو وا نییە: بچووکەکەی لە ئاودا دەژی و لە گەورەی فڕیو دەچێت، بەڵام هەر پیتی نییە. کوللە بە قاچی دواوەی گەورە باز دەدات. مێرووی ئاو دوو جووت باڵی تۆڕاوی و چاوێکی گەورەی هەیە، و نێچیر دەگرێت.",
+        ar: "لكليهما تحول ناقص: لا شرنقة. حورية الجندب تشبه البالغ وأجنحتها أقصر. الرعاش ليس كذلك: حوريته تعيش في الماء ولا تشبه البالغ الطائر، ولكنها بلا شرنقة أيضاً. الجندب يقفز بفخذ خلفي كبير. للرعاش زوجان من الأجنحة الشبكية وعين كبيرة، وهو صياد.",
+        en: "Both have incomplete metamorphosis: there is no pupa. A grasshopper nymph looks like the adult, with shorter wings. A dragonfly does not: its nymph lives in water and does not look like the flying adult, and it still has no pupa. A grasshopper jumps with a large hind femur. A dragonfly has two pairs of netted wings and a large eye, and it hunts.",
+      },
+    },
+    {
+      id: "jump-families",
+      num: "٠٢ · 02",
+      title: { ku: "چوار خێزان", ar: "أربع فصائل", en: "Four families" },
+      body: {
+        ku: "دووی یەکەم کوللەن. دووی دواوە مێرووی ئاون: یەکەمیان باڵی کراوە ڕادەگرێت، دووەمیان باڵی لەسەر پشت کۆدەکاتەوە.",
+        ar: "الأولى والثانية جنادب. الثالثة والرابعة رعاشات: واحدة تُبقي الجناح مفتوحاً، والأخرى تطويه فوق الظهر.",
+        en: "The first two are grasshoppers and crickets. The last two are dragonflies and damselflies: one holds the wings open, the other folds them over the back.",
+      },
+      families: [
+        {
+          id: "acrididae",
+          name: "Acrididae",
+          title: { ku: "کوللەی ڕۆژ", ar: "الجراد", en: "Short-horned grasshoppers" },
+          rows: {
+            ku: [["ئەنتێنا", "کورت"], ["کات", "ڕۆژ"], ["نموونە", "مەڵەشە، Schistocerca"]],
+            ar: [["القرون", "قصيرة"], ["الوقت", "النهار"], ["مثال", "الجراد، Schistocerca"]],
+            en: [["Antennae", "short"], ["Time", "day"], ["Example", "locusts, Schistocerca"]],
+          },
+        },
+        {
+          id: "gryllidae",
+          name: "Gryllidae",
+          title: { ku: "کوللەی شەو", ar: "الصراصير", en: "Crickets" },
+          rows: {
+            ku: [["ئەنتێنا", "درێژ"], ["دەنگ", "بە باڵ دەنگی لێ دەدەن"], ["کات", "زۆرجار شەو"]],
+            ar: [["القرون", "طويلة"], ["الصوت", "يصرّ بالجناح"], ["الوقت", "غالباً الليل"]],
+            en: [["Antennae", "long"], ["Sound", "they sing with the wings"], ["Time", "often night"]],
+          },
+        },
+        {
+          id: "libellulidae",
+          name: "Libellulidae",
+          title: { ku: "مێرووی ئاوی باڵکراوە", ar: "الرعاشات الكبيرة", en: "Dragonflies" },
+          rows: {
+            ku: [["باڵ", "کراوە، ناتوانرێت لەسەر پشت کۆبکرێتەوە"], ["چاو", "گەورە، زۆربەی سەر دادەپۆشێت"], ["بچووک", "لە ئاو، بە چەناگەیەکی بازدەر نێچیر دەگرێت"]],
+            ar: [["الجناح", "مفتوح، لا يُطوى فوق الظهر"], ["العين", "كبيرة وتغطي معظم الرأس"], ["الحورية", "في الماء، وتصطاد بفك مندفع"]],
+            en: [["Wings", "held open, not folded over the back"], ["Eyes", "large, covering most of the head"], ["Nymph", "in water, hunting with a hinged jaw"]],
+          },
+        },
+        {
+          id: "coenagrionidae",
+          name: "Coenagrionidae",
+          title: { ku: "مێرووی ئاوی باریک", ar: "الرعاشات الصغيرة", en: "Damselflies" },
+          rows: {
+            ku: [["باڵ", "لە کاتی وەستاندا لەسەر پشت کۆدەبێتەوە"], ["جەستە", "باریک"], ["بچووک", "هەر لە ئاودا"]],
+            ar: [["الجناح", "يُطوى فوق الظهر عند الراحة"], ["الجسم", "رفيع"], ["الحورية", "في الماء أيضاً"]],
+            en: [["Wings", "folded over the back at rest"], ["Body", "slender"], ["Nymph", "also in water"]],
+          },
+        },
+      ],
+    },
+    {
+      id: "jump-species",
+      num: "٠٣ · 03",
+      title: { ku: "جۆرە باوەکانی ناوچەکە", ar: "أنواع شائعة في المنطقة", en: "Common species of the region" },
+      body: {
+        ku: "وێنەی سەرەوە مێی Crocothemis erythraea ـە، بۆیە جەستەکەی قاوەییە. نێرەکەی سوورە. مەڵەشە گەلێکی هەیە کە گەیشتووەتە ئەم ناوچەیە.",
+        ar: "الصورة أعلاه أنثى Crocothemis erythraea، لذلك جسمها بني. الذكر أحمر. للجراد أسراب بلغت هذه المنطقة.",
+        en: "The picture above is a female Crocothemis erythraea, so the body is brown. The male is red. The desert locust has swarms that have reached this region.",
+      },
+      species: [
+        { name: "Schistocerca gregaria", family: "Acrididae", common: { ku: "مەڵەشەی بیابان", ar: "الجراد الصحراوي", en: "Desert locust" }, where: { ku: "دەشتی وشک، و هەندێک جار گەل", ar: "سهول جافة، وأحياناً أسراب", en: "Dry plains, and sometimes swarms" } },
+        { name: "Gryllus bimaculatus", family: "Gryllidae", common: { ku: "کوللەی دوو خاڵ", ar: "الصرصار ذو النقطتين", en: "Two-spotted cricket" }, where: { ku: "کێڵگە و ماڵ", ar: "حقول وبيوت", en: "Fields and houses" } },
+        { name: "Crocothemis erythraea", family: "Libellulidae", common: { ku: "مێرووی ئاوی سوور", ar: "الرعاش القرمزي", en: "Scarlet darter" }, where: { ku: "ئاوە وەستاوەکان", ar: "المياه الراكدة", en: "Still water" } },
+      ],
+    },
+  ],
+};
+
+const META_PATHS = [
+  {
+    id: "complete",
+    name: { ku: "تەواو", ar: "كامل", en: "Complete" },
+    stages: {
+      ku: [["١", "هێلکە"], ["٢", "کۆڵۆک — لە گەورە ناچێت"], ["٣", "پیت — وێنەکە ئەم قۆناغەیە"], ["٤", "گەورە"]],
+      ar: [["١", "بيضة"], ["٢", "يرقة — لا تشبه البالغ"], ["٣", "شرنقة — الصورة هي هذه المرحلة"], ["٤", "بالغة"]],
+      en: [["1", "Egg"], ["2", "Larva — it does not look like the adult"], ["3", "Pupa — the picture is this stage"], ["4", "Adult"]],
+    },
+    orders: "Lepidoptera, Coleoptera, Diptera, Hymenoptera",
+  },
+  {
+    id: "incomplete",
+    name: { ku: "ناتەواو", ar: "ناقص", en: "Incomplete" },
+    stages: {
+      ku: [["١", "هێلکە"], ["٢", "بچووک — لە کوللە و سنەدا لە گەورە دەچێت"], ["٣", "گەورە"]],
+      ar: [["١", "بيضة"], ["٢", "حورية — في الجندب والبق تشبه البالغ"], ["٣", "بالغة"]],
+      en: [["1", "Egg"], ["2", "Nymph — in a grasshopper or a bug it looks like the adult"], ["3", "Adult"]],
+    },
+    orders: "Hemiptera, Orthoptera, Odonata",
+  },
+];
+
+function MetaChapter({ lang }) {
+  const [id, setId] = useState("complete");
+  const path = META_PATHS.find((item) => item.id === id);
+  const stages = path.stages[lang] || path.stages.en;
+  const dir = lang === "en" ? "ltr" : "rtl";
+  return (
+    <div className="ento-chapter-page">
+      <Hero lang={lang} chapter={{
+        image: "/images/plates/ch12-chrysalis.jpg",
+        focus: "center 42%",
+        icon: "butterfly",
+        num: { ku: "چاپتەری دوازدەهەم", ar: "الفصل الثاني عشر", en: "Chapter 12" },
+        title: { ku: "دوو گۆڕانەپەڕە", ar: "تحولان", en: "Two metamorphoses" },
+      }} />
+      <div className="ento-container" dir={dir}>
+        <article className="ento-card ento-visible" id="meta-compare" style={{ direction: dir }}>
+          <div className="ento-card-header">
+            <div>
+              <div className="ento-card-num">٠١ · 01</div>
+              <div className="ento-card-title-ku">{lang === "ku" ? "پیت هەیە، یان نییە" : lang === "ar" ? "شرنقة أو لا شرنقة" : "A pupa, or none"}</div>
+            </div>
+          </div>
+          <p className="ento-body">
+            {lang === "ku"
+              ? "جیاوازییەکە ژمارەی قۆناغەکان نییە بە تەنها. لە گۆڕانی تەواودا کۆڵۆکەکە لە گەورە ناچێت، و پیتێک لە نێوانیاندا هەیە. لە گۆڕانی ناتەواودا پیت نییە. وێنەکە پیتی پەپوولەی Monarch ـە، Danaus plexippus، کە نموونەیەکی جیهانییە و لە پێنج جۆرەکەی کوردستاندا نییە."
+              : lang === "ar"
+              ? "الفرق ليس عدد المراحل وحده. في التحول الكامل لا تشبه اليرقة البالغ، وبينهما شرنقة. في التحول الناقص لا شرنقة. الصورة شرنقة فراشة الملكة، Danaus plexippus، وهي مثال عالمي وليست من أنواع كردستان الخمسة."
+              : "The difference is not only how many stages there are. In complete metamorphosis the larva does not look like the adult, and a pupa sits between them. In incomplete metamorphosis there is no pupa. The picture is a monarch chrysalis, Danaus plexippus, a world example, not one of the five Kurdistan species."}
+          </p>
+          <div className="ento-pick-row">
+            {META_PATHS.map((item) => (
+              <button key={item.id} type="button" className={`ento-pick ${item.id === id ? "active" : ""}`} onClick={() => setId(item.id)}>
+                <span>{text(lang, item.name)}</span>
+              </button>
+            ))}
+          </div>
+          <ul className="ento-fact-list">
+            {stages.map(([label, value]) => (
+              <li key={label}><span>{label}</span><strong>{value}</strong></li>
+            ))}
+          </ul>
+          <p className="ento-body" style={{ marginTop: 14, marginBottom: 0 }}>
+            {(lang === "ku" ? "ئۆردەرەکان: " : lang === "ar" ? "الرتب: " : "Orders: ")}
+            <span className="ento-binomial">{path.orders}</span>
+          </p>
+        </article>
+        <article className="ento-card ento-visible" id="meta-water" style={{ direction: dir }}>
+          <div className="ento-card-header">
+            <div>
+              <div className="ento-card-num">٠٢ · 02</div>
+              <div className="ento-card-title-ku">{lang === "ku" ? "مێرووی ئاو جیاوازە" : lang === "ar" ? "الرعاش مختلف" : "The dragonfly is the exception"}</div>
+            </div>
+          </div>
+          <p className="ento-body" style={{ marginBottom: 0 }}>
+            {lang === "ku"
+              ? "بچووکی کوللە و سنە لە گەورە دەچێت و باڵی کورت، یان تەنها نیشانەی باڵ، لەسەرە. بچووکی مێرووی ئاو لە ئاودا دەژی و بە چەناگەیەکی بازدەر نێچیر دەگرێت. کاتێک دەردەچێت، گەورەکە لە پشتی دەردەچێت. پیت لەم ڕێگەیەدا نییە."
+              : lang === "ar"
+              ? "حورية الجندب والبق تشبه البالغ وعليها أجنحة قصيرة أو براعم أجنحة. حورية الرعاش تعيش في الماء وتصطاد بفك مندفع. حين تخرج، يخرج البالغ من ظهرها. لا شرنقة في هذا الطريق."
+              : "A grasshopper or bug nymph looks like the adult and carries short wings, or only wing pads. A dragonfly nymph lives in water and hunts with a hinged jaw. When it climbs out, the adult comes out of its back. There is still no pupa on this path."}
+          </p>
+        </article>
+      </div>
+    </div>
+  );
+}
+
 export function Chapter6({ lang }) {
   return <TaxonChapter lang={lang} chapter={HYMENOPTERA} />;
 }
@@ -436,4 +689,13 @@ export function Chapter8({ lang }) {
 }
 export function Chapter9({ lang }) {
   return <FieldChapter lang={lang} />;
+}
+export function Chapter10({ lang }) {
+  return <TaxonChapter lang={lang} chapter={HEMIPTERA} />;
+}
+export function Chapter11({ lang }) {
+  return <TaxonChapter lang={lang} chapter={JUMPERS} />;
+}
+export function Chapter12({ lang }) {
+  return <MetaChapter lang={lang} />;
 }
