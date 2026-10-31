@@ -102,7 +102,7 @@ const LEPIDO_SECTIONS = [
       en: "Scientific Classification",
     },
     body: {
-      ku: "Lepidoptera لە زیاتر لە ١٨٠٠٠٠ جۆر پێکدێت، کە داودەبووە بۆ چەندین Superfamily گرنگ. جیاوازیەکەی بنەڕەتی لە نێوان پەپوولە و فراشە لە کات و شێوەی چالاکیان، شێوەی ئەنتێنا، و خاسییەتی ناوچەی وێستانەوەداییانە.",
+      ku: "Lepidoptera لە زیاتر لە ١٨٠٠٠٠ جۆر پێکدێت، کە دابەشبووە بۆ چەندین Superfamily گرنگ. جیاوازی بنەڕەتی نێوان پەپوولە و فراشە لە کاتی چالاکی، شێوەی ئەنتێنا، و شێوازی وەستانی باڵیاندایە.",
       ar: "يضم نظام Lepidoptera أكثر من 180,000 نوع تُصنَّف ضمن عائلات عليا (Superfamilies). الفرق الجوهري بين الفراشات والعثة يكمن في توقيت نشاطها وشكل قرونها الاستشعارية وطريقة طي أجنحتها.",
       en: "Lepidoptera encompasses over 180,000 species across many Superfamilies. The fundamental distinction between butterflies and moths lies in their activity timing, antenna morphology, and resting wing posture.",
     },
@@ -126,7 +126,7 @@ const LEPIDO_SECTIONS = [
       en: "Biology & Mechanisms",
     },
     body: {
-      ku: "رووپێوی باڵی پەپوولەکان لە Scales پێکهاتووە کە پڕ لە Chitin ن. رووپێوی ئیریدیسەنتیی (Structural Colour) — وەک ئەوەی لە Blue Morphoda دەبینرێت — لە پتاندنەوەی ڕووناکدا دەسەلمێت، نەک لە ڕووکی. لیندی خواردنی Proboscis وەک لوولەیەکی سوکایەتی کاردەکات بۆ ئاژمارکردنی بیراو. نیشانەکانی ئەنتێنا رۆڵی سەرەکییان لە دۆزینەوەی هاوسەر و شوێنی خوراکدا هەیە.",
+      ku: "رووپێوی باڵی پەپوولەکان لە Scales پێکهاتووە کە پڕ لە Chitin ن. رووپێوی ئیریدیسەنتیی (Structural Colour) — وەک ئەوەی لە Blue Morpho دەبینرێت — لە پەرتبوونەوەی ڕووناکدا دروست دەبێت، نەک لە ڕەنگدانە. Proboscis وەک لوولەیەکی سووک شیلەی گوڵ دەمژێت. ئەنتێنا ڕۆڵی سەرەکی هەیە لە دۆزینەوەی هاوسەر و خۆراکدا.",
       ar: "تتكوّن أجنحة الفراشات من حراشف كيتينية تعكس الضوء بأنماط فريدة. اللون البنيوي (Structural Colour) — كما في فراشة المورفو الزرقاء — ناتجٌ عن انكسار الضوء لا الصبغة. الخرطوم (Proboscis) أداة شرب أنبوبية ملتفة. تؤدي القرون الاستشعارية دوراً محورياً في البحث عن الأزواج ومصادر الرحيق.",
       en: "Butterfly wings are composed of chitin scales that interact with light in unique ways. Structural Colour — as seen in the Blue Morpho — results from light diffraction rather than pigment. The Proboscis is a coiled tubular drinking apparatus. Antennae are pivotal in locating mates and nectar sources.",
     },
@@ -148,11 +148,11 @@ const LEPIDO_SECTIONS = [
       en: "Kurdistan qualifies as a biodiversity hotspot. Its mountains, plains and rivers provide critical habitats for dozens of native and migratory Lepidoptera. Recent surveys have documented over 200 species in the region, including Papilio machaon (Old World Swallowtail), Colias croceus (Clouded Yellow), and Vanessa atalanta (Red Admiral).",
     },
     kurdistanSpecies: [
-      { name: "Papilio machaon",    ku: "Old World Swallowtail",   emoji: "🦋", region: "ئەرازیی کوردستان" },
-      { name: "Vanessa atalanta",   ku: "Red Admiral",             emoji: "🦋", region: "ئەڵتوون و چیایی" },
-      { name: "Colias croceus",     ku: "Clouded Yellow",          emoji: "🦋", region: "دەشت و پاییز" },
-      { name: "Polyommatus icarus", ku: "Common Blue",             emoji: "🦋", region: "گوندی و باخچە" },
-      { name: "Aglais io",          ku: "European Peacock",        emoji: "🦋", region: "جەنگەلات و دەشت" },
+      { name: "Papilio machaon", family: "Papilionidae", ku: "Old World Swallowtail", habitat: { ku: "چیا و دەشت", ar: "جبال وسهول", en: "Mountains and plains" } },
+      { name: "Vanessa atalanta", family: "Nymphalidae", ku: "Red Admiral", habitat: { ku: "باخ و دارستان", ar: "حدائق وغابات", en: "Gardens and woodland" } },
+      { name: "Colias croceus", family: "Pieridae", ku: "Clouded Yellow", habitat: { ku: "دەشتی کراوە", ar: "سهول مفتوحة", en: "Open grassland" } },
+      { name: "Polyommatus icarus", family: "Lycaenidae", ku: "Common Blue", habitat: { ku: "مێرگ و باخچە", ar: "مروج وحدائق", en: "Meadows and gardens" } },
+      { name: "Aglais io", family: "Nymphalidae", ku: "European Peacock", habitat: { ku: "دارستان و دەشت", ar: "غابات وسهول", en: "Woodland and fields" } },
     ],
     terms: ["Endemism", "Habitat Corridor", "Seasonal Migration", "Nectaring Plant"],
   },
@@ -167,7 +167,7 @@ const LEPIDO_SECTIONS = [
       en: "Conservation & Threats",
     },
     body: {
-      ku: "نزیکەی ١٠٪ لە جۆرەکانی Lepidoptera مەترسییان لەسەرە. هۆکارەکان بریتین لە: وێرانبوونی ژینگەی سروشتی، بەکارهێنانی ئافەتکوژ (Pesticides)، گەرمبوونی زەوی و گلۆبەل ووارمینگ، و بڵاوبوونەوەی ڕووەکە تازەواردەکان. پارێزگاری لە Corridors — پردی ژینگەیی لە نێوان ناوچە پارێزراوەکاندا — گرنگترین ئامرازی بەرگری لە پەپوولەکانە.",
+      ku: "نزیکەی ١٠٪ لە جۆرەکانی Lepidoptera مەترسییان لەسەرە. هۆکارەکان بریتین لە: وێرانبوونی ژینگەی سروشتی، بەکارهێنانی ئافەتکوژ (Pesticides)، گەرمبوونی جیهان، و بڵاوبوونەوەی ڕووەکە تازەواردەکان. پارێزگاری لە Corridors — پردی ژینگەیی لە نێوان ناوچە پارێزراوەکاندا — گرنگترین ئامرازی بەرگری لە پەپوولەکانە.",
       ar: "نحو 10% من أنواع Lepidoptera مهددة. تشمل الأسباب الرئيسية: تدمير الموائل، والمبيدات الحشرية، والتغير المناخي، وانتشار النباتات الغازية. يُعدّ الحفاظ على الممرات البيئية (Corridors) الرابطة بين المناطق المحمية من أهم أساليب حماية الفراشات.",
       ar2: "",
       en: "About 10% of Lepidoptera species face extinction risk. Main drivers are habitat loss, pesticide use, climate change, and invasive plant species. Maintaining habitat corridors connecting protected areas is the single most effective conservation tool for butterflies.",
@@ -337,19 +337,35 @@ function LepidoCard({ section, delay = 0, lang }) {
 
       {/* Kurdistan species */}
       {section.kurdistanSpecies && (
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 16 }}>
-          {section.kurdistanSpecies.map((sp, i) => (
-            <div key={i} style={{
-              background: "rgba(46,125,26,.08)", border: "1.5px solid rgba(46,125,26,.2)",
-              borderRadius: 12, padding: "10px 14px", minWidth: 160, flex: "1 1 160px",
-            }}>
-              <div style={{ fontSize: "1.3rem", marginBottom: 4 }}>{sp.emoji}</div>
-              <div className="ento-binomial" style={{ fontSize: ".95rem", color: "var(--accent)" }}>{sp.name}</div>
-              <div style={{ fontSize: ".78rem", color: "var(--text-secondary)", marginTop: 2 }}>{sp.ku}</div>
-              <div style={{ fontSize: ".72rem", color: "var(--text-muted)", marginTop: 4 }}>{sp.region}</div>
-            </div>
-          ))}
-        </div>
+        <>
+          <table className="ento-record">
+            <thead>
+              <tr>
+                <th>{lang === "ku" ? "ناوی زانستی" : lang === "ar" ? "الاسم العلمي" : "Scientific name"}</th>
+                <th>{lang === "ku" ? "خێزان" : lang === "ar" ? "الفصيلة" : "Family"}</th>
+                <th>{lang === "ku" ? "ناوی باو" : lang === "ar" ? "الاسم الشائع" : "Common name"}</th>
+                <th>{lang === "ku" ? "شوێن" : lang === "ar" ? "الموطن" : "Habitat"}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {section.kurdistanSpecies.map(sp => (
+                <tr key={sp.name}>
+                  <td className="ento-binomial">{sp.name}</td>
+                  <td className="ento-binomial">{sp.family}</td>
+                  <td>{sp.ku}</td>
+                  <td>{sp.habitat[lang]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="ento-body" style={{ marginTop: 12 }}>
+            {lang === "ku"
+              ? "ئەم پێنج جۆرە لە تۆماری ناوچەکەدان. گالەریی خوارەوە نموونەی جیهانیشی تێدایە؛ فلتەری «کوردستان» تەنها هەر ئەم جۆرانە پیشان دەدات."
+              : lang === "ar"
+              ? "هذه الأنواع الخمسة من سجل المنطقة. معرض الأسفل يضم نماذج من العالم أيضاً؛ مرشح «كردستان» يعرض هذه الأنواع فقط."
+              : "These five are the regional record. The gallery below also holds world examples; the Kurdistan filter shows only these species."}
+          </p>
+        </>
       )}
 
       {/* Threats */}
@@ -394,11 +410,20 @@ function LepidoCard({ section, delay = 0, lang }) {
 /* ═══════════════════════════════════════════════
    BUTTERFLY GALLERY COMPONENT
 ═══════════════════════════════════════════════ */
+const KURDISTAN_SCI = new Set([
+  "Papilio machaon",
+  "Vanessa atalanta",
+  "Colias croceus",
+  "Polyommatus icarus",
+  "Aglais io",
+]);
+
 function ButterflyGallery({ lang }) {
   const ref = useRef(null);
   const visible = useInView(ref);
   const [familyFilter, setFamilyFilter] = useState("All");
   const [typeFilter, setTypeFilter]     = useState("All");
+  const [placeFilter, setPlaceFilter]   = useState("All");
   const [search, setSearch]             = useState("");
   const [selected, setSelected]         = useState(null);
 
@@ -411,16 +436,22 @@ function ButterflyGallery({ lang }) {
   const filtered = SPECIMENS.filter(s => {
     const fam  = familyFilter === "All" || s.family === familyFilter;
     const type = typeFilter === "All" || s.type === typeFilter;
+    const place = placeFilter === "All"
+      || (placeFilter === "kurdistan" && KURDISTAN_SCI.has(s.sci))
+      || (placeFilter === "world" && !KURDISTAN_SCI.has(s.sci));
     const srch = !search || s.name.toLowerCase().includes(search.toLowerCase()) || s.sci.toLowerCase().includes(search.toLowerCase());
-    return fam && type && srch;
+    return fam && type && place && srch;
   });
 
   const labelGallery = { ku: "گالەریی پەپوولەکان", ar: "معرض الفراشات", en: "Butterfly Gallery" };
-  const labelSub     = { ku: `${SPECIMENS.length} نموونەی تۆماركراو`, ar: `${SPECIMENS.length} نموذجًا موثقًا`, en: `${SPECIMENS.length} catalogued specimens` };
+  const labelSub     = { ku: "تۆماری جیهان، لەگەڵ جۆرەکانی کوردستان", ar: "سجل عالمي، مع أنواع كردستان", en: "A world catalog, with the Kurdistan species marked" };
   const labelSearch  = { ku: "گەڕان...", ar: "بحث...", en: "Search..." };
   const labelAll     = { ku: "هەموو", ar: "الكل", en: "All" };
   const labelFamily  = { ku: "خێزان:", ar: "العائلة:", en: "Family:" };
   const labelType    = { ku: "جۆر:", ar: "النوع:", en: "Type:" };
+  const labelPlace   = { ku: "شوێن:", ar: "المكان:", en: "Place:" };
+  const labelLocal   = { ku: "کوردستان", ar: "كردستان", en: "Kurdistan" };
+  const labelWorld   = { ku: "جیهان", ar: "العالم", en: "World" };
   const labelBfly    = { ku: "پەپوولە", ar: "فراشة", en: "butterfly" };
   const labelMoth    = { ku: "فراشە", ar: "عثة", en: "moth" };
 
@@ -474,6 +505,15 @@ function ButterflyGallery({ lang }) {
             <option value="moth">{labelMoth[lang]}</option>
           </select>
         </div>
+        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+          <span style={{ fontSize: ".78rem", color: "var(--text-muted)" }}>{labelPlace[lang]}</span>
+          <select value={placeFilter} onChange={e => setPlaceFilter(e.target.value)}
+            style={{ background: "var(--card-bg)", border: "1.5px solid var(--border-card)", borderRadius: 8, padding: "7px 10px", color: "var(--text-primary)", fontSize: ".82rem", cursor: "pointer" }}>
+            <option value="All">{labelAll[lang]}</option>
+            <option value="kurdistan">{labelLocal[lang]}</option>
+            <option value="world">{labelWorld[lang]}</option>
+          </select>
+        </div>
         {filtered.length !== SPECIMENS.length && (
           <span style={{ color: "var(--accent)", fontSize: ".78rem", fontFamily: "var(--font-mono)", marginInlineStart: "auto" }}>
             {filtered.length} shown
@@ -483,7 +523,7 @@ function ButterflyGallery({ lang }) {
 
       {/* Grid */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px,1fr))", gap: 14 }}>
-        {filtered.map(s => <SpecCard key={s.id} s={s} onClick={() => setSelected(s)} />)}
+        {filtered.map(s => <SpecCard key={s.id} s={s} lang={lang} local={KURDISTAN_SCI.has(s.sci)} onClick={() => setSelected(s)} />)}
       </div>
 
       {filtered.length === 0 && (
@@ -558,7 +598,7 @@ function InfoBox({ label, value }) {
   );
 }
 
-function SpecCard({ s, onClick }) {
+function SpecCard({ s, onClick, lang, local }) {
   const [hover, setHover] = useState(false);
   const fam = FAMILY_COLORS[s.family] || FAMILY_COLORS.Nymphalidae;
   return (
@@ -590,6 +630,11 @@ function SpecCard({ s, onClick }) {
             e.target.parentElement.textContent = "🦋";
           }}
         />
+        {local && (
+          <span style={{ position: "absolute", top: 8, left: 8, background: "#1a2418", color: "#f3efe4", borderRadius: 2, padding: "2px 8px", fontSize: ".68rem" }}>
+            {lang === "ku" ? "کوردستان" : lang === "ar" ? "كردستان" : "Kurdistan"}
+          </span>
+        )}
         {s.type === "moth" && (
           <span style={{ position: "absolute", top: 8, right: 8, background: "rgba(0,0,0,.55)", color: "#a78bfa", borderRadius: 10, padding: "2px 8px", fontSize: ".7rem", fontFamily: "var(--font-mono)", backdropFilter: "blur(4px)" }}>moth</span>
         )}

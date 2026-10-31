@@ -664,6 +664,42 @@ const CSS = `
 .ento-opt-wrong   { background:rgba(239,68,68,.1)  !important; border-color:#ef4444 !important; }
 .ento-opt-wrong   .ento-opt-letter { background:#ef4444; color:#fff; }
 .ento-opt-dim     { opacity:.45; }
+.ento-quiz-why {
+  margin:14px 0 0; padding:12px 14px;
+  background:var(--accent-dim); color:var(--text-primary);
+  font-size:.9rem; line-height:1.65;
+}
+.ento-pick-row { display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 16px; }
+.ento-pick {
+  display:flex; flex-direction:column; align-items:flex-start; gap:2px;
+  background:var(--bg-card); color:var(--text-primary);
+  border:1px solid var(--border-card); border-radius:2px;
+  padding:10px 12px; cursor:pointer; font-family:var(--font-arabic); font-size:.82rem;
+}
+.ento-pick.active { border-color:#8a4e12; }
+.ento-pick:focus-visible, .ento-plate-part:focus-visible { outline:2px solid #8a4e12; outline-offset:2px; }
+.ento-fact-list { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0; }
+.ento-fact-list li {
+  display:flex; justify-content:space-between; gap:16px;
+  padding:10px 0; border-bottom:1px solid var(--border-card);
+  color:var(--text-primary); font-size:.92rem;
+}
+.ento-bodyplate { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:8px 0 16px; perspective:640px; }
+.ento-plate-part {
+  min-height:72px; background:var(--bg-card); color:var(--text-primary);
+  border:1px solid var(--border-card); border-radius:2px;
+  font-family:var(--font-serif); font-style:italic; font-size:1rem; cursor:pointer;
+  transform:rotateX(8deg); transition:transform .2s, border-color .2s, background .2s;
+}
+.ento-plate-part.active { background:#f3efe4; border-color:#8a4e12; color:#1a2418; transform:rotateX(0deg) translateY(-3px); }
+.ento-record {
+  width:100%; border-collapse:collapse; margin-top:14px; font-size:.86rem;
+}
+.ento-record th, .ento-record td {
+  text-align:start; padding:8px 10px; border-bottom:1px solid var(--border-card);
+  color:var(--text-primary);
+}
+.ento-record th { font-size:.72rem; letter-spacing:.04em; color:#8a4e12; font-weight:700; }
 
 /* result */
 .ento-quiz-result { display:flex; flex-direction:column; align-items:center; gap:8px; }

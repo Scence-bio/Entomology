@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Fragment } from "react";
 import { Mark } from "./marks";
 
 
@@ -177,8 +177,8 @@ const ARTHROPODA_SECTIONS = [
   },
   {
     id: "arth-glossary",
-    num: "٠٥",
-    numEn: "05",
+    num: "٠٧",
+    numEn: "07",
     icon: "📖",
     titles: {
       ku: "فەرهەنگی زاراوەکان",
@@ -197,6 +197,141 @@ const ARTHROPODA_SECTIONS = [
     ],
   },
 ];
+
+function ClassExplorer({ lang }) {
+  const groups = [
+    {
+      id: "insecta", name: "Insecta",
+      title: { ku: "مێرووەکان", ar: "الحشرات", en: "Insects" },
+      rows: {
+        ku: [["قاچ", "٦"], ["ئەنتێنا", "١ جووت"], ["جەستە", "٣ بەش: سەر، سنگ، سک"], ["نموونە", "مێروولە، پەپوولە، مێش"]],
+        ar: [["الأرجل", "٦"], ["قرون الاستشعار", "زوج واحد"], ["الجسم", "٣ أقسام: رأس وصدر وبطن"], ["أمثلة", "نمل، فراشات، ذباب"]],
+        en: [["Legs", "6"], ["Antennae", "1 pair"], ["Body", "3 regions: head, thorax, abdomen"], ["Examples", "ants, butterflies, flies"]],
+      },
+    },
+    {
+      id: "arachnida", name: "Arachnida",
+      title: { ku: "جاڵجاڵۆکەییەکان", ar: "العنكبيات", en: "Arachnids" },
+      rows: {
+        ku: [["قاچ", "٨"], ["ئەنتێنا", "نییە"], ["جەستە", "٢ بەش"], ["نموونە", "جاڵجاڵۆکە، دووپشک"]],
+        ar: [["الأرجل", "٨"], ["قرون الاستشعار", "لا توجد"], ["الجسم", "قسمان"], ["أمثلة", "عناكب، عقارب"]],
+        en: [["Legs", "8"], ["Antennae", "none"], ["Body", "2 regions"], ["Examples", "spiders, scorpions"]],
+      },
+    },
+    {
+      id: "crustacea", name: "Crustacea",
+      title: { ku: "قڕژاڵییەکان", ar: "القشريات", en: "Crustaceans" },
+      rows: {
+        ku: [["قاچ", "زۆرجار چەند جووت"], ["ئەنتێنا", "٢ جووت"], ["جەستە", "سەرسنگ و سک"], ["نموونە", "قڕژاڵ، میگۆ"]],
+        ar: [["الأرجل", "غالباً عدة أزواج"], ["قرون الاستشعار", "زوجان"], ["الجسم", "رأسصدري وبطن"], ["أمثلة", "سرطانات، روبيان"]],
+        en: [["Legs", "often several pairs"], ["Antennae", "2 pairs"], ["Body", "cephalothorax and abdomen"], ["Examples", "crabs, shrimp"]],
+      },
+    },
+    {
+      id: "myriapoda", name: "Myriapoda",
+      title: { ku: "هەزارپێ و سەپێ", ar: "ذوات الألف رجل", en: "Myriapods" },
+      rows: {
+        ku: [["قاچ", "زۆر، بەپێی بەشەکان"], ["ئەنتێنا", "١ جووت"], ["جەستە", "سەر و تەنێکی درێژ"], ["نموونە", "هەزارپێ و سەپێ"]],
+        ar: [["الأرجل", "كثيرة، حسب القطع"], ["قرون الاستشعار", "زوج واحد"], ["الجسم", "رأس وجذع طويل"], ["أمثلة", "ألفية الأرجل ومئوية الأرجل"]],
+        en: [["Legs", "many, one or two pairs per segment"], ["Antennae", "1 pair"], ["Body", "head and a long trunk"], ["Examples", "millipedes and centipedes"]],
+      },
+    },
+  ];
+  const [id, setId] = useState(groups[0].id);
+  const group = groups.find(g => g.id === id);
+  const rows = group.rows[lang] || group.rows.en;
+  return (
+    <article className="ento-card ento-visible" id="arth-classes" style={{ direction: lang === "en" ? "ltr" : "rtl" }}>
+      <div className="ento-card-header">
+        <div>
+          <div className="ento-card-num">٠٥ · 05</div>
+          <div className="ento-card-title-ku">{lang === "ku" ? "پۆلەکان" : lang === "ar" ? "المجموعات" : "The groups"}</div>
+          {lang !== "en" && <div className="ento-card-title-en">Interactive classification</div>}
+        </div>
+      </div>
+      <p className="ento-body">
+        {lang === "ku"
+          ? "چوار گروپی سەرەکی جومگەپێیەکان. گروپێک هەڵبژێرە تا قاچ و ئەنتێنا و جەستەکەی ببینیت."
+          : lang === "ar"
+          ? "أربع مجموعات رئيسية من مفصليات الأرجل. اختر مجموعة لترى أرجلها وقرون استشعارها وجسمها."
+          : "Four main arthropod groups. Choose one to see its legs, antennae, and body."}
+      </p>
+      <div className="ento-pick-row">
+        {groups.map(g => (
+          <button key={g.id} type="button" className={`ento-pick ${g.id === id ? "active" : ""}`} onClick={() => setId(g.id)}>
+            <span className="ento-binomial">{g.name}</span>
+            <span>{g.title[lang]}</span>
+          </button>
+        ))}
+      </div>
+      <ul className="ento-fact-list">
+        {rows.map(([k, v]) => (
+          <li key={k}><span>{k}</span><strong>{v}</strong></li>
+        ))}
+      </ul>
+    </article>
+  );
+}
+
+function BodyPlate({ lang }) {
+  const parts = [
+    {
+      id: "head",
+      title: { ku: "سەر", ar: "الرأس", en: "Head" },
+      body: {
+        ku: "چاوی ئاڵۆز (Ommatidia)، ئەنتێنا، و پارچەکانی دەم لێرەن.",
+        ar: "هنا العين المركبة (Ommatidia) وقرون الاستشعار وأجزاء الفم.",
+        en: "Compound eyes (ommatidia), antennae, and mouthparts sit here.",
+      },
+    },
+    {
+      id: "thorax",
+      title: { ku: "سنگ", ar: "الصدر", en: "Thorax" },
+      body: {
+        ku: "سێ جووت قاچ و، لە زۆربەی مێرووەکاندا، باڵەکان لە سنگەوە دەردەچن.",
+        ar: "تخرج من الصدر ثلاثة أزواج من الأرجل، وعند معظم الحشرات الأجنحة أيضاً.",
+        en: "Three pairs of legs, and in most insects the wings, attach to the thorax.",
+      },
+    },
+    {
+      id: "abdomen",
+      title: { ku: "سک", ar: "البطن", en: "Abdomen" },
+      body: {
+        ku: "کونەکانی هەناسە (Spiracles) لەسەر سک دان. هەرس و زاووزێش لێرەن.",
+        ar: "الثغور التنفسية على البطن. الهضم والتكاثر هنا.",
+        en: "Spiracles open on the abdomen. Digestion and reproduction are here.",
+      },
+    },
+  ];
+  const [id, setId] = useState("head");
+  const part = parts.find(p => p.id === id);
+  return (
+    <article className="ento-card ento-visible" id="arth-body" style={{ direction: lang === "en" ? "ltr" : "rtl" }}>
+      <div className="ento-card-header">
+        <div>
+          <div className="ento-card-num">٠٦ · 06</div>
+          <div className="ento-card-title-ku">{lang === "ku" ? "نەخشەی جەستە" : lang === "ar" ? "مخطط الجسم" : "Body plate"}</div>
+          {lang !== "en" && <div className="ento-card-title-en">Head, thorax, abdomen</div>}
+        </div>
+      </div>
+      <p className="ento-body">
+        {lang === "ku"
+          ? "بەشێکی جەستە هەڵبژێرە. ئەم نەخشەیە هەر ئەو سێ بەشەیە کە پێی دەوترێت Tagmatization."
+          : lang === "ar"
+          ? "اختر جزءاً. هذه الأقسام الثلاثة هي ما يُسمى تقسيم الجسم."
+          : "Choose a region. These three parts are what tagmatization means."}
+      </p>
+      <div className="ento-bodyplate" dir="ltr">
+        {parts.map(p => (
+          <button key={p.id} type="button" className={`ento-plate-part ${p.id === id ? "active" : ""}`} onClick={() => setId(p.id)}>
+            {p.title.en}
+          </button>
+        ))}
+      </div>
+      <p className="ento-body" style={{ marginBottom: 0 }}><strong>{part.title[lang]}. </strong>{part.body[lang]}</p>
+    </article>
+  );
+}
 
 function ArthropodaCard({ section, delay = 0, lang }) {
   const ref = useRef(null);
@@ -306,7 +441,15 @@ export default function Chapter3({ lang }) {
       />
       <div className="ento-container">
         {ARTHROPODA_SECTIONS.map((s, i) => (
-          <ArthropodaCard key={s.id} section={s} delay={i * 50} lang={lang} />
+          <Fragment key={s.id}>
+            {s.id === "arth-glossary" && (
+              <>
+                <ClassExplorer lang={lang} />
+                <BodyPlate lang={lang} />
+              </>
+            )}
+            <ArthropodaCard section={s} delay={i * 50} lang={lang} />
+          </Fragment>
         ))}
       </div>
       <AppFooter lang={lang} />

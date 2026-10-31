@@ -127,9 +127,8 @@ const SECTIONS = [
   },
   {
     id: "challenges",
-    num: "٠٧",
-    numEn: "07",
-    icon: "⚠️",
+    num: "٠٦",
+    numEn: "06",
     titles: {
       ku: "ئاڵۆزییە ئابووری و تەندروستییەکان",
       ar: "التحديات الاقتصادية والطبية",
@@ -181,7 +180,7 @@ const SECTIONS = [
       en: "Biological Control",
     },
     body: {
-      ku: "کۆنترۆڵی بایۆلۆجی بەکارهێنانی زیندەوەرێکی سوودبەخشە بۆ کەمکردنەوەی مێرووی زیانبەخش، لە جیاتی ئەوەی تەنها پێستیساید بڕژێنرێت. نمونەی ڕوون: مێرووی خاڵخاڵ (خێزانی Coccinellidae) کە شەتەک دەخوات، و مێرووی پارازیتۆید کە هێلکە لە ناو لارڤای زیانبەخشدا دادەنێت. لە کشتوکاڵدا ئەم ڕێگەیە بەشێکە لە IPM — کۆنترۆڵی تێکەڵ.",
+      ku: "کۆنترۆڵی بایۆلۆجی بەکارهێنانی زیندەوەرێکی سوودبەخشە بۆ کەمکردنەوەی مێرووی زیانبەخش، لە جیاتی ئەوەی تەنها پێستیساید بڕژێنرێت. نمونەی ڕوون: خاڵخاڵۆکە (خێزانی Coccinellidae) کە شەتەک دەخوات، و مێرووی پارازیتۆید کە هێلکە لە ناو لارڤای زیانبەخشدا دادەنێت. لە کشتوکاڵدا ئەم ڕێگەیە بەشێکە لە IPM — کۆنترۆڵی تێکەڵ.",
       ar: "المكافحة الحيوية هي استخدام كائن نافع لتقليل آفة، بدل الاعتماد على المبيد وحده. مثال واضح: الدعسوقة (فصيلة Coccinellidae) التي تأكل المن، والزنبار الطفيلي الذي يضع بيضه داخل يرقة الآفة. في الزراعة هذا جزء من المكافحة المتكاملة (IPM).",
       en: "Biological control uses a living helper to reduce a pest, instead of relying on pesticide alone. A clear case is the ladybird (family Coccinellidae), which eats aphids, and the parasitoid wasp, which lays its egg inside a pest larva. On a farm this is one part of integrated pest management (IPM).",
     },
@@ -198,17 +197,17 @@ const SECTIONS = [
       en: "Ants — Formicidae",
     },
     body: {
-      ku: "مێروولەکان لە خێزانی Formicidae دان و زیاتر لە ٢٠٠٠٠ جۆریان هەیە. کۆمەڵگەی ئۆرگانیزەکراویان هەیە — Eusociality — کە پێکدێت لە مالکە، کارگەر و نێر. رۆڵی گرنگیان هەیە لە سروشتدا: ئاواکردنی خاک، بڵاوکردنەوەی تۆوی ڕووەک و کۆنترۆڵی مێرووەکانی تر.",
-      ar: "النمل ينتمي إلى عائلة Formicidae ويضم أكثر من ٢٠٠٠٠ نوع. يتميز بالنظام الاجتماعي المتقدم (Eusociality) المكوّن من ملكة وعمال وذكور. يؤدي دوراً محورياً في الطبيعة: تهوية التربة، نشر البذور، ومكافحة الحشرات الأخرى.",
-      en: "Ants belong to the family Formicidae with over 20,000 species. They exhibit Eusociality — organized colonies of queens, workers, and males. They play vital ecological roles: soil aeration, seed dispersal, and biological pest control.",
+      ku: "مێروولەکان نمونەیەکی ڕوونی مێرووی کۆمەڵان. لە خێزانی Formicidae دان، سەر بە ئۆردەری Hymenoptera، و زیاتر لە ٢٠٠٠٠ جۆریان هەیە. کۆمەڵگەکەیان — Eusociality — لە مالکە، کارگەر و نێر پێکدێت. ڕۆڵیان ئاواکردنی خاک، بڵاوکردنەوەی تۆو و کەمکردنەوەی مێرووی ترە. مێروولەی گەڵابڕ (Leafcutter) قارچک دەچێنێت، بەڵام ئەو گروپە هی ئەمریکای گەرمە و جۆرێکی کوردستان نییە.",
+      ar: "النمل مثال واضح على حشرة اجتماعية. ينتمي إلى فصيلة Formicidae ورتبة Hymenoptera، ويضم أكثر من ٢٠٠٠٠ نوع. تتكون المستعمرة من ملكة وعمال وذكور. دوره تهوية التربة ونشر البذور وكبح حشرات أخرى. نمل قاطع الأوراق يزرع الفطر، وهو مجموعة أمريكية مدارية وليس من نمل كردستان.",
+      en: "Ants are a clear example of a social insect. They belong to the family Formicidae, in the order Hymenoptera, with over 20,000 species. The colony — eusociality — is made of a queen, workers, and males. They aerate soil, move seeds, and hold other insects in check. Leafcutter ants farm fungus, but that group is tropical American, not a Kurdistan ant.",
     },
 
     terms: ["Formicidae","Eusociality","Pheromones","Myrmecology","Superorganism"],
   },
   {
     id: "conservation",
-    num: "٠٩",
-    numEn: "09",
+    num: "١٠",
+    numEn: "10",
     icon: "🌱",
     titles: {
       ku: "پارێزگاری لە مێرووەکان",
@@ -295,6 +294,7 @@ function SectionNav({ active, lang }) {
     { id: "importance",   ku: "گرنگی",       ar: "الأهمية",    en: "Importance" },
     { id: "challenges",   ku: "ئاڵۆزییەکان", ar: "التحديات",   en: "Challenges" },
     { id: "glossary",     ku: "فەرهەنگ",     ar: "المسرد",     en: "Glossary" },
+    { id: "biocontrol",   ku: "کۆنترۆڵ",     ar: "المكافحة",   en: "Control" },
     { id: "ants",         ku: "مێروولە",     ar: "النمل",      en: "Ants" },
     { id: "conservation", ku: "پارێزگاری",   ar: "الحفاظ",     en: "Conservation" },
     { id: "quiz",         ku: "کویز",        ar: "اختبار",     en: "Quiz" },
