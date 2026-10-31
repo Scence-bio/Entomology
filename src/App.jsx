@@ -15,6 +15,8 @@ const CHAPTER_PAGES = {
   ch10: later("Chapter10"),
   ch11: later("Chapter11"),
   ch12: later("Chapter12"),
+  ch13: later("Chapter13"),
+  ch14: later("Chapter14"),
 };
 
 /* ═══════════════════════════════════════════════
@@ -711,6 +713,44 @@ const CSS = `
 }
 .ento-record th { font-size:.72rem; letter-spacing:.04em; color:#8a4e12; font-weight:700; }
 
+.ento-quiz-img {
+  border-radius:14px; overflow:hidden; background:var(--accent-dim);
+  aspect-ratio:16/10; max-height:320px;
+}
+.ento-quiz-img img { width:100%; height:100%; object-fit:cover; display:block; }
+.ento-quiz-best { font-size:.9rem; color:var(--text-secondary); margin:0 0 18px; }
+.ento-quiz-best strong { color:var(--accent); }
+.ento-quiz-actions { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:16px; }
+.ento-quiz-actions .ento-quiz-start-btn { margin:0; }
+.ento-quiz-share-btn {
+  background:transparent; color:var(--text-primary);
+  border:1.5px solid var(--accent); border-radius:14px;
+  padding:14px 26px; font-size:1rem; font-weight:800; cursor:pointer;
+  font-family:var(--font-arabic);
+}
+.ento-quiz-share-btn:hover { background:var(--accent-dim); }
+.ento-quiz-board { width:100%; margin-top:8px; }
+.ento-quiz-board-form { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+.ento-quiz-board-form input {
+  flex:1; min-width:160px; padding:10px 14px; border-radius:10px;
+  border:1.5px solid var(--border-card); background:var(--card-bg); color:var(--text-primary);
+  font-family:var(--font-arabic); font-size:.9rem;
+}
+.ento-quiz-board-form button {
+  padding:10px 18px; border-radius:10px; border:none; cursor:pointer;
+  background:var(--accent-bright); color:#1a140c; font-weight:700; font-family:var(--font-arabic);
+}
+.ento-quiz-board-form button:disabled { opacity:.5; cursor:default; }
+.ento-quiz-board-note { font-size:.82rem; color:var(--text-muted); margin:4px 0; text-align:center; }
+.ento-quiz-board-list { list-style:none; margin:0; padding:0; }
+.ento-quiz-board-list li {
+  display:flex; justify-content:space-between; gap:12px;
+  padding:9px 2px; border-bottom:1px solid var(--border-card);
+  color:var(--text-primary); font-size:.9rem;
+}
+.ento-quiz-board-list strong { color:var(--accent); }
+.ento-rev-img { display:block; width:120px; height:80px; object-fit:cover; border-radius:8px; margin:8px 34px 0; }
+
 /* result */
 .ento-quiz-result { display:flex; flex-direction:column; align-items:center; gap:8px; }
 .ento-quiz-score-circle { width:130px; height:130px; margin-bottom:8px; }
@@ -1215,6 +1255,23 @@ const CHAPTERS = [
     focus: "center 42%",
     title: { ku: "دوو گۆڕانەپەڕە", en: "Two metamorphoses", ar: "تحولان" },
     desc: { ku: "پیت هەیە، یان نییە", en: "A pupa, or none", ar: "شرنقة أو لا شرنقة" },
+  },
+  {
+    id: "ch13",
+    num: { ku: "چاپتەری سێزدەهەم", en: "Chapter 13", ar: "الفصل الثالث عشر" },
+    icon: "lace",
+    image: "/images/plates/ch13-lacewing.jpg",
+    latin: "Neuroptera",
+    title: { ku: "تۆڕباڵ", en: "Lacewings", ar: "أسد المن والشبكيات" },
+    desc: { ku: "باڵی تۆڕاوی، و کۆڵۆکێک کە شەتەک دەخوات", en: "Netted wings, and a larva that eats aphids", ar: "أجنحة شبكية ويرقة تأكل المن" },
+  },
+  {
+    id: "ch14",
+    num: { ku: "چاپتەری چواردەهەم", en: "Chapter 14", ar: "الفصل الرابع عشر" },
+    icon: "key",
+    image: "/images/plates/ch14-key.jpg",
+    title: { ku: "کلیلی ناسینەوە", en: "Identification key", ar: "مفتاح التعريف" },
+    desc: { ku: "پرسیار بە پرسیار ئۆردەرەکە بدۆزەوە", en: "Find the order, one question at a time", ar: "اعثر على الرتبة سؤالاً بسؤال" },
   },
 ];
 

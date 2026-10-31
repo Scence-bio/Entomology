@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, Fragment } from "react";
 import { Mark } from "./marks";
 import { AppFooter } from "./Footer";
+import { QuizSection } from "./quiz/Quiz";
 
 
 
@@ -416,6 +417,7 @@ export default function Chapter3({ lang }) {
           </Fragment>
         ))}
       </div>
+      <QuizSection lang={lang} chapter="ch3" />
       <AppFooter lang={lang} />
     </div>
   );

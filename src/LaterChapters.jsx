@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Mark } from "./marks";
 import { AppFooter } from "./Footer";
+import { QuizSection } from "./quiz/Quiz";
 
 function text(lang, pack) {
   return pack[lang] || pack.en;
@@ -73,7 +74,7 @@ function SpeciesTable({ lang, species }) {
   );
 }
 
-function TaxonChapter({ lang, chapter }) {
+function TaxonChapter({ lang, chapter, quiz }) {
   const dir = lang === "en" ? "ltr" : "rtl";
   return (
     <div className="ento-chapter-page">
@@ -93,6 +94,7 @@ function TaxonChapter({ lang, chapter }) {
           </article>
         ))}
       </div>
+      <QuizSection lang={lang} chapter={quiz} />
       <AppFooter lang={lang} />
     </div>
   );
@@ -330,7 +332,7 @@ const DIPTERA = {
   ],
 };
 
-function FieldChapter({ lang }) {
+function FieldChapter({ lang, quiz }) {
   const pins = [
     { id: "lep", name: "Lepidoptera", where: { ku: "لە ناوەڕاستی سنگ", ar: "في وسط الصدر", en: "Through the middle of the thorax" } },
     { id: "col", name: "Coleoptera", where: { ku: "لە ئیلیترۆنی ڕاست، نزیک شانە", ar: "في الغمد الأيمن، قرب الكتف", en: "Through the right elytron, near the shoulder" } },
@@ -423,6 +425,7 @@ function FieldChapter({ lang }) {
           </div>
         </article>
       </div>
+      <QuizSection lang={lang} chapter={quiz} />
       <AppFooter lang={lang} />
     </div>
   );
@@ -601,7 +604,7 @@ const META_PATHS = [
       ar: [["١", "بيضة"], ["٢", "يرقة — لا تشبه البالغ"], ["٣", "شرنقة — الصورة هي هذه المرحلة"], ["٤", "بالغة"]],
       en: [["1", "Egg"], ["2", "Larva — it does not look like the adult"], ["3", "Pupa — the picture is this stage"], ["4", "Adult"]],
     },
-    orders: "Lepidoptera, Coleoptera, Diptera, Hymenoptera",
+    orders: "Lepidoptera, Coleoptera, Diptera, Hymenoptera, Neuroptera",
   },
   {
     id: "incomplete",
@@ -615,7 +618,7 @@ const META_PATHS = [
   },
 ];
 
-function MetaChapter({ lang }) {
+function MetaChapter({ lang, quiz }) {
   const [id, setId] = useState("complete");
   const path = META_PATHS.find((item) => item.id === id);
   const stages = path.stages[lang] || path.stages.en;
@@ -677,29 +680,299 @@ function MetaChapter({ lang }) {
           </p>
         </article>
       </div>
+      <QuizSection lang={lang} chapter={quiz} />
+      <AppFooter lang={lang} />
+    </div>
+  );
+}
+
+const NEUROPTERA = {
+  image: "/images/plates/ch13-lacewing.jpg",
+  icon: "lace",
+  latin: "Neuroptera",
+  num: { ku: "چاپتەری سێزدەهەم", ar: "الفصل الثالث عشر", en: "Chapter 13" },
+  title: { ku: "تۆڕباڵ", ar: "أسد المن والشبكيات", en: "Lacewings" },
+  blocks: [
+    {
+      id: "neu-def",
+      num: "٠١ · 01",
+      title: { ku: "پێناسە", ar: "التعريف", en: "What they are" },
+      body: {
+        ku: "Neuroptera ئۆردەری تۆڕباڵ و شێری مێروولەیە. ناوەکە لە neuron هاتووە، واتە دەمار یان تۆڕ، و لە pteron، واتە باڵ. دوو جووت باڵی ناسکی تۆڕاویان هەیە، بێ قاو و بێ قاوغ. گۆڕانەپەڕەیان تەواوە. کۆڵۆکەکە نێچیرگرە و شەتەک دەخوات؛ بۆیە سێیەم نموونەی کۆنترۆڵی بایۆلۆجییە لە دوای خاڵخاڵۆکە و زەنبووری پارازیتۆید.",
+        ar: "Neuroptera رتبة أسد المن وأسد النمل. الاسم من neuron (شبكة) وpteron (جناح): زوجان من الأجنحة الرقيقة الشبكية بلا حراشف ولا أغماد. تحولها كامل. اليرقة مفترسة وتأكل المن؛ لذلك هي المثال الثالث للمكافحة الحيوية بعد الدعسوقة والزنبار الطفيلي.",
+        en: "Neuroptera is the order of lacewings and antlions. The name is neuron (nerve, or net) and pteron (wing): two pairs of soft netted wings, without scales and without hard covers. Metamorphosis is complete. The larva is a hunter and eats aphids, so it is the third biological-control example after the ladybird and the parasitoid wasp.",
+      },
+    },
+    {
+      id: "neu-families",
+      num: "٠٢ · 02",
+      title: { ku: "دوو خێزان", ar: "فصيلتان", en: "Two families" },
+      body: {
+        ku: "باڵەکە هەمان شتە. شوێن و شێوەی نێچیر جیاوازە.",
+        ar: "الجناح واحد. مكان الصيد وشكله يختلفان.",
+        en: "The netted wing is shared. Where and how they hunt are not.",
+      },
+      families: [
+        {
+          id: "chrysopidae",
+          name: "Chrysopidae",
+          title: { ku: "تۆڕباڵی سەوز", ar: "أسد المن الأخضر", en: "Green lacewings" },
+          rows: {
+            ku: [["شێوە", "باڵی سەوز، چاوی زێڕین"], ["خۆراکی کۆڵۆک", "شەتەک"], ["کار", "کۆنترۆڵی بایۆلۆجی"]],
+            ar: [["الشكل", "جناح أخضر وعين ذهبية"], ["طعام اليرقة", "المن"], ["الدور", "مكافحة حيوية"]],
+            en: [["Look", "Green wing, golden eye"], ["Larva food", "Aphids"], ["Role", "Biological control"]],
+          },
+        },
+        {
+          id: "myrmeleontidae",
+          name: "Myrmeleontidae",
+          title: { ku: "شێری مێروولە", ar: "أسد النمل", en: "Antlions" },
+          rows: {
+            ku: [["شێوە", "باڵی درێژ، لە مێرووی ئاو دەچێت بەڵام لاوازترە"], ["خۆراکی کۆڵۆک", "مێروولە لە چاڵی لم"], ["شوێن", "خاکی وشک و لم"]],
+            ar: [["الشكل", "جناح طويل، يشبه الرعاش لكنه أضعف"], ["طعام اليرقة", "نمل في حفرة رمل"], ["الموطن", "تربة جافة ورمل"]],
+            en: [["Look", "Long wing, like a soft dragonfly"], ["Larva food", "Ants in a sand pit"], ["Where", "Dry soil and sand"]],
+          },
+        },
+      ],
+    },
+    {
+      id: "neu-species",
+      num: "٠٣ · 03",
+      title: { ku: "جۆرە باوەکانی ناوچەکە", ar: "أنواع شائعة في المنطقة", en: "Common species of the region" },
+      body: {
+        ku: "وێنەی سەرەوە Chrysoperla carnea ـە، تۆڕباڵێکی سەوزی باو لە کوردستان و دەوروبەر. کۆڵۆکەکەی لەسەر گەڵا شەتەک دەخوات.",
+        ar: "الصورة أعلاه Chrysoperla carnea، أسد من أخضر شائع في كردستان وما حولها. يرقتها تأكل المن على الأوراق.",
+        en: "The picture above is Chrysoperla carnea, a common green lacewing of Kurdistan and the country around it. Its larva eats aphids on leaves.",
+      },
+      species: [
+        { name: "Chrysoperla carnea", family: "Chrysopidae", common: { ku: "تۆڕباڵی سەوزی باو", ar: "أسد المن الأخضر الشائع", en: "Common green lacewing" }, where: { ku: "باخ و کێڵگە", ar: "بساتين وحقول", en: "Orchards and fields" } },
+        { name: "Myrmeleon spp.", family: "Myrmeleontidae", common: { ku: "شێری مێروولە", ar: "أسد النمل", en: "Antlion" }, where: { ku: "لم و خاکی وشک", ar: "رمل وتربة جافة", en: "Sand and dry ground" } },
+      ],
+    },
+  ],
+};
+
+const KEY_NODES = {
+  start: {
+    q: {
+      ku: "مێرووەکە باڵی هەیە؟",
+      ar: "هل للحشرة أجنحة؟",
+      en: "Does the insect have wings?",
+    },
+    choices: [
+      { label: { ku: "بەڵێ", ar: "نعم", en: "Yes" }, next: "winged" },
+      { label: { ku: "نەخێر", ar: "لا", en: "No" }, next: "wingless" },
+    ],
+  },
+  wingless: {
+    q: {
+      ku: "کەمەرێکی باریکی هەیە، یان دەمێکی کونکەری؟",
+      ar: "أله خصر ضيق، أم فم ثاقب؟",
+      en: "Does it have a narrow waist, or a piercing beak?",
+    },
+    choices: [
+      { label: { ku: "کەمەری باریک — کارگەری مێروولە", ar: "خصر ضيق — شغالة نمل", en: "Narrow waist — ant worker" }, next: "hymenoptera" },
+      { label: { ku: "دەمی کونکەر — شەتەکی بێباڵ", ar: "فم ثاقب — من بلا جناح", en: "Piercing beak — wingless aphid" }, next: "hemiptera" },
+    ],
+  },
+  winged: {
+    q: {
+      ku: "چەند جووت باڵی فڕینی هەیە؟",
+      ar: "كم زوج أجنحة طيران؟",
+      en: "How many pairs of flying wings?",
+    },
+    choices: [
+      { label: { ku: "یەک جووت (+ هەڵتەر)", ar: "زوج واحد (+ دبوس توازن)", en: "One pair (+ halteres)" }, next: "diptera" },
+      { label: { ku: "دوو جووت", ar: "زوجان", en: "Two pairs" }, next: "two_pairs" },
+    ],
+  },
+  two_pairs: {
+    q: {
+      ku: "باڵی پێشەوە چۆنە؟",
+      ar: "كيف الجناح الأمامي؟",
+      en: "What is the forewing like?",
+    },
+    choices: [
+      { label: { ku: "قاوغی ڕەق، لەسەر هێڵێکی ڕاست", ar: "غمد صلب على خط مستقيم", en: "Hard covers in a straight line" }, next: "coleoptera" },
+      { label: { ku: "نیوە قاوغ، نیوە پەردە", ar: "نصفه غمد ونصفه غشاء", en: "Half hard, half membrane" }, next: "hemiptera" },
+      { label: { ku: "پۆشراو بە قاو", ar: "مغطى بحراشف", en: "Covered in scales" }, next: "lepidoptera" },
+      { label: { ku: "پەردەیی یان تۆڕاوی، بێ قاو", ar: "غشائي أو شبكي بلا حراشف", en: "Membranous or netted, no scales" }, next: "membrane" },
+    ],
+  },
+  membrane: {
+    q: {
+      ku: "کام نیشانە دەیبینیت؟",
+      ar: "أي علامة ترى؟",
+      en: "Which mark do you see?",
+    },
+    choices: [
+      { label: { ku: "کەمەری باریک + hamuli", ar: "خصر ضيق + خطاطيف", en: "Narrow waist + hamuli" }, next: "hymenoptera" },
+      { label: { ku: "قاچی دواوە درێژ بۆ باز", ar: "أرجل خلفية للقفز", en: "Long hind legs for a jump" }, next: "orthoptera" },
+      { label: { ku: "چاوی گەورە، باڵ کراوە یان تاو دراو", ar: "عين كبيرة، أجنحة مفتوحة أو مطوية", en: "Large eyes, wings open or folded" }, next: "odonata" },
+      { label: { ku: "باڵی تۆڕاوی نەرم، بێ کەمەر", ar: "جناح شبكي لين بلا خصر", en: "Soft netted wings, no waist" }, next: "neuroptera" },
+    ],
+  },
+  lepidoptera: {
+    result: { ku: "Lepidoptera — پەپوولە", ar: "Lepidoptera — فراشة", en: "Lepidoptera — butterfly or moth" },
+    note: { ku: "باڵەکە بە قاو داپۆشراوە. چاپتەری پێنجەم.", ar: "الجناح مغطى بالحراشف. الفصل الخامس.", en: "The wing is covered in scales. Chapter 5." },
+    href: "#/ch5",
+  },
+  hymenoptera: {
+    result: { ku: "Hymenoptera — مێروولە، هەنگ یان زەنبوور", ar: "Hymenoptera — نمل أو نحل أو زنابير", en: "Hymenoptera — ant, bee or wasp" },
+    note: { ku: "کەمەری باریک و باڵی پەردەیی. چاپتەری شەشەم.", ar: "خصر ضيق وأجنحة غشائية. الفصل السادس.", en: "A narrow waist and membranous wings. Chapter 6." },
+    href: "#/ch6",
+  },
+  coleoptera: {
+    result: { ku: "Coleoptera — قوڕقوڕە", ar: "Coleoptera — خنفساء", en: "Coleoptera — beetle" },
+    note: { ku: "elytra قاوغی ڕەقە. چاپتەری حەوتەم.", ar: "الأغماد elytra صلبة. الفصل السابع.", en: "The elytra are hard covers. Chapter 7." },
+    href: "#/ch7",
+  },
+  diptera: {
+    result: { ku: "Diptera — مێش یان مێشوولە", ar: "Diptera — ذبابة أو بعوضة", en: "Diptera — fly or mosquito" },
+    note: { ku: "یەک جووت باڵ و هەڵتەر. چاپتەری هەشتەم.", ar: "زوج أجنحة ودبوس توازن. الفصل الثامن.", en: "One pair of wings and halteres. Chapter 8." },
+    href: "#/ch8",
+  },
+  hemiptera: {
+    result: { ku: "Hemiptera — شەتەک یان سنە", ar: "Hemiptera — من أو بق", en: "Hemiptera — aphid or true bug" },
+    note: { ku: "دەمی کونکەر. چاپتەری دەیەم.", ar: "فم ثاقب ماص. الفصل العاشر.", en: "A piercing-sucking beak. Chapter 10." },
+    href: "#/ch10",
+  },
+  orthoptera: {
+    result: { ku: "Orthoptera — جڕوشک یان سیسرک", ar: "Orthoptera — جندب أو صرصار", en: "Orthoptera — grasshopper or cricket" },
+    note: { ku: "بازدان بە قاچی دواوە. چاپتەری یازدەهەم.", ar: "قفز بالأرجل الخلفية. الفصل الحادي عشر.", en: "A jump with the hind legs. Chapter 11." },
+    href: "#/ch11",
+  },
+  odonata: {
+    result: { ku: "Odonata — مێرووی ئاو", ar: "Odonata — رعاش", en: "Odonata — dragonfly or damselfly" },
+    note: { ku: "چاوی گەورە و باڵی تۆڕاوی. چاپتەری یازدەهەم.", ar: "عين كبيرة وجناح شبكي. الفصل الحادي عشر.", en: "Large eyes and netted wings. Chapter 11." },
+    href: "#/ch11",
+  },
+  neuroptera: {
+    result: { ku: "Neuroptera — تۆڕباڵ", ar: "Neuroptera — أسد المن", en: "Neuroptera — lacewing" },
+    note: { ku: "باڵی تۆڕاوی نەرم، بێ کەمەر. چاپتەری سێزدەهەم.", ar: "جناح شبكي لين بلا خصر. الفصل الثالث عشر.", en: "Soft netted wings, no waist. Chapter 13." },
+    href: "#/ch13",
+  },
+};
+
+function KeyChapter({ lang, quiz }) {
+  const [nodeId, setNodeId] = useState("start");
+  const [trail, setTrail] = useState(["start"]);
+  const node = KEY_NODES[nodeId];
+  const dir = lang === "en" ? "ltr" : "rtl";
+  const done = Boolean(node.result);
+
+  function choose(next) {
+    setNodeId(next);
+    setTrail((prev) => [...prev, next]);
+  }
+
+  function restart() {
+    setNodeId("start");
+    setTrail(["start"]);
+  }
+
+  function back() {
+    if (trail.length < 2) return;
+    const nextTrail = trail.slice(0, -1);
+    setTrail(nextTrail);
+    setNodeId(nextTrail[nextTrail.length - 1]);
+  }
+
+  return (
+    <div className="ento-chapter-page">
+      <Hero lang={lang} chapter={{
+        image: "/images/plates/ch14-key.jpg",
+        icon: "key",
+        num: { ku: "چاپتەری چواردەهەم", ar: "الفصل الرابع عشر", en: "Chapter 14" },
+        title: { ku: "کلیلی ناسینەوە", ar: "مفتاح التعريف", en: "Identification key" },
+      }} />
+      <div className="ento-container" dir={dir}>
+        <article className="ento-card ento-visible" id="key-how" style={{ direction: dir }}>
+          <div className="ento-card-header">
+            <div>
+              <div className="ento-card-num">٠١ · 01</div>
+              <div className="ento-card-title-ku">{lang === "ku" ? "چۆن کلیل بەکاربهێنیت" : lang === "ar" ? "كيف تستخدم المفتاح" : "How to use the key"}</div>
+            </div>
+          </div>
+          <p className="ento-body" style={{ marginBottom: 0 }}>
+            {lang === "ku"
+              ? "لە هەر هەنگاوێکدا یەک پرسیار هەیە. وەڵامەکەت دەتبات بۆ هەنگاوی دواتر، تا ئۆردەرەکە دەردەکەوێت. ئەم کلیلە تەنها ئەو ئۆردەرانە دەگرێتەوە کە لەم ئەتڵەسەدا فێر کراون، نەک هەموو مێرووی جیهان."
+              : lang === "ar"
+              ? "في كل خطوة سؤال واحد. جوابك ينقلك إلى الخطوة التالية حتى تظهر الرتبة. هذا المفتاح يغطي فقط الرتب التي عُلّمت في هذا الأطلس، لا كل حشرات العالم."
+              : "Each step has one question. Your answer moves you to the next step until an order appears. This key covers only the orders taught in this atlas, not every insect on earth."}
+          </p>
+        </article>
+        <article className="ento-card ento-visible" id="key-run" style={{ direction: dir }}>
+          <div className="ento-card-header">
+            <div>
+              <div className="ento-card-num">٠٢ · 02</div>
+              <div className="ento-card-title-ku">{lang === "ku" ? "کلیلەکە" : lang === "ar" ? "المفتاح" : "The key"}</div>
+            </div>
+          </div>
+          {!done ? (
+            <>
+              <p className="ento-body">{text(lang, node.q)}</p>
+              <div className="ento-pick-row">
+                {node.choices.map((choice) => (
+                  <button key={choice.next} type="button" className="ento-pick" onClick={() => choose(choice.next)}>
+                    <span>{text(lang, choice.label)}</span>
+                  </button>
+                ))}
+              </div>
+            </>
+          ) : (
+            <>
+              <p className="ento-body" style={{ marginBottom: 8 }}>
+                <span className="ento-binomial">{text(lang, node.result)}</span>
+              </p>
+              <p className="ento-body">{text(lang, node.note)}</p>
+              <div className="ento-pick-row">
+                <a className="ento-pick" href={node.href}><span>{lang === "ku" ? "بڕۆ بۆ چاپتەرەکە" : lang === "ar" ? "إلى الفصل" : "Open the chapter"}</span></a>
+              </div>
+            </>
+          )}
+          <div className="ento-pick-row" style={{ marginTop: 8 }}>
+            {trail.length > 1 && (
+              <button type="button" className="ento-pick" onClick={back}>
+                <span>{lang === "ku" ? "گەڕانەوە" : lang === "ar" ? "رجوع" : "Back"}</span>
+              </button>
+            )}
+            <button type="button" className="ento-pick" onClick={restart}>
+              <span>{lang === "ku" ? "لە سەرەتاوە" : lang === "ar" ? "من البداية" : "Start over"}</span>
+            </button>
+          </div>
+        </article>
+      </div>
+      <QuizSection lang={lang} chapter={quiz} />
       <AppFooter lang={lang} />
     </div>
   );
 }
 
 export function Chapter6({ lang }) {
-  return <TaxonChapter lang={lang} chapter={HYMENOPTERA} />;
+  return <TaxonChapter lang={lang} chapter={HYMENOPTERA} quiz="ch6" />;
 }
 export function Chapter7({ lang }) {
-  return <TaxonChapter lang={lang} chapter={COLEOPTERA} />;
+  return <TaxonChapter lang={lang} chapter={COLEOPTERA} quiz="ch7" />;
 }
 export function Chapter8({ lang }) {
-  return <TaxonChapter lang={lang} chapter={DIPTERA} />;
+  return <TaxonChapter lang={lang} chapter={DIPTERA} quiz="ch8" />;
 }
 export function Chapter9({ lang }) {
-  return <FieldChapter lang={lang} />;
+  return <FieldChapter lang={lang} quiz="ch9" />;
 }
 export function Chapter10({ lang }) {
-  return <TaxonChapter lang={lang} chapter={HEMIPTERA} />;
+  return <TaxonChapter lang={lang} chapter={HEMIPTERA} quiz="ch10" />;
 }
 export function Chapter11({ lang }) {
-  return <TaxonChapter lang={lang} chapter={JUMPERS} />;
+  return <TaxonChapter lang={lang} chapter={JUMPERS} quiz="ch11" />;
 }
 export function Chapter12({ lang }) {
-  return <MetaChapter lang={lang} />;
+  return <MetaChapter lang={lang} quiz="ch12" />;
+}
+export function Chapter13({ lang }) {
+  return <TaxonChapter lang={lang} chapter={NEUROPTERA} quiz="ch13" />;
+}
+export function Chapter14({ lang }) {
+  return <KeyChapter lang={lang} quiz="ch14" />;
 }

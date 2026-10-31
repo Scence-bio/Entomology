@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Mark } from "./marks";
 import { AppFooter } from "./Footer";
+import { QuizSection } from "./quiz/Quiz";
 
 const SCIENTIST_IMGS = {};
 
@@ -181,11 +182,11 @@ const SECTIONS = [
       en: "Biological Control",
     },
     body: {
-      ku: "کۆنترۆڵی بایۆلۆجی ئەوەیە زیندەوەرێکی سوودبەخش بەکاربهێنرێت بۆ کەمکردنەوەی مێرووی زیانبەخش، نەک تەنها پێستیساید بڕژێنرێت. نمونەیەکی ڕوون خاڵخاڵۆکەیە، کە شەتەک دەخوات، و مێرووی پارازیتۆیدە، کە هێلکە لە ناو کۆڵۆکی زیانبەخشدا دادەنێت. لە کشتوکاڵدا ئەم ڕێگەیە بەشێکە لە کۆنترۆڵی تێکەڵ.",
-      ar: "المكافحة الحيوية هي استخدام كائن نافع لتقليل آفة، بدل الاعتماد على المبيد وحده. مثال واضح: الدعسوقة (فصيلة Coccinellidae) التي تأكل المن، والزنبار الطفيلي الذي يضع بيضه داخل يرقة الآفة. في الزراعة هذا جزء من المكافحة المتكاملة (IPM).",
-      en: "Biological control uses a living helper to reduce a pest, instead of relying on pesticide alone. A clear case is the ladybird (family Coccinellidae), which eats aphids, and the parasitoid wasp, which lays its egg inside a pest larva. On a farm this is one part of integrated pest management (IPM).",
+      ku: "کۆنترۆڵی بایۆلۆجی ئەوەیە زیندەوەرێکی سوودبەخش بەکاربهێنرێت بۆ کەمکردنەوەی مێرووی زیانبەخش، نەک تەنها پێستیساید بڕژێنرێت. نمونەیەکی ڕوون خاڵخاڵۆکەیە، کە شەتەک دەخوات؛ کۆڵۆکی تۆڕباڵە، کە هەر شەتەک دەخوات؛ و مێرووی پارازیتۆیدە، کە هێلکە لە ناو کۆڵۆکی زیانبەخشدا دادەنێت. لە کشتوکاڵدا ئەم ڕێگەیە بەشێکە لە کۆنترۆڵی تێکەڵ.",
+      ar: "المكافحة الحيوية هي استخدام كائن نافع لتقليل آفة، بدل الاعتماد على المبيد وحده. مثال واضح: الدعسوقة (Coccinellidae) التي تأكل المن، ويرقة أسد المن (Chrysopidae) التي تأكل المن أيضاً، والزنبار الطفيلي الذي يضع بيضه داخل يرقة الآفة. في الزراعة هذا جزء من المكافحة المتكاملة (IPM).",
+      en: "Biological control uses a living helper to reduce a pest, instead of relying on pesticide alone. A clear case is the ladybird (Coccinellidae), which eats aphids; the lacewing larva (Chrysopidae), which also eats aphids; and the parasitoid wasp, which lays its egg inside a pest larva. On a farm this is one part of integrated pest management (IPM).",
     },
-    terms: ["Biological control","Coccinellidae","Parasitoid","IPM"],
+    terms: ["Biological control","Coccinellidae","Chrysopidae","Parasitoid","IPM"],
   },
   {
     id: "ants",
@@ -267,7 +268,7 @@ function useInView(ref, { threshold = 0.07, rootMargin = "0px 0px -20px 0px" } =
 function useActiveSection() {
   const [active, setActive] = useState("");
   useEffect(() => {
-    const ids = ["intro", ...SECTIONS.map(s => s.id), "quiz", "videos", "goals", "team"];
+    const ids = ["intro", ...SECTIONS.map(s => s.id), "quiz"];
     const h = () => {
       for (const id of ids) {
         const el = document.getElementById(id);
@@ -299,9 +300,6 @@ function SectionNav({ active, lang }) {
     { id: "ants",         ku: "مێروولە",     ar: "النمل",      en: "Ants" },
     { id: "conservation", ku: "پارێزگاری",   ar: "الحفاظ",     en: "Conservation" },
     { id: "quiz",         ku: "کویز",        ar: "اختبار",     en: "Quiz" },
-    { id: "videos",       ku: "ڤیدیۆ",       ar: "فيديو",      en: "Videos" },
-    { id: "goals",        ku: "ئامانجەکان",  ar: "الأهداف",    en: "Goals" },
-    { id: "team",         ku: "تیم",         ar: "الفريق",     en: "Team" },
   ];
   return (
     <nav className="ento-section-nav" aria-label="Section navigation" style={{ direction: lang === "en" ? "ltr" : "rtl" }}>
@@ -555,6 +553,7 @@ export default function Chapter2({ lang }) {
           <SectionCard key={s.id} section={s} delay={i * 50} lang={lang} />
         ))}
       </div>
+      <QuizSection lang={lang} chapter="ch2" />
       <AppFooter lang={lang} sections={SECTIONS} />
     </div>
   );
