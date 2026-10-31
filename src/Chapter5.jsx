@@ -21,6 +21,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Mark } from "./marks";
+import { AppFooter } from "./Footer";
 
 /* ═══════════════════════════════════════════════
    LANG CONFIG (mirror from App.js)
@@ -704,9 +705,7 @@ export default function Chapter5({ lang }) {
       {/* Interactive gallery */}
       <ButterflyGallery lang={lang} />
 
-      {/* Footer via App.js AppFooter — caller passes it, so we just end here.
-          If Chapter5 is standalone, uncomment the block below and import AppFooter,
-          or simply duplicate the footer markup. For now we close cleanly. */}
+      <AppFooter lang={lang} />
     </div>
   );
 }

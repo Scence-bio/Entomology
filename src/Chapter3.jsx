@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, Fragment } from "react";
 import { Mark } from "./marks";
+import { AppFooter } from "./Footer";
 
 
 
@@ -384,43 +385,6 @@ function ArthropodaCard({ section, delay = 0, lang }) {
         </div>
       )}
     </article>
-  );
-}
-
-function AppFooter({ lang }) {
-  return (
-    <footer className="ento-footer">
-        <div className="ento-footer-inner" dir={lang === "en" ? "ltr" : "rtl"}>
-          <div className="ento-footer-col">
-            <div className="ento-footer-col-title">
-              {lang === "ku" ? "پرۆژە" : lang === "ar" ? "المشروع" : "Project"}
-            </div>
-            <div className="ento-footer-project">Atlas of <span>Entomology</span></div>
-            <div className="ento-footer-tagline">
-              {lang === "ku"
-                ? "سەرچاوەی زانستی و ئەکادیمی بۆ خوێندنی مێرووناسی"
-                : lang === "ar"
-                ? "مرجع علمي وأكاديمي لدراسة علم الحشرات"
-                : "A scientific & academic reference for Entomology"}
-            </div>
-          </div>
-          <div className="ento-footer-col">
-            <div className="ento-footer-col-title">
-              {lang === "ku" ? "چاپتەر" : lang === "ar" ? "الفصل" : "Chapter"}
-            </div>
-            <div className="ento-footer-link">{lang === "ku" ? "فایلەمی جومگەپێیەکان" : lang === "ar" ? "شعبة مفصليات الأرجل" : "Phylum Arthropoda"}</div>
-            <div className="ento-footer-link">Phylum Arthropoda</div>
-          </div>
-          <div className="ento-footer-col">
-            <div className="ento-footer-col-title">
-              {lang === "ku" ? "سیستەم" : lang === "ar" ? "النظام" : "System"}
-            </div>
-            <div className="ento-footer-link">Respiratory System</div>
-            <div className="ento-footer-link">Exoskeleton</div>
-            <div className="ento-footer-link">Compound Eyes</div>
-          </div>
-        </div>
-    </footer>
   );
 }
 

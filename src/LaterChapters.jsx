@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mark } from "./marks";
+import { AppFooter } from "./Footer";
 
 function text(lang, pack) {
   return pack[lang] || pack.en;
@@ -92,6 +93,7 @@ function TaxonChapter({ lang, chapter }) {
           </article>
         ))}
       </div>
+      <AppFooter lang={lang} />
     </div>
   );
 }
@@ -421,6 +423,7 @@ function FieldChapter({ lang }) {
           </div>
         </article>
       </div>
+      <AppFooter lang={lang} />
     </div>
   );
 }
@@ -674,6 +677,7 @@ function MetaChapter({ lang }) {
           </p>
         </article>
       </div>
+      <AppFooter lang={lang} />
     </div>
   );
 }
