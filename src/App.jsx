@@ -1065,7 +1065,7 @@ function LangSwitcher({ lang, setLang }) {
 ═══════════════════════════════════════════════ */
 function Hero({ lang }) {
   const heroDesc = {
-    ku: "پلاتفۆڕمی زانستی مێرووەکان بۆ ڕوونکردنەوە بە شێوازی زانستی و ئەکادیمی و ئاسان",
+    ku: "پلاتفۆرمێکی زانستییە بۆ ڕوونکردنەوەی مێروو، بە شێوازێکی ئەکادیمی و ئاسان",
     ar: "دراسة العلاقات التطورية والتصنيف — علم أكاديمي متخصص في الحشرات",
     en: "Phylogeny & Taxonomy Analysis — The academic science of insects explained clearly",
   };
@@ -1195,7 +1195,7 @@ const CHAPTERS = [
     icon: "dragon",
     image: "/images/plates/ch11-dragon.jpg",
     latin: "Orthoptera · Odonata",
-    title: { ku: "کوللە و مێرووی ئاو", en: "Grasshoppers and dragonflies", ar: "الجنادب والرعاشات" },
+    title: { ku: "جڕوشک و مێرووی ئاو", en: "Grasshoppers and dragonflies", ar: "الجنادب والرعاشات" },
     desc: { ku: "بازدان، چاوی گەورە، و بچووکێک لە ناو ئاو", en: "A jump, a large eye, and a nymph in the water", ar: "قفزة وعين كبيرة وحورية في الماء" },
   },
   {

@@ -115,7 +115,7 @@ const ARTHROPODA_SECTIONS = [
       en: "Respiratory System",
     },
     body: {
-      ku: "جومگەپێیەکان سیستەمێکی هەناسەدانی زۆر کارایان هەیە. مێرووەکان لە ڕێگەی کونی وردی سەر جەستەیان (Spiracles) و تۆڕێکی ئاڵۆز لە بۆریی هەوایی (Tracheae) ئۆکسجین ڕاستەوخۆ دەگەیەننە ناو خانەکان.",
+      ku: "مێروو سیستەمێکی هەناسەدانی کارای هەیە. هەوا لە کونێکی وردەوە دێتە ناوەوە، کە پێی دەوترێت Spiracles، و لە ڕێگەی تۆڕێک لە بۆریی هەوا ئۆکسجین ڕاستەوخۆ دەگاتە خانەکان.",
       en: "Arthropods have a highly efficient respiratory system. Insects use tiny openings called Spiracles and a complex network of Tracheae to deliver oxygen directly to their tissues.",
       ar: "تمتلك مفصليات الأرجل جهازًا تنفسيًا فعالًا للغاية. تستخدم الحشرات فتحات صغيرة تسمى الثغور التنفسية وشبكة معقدة من القصبات الهوائية لإيصال الأكسجين مباشرة إلى الأنسجة.",
     },
@@ -133,7 +133,7 @@ const ARTHROPODA_SECTIONS = [
       en: "Exoskeleton",
     },
     body: {
-      ku: "جەستەیان داپۆشراوە بە زریپۆشێکی ڕەق لە ماددەی کایتین (Chitin) دروست بووە، کە وەک قەڵغانێک دەیانپارێزێت. بۆ گەشەکردن، ئەم زیندەوەرانە پڕۆسەی تێڵاکردن (Molting) ئەنجام دەدەن.",
+      ku: "جەستەیان بە توێژێکی ڕەق داپۆشراوە کە لە کایتین دروست بووە و وەک قەڵغان دەیپارێزێت. بۆ ئەوەی گەورە ببن، توێژە کۆنەکە فڕێ دەدەن.",
       en: "Their bodies are covered by a hard Exoskeleton made of Chitin, which acts as a protective shield. To grow, these organisms undergo a process called Molting (Ecdysis).",
       ar: "أجسامها مغطاة بـ هيكل خارجي صلب مكون من مادة الكايتين، والذي يعمل كدرع واقٍ. وللنمو، تمر هذه الكائنات بعملية تسمى الانسلاخ.",
     },
@@ -151,7 +151,7 @@ const ARTHROPODA_SECTIONS = [
       en: "Open Circulatory System",
     },
     body: {
-      ku: "ئەمان خاوەنی سوڕی خوێنی کراوەن، کە تێیدا شلەیەک بە ناوی هیمۆلیمف (Hemolymph) ئەندامە ناوخۆییەکان نوقم دەکات و ماددە خۆراکییەکان دەگوازێتەوە.",
+      ku: "سوڕی خوێنیان کراوەیە. شلەیەک بە ناوی هیمۆلیمف بە دەوری ئەندامە ناوخۆییەکاندا دەسووڕێتەوە و خۆراک دەگوازێتەوە.",
       en: "They possess an open circulatory system, where a fluid called Hemolymph bathes the internal organs and transports nutrients.",
       ar: "تمتلك جهاز دوران مفتوحًا، حيث يقوم سائل يسمى اللمف الدموي بغمر الأعضاء الداخلية ونقل المواد الغذائية.",
     },
@@ -169,7 +169,7 @@ const ARTHROPODA_SECTIONS = [
       en: "Compound Eyes",
     },
     body: {
-      ku: "زۆربەی جومگەپێیەکان خاوەنی چاوی ئاڵۆزن کە لە هەزاران یەکەی بینینی بچووک پێکدێن، ئەمەش مەودایەکی فراوانی بینینیان پێ دەبەخشێت بۆ ناسینەوەی خێراترین جووڵە.",
+      ku: "زۆربەی جومگەپێیەکان چاوێکی ئاڵۆزیان هەیە. ئەم چاوە لە هەزاران یەکەی بینینی بچووک پێکدێت، بۆیە مەودای بینینیان فراوانە و جووڵەی خێرا دەبینن.",
       en: "Most arthropods have Compound Eyes consisting of thousands of tiny visual units, providing them with a wide field of view to detect the fastest movements.",
       ar: "تمتلك معظم مفصليات الأرجل عيونًا مركبة تتكون من آلاف الوحدات البصرية الصغيرة، مما يمنحها مجال رؤية واسعًا للكشف عن أسرع الحركات.",
     },
@@ -190,10 +190,10 @@ const ARTHROPODA_SECTIONS = [
       { term: "Chitin", ku: "ماددەیەکی پۆڵیسەکەریدی بەهێز و نەرمە، پێکهاتەی سەرەکیی ئێسکەپەیکەری دەرەکیی جومگەپێیەکان دروست دەکات.", en: "A tough, protective polysaccharide that forms the main component of the arthropod exoskeleton.", ar: "مادة سكرية متعددة قوية ومرنة، تشكل المكون الأساسي للهيكل الخارجي لمفصليات الأرجل." },
       { term: "Ecdysis (Molting)", ku: "پڕۆسەی فڕێدانی پەیەکەری دەرەکیی کۆن و گۆڕینی بە دانەیەکی نوێ بۆ ئەوەی زیندەوەرەکە بتوانێت گەشە بکات.", en: "The process of shedding the old exoskeleton and replacing it with a new one to allow for growth.", ar: "عملية التخلص من الهيكل الخارجي القديم واستبداله بآخر جديد للسماح للكائن الحي بالنمو." },
       { term: "Hemolymph", ku: "ئەو شلەیەیە کە لە ناو سوڕی خوێنی کراوەی جومگەپێیەکاندا دەگەڕێت و هاوتای خوێن و لیمفە لە بڕبڕەدارەکاندا.", en: "The fluid that circulates in the open circulatory system of arthropods, equivalent to blood and lymph.", ar: "السائل الذي يدور في جهاز الدوران المفتوح لمفصليات الأرجل، ويعادل الدم واللمف في الفقاريات." },
-      { term: "Spiracles", ku: "کونی وردن لەسەر دیواری جەستەی مێرووەکان کە ڕێگە بە هەوا دەدەن بچێتە ناو سیستەمی بۆرییە هەواییەکان.", en: "Small openings on the body wall of insects that allow air to enter the tracheal system.", ar: "فتحات صغيرة على جدار جسم الحشرات تسمح بدخول الهواء إلى جهاز القصبات الهوائية." },
-      { term: "Ommatidia", ku: "یەکە بچووکەکانی پێکهاتەی چاوی ئاڵۆز، کە هەر یەکێکیان وەک هاوێنەیەکی سەربەخۆ کار دەکات.", en: "The individual optical units that make up a compound eye.", ar: "الوحدات البصرية الفردية التي تشكل العين المركبة." },
-      { term: "Jointed Appendages", ku: "ئەو قاچ و ئەنتێنا و بەشانەی کە لە جەستەی جومگەپێیەکان دەبنەوە و خاوەنی جومگەن بۆ جووڵە.", en: "Structures such as legs and antennae that extend from the body and have joints for flexibility.", ar: "الهياكل مثل الأرجل وقرون الاستشعار التي تمتد من الجسم ولها مفاصل للحركة." },
-      { term: "Exoskeleton", ku: "بەرگێکی ڕەق و پارێزەر کە لە دەرەوەی جەستەی جومگەپێیەکانە و پشتگیرییان دەکات.", en: "A hard, protective outer layer that supports and protects the body of an arthropod.", ar: "طبقة خارجية صلبة واقية تدعم وتحمي جسم مفصليات الأرجل." },
+      { term: "Spiracles", ku: "کونە وردەکان لەسەر دیواری جەستەی مێروو، کە ڕێگە بە هەوا دەدەن بچێتە ناو بۆرییەکانی هەوا.", en: "Small openings on the body wall of insects that allow air to enter the tracheal system.", ar: "فتحات صغيرة على جدار جسم الحشرات تسمح بدخول الهواء إلى جهاز القصبات الهوائية." },
+      { term: "Ommatidia", ku: "یەکە بچووکەکانی چاوی ئاڵۆز. هەر یەکێکیان وەک چاوێکی سەربەخۆ کار دەکات.", en: "The individual optical units that make up a compound eye.", ar: "الوحدات البصرية الفردية التي تشكل العين المركبة." },
+      { term: "Jointed Appendages", ku: "قاچ، ئەنتێنا و ئەو لقانەی کە لە جەستە دەردەچن و جومگەیان هەیە بۆ جووڵە.", en: "Structures such as legs and antennae that extend from the body and have joints for flexibility.", ar: "الهياكل مثل الأرجل وقرون الاستشعار التي تمتد من الجسم ولها مفاصل للحركة." },
+      { term: "Exoskeleton", ku: "توێژێکی ڕەق و پارێزەرە لە دەرەوەی جەستە، و جەستەکە ڕادەگرێت.", en: "A hard, protective outer layer that supports and protects the body of an arthropod.", ar: "طبقة خارجية صلبة واقية تدعم وتحمي جسم مفصليات الأرجل." },
     ],
   },
 ];
@@ -297,7 +297,7 @@ function BodyPlate({ lang }) {
       id: "abdomen",
       title: { ku: "سک", ar: "البطن", en: "Abdomen" },
       body: {
-        ku: "کونەکانی هەناسە (Spiracles) لەسەر سک دان. هەرس و زاووزێش لێرەن.",
+        ku: "کونەکانی هەناسە لەسەر سکن. هەرس و زاوزێ لێرەن.",
         ar: "الثغور التنفسية على البطن. الهضم والتكاثر هنا.",
         en: "Spiracles open on the abdomen. Digestion and reproduction are here.",
       },

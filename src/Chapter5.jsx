@@ -62,7 +62,7 @@ const LEPIDO_SECTIONS = [
       en: "Defining Lepidoptera",
     },
     body: {
-      ku: "Lepidoptera (لیپیدۆپتیرا) یەکێکە لە گەورەترین Order مێرووەکاندا، کە پەپوولە و فراشەکان (Butterflies & Moths) لەخۆ دەگرێت. ناوی لە وشەی یۆنانیی کۆنی λεπίς (lepís — قاو) و πτερόν (pterón — باڵ) هاتووە. خاسییەتی سەرەکییان هەبوونی Scales (قاو) لەسەر باڵەکانیانە کە پرتۆکالی رووپێوەی دوانیشتیی باڵ دروست دەکەن.",
+      ku: "Lepidoptera یەکێکە لە گەورەترین ئۆردەرەکانی مێرووە، و پەپوولە و فراشەی لەخۆگرتووە. ناوەکە لە دوو وشەی یۆنانیی کۆن هاتووە: lepís واتە قاو، و pterón واتە باڵ. نیشانەی سەرەکییان ئەوەیە کە قاوێکی ورد باڵەکانیان دادەپۆشێت و ڕەنگەکەیان دروست دەکات.",
       ar: "حرشفيات الأجنحة (Lepidoptera) من أكبر رتب الحشرات، وتشمل الفراشات والعثة. يأتي اسمها من اليونانية: λεπίς (lepís — قشرة) وπτερόν (pterón — جناح). تتميز بوجود حراشف (Scales) دقيقة تغطي أجنحتها وتمنحها ألوانها المبهرة.",
       en: "Lepidoptera is one of the largest insect orders, encompassing butterflies and moths. The name derives from Greek λεπίς (lepís — scale) and πτερόν (pterón — wing). Their defining feature is the presence of overlapping scales on their wings that produce their remarkable colours.",
     },
@@ -79,7 +79,7 @@ const LEPIDO_SECTIONS = [
       en: "Complete Metamorphosis — Holometabolism",
     },
     body: {
-      ku: "پەپوولەکان خاوەنی Holometabolism (گۆڕانەپەڕەی تەواو) ن، کە پێکدێت لە چوار قۆناغی سەرەکی: یوم (Egg)، کۆڵۆک (Larva/Caterpillar)، پیت (Pupa/Chrysalis)، و پەپوولەی گەورە (Imago/Adult). هەر قۆناغێک کاری تایبەتی خۆی هەیە — لارڤا بۆ خواردن و گەورەبوون، پیوپا بۆ گۆڕانکاریی ناوەکی، و ئیماگۆ بۆ بازاندن و بەر هێنانی نەوە.",
+      ku: "پەپوولە گۆڕانەپەڕەیەکی تەواوی هەیە. چوار قۆناغە: هێلکە، کۆڵۆک، پیت و پەپوولەی گەورە. کۆڵۆکەکە دەخوات و گەورە دەبێت، پیتەکە لە ناوەوە دەگۆڕێت، و پەپوولەی گەورە جووت دەبێت و نەوە دەهێنێت.",
       ar: "تمر الفراشات بالتحول الكامل (Holometabolism)، ويشمل أربع مراحل: البيضة (Egg)، اليرقة (Larva/Caterpillar)، الشرنقة (Pupa/Chrysalis)، والحشرة الكاملة (Imago/Adult). لكل مرحلة وظيفتها — اليرقة للتغذية والنمو، والشرنقة للتحول الداخلي، والبالغة للتزاوج وإنتاج الأجيال.",
       en: "Butterflies undergo complete metamorphosis (Holometabolism), comprising four distinct stages: Egg, Larva (Caterpillar), Pupa (Chrysalis), and adult Imago. Each stage has a dedicated function — the larva feeds and grows, the pupa undergoes internal reorganisation, and the adult reproduces.",
     },
@@ -108,10 +108,10 @@ const LEPIDO_SECTIONS = [
     },
     classification: [
       { family: "Nymphalidae",  emoji: "🌿", ku: "گەورەترین خێزانی پەپوولە — Vanessa, Morpho, Monarch", ar: "أكبر عائلات الفراشات — تشمل الحاكمة والمورفو والملكة", en: "Largest butterfly family — Vanessa, Morpho, Monarch" },
-      { family: "Papilionidae", emoji: "🌸", ku: "پەپوولەی دووکوتایی (Swallowtails) — رووپێوی جوانییان زۆره", ar: "فراشات السنونو — من أجمل فراشات العالم", en: "Swallowtail butterflies — among the most beautiful species" },
+      { family: "Papilionidae", emoji: "🌸", ku: "پەپوولەی دووکڵ — ڕەنگاڵەیان زۆرە", ar: "فراشات السنونو — من أجمل فراشات العالم", en: "Swallowtail butterflies — among the most beautiful species" },
       { family: "Lycaenidae",   emoji: "💙", ku: "پەپوولەی بچووک — زۆرێکیان شینی ئاسمانیی جوانن", ar: "الفراشات الصغيرة — كثير منها زرقاء ساطعة", en: "Small butterflies — many with brilliant blue colouring" },
       { family: "Pieridae",     emoji: "🤍", ku: "پەپوولەی سپی و زەرد — Colias و Pieris", ar: "الفراشات البيضاء والصفراء — Colias وPieris", en: "White and yellow butterflies — Colias & Pieris" },
-      { family: "Saturniidae",  emoji: "🌙", ku: "گەورەترین فراشەکان — Atlas Moth خاوەنی گەورەترین باڵ", ar: "أكبر العث في العالم — حشرة الأطلس لها أكبر الأجنحة", en: "World's largest moths — Atlas Moth has the widest wingspan" },
+      { family: "Saturniidae",  emoji: "🌙", ku: "گەورەترین فراشەکانن. Atlas Moth فراوانترین باڵی هەیە", ar: "أكبر العث في العالم — حشرة الأطلس لها أكبر الأجنحة", en: "World's largest moths — Atlas Moth has the widest wingspan" },
     ],
     terms: ["Nymphalidae", "Papilionidae", "Lycaenidae", "Pieridae", "Saturniidae"],
   },
@@ -126,7 +126,7 @@ const LEPIDO_SECTIONS = [
       en: "Biology & Mechanisms",
     },
     body: {
-      ku: "رووپێوی باڵی پەپوولەکان لە Scales پێکهاتووە کە پڕ لە Chitin ن. رووپێوی ئیریدیسەنتیی (Structural Colour) — وەک ئەوەی لە Blue Morpho دەبینرێت — لە پەرتبوونەوەی ڕووناکدا دروست دەبێت، نەک لە ڕەنگدانە. Proboscis وەک لوولەیەکی سووک شیلەی گوڵ دەمژێت. ئەنتێنا ڕۆڵی سەرەکی هەیە لە دۆزینەوەی هاوسەر و خۆراکدا.",
+      ku: "ڕووپۆشی باڵی پەپوولە لە قاو پێکهاتووە، و قاوەکان لە کایتین دروست بوون. ڕەنگی درەوشاوە، وەک ئەوەی لە Blue Morpho دا دەبینرێت، لە شکاندنەوەی ڕووناکی دروست دەبێت، نەک لە بۆیە. Proboscis وەک لوولەیەکی سووک شیلەی گوڵ دەمژێت. ئەنتێنا ڕۆڵی سەرەکی هەیە لە دۆزینەوەی هاوسەر و خۆراکدا.",
       ar: "تتكوّن أجنحة الفراشات من حراشف كيتينية تعكس الضوء بأنماط فريدة. اللون البنيوي (Structural Colour) — كما في فراشة المورفو الزرقاء — ناتجٌ عن انكسار الضوء لا الصبغة. الخرطوم (Proboscis) أداة شرب أنبوبية ملتفة. تؤدي القرون الاستشعارية دوراً محورياً في البحث عن الأزواج ومصادر الرحيق.",
       en: "Butterfly wings are composed of chitin scales that interact with light in unique ways. Structural Colour — as seen in the Blue Morpho — results from light diffraction rather than pigment. The Proboscis is a coiled tubular drinking apparatus. Antennae are pivotal in locating mates and nectar sources.",
     },
@@ -143,7 +143,7 @@ const LEPIDO_SECTIONS = [
       en: "Kurdistan's Butterflies",
     },
     body: {
-      ku: "کوردستان بە جۆرەوازیی بایۆلۆجی و ناوچەی Hotspot دادەنرێت. کۆیستانەکانی، دەشتەکانی و چەمەکانی شوێنی گونجاوی گرنگن بۆ چەندین جۆری پەپوولەی ناوخۆیی و کۆچیار. لە توێژینەوەی ئەخیردا زیاتر لە ٢٠٠ جۆر Lepidoptera لەناوچەکەدا تۆمارکراوە، لەوانە: Papilio machaon (Old World Swallowtail)، Colias croceus (Clouded Yellow)، و Vanessa atalanta (Red Admiral).",
+      ku: "کوردستان ناوچەیەکی دەوڵەمەندە بە جۆراوجۆریی زیندەوەر. کوێستان، دەشت و چەمەکانی شوێنی گونجاون بۆ پەپوولەی ناوخۆیی و کۆچبەر. لە توێژینەوەی ئەم دواییانەدا زیاتر لە ٢٠٠ جۆری Lepidoptera لە ناوچەکەدا تۆمار کراوە، لەوانە Papilio machaon، Colias croceus و Vanessa atalanta.",
       ar: "تُعدّ كردستان من مناطق التنوع البيولوجي الساخنة. وفّرت جبالها وسهولها وأنهارها موائل حيوية لعشرات أنواع الفراشات المتوطنة والمهاجرة. وثّقت الدراسات الحديثة أكثر من 200 نوع من حرشفيات الأجنحة في المنطقة، منها: أبو الدُّمَّلَيْن (Papilio machaon)، والأصفر المغيوم (Colias croceus)، والأميرال الأحمر (Vanessa atalanta).",
       en: "Kurdistan qualifies as a biodiversity hotspot. Its mountains, plains and rivers provide critical habitats for dozens of native and migratory Lepidoptera. Recent surveys have documented over 200 species in the region, including Papilio machaon (Old World Swallowtail), Colias croceus (Clouded Yellow), and Vanessa atalanta (Red Admiral).",
     },
@@ -167,7 +167,7 @@ const LEPIDO_SECTIONS = [
       en: "Conservation & Threats",
     },
     body: {
-      ku: "نزیکەی ١٠٪ لە جۆرەکانی Lepidoptera مەترسییان لەسەرە. هۆکارەکان بریتین لە: وێرانبوونی ژینگەی سروشتی، بەکارهێنانی ئافەتکوژ (Pesticides)، گەرمبوونی جیهان، و بڵاوبوونەوەی ڕووەکە تازەواردەکان. پارێزگاری لە Corridors — پردی ژینگەیی لە نێوان ناوچە پارێزراوەکاندا — گرنگترین ئامرازی بەرگری لە پەپوولەکانە.",
+      ku: "نزیکەی ١٠٪ی جۆرەکانی Lepidoptera لەژێر مەترسیدان. هۆکارەکان ئەمانەن: وێرانبوونی ژینگەی سروشتی، بەکارهێنانی ئافەتکوژ، گەرمبوونی جیهان، و بڵاوبوونەوەی ڕووەکی نامۆ. گرنگترین ڕێگەی پاراستن ئەوەیە پردێکی ژینگەیی لە نێوان ناوچە پارێزراوەکاندا بمێنێتەوە.",
       ar: "نحو 10% من أنواع Lepidoptera مهددة. تشمل الأسباب الرئيسية: تدمير الموائل، والمبيدات الحشرية، والتغير المناخي، وانتشار النباتات الغازية. يُعدّ الحفاظ على الممرات البيئية (Corridors) الرابطة بين المناطق المحمية من أهم أساليب حماية الفراشات.",
       ar2: "",
       en: "About 10% of Lepidoptera species face extinction risk. Main drivers are habitat loss, pesticide use, climate change, and invasive plant species. Maintaining habitat corridors connecting protected areas is the single most effective conservation tool for butterflies.",
@@ -190,7 +190,7 @@ const LEPIDO_SECTIONS = [
       en: "Mimicry in Lepidoptera",
     },
     body: {
-      ku: "Lepidoptera یەکێکە لە باشترین نموونەکانی تەقلیدکاری لە سروشتدا. دوو جۆری سەرەکی هەیە: ١) Müllerian mimicry — کاتێک چەند جۆری گەندەڵی هاوشێوە دەکەن بۆ ئەوەی نیشانەکە بهێزبێت. ٢) Batesian mimicry — کاتێک جۆرێکی بێزیان شێوەی جۆرێکی گەندەڵ دەگرێتەوە بۆ دووری کردنەوە لە نێچیرواندان.",
+      ku: "Lepidoptera یەکێکە لە ڕوونترین نموونەکانی لاساییکردنەوە لە سروشتدا. دوو جۆری سەرەکی هەیە. یەکەم، Müllerian: چەند جۆرێکی ژەهراوی یەک ڕەنگ بەکاردەهێنن، بۆ ئەوەی نیشانەکە بەهێزتر بێت. دووەم، Batesian: جۆرێکی بێ زیان شێوەی جۆرێکی ژەهراوی وەردەگرێت، بۆ ئەوەی نێچیرخۆر لێی دوور بکەوێتەوە.",
       ar: "تمثّل حرشفيات الأجنحة النموذج الأمثل على ظاهرة المحاكاة في الطبيعة. ثمة نوعان رئيسيان: ١) المحاكاة المولرية (Müllerian) — تشترك فيها أنواع سامة عدة بتصميم تحذيري واحد لتعزيز التأثير. ٢) المحاكاة البيتسية (Batesian) — تحاكي فيها أنواع غير سامة أنواعاً سامة لتجنّب الافتراس.",
       en: "Lepidoptera are textbook examples of mimicry in nature. Two key types exist: ① Müllerian mimicry — multiple toxic species share warning colouration to reinforce the signal. ② Batesian mimicry — a harmless species mimics a toxic one to deceive predators.",
     },
@@ -209,15 +209,15 @@ const LEPIDO_SECTIONS = [
     body: { ku: "", ar: "", en: "" },
     glossary: [
       { term: "Lepidoptera",      ku: "ئۆردەری پەپوولە و فراشەکان",       ar: "رتبة حرشفيات الأجنحة",       en: "Order of butterflies and moths" },
-      { term: "Imago",            ku: "پەپوولەی گەورەی بازانی",             ar: "الحشرة البالغة",              en: "Winged adult stage" },
-      { term: "Chrysalis",        ku: "پیت — قۆناغی گۆڕانکاری",            ar: "الشرنقة — مرحلة التحول",      en: "Pupal stage in butterflies" },
-      { term: "Proboscis",        ku: "لیندی خواردنی لووڵی",               ar: "الخرطوم — أداة الشرب",        en: "Coiled tube for drinking nectar" },
-      { term: "Scales",           ku: "قاوی باڵ — رووپێوی رووناکییەکان",    ar: "حراشف الأجنحة",              en: "Wing scales creating colour" },
-      { term: "Instar",           ku: "قۆناغی لارڤای نێوان دوو کلاو",       ar: "الطور اليرقي بين انسلاخين",   en: "Larval stage between moults" },
-      { term: "Nectaring",        ku: "ئاژمارکردنی بیراو — خواردنی خوراک",  ar: "امتصاص الرحيق",              en: "Feeding on flower nectar" },
-      { term: "Puddling",         ku: "خواردنی ئاو و مینەراڵ لە زەوی شل",   ar: "التبلل — شرب الأملاح من التربة الرطبة", en: "Mineral-drinking from wet soil" },
-      { term: "Diapause",         ku: "خەو یا وەستانی گەشەسەندن لە زستاندا", ar: "السكون — توقف النمو في الشتاء", en: "Dormancy during winter" },
-      { term: "Host Plant",       ku: "ڕووەکی مێوان — ئەوەی لارڤا لەی دەخوات", ar: "النبات العائل للحشرة",        en: "Plant the larva feeds on" },
+      { term: "Imago",            ku: "پەپوولەی گەورەی باڵدار",             ar: "الحشرة البالغة",              en: "Winged adult stage" },
+      { term: "Chrysalis",        ku: "پیت — قۆناغی گۆڕان",            ar: "الشرنقة — مرحلة التحول",      en: "Pupal stage in butterflies" },
+      { term: "Proboscis",        ku: "خرتومی لوولکراو بۆ مژینی شیلەی گوڵ", ar: "الخرطوم — أداة الشرب",        en: "Coiled tube for drinking nectar" },
+      { term: "Scales",           ku: "قاوەکانی باڵ، کە ڕووناکی دەشکێننەوە", ar: "حراشف الأجنحة",              en: "Wing scales creating colour" },
+      { term: "Instar",           ku: "قۆناغی نێوان دوو تێڵان",       ar: "الطور اليرقي بين انسلاخين",   en: "Larval stage between moults" },
+      { term: "Nectaring",        ku: "مژینی شیلەی گوڵ",  ar: "امتصاص الرحيق",              en: "Feeding on flower nectar" },
+      { term: "Puddling",         ku: "مژینی ئاو و کانزا لە خاکی تەڕ",   ar: "التبلل — شرب الأملاح من التربة الرطبة", en: "Mineral-drinking from wet soil" },
+      { term: "Diapause",         ku: "وەستانی گەشە لە زستاندا", ar: "السكون — توقف النمو في الشتاء", en: "Dormancy during winter" },
+      { term: "Host Plant",       ku: "ڕووەکی خانەخوێ — ئەوەی کۆڵۆکەکە لێی دەخوات", ar: "النبات العائل للحشرة",        en: "Plant the larva feeds on" },
     ],
   },
 ];
@@ -360,7 +360,7 @@ function LepidoCard({ section, delay = 0, lang }) {
           </table>
           <p className="ento-body" style={{ marginTop: 12 }}>
             {lang === "ku"
-              ? "ئەم پێنج جۆرە لە تۆماری ناوچەکەدان. گالەریی خوارەوە نموونەی جیهانیشی تێدایە؛ فلتەری «کوردستان» تەنها هەر ئەم جۆرانە پیشان دەدات."
+              ? "ئەم پێنج جۆرە لە تۆماری ناوچەکەدان. گالەریی خوارەوە نموونەی جیهانیشی تێدایە. فلتەری «کوردستان» تەنها ئەم جۆرانە پیشان دەدات."
               : lang === "ar"
               ? "هذه الأنواع الخمسة من سجل المنطقة. معرض الأسفل يضم نماذج من العالم أيضاً؛ مرشح «كردستان» يعرض هذه الأنواع فقط."
               : "These five are the regional record. The gallery below also holds world examples; the Kurdistan filter shows only these species."}
