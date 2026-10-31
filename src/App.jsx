@@ -918,13 +918,6 @@ const CSS = `
   font-size:.84rem; color:#3e4a3a;
   line-height:1.55;
 }
-.ento-plate-credits {
-  display:flex; flex-wrap:wrap; justify-content:center;
-  gap:6px 16px; width:100%; max-width:1080px;
-  margin:clamp(18px,3vw,28px) 0 0;
-  font-size:.68rem; line-height:1.45; color:#4a453c;
-}
-.ento-plate-credits a { color:#4a453c; text-underline-offset:2px; }
 
 /* ══ CHAPTER PAGE WRAPPER ══ */
 .ento-chapter-page {
@@ -1076,8 +1069,6 @@ const CHAPTERS = [
     num: { ku: "چاپتەری یەکەم", en: "Chapter 1", ar: "الفصل الأول" },
     icon: "pin",
     image: "/images/plates/ch1-raparin.jpg",
-    credit: "Chapter 1 — Akam Aziz, CC BY-SA 4.0",
-    source: "https://commons.wikimedia.org/wiki/File:University_of_Raparin_2019.jpg",
     title: { ku: "زانیاری زیادە", en: "Additional Information", ar: "معلومات إضافية" },
     desc: { ku: "دەربارەی پرۆژە، تیم و زانکۆ", en: "About the project, team & university", ar: "عن المشروع والفريق والجامعة" },
   },
@@ -1086,8 +1077,6 @@ const CHAPTERS = [
     num: { ku: "چاپتەری دووەم", en: "Chapter 2", ar: "الفصل الثاني" },
     icon: "beetle",
     image: "/images/plates/ch2-drawer.jpg",
-    credit: "Chapter 2 — Henk Caspers / Naturalis, CC BY-SA 3.0",
-    source: "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_Museum_-_Collection_tower_06_-_Open_drawer_with_mounted_beetles_include_Dorcadion_suverianum_and_D_morosovi.jpg",
     title: { ku: "دەستپێکی ئێنتۆمۆلۆجی", en: "Introduction to Entomology", ar: "مقدمة علم الحشرات" },
     desc: { ku: "پێناسە، مێژوو و گرنگیی مێرووناسی", en: "Definition, history & importance of entomology", ar: "تعريف التاريخ وأهمية علم الحشرات" },
   },
@@ -1096,8 +1085,6 @@ const CHAPTERS = [
     num: { ku: "چاپتەری سێیەم", en: "Chapter 3", ar: "الفصل الثالث" },
     icon: "legs",
     image: "/images/plates/ch3-dragonfly.jpg",
-    credit: "Chapter 3 — Daniel Schwen, CC BY-SA 3.0",
-    source: "https://commons.wikimedia.org/wiki/File:Dragonfly_macro.jpg",
     latin: "Arthropoda",
     title: { ku: "فایلەمی جومگەپێیەکان", en: "Phylum Arthropoda", ar: "شعبة مفصليات الأرجل" },
     desc: { ku: "سیستەمی هەناسەدان، پەیەکەری دەرەکی، چاوی ئاڵۆز و فەرهەنگ", en: "Respiratory system, exoskeleton, compound eyes & glossary", ar: "الجهاز التنفسي والهيكل الخارجي والعيون المركبة والمصطلحات" },
@@ -1107,8 +1094,6 @@ const CHAPTERS = [
     num: { ku: "چاپتەری چوارەم", en: "Chapter 4", ar: "الفصل الرابع" },
     icon: "card",
     image: "/images/plates/ch4-study.jpg",
-    credit: "Chapter 4 — Karolina Fok, CC BY 4.0",
-    source: "https://commons.wikimedia.org/wiki/File:Entomologist_at_work_in_the_Hymenoptera_collection._Institute_of_Systematics_and_Evolution_of_Animals_Polish_Academy_of_Sciences_in_Cracov.jpg",
     title: { ku: "کویز", en: "Quiz", ar: "اختبار" },
     desc: { ku: "تاقیکردنەوەی زانیاریت بە پرسیار و ڤیدیۆ", en: "Test your knowledge with questions & videos", ar: "اختبر معلوماتك بالأسئلة والفيديوهات" },
   },
@@ -1117,8 +1102,6 @@ const CHAPTERS = [
     num: { ku: "چاپتەری پێنجەم", en: "Chapter 5", ar: "الفصل الخامس" },
     icon: "butterfly",
     image: "/images/plates/ch5-machaon.jpg",
-    credit: "Chapter 5 — Charles J. Sharp, CC BY-SA 4.0",
-    source: "https://commons.wikimedia.org/wiki/File:Old_World_swallowtail_(Papilio_machaon)_Corfu_2.jpg",
     latin: "Lepidoptera",
     title: { ku: "پەپوولەکان", en: "Butterflies", ar: "الفراشات" },
     desc: { ku: "ناسنامە، بایۆلۆجی و جۆرە کوردستانییەکان", en: "Identity, biology & Kurdistan species", ar: "الهوية والبيولوجيا وأنواع كردستان" },
@@ -1145,11 +1128,6 @@ function HomeScreen({ lang }) {
               <div className="ento-ch-desc">{ch.desc[lang]}</div>
             </div>
           </a>
-        ))}
-      </div>
-      <div className="ento-plate-credits" dir="ltr">
-        {CHAPTERS.map((ch) => (
-          <a key={ch.id} href={ch.source} target="_blank" rel="noreferrer">{ch.credit}</a>
         ))}
       </div>
     </div>
