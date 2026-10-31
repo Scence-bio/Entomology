@@ -125,7 +125,7 @@ export const QUIZ = [
     q: { ku: "کامەیان نمونەی کۆنترۆڵی بایۆلۆجییە؟", ar: "أي مما يلي مثال على المكافحة الحيوية؟", en: "Which of these is biological control?" },
     opts: { ku: ["ڕشاندنی پێستیساید بە تەنها", "خاڵخاڵۆکە کە شەتەک دەخوات", "سوتاندنی کێڵگە", "هێنانی ڕووەکێکی نامۆ"], ar: ["رش المبيد وحده", "دعسوقة تأكل المن", "حرق الحقل", "إدخال نبات غريب"], en: ["Spraying pesticide alone", "A ladybird eating aphids", "Burning a field", "Bringing in a foreign plant"] },
     correct: 1,
-    why: { ku: "خاڵخاڵۆکە شەتەک دەخوات. کۆڵۆکی تۆڕباڵیش هەر وایە؛ پارازیتۆید هێلکە لە ناو زیانبەخشددا دادەنێت.", ar: "الدعسوقة تأكل المن. يرقة أسد المن كذلك؛ والزنبار الطفيلي يضع بيضه في الآفة.", en: "A ladybird eats aphids. A lacewing larva does too; a parasitoid lays an egg in a pest." },
+    why: { ku: "خاڵخاڵۆکە شەتەک دەخوات. کۆڵۆکی تۆڕباڵیش هەر وایە؛ پارازیتۆید هێلکە لە ناو زیانبەخشدا دادەنێت.", ar: "الدعسوقة تأكل المن. يرقة أسد المن كذلك؛ والزنبار الطفيلي يضع بيضه في الآفة.", en: "A ladybird eats aphids. A lacewing larva does too; a parasitoid lays an egg in a pest." },
   },
   {
     id: 15,
