@@ -15,12 +15,20 @@ function digits(lang, value) {
   return lang === "en" ? s : s.replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]);
 }
 
+// The sheet replaces the built-in questions chapter by chapter: a chapter
+// with no rows in the sheet (a new one, say) keeps its questions.js set.
+function withBuiltIn(sheet) {
+  if (!sheet) return QUIZ;
+  const covered = new Set(sheet.map((q) => q.chapter));
+  return [...sheet, ...QUIZ.filter((q) => !covered.has(q.chapter))];
+}
+
 function useQuestionPool() {
-  const [pool, setPool] = useState(() => cachedSheetQuestions() || QUIZ);
+  const [pool, setPool] = useState(() => withBuiltIn(cachedSheetQuestions()));
   useEffect(() => {
     let live = true;
     loadSheetQuestions().then((questions) => {
-      if (live && questions) setPool(questions);
+      if (live && questions) setPool(withBuiltIn(questions));
     });
     return () => { live = false; };
   }, []);
