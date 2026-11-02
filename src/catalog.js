@@ -7,7 +7,7 @@ export const CHAPTERS = [
     id: "ch1",
     num: { ku: "چاپتەری یەکەم", en: "Chapter 1", ar: "الفصل الأول" },
     icon: "pin",
-    image: "/images/plates/ch1-raparin.jpg",
+    image: "/images/plates/ch1-college-science.jpg",
     alt: {
       ku: "کەمپەسی زانکۆی ڕاپەڕین",
       ar: "حرم جامعة رابرين",

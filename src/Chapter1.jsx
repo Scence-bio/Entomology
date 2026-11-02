@@ -236,14 +236,16 @@ export default function Chapter1({ lang }) {
       <div className="ento-chapter-hero ento-ch1-hero">
         <img
           className="ento-ch1-hero-img"
-          src="/images/plates/ch1-raparin.jpg"
+          src="/images/plates/ch1-college-science.jpg"
           alt={t(lang, {
-            ku: "کەمپەسی زانکۆی ڕاپەڕین",
-            ar: "حرم جامعة رابرين",
-            en: "University of Raparin campus",
+            ku: "کۆلێژی زانست · زانکۆی ڕاپەڕین",
+            ar: "كلية العلوم · جامعة رابرين",
+            en: "College of Science · University of Raparin",
           })}
           loading="eager"
           decoding="async"
+          width="1600"
+          height="1060"
         />
         <div className="ento-ch1-hero-shade" aria-hidden="true" />
         <div className="ento-ch1-hero-copy">
@@ -384,6 +386,100 @@ export default function Chapter1({ lang }) {
                   en: "College of Science · Biology Department. An open instructional resource for students and staff.",
                 })}
               </p>
+              <div
+                className="ento-ch1-inst-gallery"
+                role="group"
+                aria-label={t(lang, {
+                  ku: "وێنەی فەرمیی کەمپەس",
+                  ar: "صور الحرم الرسمية",
+                  en: "Official campus photographs",
+                })}
+              >
+                <figure className="ento-ch1-inst-shot">
+                  <img
+                    src="/images/plates/ch1-college-science.jpg"
+                    alt={t(lang, {
+                      ku: "بینای کۆلێژی زانست",
+                      ar: "مبنى كلية العلوم",
+                      en: "College of Science building",
+                    })}
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="530"
+                  />
+                  <figcaption>
+                    {t(lang, {
+                      ku: "کۆلێژی زانست · sci.uor.edu.krd",
+                      ar: "كلية العلوم · sci.uor.edu.krd",
+                      en: "College of Science · sci.uor.edu.krd",
+                    })}
+                  </figcaption>
+                </figure>
+                <figure className="ento-ch1-inst-shot">
+                  <img
+                    src="/images/plates/ch1-uor-campus.jpg"
+                    alt={t(lang, {
+                      ku: "کەمپەسی سەرەکیی زانکۆی ڕاپەڕین",
+                      ar: "الحرم الرئيسي لجامعة رابرين",
+                      en: "University of Raparin main campus",
+                    })}
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="530"
+                  />
+                  <figcaption>
+                    {t(lang, {
+                      ku: "کەمپەسی زانکۆ · uor.edu.krd",
+                      ar: "حرم الجامعة · uor.edu.krd",
+                      en: "University campus · uor.edu.krd",
+                    })}
+                  </figcaption>
+                </figure>
+                <figure className="ento-ch1-inst-shot">
+                  <img
+                    src="/images/plates/ch1-sci-campus-1.jpg"
+                    alt={t(lang, {
+                      ku: "تاقیگەی کۆلێژی زانست",
+                      ar: "مختبر كلية العلوم",
+                      en: "College of Science laboratory",
+                    })}
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="530"
+                  />
+                  <figcaption>
+                    {t(lang, {
+                      ku: "تاقیگە · گەلەریی کۆلێژ",
+                      ar: "مختبر · معرض الكلية",
+                      en: "Laboratory · college gallery",
+                    })}
+                  </figcaption>
+                </figure>
+                <figure className="ento-ch1-inst-shot">
+                  <img
+                    src="/images/plates/ch1-sci-campus-2.jpg"
+                    alt={t(lang, {
+                      ku: "خوێندکار لەسەر مایکرۆسکۆپ",
+                      ar: "طالبة على المجهر",
+                      en: "Student at the microscope",
+                    })}
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="530"
+                  />
+                  <figcaption>
+                    {t(lang, {
+                      ku: "کارکردن لە تاقیگە · گەلەریی کۆلێژ",
+                      ar: "عمل مخبري · معرض الكلية",
+                      en: "Lab work · college gallery",
+                    })}
+                  </figcaption>
+                </figure>
+              </div>
               <ul className="ento-ch1-links">
                 <li>
                   <a href="https://uor.edu.krd/en/" target="_blank" rel="noopener noreferrer">

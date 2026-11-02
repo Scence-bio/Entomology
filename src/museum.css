@@ -523,7 +523,7 @@ input, textarea, button { caret-color:var(--accent); }
 }
 .ento-ch1-hero-img {
   position:absolute; inset:0; width:100%; height:100%;
-  object-fit:cover; object-position:center 35%;
+  object-fit:cover; object-position:center 42%;
 }
 .ento-ch1-hero-shade {
   position:absolute; inset:0;
@@ -636,12 +636,32 @@ input, textarea, button { caret-color:var(--accent); }
 .ento-ch1-inst-card > p {
   margin:0 0 14px; font-size:.9rem; line-height:1.75; color:var(--text-secondary);
 }
+.ento-ch1-inst-gallery {
+  margin:0 0 14px;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:10px;
+}
+.ento-ch1-inst-shot {
+  margin:0; display:flex; flex-direction:column; gap:6px;
+  min-width:0;
+}
+.ento-ch1-inst-shot img {
+  width:100%; aspect-ratio:16/10; object-fit:cover;
+  object-position:center 40%;
+  background:rgba(18,22,15,.08);
+}
+.ento-ch1-inst-shot figcaption {
+  margin:0; font-size:.68rem; line-height:1.45;
+  color:var(--text-muted); font-family:var(--font-mono);
+  letter-spacing:.02em;
+}
 .ento-ch1-links {
   list-style:none; margin:0; padding:0;
   display:flex; flex-direction:column; gap:8px;
 }
 .ento-ch1-links a {
-  color:var(--accent); text-decoration:none; font-size:.88rem; font-weight:650;
+  color:var(--accent); text-decoration:none; font-size:.88rem; font-weight:600;
 }
 .ento-ch1-links a:hover { text-decoration:underline; text-underline-offset:3px; }
 .ento-ch1-author {
@@ -675,6 +695,7 @@ input, textarea, button { caret-color:var(--accent); }
 }
 @media (max-width:720px) {
   .ento-ch1-steps { grid-template-columns:1fr; }
+  .ento-ch1-inst-gallery { grid-template-columns:1fr; }
   .ento-ch1-author { grid-template-columns:1fr; }
   .ento-ch1-author-photo { max-width:220px; margin-inline:auto; }
   .ento-ch1-meta-row { grid-template-columns:1fr; gap:4px; }
