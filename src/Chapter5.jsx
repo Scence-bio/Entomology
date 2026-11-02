@@ -269,11 +269,7 @@ function LepidoCard({ section, delay = 0, lang }) {
       {section.metamorphStages && (
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 16 }}>
           {section.metamorphStages.map((st, i) => (
-            <div key={i} style={{
-              flex: "1 1 120px", background: "var(--accent-dim)",
-              border: "1.5px solid rgba(245,158,11,.25)", borderRadius: 14,
-              padding: "14px 12px", textAlign: "center",
-            }}>
+            <div key={i} className="ento-stage-chip">
               <div style={{ fontSize: "2rem", marginBottom: 6 }}>{st.icon}</div>
               <div style={{ fontWeight: 800, fontSize: ".85rem", color: "var(--text-primary)", marginBottom: 4 }}>
                 {lang === "ku" ? st.ku : lang === "ar" ? st.ar : st.en}
@@ -290,12 +286,8 @@ function LepidoCard({ section, delay = 0, lang }) {
       {section.classification && (
         <div style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 16 }}>
           {section.classification.map((c, i) => (
-            <div key={i} style={{
-              display: "flex", alignItems: "flex-start", gap: 12,
-              background: "rgba(45,116,23,.06)", border: "1px solid rgba(45,116,23,.12)",
-              borderRadius: 12, padding: "12px 14px",
-            }}>
-              <span style={{ fontSize: "1.4rem", flexShrink: 0 }}>{c.emoji}</span>
+            <div key={i} className="ento-app-row" style={{ alignItems: "flex-start" }}>
+              <span style={{ fontSize: "1.4rem", flexShrink: 0 }} aria-hidden="true">{c.emoji}</span>
               <div>
                 <div className="ento-binomial" style={{ fontSize: "1rem", color: "var(--accent)", marginBottom: 3 }}>{c.family}</div>
                 <div style={{ fontSize: ".84rem", color: "var(--text-secondary)" }}>
@@ -454,17 +446,13 @@ function ButterflyGallery({ lang }) {
           onChange={e => setSearch(e.target.value)}
           placeholder={labelSearch[lang]}
           aria-label={labelSearch[lang]}
-          style={{
-            background: "var(--card-bg)", border: "1.5px solid var(--border-card)",
-            borderRadius: 10, padding: "8px 14px", color: "var(--text-primary)",
-            fontSize: ".85rem", fontFamily: "var(--font-arabic)", outline: "none",
-            width: 200,
-          }}
+          className="ento-filter-control"
+          style={{ width: 200 }}
         />
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
           <span style={{ fontSize: ".78rem", color: "var(--text-muted)" }}>{labelFamily[lang]}</span>
           <select value={familyFilter} onChange={e => setFamilyFilter(e.target.value)}
-            style={{ background: "var(--card-bg)", border: "1.5px solid var(--border-card)", borderRadius: 8, padding: "7px 10px", color: "var(--text-primary)", fontSize: ".82rem", cursor: "pointer" }}>
+            className="ento-filter-control">
             <option value="All">{labelAll[lang]}</option>
             {FAMILIES_LIST.filter(f => f !== "All").map(f => <option key={f} value={f}>{f}</option>)}
           </select>
@@ -472,7 +460,7 @@ function ButterflyGallery({ lang }) {
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
           <span style={{ fontSize: ".78rem", color: "var(--text-muted)" }}>{labelType[lang]}</span>
           <select value={typeFilter} onChange={e => setTypeFilter(e.target.value)}
-            style={{ background: "var(--card-bg)", border: "1.5px solid var(--border-card)", borderRadius: 8, padding: "7px 10px", color: "var(--text-primary)", fontSize: ".82rem", cursor: "pointer" }}>
+            className="ento-filter-control">
             <option value="All">{labelAll[lang]}</option>
             <option value="butterfly">{labelBfly[lang]}</option>
             <option value="moth">{labelMoth[lang]}</option>
@@ -481,7 +469,7 @@ function ButterflyGallery({ lang }) {
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
           <span style={{ fontSize: ".78rem", color: "var(--text-muted)" }}>{labelPlace[lang]}</span>
           <select value={placeFilter} onChange={e => setPlaceFilter(e.target.value)}
-            style={{ background: "var(--card-bg)", border: "1.5px solid var(--border-card)", borderRadius: 8, padding: "7px 10px", color: "var(--text-primary)", fontSize: ".82rem", cursor: "pointer" }}>
+            className="ento-filter-control">
             <option value="All">{labelAll[lang]}</option>
             <option value="kurdistan">{labelLocal[lang]}</option>
             <option value="world">{labelWorld[lang]}</option>
@@ -570,9 +558,9 @@ function ButterflyGallery({ lang }) {
 
 function InfoBox({ label, value }) {
   return (
-    <div style={{ background: "var(--accent-dim)", borderRadius: 10, padding: "10px 12px" }}>
-      <p style={{ fontSize: ".68rem", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: ".1em", margin: "0 0 4px", fontFamily: "var(--font-mono)" }}>{label}</p>
-      <p style={{ fontSize: ".85rem", color: "var(--text-secondary)", margin: 0 }}>{value}</p>
+    <div className="ento-info-box">
+      <p className="ento-info-box-label">{label}</p>
+      <p className="ento-info-box-value">{value}</p>
     </div>
   );
 }
@@ -589,13 +577,7 @@ function SpecCard({ s, onClick, lang, local }) {
       onKeyDown={e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick(); } }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      style={{
-        background: "var(--card-bg)", border: `1.5px solid ${hover ? "var(--accent)" : "var(--border-card)"}`,
-        borderRadius: 14, overflow: "hidden", cursor: "pointer",
-        transition: "border-color .2s, transform .2s",
-        transform: hover ? "translateY(-4px)" : "none",
-        boxShadow: hover ? "0 8px 28px rgba(0,0,0,.15)" : "none",
-      }}
+      className={`ento-spec-card${hover ? " is-hover" : ""}`}
     >
       {/* Image or colour fallback */}
       <div style={{ width: "100%", height: 150, background: s.color + "22", overflow: "hidden", position: "relative" }}>
@@ -616,15 +598,15 @@ function SpecCard({ s, onClick, lang, local }) {
           </span>
         )}
         {s.type === "moth" && (
-          <span style={{ position: "absolute", top: 8, right: 8, background: "rgba(0,0,0,.55)", color: "#a78bfa", borderRadius: 10, padding: "2px 8px", fontSize: ".7rem", backdropFilter: "blur(4px)" }}>{lang === "ku" ? "پەپوولەی شەو" : lang === "ar" ? "عثة" : "moth"}</span>
+          <span className="ento-moth-badge">{lang === "ku" ? "پەپوولەی شەو" : lang === "ar" ? "عثة" : "moth"}</span>
         )}
       </div>
       <div style={{ padding: "10px 12px" }}>
         <p style={{ fontSize: ".88rem", fontWeight: 700, color: "var(--text-primary)", margin: "0 0 2px" }}>{s.name}</p>
         <p className="ento-binomial" style={{ fontSize: ".9rem", color: "var(--accent)", margin: "0 0 8px" }}>{s.sci}</p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-          <span className="ento-binomial" style={{ background: fam.bg, color: fam.text, borderRadius: 8, padding: "2px 8px", fontSize: ".85rem" }}>{s.family}</span>
-          <span style={{ background: "rgba(46,125,26,.12)", color: "var(--text-secondary)", borderRadius: 8, padding: "2px 8px", fontSize: ".7rem", fontFamily: "var(--font-mono)" }}>{s.region.split(",")[0]}</span>
+          <span className="ento-binomial ento-chip" style={{ background: fam.bg, color: fam.text }}>{s.family}</span>
+          <span className="ento-chip ento-chip-muted">{s.region.split(",")[0]}</span>
         </div>
       </div>
     </div>

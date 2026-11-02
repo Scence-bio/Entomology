@@ -9,18 +9,18 @@ function text(lang, pack) {
 
 function Hero({ lang, chapter }) {
   return (
-    <div className="ento-chapter-hero" style={{ position: "relative", overflow: "hidden", minHeight: 420, padding: 0, background: "#0d2107" }}>
+    <div className="ento-chapter-hero" style={{ position: "relative", overflow: "hidden", minHeight: 420, padding: 0 }}>
       <img
         src={chapter.image}
         alt=""
         style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: chapter.focus || "center" }}
       />
-      <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,.42)", pointerEvents: "none" }} />
+      <div className="ento-chapter-hero-scrim" />
       <div style={{ position: "relative", zIndex: 2, minHeight: 420, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "clamp(36px,6vw,64px) 20px" }}>
         <div className="ento-chapter-hero-num">{text(lang, chapter.num)}</div>
         <span className="ento-chapter-hero-icon"><Mark name={chapter.icon} /></span>
         <h1 className="ento-chapter-hero-title">{text(lang, chapter.title)}</h1>
-        {chapter.latin && <div className="ento-binomial" style={{ color: "#e8d7b0", fontSize: "1.15rem", marginTop: 6 }}>{chapter.latin}</div>}
+        {chapter.latin && <div className="ento-binomial">{chapter.latin}</div>}
       </div>
     </div>
   );

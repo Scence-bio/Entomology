@@ -14,7 +14,6 @@ function ChapterHeroMedia({ lang, numKu, numAr, numEn, icon, titleKu, titleAr, t
         overflow: "hidden",
         minHeight: "420px",
         padding: 0,
-        background: "#0d2107",
       }}
     >
       {video && (
@@ -57,15 +56,7 @@ function ChapterHeroMedia({ lang, numKu, numAr, numEn, icon, titleKu, titleAr, t
         />
       )}
 
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          zIndex: 1,
-          background: "rgba(0,0,0,.42)",
-          pointerEvents: "none",
-        }}
-      />
+      <div className="ento-chapter-hero-scrim" />
 
       <div
         style={{
@@ -355,7 +346,7 @@ function ArthropodaCard({ section, delay = 0, lang }) {
       </div>
 
       {section.image && (
-        <div style={{ margin: "16px 0", borderRadius: 18, overflow: "hidden", border: "1.5px solid var(--border-card)", background: "var(--accent-dim)" }}>
+        <div className="ento-map-wrap" style={{ margin: "16px 0" }}>
           <img
             src={section.image}
             alt={section.titles.en}
