@@ -753,132 +753,8 @@ const NEUROPTERA = {
   ],
 };
 
-const KEY_NODES = {
-  start: {
-    q: {
-      ku: "مێرووەکە باڵی هەیە؟",
-      ar: "هل للحشرة أجنحة؟",
-      en: "Does the insect have wings?",
-    },
-    choices: [
-      { label: { ku: "بەڵێ", ar: "نعم", en: "Yes" }, next: "winged" },
-      { label: { ku: "نەخێر", ar: "لا", en: "No" }, next: "wingless" },
-    ],
-  },
-  wingless: {
-    q: {
-      ku: "کەمەرێکی باریکی هەیە، یان دەمێکی کونکەری؟",
-      ar: "أله خصر ضيق، أم فم ثاقب؟",
-      en: "Does it have a narrow waist, or a piercing beak?",
-    },
-    choices: [
-      { label: { ku: "کەمەری باریک — کارگەری مێروولە", ar: "خصر ضيق — شغالة نمل", en: "Narrow waist — ant worker" }, next: "hymenoptera" },
-      { label: { ku: "دەمی کونکەر — شەتەکی بێباڵ", ar: "فم ثاقب — من بلا جناح", en: "Piercing beak — wingless aphid" }, next: "hemiptera" },
-    ],
-  },
-  winged: {
-    q: {
-      ku: "چەند جووت باڵی فڕینی هەیە؟",
-      ar: "كم زوج أجنحة طيران؟",
-      en: "How many pairs of flying wings?",
-    },
-    choices: [
-      { label: { ku: "یەک جووت (+ هەڵتەر)", ar: "زوج واحد (+ دبوس توازن)", en: "One pair (+ halteres)" }, next: "diptera" },
-      { label: { ku: "دوو جووت", ar: "زوجان", en: "Two pairs" }, next: "two_pairs" },
-    ],
-  },
-  two_pairs: {
-    q: {
-      ku: "باڵی پێشەوە چۆنە؟",
-      ar: "كيف الجناح الأمامي؟",
-      en: "What is the forewing like?",
-    },
-    choices: [
-      { label: { ku: "قاوغی ڕەق، لەسەر هێڵێکی ڕاست", ar: "غمد صلب على خط مستقيم", en: "Hard covers in a straight line" }, next: "coleoptera" },
-      { label: { ku: "نیوە قاوغ، نیوە پەردە", ar: "نصفه غمد ونصفه غشاء", en: "Half hard, half membrane" }, next: "hemiptera" },
-      { label: { ku: "پۆشراو بە قاو", ar: "مغطى بحراشف", en: "Covered in scales" }, next: "lepidoptera" },
-      { label: { ku: "پەردەیی یان تۆڕاوی، بێ قاو", ar: "غشائي أو شبكي بلا حراشف", en: "Membranous or netted, no scales" }, next: "membrane" },
-    ],
-  },
-  membrane: {
-    q: {
-      ku: "کام نیشانە دەیبینیت؟",
-      ar: "أي علامة ترى؟",
-      en: "Which mark do you see?",
-    },
-    choices: [
-      { label: { ku: "کەمەری باریک + hamuli", ar: "خصر ضيق + خطاطيف", en: "Narrow waist + hamuli" }, next: "hymenoptera" },
-      { label: { ku: "قاچی دواوە درێژ بۆ باز", ar: "أرجل خلفية للقفز", en: "Long hind legs for a jump" }, next: "orthoptera" },
-      { label: { ku: "چاوی گەورە، باڵ کراوە یان تاو دراو", ar: "عين كبيرة، أجنحة مفتوحة أو مطوية", en: "Large eyes, wings open or folded" }, next: "odonata" },
-      { label: { ku: "باڵی تۆڕاوی نەرم، بێ کەمەر", ar: "جناح شبكي لين بلا خصر", en: "Soft netted wings, no waist" }, next: "neuroptera" },
-    ],
-  },
-  lepidoptera: {
-    result: { ku: "Lepidoptera — پەپوولە", ar: "Lepidoptera — فراشة", en: "Lepidoptera — butterfly or moth" },
-    note: { ku: "باڵەکە بە قاو داپۆشراوە. چاپتەری چوارەم.", ar: "الجناح مغطى بالحراشف. الفصل الرابع.", en: "The wing is covered in scales. Chapter 4." },
-    href: "#/ch5",
-  },
-  hymenoptera: {
-    result: { ku: "Hymenoptera — مێروولە، هەنگ یان زەنبوور", ar: "Hymenoptera — نمل أو نحل أو زنابير", en: "Hymenoptera — ant, bee or wasp" },
-    note: { ku: "کەمەری باریک و باڵی پەردەیی. چاپتەری پێنجەم.", ar: "خصر ضيق وأجنحة غشائية. الفصل الخامس.", en: "A narrow waist and membranous wings. Chapter 5." },
-    href: "#/ch6",
-  },
-  coleoptera: {
-    result: { ku: "Coleoptera — قوڕقوڕە", ar: "Coleoptera — خنفساء", en: "Coleoptera — beetle" },
-    note: { ku: "elytra قاوغی ڕەقە. چاپتەری شەشەم.", ar: "الأغماد elytra صلبة. الفصل السادس.", en: "The elytra are hard covers. Chapter 6." },
-    href: "#/ch7",
-  },
-  diptera: {
-    result: { ku: "Diptera — مێش یان مێشوولە", ar: "Diptera — ذبابة أو بعوضة", en: "Diptera — fly or mosquito" },
-    note: { ku: "یەک جووت باڵ و هەڵتەر. چاپتەری حەوتەم.", ar: "زوج أجنحة ودبوس توازن. الفصل السابع.", en: "One pair of wings and halteres. Chapter 7." },
-    href: "#/ch8",
-  },
-  hemiptera: {
-    result: { ku: "Hemiptera — شەتەک یان سنە", ar: "Hemiptera — من أو بق", en: "Hemiptera — aphid or true bug" },
-    note: { ku: "دەمی کونکەر. چاپتەری هەشتەم.", ar: "فم ثاقب ماص. الفصل الثامن.", en: "A piercing-sucking beak. Chapter 8." },
-    href: "#/ch10",
-  },
-  orthoptera: {
-    result: { ku: "Orthoptera — جڕوشک یان سیسرک", ar: "Orthoptera — جندب أو صرصار", en: "Orthoptera — grasshopper or cricket" },
-    note: { ku: "بازدان بە قاچی دواوە. چاپتەری نۆیەم.", ar: "قفز بالأرجل الخلفية. الفصل التاسع.", en: "A jump with the hind legs. Chapter 9." },
-    href: "#/ch11",
-  },
-  odonata: {
-    result: { ku: "Odonata — مێرووی ئاو", ar: "Odonata — رعاش", en: "Odonata — dragonfly or damselfly" },
-    note: { ku: "چاوی گەورە و باڵی تۆڕاوی. چاپتەری نۆیەم.", ar: "عين كبيرة وجناح شبكي. الفصل التاسع.", en: "Large eyes and netted wings. Chapter 9." },
-    href: "#/ch11",
-  },
-  neuroptera: {
-    result: { ku: "Neuroptera — تۆڕباڵ", ar: "Neuroptera — أسد المن", en: "Neuroptera — lacewing" },
-    note: { ku: "باڵی تۆڕاوی نەرم، بێ کەمەر. چاپتەری دەیەم.", ar: "جناح شبكي لين بلا خصر. الفصل العاشر.", en: "Soft netted wings, no waist. Chapter 10." },
-    href: "#/ch13",
-  },
-};
-
 function KeyChapter({ lang, quiz }) {
-  const [nodeId, setNodeId] = useState("start");
-  const [trail, setTrail] = useState(["start"]);
-  const node = KEY_NODES[nodeId];
   const dir = lang === "en" ? "ltr" : "rtl";
-  const done = Boolean(node.result);
-
-  function choose(next) {
-    setNodeId(next);
-    setTrail((prev) => [...prev, next]);
-  }
-
-  function restart() {
-    setNodeId("start");
-    setTrail(["start"]);
-  }
-
-  function back() {
-    if (trail.length < 2) return;
-    const nextTrail = trail.slice(0, -1);
-    setTrail(nextTrail);
-    setNodeId(nextTrail[nextTrail.length - 1]);
-  }
-
   return (
     <div className="ento-chapter-page">
       <Hero lang={lang} chapter={{
@@ -897,10 +773,10 @@ function KeyChapter({ lang, quiz }) {
           </div>
           <p className="ento-body" style={{ marginBottom: 0 }}>
             {lang === "ku"
-              ? "لە هەر هەنگاوێکدا یەک پرسیار هەیە. وەڵامەکەت دەتبات بۆ هەنگاوی دواتر، تا ئۆردەرەکە دەردەکەوێت. ئەم کلیلە تەنها ئەو ئۆردەرانە دەگرێتەوە کە لەم ئەتڵەسەدا فێر کراون، نەک هەموو مێرووی جیهان."
+              ? "دوو ڕێگا هەیە: پرسیار بە پرسیار، یان هەڵبژاردنی نیشانەکان. کلیلەکە تەنها ئۆردەرەکانی ئەم ئەتڵەسە دەگرێتەوە."
               : lang === "ar"
-              ? "في كل خطوة سؤال واحد. جوابك ينقلك إلى الخطوة التالية حتى تظهر الرتبة. هذا المفتاح يغطي فقط الرتب التي عُلّمت في هذا الأطلس، لا كل حشرات العالم."
-              : "Each step has one question. Your answer moves you to the next step until an order appears. This key covers only the orders taught in this atlas, not every insect on earth."}
+              ? "طريقتان: سؤالاً بسؤال، أو اختيار العلامات. يغطي المفتاح فقط رتب هذا الأطلس."
+              : "Two ways: step-by-step questions, or selecting traits. The key covers only the orders in this atlas."}
           </p>
         </article>
         <article className="ento-card ento-visible" id="key-run" style={{ direction: dir }}>
@@ -910,38 +786,7 @@ function KeyChapter({ lang, quiz }) {
               <div className="ento-card-title-ku">{lang === "ku" ? "کلیلەکە" : lang === "ar" ? "المفتاح" : "The key"}</div>
             </div>
           </div>
-          {!done ? (
-            <>
-              <p className="ento-body">{text(lang, node.q)}</p>
-              <div className="ento-pick-row">
-                {node.choices.map((choice) => (
-                  <button key={choice.next} type="button" className="ento-pick" onClick={() => choose(choice.next)}>
-                    <span>{text(lang, choice.label)}</span>
-                  </button>
-                ))}
-              </div>
-            </>
-          ) : (
-            <>
-              <p className="ento-body" style={{ marginBottom: 8 }}>
-                <span className="ento-binomial">{text(lang, node.result)}</span>
-              </p>
-              <p className="ento-body">{text(lang, node.note)}</p>
-              <div className="ento-pick-row">
-                <a className="ento-pick" href={node.href}><span>{lang === "ku" ? "بڕۆ بۆ چاپتەرەکە" : lang === "ar" ? "إلى الفصل" : "Open the chapter"}</span></a>
-              </div>
-            </>
-          )}
-          <div className="ento-pick-row" style={{ marginTop: 8 }}>
-            {trail.length > 1 && (
-              <button type="button" className="ento-pick" onClick={back}>
-                <span>{lang === "ku" ? "گەڕانەوە" : lang === "ar" ? "رجوع" : "Back"}</span>
-              </button>
-            )}
-            <button type="button" className="ento-pick" onClick={restart}>
-              <span>{lang === "ku" ? "لە سەرەتاوە" : lang === "ar" ? "من البداية" : "Start over"}</span>
-            </button>
-          </div>
+          <IdKey lang={lang} compact />
         </article>
       </div>
       <QuizSection lang={lang} chapter={quiz} />
