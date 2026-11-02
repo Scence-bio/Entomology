@@ -1,4 +1,4 @@
-/** Shared chapter catalog — home, nav, search, sources, sitemap. */
+/** Shared chapter catalog — home, nav, search, sitemap. */
 
 export const SITE_URL = "https://www.entomo.online";
 export const VERSION = "0.2.0";
@@ -350,23 +350,6 @@ export const LEARNING_PATH = [
     desc: { ku: "تاقیکردنەوەی گشتی", ar: "اختبار عام", en: "Full knowledge check" },
     chapters: ["ch4"],
   },
-];
-
-export const IMAGE_CREDITS = [
-  { chapter: "ch1", file: "University of Raparin 2019.jpg", credit: "Akam Aziz", license: "CC BY-SA 4.0", via: "Wikimedia Commons" },
-  { chapter: "ch2", file: "Naturalis beetle drawer", credit: "Henk Caspers / Naturalis", license: "CC BY-SA 3.0", via: "Wikimedia Commons" },
-  { chapter: "ch3", file: "Dragonfly macro.jpg", credit: "Daniel Schwen", license: "CC BY-SA 3.0", via: "Wikimedia Commons" },
-  { chapter: "ch4", file: "Entomologist at drawer", credit: "Karolina Fok", license: "CC BY 4.0", via: "Wikimedia Commons" },
-  { chapter: "ch5", file: "Papilio machaon Corfu 2", credit: "Charles J. Sharp", license: "CC BY-SA 4.0", via: "Wikimedia Commons" },
-  { chapter: "ch6", file: "Apis mellifera flying.jpg", credit: "Wikimedia Commons contributors", license: "CC BY / CC BY-SA", via: "Wikimedia Commons" },
-  { chapter: "ch7", file: "Coccinella septempunctata Luc Viatour.JPG", credit: "Luc Viatour", license: "CC BY-SA", via: "Wikimedia Commons" },
-  { chapter: "ch8", file: "Anopheles stephensi.jpeg", credit: "Wikimedia Commons contributors", license: "CC BY / public domain", via: "Wikimedia Commons" },
-  { chapter: "ch9", file: "CSIRO insect net", credit: "CSIRO", license: "CC BY", via: "Wikimedia Commons" },
-  { chapter: "ch10", file: "Nezara viridula MHNT verte.jpg", credit: "MHNT", license: "CC BY-SA", via: "Wikimedia Commons" },
-  { chapter: "ch11", file: "Scarlet darter female Bulgaria", credit: "Wikimedia Commons contributors", license: "CC BY-SA", via: "Wikimedia Commons" },
-  { chapter: "ch12", file: "Monarch chrysalis", credit: "Wikimedia Commons contributors", license: "CC BY / CC BY-SA", via: "Wikimedia Commons" },
-  { chapter: "ch13", file: "Common Green Lacewing - Chrysoperla carnea (24643542710).jpg", credit: "Line Sabroe", license: "CC BY 2.0", via: "Wikimedia Commons / Flickr" },
-  { chapter: "ch14", file: "Insect collection.jpg", credit: "Greg09Ag", license: "CC BY-SA 3.0", via: "Wikimedia Commons" },
 ];
 
 export function chapterById(id) {

@@ -25,7 +25,6 @@ export function AppFooter({ lang, sections }) {
             </div>
             <div className="ento-footer-links">
               {[
-                { href: "#/sources", internal: true, ku: "سەرچاوە و مۆڵەت", ar: "المصادر والتراخيص", en: "Sources & licenses" },
                 { href: "https://gov.krd/mohe/",                             ku: "وەزارەتی خوێندنی باڵا و توێژینەوەی زانستی",    ar: "وزارة التعليم العالي والبحث العلمي",        en: "Ministry of Higher Ed. & Scientific Research" },
                 { href: "https://uor.edu.krd/en/",                           ku: "زانکۆی ڕاپەڕین",           ar: "جامعة رابرين",                en: "University of Raparin" },
                 { href: "https://sci.uor.edu.krd/en/",                       ku: "کۆلێژی زانست",             ar: "كلية العلوم",                 en: "College of Science" },
@@ -36,7 +35,8 @@ export function AppFooter({ lang, sections }) {
                   key={link.href}
                   className="ento-footer-link"
                   href={link.href}
-                  {...(link.internal ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span className="ento-footer-link-arrow">{lang === "en" ? "→" : "←"}</span>
                   <span>{lang === "ku" ? link.ku : lang === "ar" ? link.ar : link.en}</span>

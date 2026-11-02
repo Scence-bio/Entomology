@@ -3,7 +3,6 @@ import { Mark } from "./marks";
 import "./museum.css";
 import { CHAPTERS, LEARNING_PATH, searchChapters, VERSION } from "./catalog";
 import { ChapterNav } from "./ChapterNav";
-import SourcesPage from "./Sources";
 import NotFoundPage from "./NotFound";
 
 const later = (name) => lazy(() => import("./LaterChapters").then((m) => ({ default: m[name] })));
@@ -197,10 +196,7 @@ function HomeScreen({ lang }) {
           ))}
         </div>
       )}
-      <p className="ento-home-meta">
-        Atlas of Entomology · v{VERSION} ·{" "}
-        <a href="#/sources">{lang === "ku" ? "سەرچاوە و مۆڵەت" : lang === "ar" ? "المصادر والتراخيص" : "Sources & licenses"}</a>
-      </p>
+      <p className="ento-home-meta">Atlas of Entomology · v{VERSION}</p>
     </div>
   );
 }
@@ -214,7 +210,6 @@ function pageFromHash() {
   if (!hash.startsWith("#/")) return null;
   const id = decodeURIComponent(hash.slice(2).split(/[/?#]/)[0]);
   if (!id || id === "home") return "home";
-  if (id === "sources") return "sources";
   if (CHAPTER_PAGES[id]) return id;
   return "notfound";
 }
@@ -305,7 +300,6 @@ export default function EntomologyPage() {
           <HomeScreen lang={lang} />
         </>
       )}
-      {page === "sources" && <SourcesPage lang={lang} />}
       {page === "notfound" && <NotFoundPage lang={lang} />}
       {ChapterPage && (
         <Suspense fallback={<div className="ento-chapter-page" />}>

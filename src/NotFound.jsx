@@ -23,9 +23,6 @@ export default function NotFoundPage({ lang }) {
           <a className="ento-nav-btn" href="#/ch14">
             {lang === "ku" ? "کلیلی ناسینەوە" : lang === "ar" ? "مفتاح التعريف" : "Identification key"}
           </a>
-          <a className="ento-nav-btn" href="#/sources">
-            {lang === "ku" ? "سەرچاوەکان" : lang === "ar" ? "المصادر" : "Sources"}
-          </a>
         </div>
       </div>
       <AppFooter lang={lang} />
