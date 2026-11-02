@@ -1,45 +1,194 @@
 import { useState, useRef, useEffect } from "react";
 import { Mark } from "./marks";
 
-const TEAM = [
-  {
-    img: "/images/team/mahmood.webp",
-    nameKu: "مەحموود خدر فەقێ ڕەسوڵ",
-    nameAr: "محمود خدر فقێ رسول",
-    nameEn: "Mahmood Khdir Faqe Rasul",
-    roleKu: "خوێندکاری بایۆلۆجی · گەشەپێدەری وێب سایت",
-    roleAr: "طالب علوم بايولوجي · مطور موقع",
-    roleEn: "Biology Student · Website Developer",
-    icon: "💻",
-  }
-];
+function t(lang, pack) {
+  return pack[lang] || pack.en;
+}
 
+const AUTHOR = {
+  img: "/images/team/mahmood.webp",
+  name: {
+    ku: "مەحموود خدر فەقێ ڕەسوڵ",
+    ar: "محمود خدر فقێ رسول",
+    en: "Mahmood Khdir Faqe Rasul",
+  },
+  latin: "Mahmood Khdir Faqe Rasul",
+  role: {
+    ku: "خوێندکاری بەشی بایۆلۆجی · گەشەپێدەری ئەتڵەس",
+    ar: "طالب قسم علوم الحياة · مطور الأطلس",
+    en: "Biology student · Atlas developer",
+  },
+  affiliation: {
+    ku: "زانکۆی ڕاپەڕین · کۆلێژی زانست · بەشی بایۆلۆجی",
+    ar: "جامعة رابرين · كلية العلوم · قسم علوم الحياة",
+    en: "University of Raparin · College of Science · Biology Department",
+  },
+};
 
-const SECTIONS = [
+const OUTCOMES = [
   {
-    id: "intro",
-    icon: "📘",
-    titles: { ku: "پێشەکی", ar: "المقدمة", en: "Introduction" }
+    id: "01",
+    title: {
+      ku: "دیجیتاڵکردنی ناوەڕۆکی ئەکادیمی",
+      ar: "رقمنة المحتوى الأكاديمي",
+      en: "Digitising academic content",
+    },
+    body: {
+      ku: "گواستنەوەی زانیاریی مێرووناسی لە فۆرمی کاغەز و وانەی کلاسیک بۆ پلاتفۆرمێکی وێبیی سێ زمانە، گونجاو بۆ خوێندن و پێداچوونەوە.",
+      ar: "نقل معرفة علم الحشرات من الورق والمحاضرة إلى منصة ويب ثلاثية اللغة للمطالعة والمراجعة.",
+      en: "Moving entomological knowledge from print and lecture notes into a trilingual web platform for study and revision.",
+    },
   },
   {
-    id: "goals",
-    icon: "🎯",
-    titles: { ku: "ئامانج", ar: "الأهداف", en: "Goals" }
+    id: "02",
+    title: {
+      ku: "سەرچاوە بە زمانی دایک و زمانە زانستییەکان",
+      ar: "مصدر باللغة الأم واللغات العلمية",
+      en: "Mother-tongue and scientific languages",
+    },
+    body: {
+      ku: "پێشکەشکردنی دەقی فێرکاری بە کوردی، عەرەبی و ئینگلیزی، لەگەڵ ناوی زانستیی لاتینی و زاراوەی تەکنیکی.",
+      ar: "تقديم نص تعليمي بالكردية والعربية والإنجليزية مع الأسماء العلمية اللاتينية والمصطلح التقني.",
+      en: "Delivering instructional text in Kurdish, Arabic and English, with Latin binomials and technical terminology.",
+    },
   },
   {
-    id: "team",
-    icon: "👥",
-    titles: { ku: "دەربارەی ئێمە", ar: "معلومات عنا", en: "About Us" }
-  }
+    id: "03",
+    title: {
+      ku: "پۆلێن و ناسینەوەی کارلێکەر",
+      ar: "تصنيف وتعريف تفاعليان",
+      en: "Interactive classification and identification",
+    },
+    body: {
+      ku: "ڕوونکردنەوەی ئۆردەر و خێزان، کلیلی ناسینەوە، و نموونەی ناوچەیی بۆ جیاکردنەوەی pollinator و pest و vector.",
+      ar: "توضيح الرتب والفصائل ومفتاح التعريف وأمثلة إقليمية لتمييز الملقّح والآفة والناقل.",
+      en: "Explaining orders and families, an identification key, and regional examples that separate pollinators, pests and vectors.",
+    },
+  },
+  {
+    id: "04",
+    title: {
+      ku: "گرێدانی ناوچە و ژینگە",
+      ar: "ربط المنطقة والبيئة",
+      en: "Linking region and environment",
+    },
+    body: {
+      ku: "تیشک خستنە سەر فەونای کوردستان و ناوچەی Irano-Anatolian، و ڕۆڵی مێروو وەک bioindicator و لە کشتوکاڵدا.",
+      ar: "إبراز فونة كردستان ونقطة Irano-Anatolian ودور الحشرات كمؤشرات حيوية وفي الزراعة.",
+      en: "Highlighting Kurdistan’s fauna within the Irano-Anatolian hotspot, and insects as bioindicators and agricultural agents.",
+    },
+  },
+  {
+    id: "05",
+    title: {
+      ku: "پشتیوانی خوێندن و توێژینەوەی سەرەتایی",
+      ar: "دعم الدراسة والبحث الأولي",
+      en: "Supporting study and early research",
+    },
+    body: {
+      ku: "دابینکردنی چوارچێوەیەکی ڕێکخراو بۆ خوێندکارانی بایۆلۆجی: فەرهەنگ، کویز، و میتۆدی کێڵگە و لەیبڵ.",
+      ar: "توفير إطار منظم لطلاب علوم الحياة: مسرد واختبار وطرائق الحقل والبطاقة.",
+      en: "Providing a structured frame for biology students: glossary, quiz, and field-and-label methods.",
+    },
+  },
+  {
+    id: "06",
+    title: {
+      ku: "هۆشیاری و پاراستنی مێروو",
+      ar: "الوعي وحفظ الحشرات",
+      en: "Awareness and insect conservation",
+    },
+    body: {
+      ku: "گۆڕینی تێڕوانینی نەرێنی بەرامبەر مێروو، و پێشنیاری IPM و پاراستنی habitat لەبری پشتبەستنی تەنها بە سم.",
+      ar: "تعديل النظرة السلبية إلى الحشرات واقتراح IPM وحفظ الموائل بدل الاعتماد على المبيدات وحدها.",
+      en: "Shifting negative attitudes toward insects and promoting IPM and habitat care over chemistry-only control.",
+    },
+  },
 ];
 
+const SCOPE = [
+  {
+    label: { ku: "ئاست", ar: "المستوى", en: "Level" },
+    value: {
+      ku: "خوێندنی باڵا — پێشەکیی مێرووناسی",
+      ar: "التعليم العالي — مقدمة في علم الحشرات",
+      en: "Undergraduate — introductory entomology",
+    },
+  },
+  {
+    label: { ku: "زمان", ar: "اللغة", en: "Languages" },
+    value: {
+      ku: "کوردی (سۆرانی)، عەرەبی، ئینگلیزی + لاتینی",
+      ar: "الكردية والسربية والعربية والإنجليزية + اللاتينية",
+      en: "Kurdish (Sorani), Arabic, English + Latin",
+    },
+  },
+  {
+    label: { ku: "ناوەڕۆک", ar: "المحتوى", en: "Content" },
+    value: {
+      ku: "بنەما، Arthropoda، ئۆردەرەکان، کێڵگە، کلیل، کویز",
+      ar: "الأسس وArthropoda والرتب والحقل والمفتاح والاختبار",
+      en: "Foundations, Arthropoda, orders, field work, key, quiz",
+    },
+  },
+  {
+    label: { ku: "دامەزراوە", ar: "المؤسسة", en: "Institution" },
+    value: {
+      ku: "زانکۆی ڕاپەڕین · کۆلێژی زانست",
+      ar: "جامعة رابرين · كلية العلوم",
+      en: "University of Raparin · College of Science",
+    },
+  },
+];
 
-function useInView(ref, { threshold = 0.07, rootMargin = "0px 0px -20px 0px" } = {}) {
+const HOW_TO = [
+  {
+    step: "01",
+    title: { ku: "نەخشەی فێرکاری", ar: "مسار التعلم", en: "Learning path" },
+    body: {
+      ku: "لە سەرەکیەوە بە ڕیز بخوێنە: دەستپێک → ئۆردەرەکان → کێڵگە و کلیل → کویز.",
+      ar: "من الرئيسية اقرأ بالترتيب: البداية ثم الرتب ثم الحقل والمفتاح ثم الاختبار.",
+      en: "From Home, follow the path: foundations → orders → field and key → quiz.",
+    },
+  },
+  {
+    step: "02",
+    title: { ku: "کلیلی ناسینەوە", ar: "مفتاح التعريف", en: "Identification key" },
+    body: {
+      ku: "بۆ نمونەیەکی نادیار، کلیلی ڕێنیشاندەر یان نیشانەکان بەکاربهێنە؛ ئەنجامەکە بە چاپتەری ئۆردەر ببەستەوە.",
+      ar: "للعينة المجهولة استخدم المفتاح الإرشادي أو الصفات، ثم اربط النتيجة بفصل الرتبة.",
+      en: "For an unknown specimen, use the guided key or traits, then open the matching order chapter.",
+    },
+  },
+  {
+    step: "03",
+    title: { ku: "کویز و پێداچوونەوە", ar: "الاختبار والمراجعة", en: "Quiz and revision" },
+    body: {
+      ku: "دوای خوێندن، کویز بکە بۆ پشکنینی تێگەیشتن؛ وەڵامە هەڵەکان بگەڕێنەوە بۆ بەشی پەیوەندیدار.",
+      ar: "بعد القراءة خض الاختبار لقياس الفهم، وارجع للأقسام ذات الصلة عند الخطأ.",
+      en: "After reading, take the quiz to check understanding and revisit linked sections on mistakes.",
+    },
+  },
+];
+
+const NAV = [
+  { id: "preface", ku: "پێشەکی", ar: "المقدمة", en: "Preface" },
+  { id: "scope", ku: "چوارچێوە", ar: "الإطار", en: "Scope" },
+  { id: "outcomes", ku: "ئامانج", ar: "المخرجات", en: "Outcomes" },
+  { id: "howto", ku: "چۆنیەتی", ar: "الاستخدام", en: "How to use" },
+  { id: "institution", ku: "دامەزراوە", ar: "المؤسسة", en: "Institution" },
+  { id: "author", ku: "نووسەر", ar: "المؤلف", en: "Author" },
+];
+
+function useInView(ref, { threshold = 0.08, rootMargin = "0px 0px -24px 0px" } = {}) {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
-    if (!ref.current) return;
+    if (!ref.current) return undefined;
     const obs = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { setVisible(true); obs.disconnect(); }
+      if (e.isIntersecting) {
+        setVisible(true);
+        obs.disconnect();
+      }
     }, { threshold, rootMargin });
     obs.observe(ref.current);
     return () => obs.disconnect();
@@ -47,246 +196,252 @@ function useInView(ref, { threshold = 0.07, rootMargin = "0px 0px -20px 0px" } =
   return visible;
 }
 
-function TeamSection({ lang }) {
+function SectionNav({ lang }) {
+  return (
+    <nav className="ento-section-nav" aria-label={t(lang, { ku: "بەشەکانی چاپتەر", ar: "أقسام الفصل", en: "Chapter sections" })}>
+      {NAV.map((item) => (
+        <a key={item.id} className="ento-snav-pill" href={`#${item.id}`}>
+          {item[lang]}
+        </a>
+      ))}
+    </nav>
+  );
+}
+
+function Block({ id, lang, title, lead, children }) {
   const ref = useRef(null);
   const visible = useInView(ref);
+  const dir = lang === "en" ? "ltr" : "rtl";
   return (
     <section
       ref={ref}
-      id="team"
-      className={`ento-team-section ${visible ? "ento-visible" : ""}`}
-      dir={lang === "en" ? "ltr" : "rtl"}
+      id={id}
+      className={`ento-ch1-block ${visible ? "ento-visible" : ""}`}
+      dir={dir}
     >
-      <div className="ento-team-header">
-        <span className="ento-team-icon">👨‍💻</span>
-        <div>
-          <h2 className="ento-team-title">
-            {lang === "ku" ? "تیمی پەرەپێدەران" : lang === "ar" ? "فريق التطوير" : "Development Team"}
-          </h2>
-          <p className="ento-team-sub">
-            {lang === "ku"
-              ? "ئەم پرۆژەیە لەلایەن خوێندکارانی بایۆلۆجی — زانکۆی ڕاپەڕین دروستکراوە"
-              : lang === "ar"
-              ? "هذا المشروع من تطوير طلاب علوم بايولوجي — جامعة رابرين"
-              : "This project is developed by Biology students — University of Raparin"}
-          </p>
-        </div>
-      </div>
-
-      {/* ── ABOUT ── */}
-      <div className="ento-about-box">
-        <h3 className="ento-about-heading">
-          {lang === "ku" ? "دەربارەی ئێمە"
-           : lang === "ar" ? "عنّا"
-           : "About Us"}
-        </h3>
-        <p className="ento-about-text">
-          {lang === "ku"
-            ? "ئێمە خوێندکاری بەشی بایۆلۆجین لە زانکۆی ڕاپەڕین، و خولیای زانست و داهێنان کۆمان کردووەتەوە. ئەم پرۆژەیە لەبەر ئەوە لەدایک بوو کە سەرچاوەیەکی زانستیی ئەکادیمی بە زمانی دایکمان لە بواری ئێنتۆمۆلۆجیدا نەبوو. باوەڕمان وایە زانست بەهێزتر دەبێت کاتێک بە شێوازێکی مۆدێرن و گشتگیر پێشکەش دەکرێت. بۆیە هەوڵمان داوە «ئەتڵەسی ئێنتۆمۆلۆجی» ببێتە پردێک لە نێوان توێژینەوەی ئەکادیمی و هەموو ئەو کەسانەی حەزیان لە ناسینی نهێنییەکانی سروشتە."
-            : lang === "ar"
-            ? "نحن طالبان من قسم علوم بايولوجي في جامعة رابرين، جمعتنا شغفنا المشترك بالعلم والابتكار. وُلد هذا المشروع من إحساسنا بغياب المصادر العلمية الأكاديمية باللغة الأم في مجال علم الحشرات. نؤمن بأن العلم يزداد قوةً حين يُقدَّم بأسلوب حديث وشامل، لذا سعينا إلى جعل \"أطلس علم الحشرات\" جسرًا بين الأبحاث الأكاديمية وكل من تتوق روحه إلى معرفة أسرار الطبيعة."
-            : "We are two biology students from the University of Raparin united by a shared passion for science and innovation. This project was born out of a felt absence of academic scientific resources in our mother tongue in the field of entomology. We believe science grows stronger when presented in a modern and inclusive way, so we set out to make the Atlas of Entomology a bridge between academic research and everyone who longs to uncover the secrets of nature."}
-        </p>
-      </div>
-
-      <div className="ento-team-grid">
-        {TEAM.map((m, i) => (
-          <div key={i} className="ento-team-card">
-            <div className="ento-team-photo-wrap">
-              <img src={m.img} alt={m.nameEn} className="ento-team-photo" loading="lazy" />
-              <div className="ento-team-badge">{m.icon}</div>
-            </div>
-            <div className="ento-team-info">
-              <div className="ento-team-name">
-                {lang === "ku" ? m.nameKu : lang === "ar" ? m.nameAr : m.nameEn}
-              </div>
-              <div className="ento-team-name-en">{m.nameEn}</div>
-              <div className="ento-team-role">
-                {lang === "ku" ? m.roleKu : lang === "ar" ? m.roleAr : m.roleEn}
-              </div>
-              <div className="ento-team-uni">
-                {lang === "ku" ? "🏛️ زانکۆی ڕاپەڕین · بەشی بایۆلۆجی"
-                 : lang === "ar" ? "🏛️ جامعة رابرين · قسم علوم بايولوجي"
-                 : "🏛️ University of Raparin · Biology Dept."}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <header className="ento-ch1-head">
+        <h2 className="ento-ch1-title">{title}</h2>
+        {lead ? <p className="ento-ch1-lead">{lead}</p> : null}
+      </header>
+      {children}
     </section>
   );
 }
 
-/* ═══════════════════════════════════════════════
-   INTRO / PREFACE SECTION
-═══════════════════════════════════════════════ */
-const GOALS = [
-  {
-    num: "١",
-    icon: "💻",
-    ku: "دیجیتاڵکردنی زانست",
-    ar: "رقمنة العلم",
-    en: "Digitising Science",
-    descKu: "گۆڕینی زانیارییە کاغەزییەکان بۆ پلاتفۆرمێکی دیجیتاڵی مۆدێرن.",
-    descAr: "تحويل المعلومات الورقية إلى منصة رقمية حديثة.",
-    descEn: "Transforming paper-based knowledge into a modern digital platform.",
-  },
-  {
-    num: "٢",
-    icon: "🗣️",
-    ku: "سەرچاوەی زمانی دایک",
-    ar: "مصدر باللغة الأم",
-    en: "Mother-Tongue Resource",
-    descKu: "دابینکردنی زانیارییە ئەکادیمییەکان بە زمانی کوردی بۆ خوێندکاران و مامۆستایان و زانست دۆستان.",
-    descAr: "توفير المعلومات الأكاديمية باللغة الكردية للطلاب والمعلمين وعشاق العلم.",
-    descEn: "Providing academic information in Kurdish for students, teachers and science enthusiasts.",
-  },
-  {
-    num: "٣",
-    icon: "🔬",
-    ku: "پۆلێنکردنی کارلێکەر",
-    ar: "التصنيف التفاعلي",
-    en: "Interactive Classification",
-    descKu: "نیشاندانی تێرمی زانستی و پۆلەکان بە شێوازێکی بینراو و مۆدێرن.",
-    descAr: "عرض المصطلحات العلمية والتصنيفات بأسلوب بصري وحديث.",
-    descEn: "Presenting scientific terms and classifications in a visual, modern style.",
-  },
-  {
-    num: "٤",
-    icon: "🌿",
-    ku: "ناساندنی ژینگەی کوردستان",
-    ar: "التعريف ببيئة كردستان",
-    en: "Kurdistan's Environment",
-    descKu: "تیشک خستنە سەر جۆرە جیاوازەکانی مێروو لە ناوچەکەدا.",
-    descAr: "تسليط الضوء على الأنواع المتنوعة من الحشرات في المنطقة.",
-    descEn: "Spotlighting the diverse insect species found across the region.",
-  },
-  {
-    num: "٥",
-    icon: "💡",
-    ku: "هۆشیاری بایۆلۆجی",
-    ar: "الوعي البيولوجي",
-    en: "Biological Awareness",
-    descKu: "گۆڕینی تێڕوانینی نەرێنی کۆمەڵگە بەرامبەر بە جیهانی مێرووەکان.",
-    descAr: "تغيير النظرة السلبية للمجتمع تجاه عالم الحشرات.",
-    descEn: "Changing society's negative perception of the insect world.",
-  },
-  {
-    num: "٦",
-    icon: "🌍",
-    ku: "پێوەرە ژینگەییەکان",
-    ar: "المؤشرات البيئية",
-    en: "Environmental Indicators",
-    descKu: "ئاشناکردنی خەڵک بە مێرووەکان وەک نیشاندەری پاکیی ژینگە.",
-    descAr: "تعريف الناس بالحشرات كمؤشرات لنقاء البيئة.",
-    descEn: "Acquainting people with insects as indicators of environmental health.",
-  },
-  {
-    num: "٧",
-    icon: "🔗",
-    ku: "بەستنەوەی زانستەکان",
-    ar: "ربط العلوم",
-    en: "Connecting Sciences",
-    descKu: "نیشاندانی پەیوەندی نێوان بایۆلۆجی و تەکنەلۆژیای سەردەم.",
-    descAr: "إبراز العلاقة بين علم الأحياء وتكنولوجيا العصر.",
-    descEn: "Showcasing the relationship between biology and modern technology.",
-  },
-  {
-    num: "٨",
-    icon: "📊",
-    ku: "پشتیوانی توێژەران",
-    ar: "دعم الباحثين",
-    en: "Supporting Researchers",
-    descKu: "دابینکردنی داتای ورد بۆ خوێندکارانی بەشی بایۆلۆجی و پاراستنی ڕووەک.",
-    descAr: "توفير بيانات دقيقة لطلاب قسم علوم بايولوجي وعلم النبات.",
-    descEn: "Providing detailed data for biology and plant-science students.",
-  },
-  {
-    num: "٩",
-    icon: "🌾",
-    ku: "کۆنترۆڵی بایۆلۆجی",
-    ar: "المكافحة الحيوية",
-    en: "Biological Control",
-    descKu: "هۆشیارکردنەوە لەسەر گرنگی مێرووە سوودبەخشەکان لە کشتوکاڵدا.",
-    descAr: "التوعية بأهمية الحشرات المفيدة في الزراعة.",
-    descEn: "Raising awareness of beneficial insects' importance in agriculture.",
-  },
-  {
-    num: "١٠",
-    icon: "🎨",
-    ku: "داهێنانی بینراو",
-    ar: "الابتكار البصري",
-    en: "Visual Innovation",
-    descKu: "بەکارهێنانی وێنە و ئینفۆگرافیکی سێ ڕەهەندی بۆ فێربوونی خێراتر.",
-    descAr: "توظيف الصور والإنفوجرافيك ثلاثي الأبعاد لتسريع التعلم.",
-    descEn: "Using images and 3-D infographics for faster, deeper learning.",
-  },
-];
-
-function GoalsSection({ lang }) {
-  const ref = useRef(null);
-  const visible = useInView(ref);
-  const isRtl = lang !== "en";
-  return (
-    <section
-      ref={ref}
-      id="goals"
-      className={`ento-goals-section ${visible ? "ento-visible" : ""}`}
-      dir={isRtl ? "rtl" : "ltr"}
-    >
-      <div className="ento-goals-header">
-        <span className="ento-goals-icon">🎯</span>
-        <div>
-          <h2 className="ento-goals-title">
-            {lang === "ku" ? "ئامانجە ستراتیژییەکان"
-             : lang === "ar" ? "الأهداف الاستراتيجية"
-             : "Strategic Goals"}
-          </h2>
-          <p className="ento-goals-sub">
-            {lang === "ku" ? "١٠ ئامانجی بنەڕەتیی ئەتڵەسی ئێنتۆمۆلۆجی"
-             : lang === "ar" ? "١٠ أهداف أساسية لأطلس علم الحشرات"
-             : "10 core goals of the Atlas of Entomology"}
-          </p>
-        </div>
-      </div>
-
-      <div className="ento-goals-grid">
-        {GOALS.map((g, i) => (
-          <div key={i} className="ento-goals-card" style={{ animationDelay: `${i * 60}ms` }}>
-            <div className="ento-goals-card-top">
-              <span className="ento-goals-num">{g.num}</span>
-              <span className="ento-goals-emoji">{g.icon}</span>
-            </div>
-            <div className="ento-goals-card-title">
-              {lang === "ku" ? g.ku : lang === "ar" ? g.ar : g.en}
-            </div>
-            <div className="ento-goals-card-desc">
-              {lang === "ku" ? g.descKu : lang === "ar" ? g.descAr : g.descEn}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════════
-   QUIZ SECTION
-═══════════════════════════════════════════════ */
 export default function Chapter1({ lang }) {
+  const dir = lang === "en" ? "ltr" : "rtl";
+
   return (
-    <div className="ento-chapter-page">
-      <div className="ento-chapter-hero">
-        <div className="ento-chapter-hero-num">{lang === "ku" ? "چاپتەری یەکەم" : lang === "ar" ? "الفصل الأول" : "Chapter 1"}</div>
-        <span className="ento-chapter-hero-icon"><Mark name="pin" /></span>
-        <h1 className="ento-chapter-hero-title">
-          {lang === "ku" ? "زانیاری زیادە" : lang === "ar" ? "معلومات إضافية" : "Additional Information"}
-        </h1>
-        <div className="ento-chapter-hero-en">Additional Information · زانیاری زیادە</div>
+    <div className="ento-chapter-page ento-ch1">
+      <div className="ento-chapter-hero ento-ch1-hero">
+        <img
+          className="ento-ch1-hero-img"
+          src="/images/plates/ch1-raparin.jpg"
+          alt={t(lang, {
+            ku: "کەمپەسی زانکۆی ڕاپەڕین",
+            ar: "حرم جامعة رابرين",
+            en: "University of Raparin campus",
+          })}
+          loading="eager"
+          decoding="async"
+        />
+        <div className="ento-ch1-hero-shade" aria-hidden="true" />
+        <div className="ento-ch1-hero-copy">
+          <div className="ento-chapter-hero-num">
+            {t(lang, { ku: "چاپتەری یەکەم", ar: "الفصل الأول", en: "Chapter 1" })}
+          </div>
+          <span className="ento-chapter-hero-icon"><Mark name="pin" /></span>
+          <h1 className="ento-chapter-hero-title">
+            {t(lang, {
+              ku: "پێشەکی و دامەزراوە",
+              ar: "المقدمة والمؤسسة",
+              en: "Preface and institution",
+            })}
+          </h1>
+          <p className="ento-chapter-hero-en">
+            {t(lang, {
+              ku: "چوارچێوەی ئەکادیمی · زانکۆی ڕاپەڕین",
+              ar: "إطار أكاديمي · جامعة رابرين",
+              en: "Academic frame · University of Raparin",
+            })}
+          </p>
+        </div>
       </div>
-      <TeamSection lang={lang} />
-      <GoalsSection lang={lang} />
+
+      <SectionNav lang={lang} />
+
+      <div className="ento-ch1-wrap" dir={dir}>
+        <Block
+          id="preface"
+          lang={lang}
+          title={t(lang, { ku: "پێشەکی", ar: "مقدمة", en: "Preface" })}
+          lead={t(lang, {
+            ku: "ئەم ئەتڵەسە سەرچاوەیەکی فێرکاریی کراوەیە بۆ مێرووناسی لە چوارچێوەی کۆلێژی زانست.",
+            ar: "هذا الأطلس مصدر تعليمي مفتوح لعلم الحشرات في إطار كلية العلوم.",
+            en: "This atlas is an open instructional resource for entomology within the College of Science.",
+          })}
+        >
+          <div className="ento-ch1-prose">
+            <p>
+              {t(lang, {
+                ku: "مێرووناسی (Entomology) لقێکی زانستی زیندەوەرە کە Insecta دەخوێنێتەوە: مۆرفۆلۆجی، فیزیۆلۆجی، ئیکۆلۆجی، ڕەفتار، پۆلێنکردن و پەیوەندی لەگەڵ مرۆڤ و کشتوکاڵ. لە زۆر ناوچەدا سەرچاوەی ئەکادیمی بە زمانی دایک کەمە؛ ئەم پرۆژەیە بۆ پڕکردنەوەی ئەو بۆشاییە دانراوە.",
+                ar: "علم الحشرات فرع من علم الأحياء يدرس طائفة Insecta: الشكل والوظيفة والبيئة والسلوك والتصنيف وعلاقة الحشرات بالإنسان والزراعة. في كثير من المناطق تقل المصادر الأكاديمية باللغة الأم؛ وُضع هذا المشروع لسدّ تلك الفجوة.",
+                en: "Entomology is the biological study of Insecta—morphology, physiology, ecology, behaviour, systematics and human–agricultural interactions. Academic resources in the mother tongue are scarce in many regions; this project was built to narrow that gap.",
+              })}
+            </p>
+            <p>
+              {t(lang, {
+                ku: "ئامانجی سەرەکی بریتییە لە پێشکەشکردنی دەقی ورد، نموونەی ناوچەیی، و ئامرازی ناسینەوە و تاقیکردنەوە — بە شێوازێک کە بۆ وانە، خۆخوێندن و پێداچوونەوەی تاقیکردنەوە گونجاو بێت.",
+                ar: "الهدف الرئيس تقديم نص دقيق وأمثلة إقليمية وأدوات تعريف واختبار بأسلوب يصلح للمحاضرة والدراسة الذاتية ومراجعة الامتحان.",
+                en: "The primary aim is precise text, regional examples, and tools for identification and assessment—suitable for lectures, self-study and exam revision.",
+              })}
+            </p>
+          </div>
+        </Block>
+
+        <Block
+          id="scope"
+          lang={lang}
+          title={t(lang, { ku: "چوارچێوە و سنوور", ar: "الإطار والنطاق", en: "Scope and frame" })}
+          lead={t(lang, {
+            ku: "ئەم خشتەیە سنووری فێرکاری و دامەزراوەیی ئەتڵەسەکە دیاری دەکات.",
+            ar: "يحدد هذا الجدول النطاق التعليمي والمؤسسي للأطلس.",
+            en: "This table states the instructional and institutional bounds of the atlas.",
+          })}
+        >
+          <dl className="ento-ch1-meta">
+            {SCOPE.map((row) => (
+              <div key={row.label.en} className="ento-ch1-meta-row">
+                <dt>{t(lang, row.label)}</dt>
+                <dd>{t(lang, row.value)}</dd>
+              </div>
+            ))}
+          </dl>
+        </Block>
+
+        <Block
+          id="outcomes"
+          lang={lang}
+          title={t(lang, { ku: "ئامانجە فێرکارییەکان", ar: "مخرجات التعلم", en: "Learning outcomes" })}
+          lead={t(lang, {
+            ku: "دوای خوێندنی ئەتڵەسەکە، خوێندکار دەتوانێت ئەم ئامانجانە جێبەجێ بکات.",
+            ar: "بعد دراسة الأطلس يستطيع المتعلم تحقيق هذه المخرجات.",
+            en: "After studying the atlas, a learner should be able to meet these outcomes.",
+          })}
+        >
+          <ol className="ento-ch1-outcomes">
+            {OUTCOMES.map((item) => (
+              <li key={item.id}>
+                <span className="ento-ch1-outcome-num" dir="ltr">{item.id}</span>
+                <div>
+                  <strong>{t(lang, item.title)}</strong>
+                  <p>{t(lang, item.body)}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </Block>
+
+        <Block
+          id="howto"
+          lang={lang}
+          title={t(lang, { ku: "چۆنیەتی بەکارهێنان", ar: "كيفية الاستخدام", en: "How to use this atlas" })}
+          lead={t(lang, {
+            ku: "سێ هەنگاوی کرداری بۆ خوێندنەوەی ڕێکخراو.",
+            ar: "ثلاث خطوات عملية للقراءة المنظمة.",
+            en: "Three practical steps for structured study.",
+          })}
+        >
+          <div className="ento-ch1-steps">
+            {HOW_TO.map((item) => (
+              <article key={item.step} className="ento-ch1-step">
+                <span className="ento-ch1-step-num" dir="ltr">{item.step}</span>
+                <h3>{t(lang, item.title)}</h3>
+                <p>{t(lang, item.body)}</p>
+              </article>
+            ))}
+          </div>
+        </Block>
+
+        <Block
+          id="institution"
+          lang={lang}
+          title={t(lang, { ku: "دامەزراوە", ar: "المؤسسة", en: "Institution" })}
+          lead={t(lang, {
+            ku: "ئەم ئەتڵەسە لە چوارچێوەی زانکۆی ڕاپەڕین پەرەی پێ دراوە.",
+            ar: "طُوّر هذا الأطلس في إطار جامعة رابرين.",
+            en: "This atlas was developed in the frame of the University of Raparin.",
+          })}
+        >
+          <div className="ento-ch1-institution">
+            <div className="ento-ch1-inst-card">
+              <p className="ento-ch1-inst-kicker" dir="ltr">University of Raparin</p>
+              <h3>{t(lang, { ku: "زانکۆی ڕاپەڕین", ar: "جامعة رابرين", en: "University of Raparin" })}</h3>
+              <p>
+                {t(lang, {
+                  ku: "کۆلێژی زانست · بەشی بایۆلۆجی. سەرچاوەی فێرکاریی کراوە بۆ خوێندکار و مامۆستا.",
+                  ar: "كلية العلوم · قسم علوم الحياة. مصدر تعليمي مفتوح للطلاب والأساتذة.",
+                  en: "College of Science · Biology Department. An open instructional resource for students and staff.",
+                })}
+              </p>
+              <ul className="ento-ch1-links">
+                <li>
+                  <a href="https://uor.edu.krd/en/" target="_blank" rel="noopener noreferrer">
+                    {t(lang, { ku: "ماڵپەڕی زانکۆ", ar: "موقع الجامعة", en: "University website" })}
+                  </a>
+                </li>
+                <li>
+                  <a href="https://sci.uor.edu.krd/en/" target="_blank" rel="noopener noreferrer">
+                    {t(lang, { ku: "کۆلێژی زانست", ar: "كلية العلوم", en: "College of Science" })}
+                  </a>
+                </li>
+                <li>
+                  <a href="https://sci.uor.edu.krd/en/departments/biology/" target="_blank" rel="noopener noreferrer">
+                    {t(lang, { ku: "بەشی بایۆلۆجی", ar: "قسم علوم الحياة", en: "Biology Department" })}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Block>
+
+        <Block
+          id="author"
+          lang={lang}
+          title={t(lang, { ku: "نووسەر و گەشەپێدەر", ar: "المؤلف والمطور", en: "Author and developer" })}
+          lead={t(lang, {
+            ku: "دیزاین، ناوەڕۆک و جێبەجێکردنی وێب لەلایەن خوێندکارێکی بەشی بایۆلۆجی.",
+            ar: "تصميم المحتوى وتنفيذ الويب بواسطة طالب في قسم علوم الحياة.",
+            en: "Content design and web implementation by a Biology Department student.",
+          })}
+        >
+          <article className="ento-ch1-author">
+            <div className="ento-ch1-author-photo">
+              <img
+                src={AUTHOR.img}
+                alt={AUTHOR.latin}
+                loading="lazy"
+                decoding="async"
+                width="320"
+                height="400"
+              />
+            </div>
+            <div className="ento-ch1-author-body">
+              <h3>{t(lang, AUTHOR.name)}</h3>
+              <p className="ento-ch1-author-latin" dir="ltr">{AUTHOR.latin}</p>
+              <p className="ento-ch1-author-role">{t(lang, AUTHOR.role)}</p>
+              <p className="ento-ch1-author-aff">{t(lang, AUTHOR.affiliation)}</p>
+              <p className="ento-ch1-author-note">
+                {t(lang, {
+                  ku: "ئەم ئەتڵەسە وەک سەرچاوەی فێرکاریی ئەکادیمی ئامادە کراوە؛ ناوەڕۆکەکە بۆ خوێندن و وانە بەکاردێت و جێگای دەستنیشانکردنی تاکەسەرچاوەی توێژینەوەی سەربەخۆ ناگرێتەوە بەبێ پێداچوونەوەی زیاتر.",
+                  ar: "أُعدّ هذا الأطلس مصدراً تعليمياً أكاديمياً؛ يصلح للدراسة والمحاضرة ولا يغني عن المراجعة العلمية الإضافية في البحث المستقل.",
+                  en: "Prepared as an academic teaching resource for study and lectures; it does not replace further scholarly review for independent research.",
+                })}
+              </p>
+            </div>
+          </article>
+        </Block>
+      </div>
     </div>
   );
 }
-
