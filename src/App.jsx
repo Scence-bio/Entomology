@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, lazy, Suspense } from "react";
+import { useState, useEffect, useRef, useCallback, lazy, Suspense, startTransition } from "react";
 import "./museum.css";
 import { CHAPTERS, LEARNING_PATH, searchChapters } from "./catalog";
 import { ChapterNav } from "./ChapterNav";
@@ -46,6 +46,7 @@ function useTheme() {
   const isDark = mode === "dark" || (mode === "auto" && systemDark);
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
+    document.documentElement.style.colorScheme = isDark ? "dark" : "light";
   }, [isDark]);
   const cycle = () => {
     const cyc = ["auto", "dark", "light"];
@@ -56,30 +57,75 @@ function useTheme() {
   return { mode, isDark, cycle };
 }
 
+function navigateWithTransition(update) {
+  if (typeof document !== "undefined" && typeof document.startViewTransition === "function") {
+    document.startViewTransition(() => {
+      startTransition(update);
+    });
+    return;
+  }
+  startTransition(update);
+}
+
 function Hero({ lang }) {
+  const videoRef = useRef(null);
+  const [allowVideo] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  });
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el || !allowVideo) return undefined;
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (el.dataset.src && !el.getAttribute("src")) {
+            el.src = el.dataset.src;
+            el.load();
+          }
+          el.play().catch(() => {});
+        } else {
+          el.pause();
+        }
+      },
+      { rootMargin: "80px", threshold: 0.15 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [allowVideo]);
+
   const heroDesc = {
-    ku: "ئەپڵیکەیشنی فێرکاریی مێرووناسی — پێناسە، ئۆردەر، کلیل و کویز",
-    ar: "تطبيق تعليمي لعلم الحشرات — تعريف ورتب ومفتاح واختبار",
-    en: "An entomology learning web app — definition, orders, key and quiz",
+    ku: "سەرچاوەیەکی ئەکادیمیی فێرکاری بۆ مێرووناسی — پێناسە، ئۆردەر، کلیل و کویز",
+    ar: "مرجع أكاديمي تعليمي لعلم الحشرات — تعريف ورتب ومفتاح واختبار",
+    en: "An academic learning atlas of entomology — concepts, orders, key and quiz",
   };
+
   return (
     <section className="ento-hero">
-      <video
-        className="ento-hero-video"
-        src="/FILE_2026-05-03_16_09_49.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+      {allowVideo && (
+        <video
+          ref={videoRef}
+          className="ento-hero-video"
+          data-src="/FILE_2026-05-03_16_09_49.mp4"
+          poster="/images/plates/ch2-drawer.jpg"
+          muted
+          loop
+          playsInline
+          preload="none"
+        />
+      )}
       <div className="ento-hero-overlay" />
       <div className="ento-hero-body" style={{ direction: lang === "en" ? "ltr" : "rtl" }}>
-        <p className="ento-hero-kicker">Entomo</p>
+        <p className="ento-hero-kicker">University of Raparin · College of Science</p>
         <h1 className="ento-hero-title-en">Atlas of Entomology</h1>
         <div className="ento-hero-title-ku">
           {lang === "ku" ? "ئەتڵەسی مێرووناسی" : lang === "ar" ? "أطلس علم الحشرات" : "The Atlas of Entomology"}
         </div>
-        <p className="ento-hero-desc" style={{ direction: lang === "en" ? "ltr" : "rtl", textAlign: "center" }}>{heroDesc[lang]}</p>
+        <p className="ento-hero-desc" style={{ direction: lang === "en" ? "ltr" : "rtl", textAlign: "center" }}>
+          {heroDesc[lang]}
+        </p>
         <div className="ento-hero-ctas">
           <a className="ento-hero-cta" href="#id-key">
             {lang === "ku" ? "مێروو بناسەوە" : lang === "ar" ? "عرّف الحشرة" : "Identify an insect"}
@@ -145,6 +191,8 @@ function HomeScreen({ lang }) {
           onChange={(e) => setQuery(e.target.value)}
           placeholder={lang === "ku" ? "گەڕان: ناو، وەسف، یان ناوی زانستی…" : lang === "ar" ? "ابحث: اسم أو وصف أو اسم علمي…" : "Search title, description, or scientific name…"}
           aria-label={lang === "ku" ? "گەڕان لە بەشەکان" : lang === "ar" ? "بحث في الفصول" : "Search chapters"}
+          enterKeyHint="search"
+          autoComplete="off"
         />
       </label>
       {results.length === 0 ? (
@@ -154,7 +202,15 @@ function HomeScreen({ lang }) {
           {results.map((ch) => (
             <a key={ch.id} className="ento-chapter-card" href={`#/${ch.id}`}>
               <div className="ento-plate-photo">
-                <img src={ch.image} alt={ch.alt?.[lang] || ch.title[lang]} loading="lazy" style={{ objectPosition: ch.focus || "center" }} />
+                <img
+                  src={ch.image}
+                  alt={ch.alt?.[lang] || ch.title[lang]}
+                  loading="lazy"
+                  decoding="async"
+                  width="640"
+                  height="400"
+                  style={{ objectPosition: ch.focus || "center" }}
+                />
               </div>
               <div className="ento-plate-label">
                 <div className="ento-ch-num">{ch.num.en}</div>
@@ -166,7 +222,7 @@ function HomeScreen({ lang }) {
           ))}
         </div>
       )}
-      <p className="ento-home-meta">Atlas of Entomology · Web App</p>
+      <p className="ento-home-meta">Atlas of Entomology · Academic Web App · University of Raparin</p>
     </div>
   );
 }
@@ -213,7 +269,6 @@ export default function EntomologyPage() {
       if (!link) return;
       const href = link.getAttribute("href");
       if (href.startsWith("#/")) {
-        // "#/#chapters" → go home then scroll to section
         const rest = href.slice(2);
         if (rest.startsWith("#")) {
           e.preventDefault();
@@ -224,7 +279,7 @@ export default function EntomologyPage() {
           };
           if (page !== "home") {
             window.location.hash = "#/";
-            setTimeout(go, 80);
+            setTimeout(go, 120);
           } else {
             go();
           }
@@ -243,7 +298,10 @@ export default function EntomologyPage() {
   useEffect(() => {
     const sync = () => {
       const next = pageFromHash();
-      if (next) setPage(next);
+      if (!next) return;
+      navigateWithTransition(() => {
+        setPage((prev) => (next === prev ? prev : next));
+      });
     };
     window.addEventListener("hashchange", sync);
     return () => window.removeEventListener("hashchange", sync);
@@ -254,16 +312,19 @@ export default function EntomologyPage() {
       skipFirstScroll.current = false;
       return;
     }
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "auto" });
   }, [page]);
 
   const ChapterPage = CHAPTER_PAGES[page] || null;
 
   return (
     <div className={`ento-root ento-app ${isDark ? "ento-dark" : ""}`}>
+      <a className="ento-skip" href="#main">
+        {lang === "ku" ? "بڕۆ بۆ ناوەڕۆک" : lang === "ar" ? "انتقل إلى المحتوى" : "Skip to content"}
+      </a>
       <AppHeader lang={lang} setLang={setLang} page={page} isDark={isDark} onThemeCycle={cycle} />
 
-      <main className="ento-main" id="main">
+      <main className="ento-main" id="main" data-page={page}>
         {page === "home" && (
           <>
             <Hero lang={lang} />

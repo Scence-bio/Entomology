@@ -12,26 +12,28 @@ export function ChapterNav({ lang, chapterId }) {
 
   return (
     <nav className="ento-chapter-nav" dir={dir} aria-label={t(lang, "ڕێنیشاندەری چاپتەر", "تنقل الفصل", "Chapter navigation")}>
-      <ol className="ento-breadcrumb">
-        <li><a href="#/">{t(lang, "سەرەکی", "الرئيسية", "Home")}</a></li>
-        <li aria-current="page">{chapter.title[lang]}</li>
-      </ol>
-      <div className="ento-chapter-nav-actions">
-        <button type="button" className="ento-nav-btn" onClick={() => window.print()}>
-          {t(lang, "چاپ / PDF", "طباعة / PDF", "Print / PDF")}
+      <div className="ento-chapter-nav-top">
+        <ol className="ento-breadcrumb">
+          <li><a href="#/">{t(lang, "سەرەکی", "الرئيسية", "Home")}</a></li>
+          <li aria-current="page">{chapter.num[lang]}</li>
+        </ol>
+        <button type="button" className="ento-nav-btn ento-nav-btn-print" onClick={() => window.print()}>
+          {t(lang, "چاپ", "طباعة", "Print")}
         </button>
-        <div className="ento-chapter-siblings">
-          {prev ? (
-            <a className="ento-nav-btn" href={`#/${prev.id}`}>
-              {lang === "en" ? `← ${prev.title.en}` : `← ${prev.title[lang]}`}
-            </a>
-          ) : <span />}
-          {next ? (
-            <a className="ento-nav-btn" href={`#/${next.id}`}>
-              {lang === "en" ? `${next.title.en} →` : `${next.title[lang]} →`}
-            </a>
-          ) : <span />}
-        </div>
+      </div>
+      <div className="ento-chapter-siblings">
+        {prev ? (
+          <a className="ento-nav-btn" href={`#/${prev.id}`}>
+            <span className="ento-nav-dir" aria-hidden="true">‹</span>
+            <span className="ento-nav-sibling-title">{prev.title[lang]}</span>
+          </a>
+        ) : <span />}
+        {next ? (
+          <a className="ento-nav-btn" href={`#/${next.id}`}>
+            <span className="ento-nav-sibling-title">{next.title[lang]}</span>
+            <span className="ento-nav-dir" aria-hidden="true">›</span>
+          </a>
+        ) : <span />}
       </div>
     </nav>
   );
