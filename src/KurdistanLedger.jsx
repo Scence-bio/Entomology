@@ -134,14 +134,14 @@ export default function KurdistanLedger({ lang }) {
           <div className="ento-ch1-prose">
             <p>
               {t(lang, {
-                ku: `لە وێنەی GBIFـی عێراق (${GBIF_IRAQ.retrieved})دا ${digits(lang, GBIF_IRAQ.insecta.occurrences)} ڕوودانی Insecta و ${digits(lang, GBIF_IRAQ.insecta.distinctSpeciesKeys)} speciesKey تۆمار کراون. ئەم ژمارانە بنەمای دیجیتاڵن؛ توێژینەوەی خوارەوە قووڵایی ناوچەیی دەبەخشن کە GBIF بەتەنهایی ناتوانێت پڕی بکاتەوە.`,
+                ku: `لە وێنەی GBIFـی عێراق (${GBIF_IRAQ.retrieved})دا ${digits(lang, GBIF_IRAQ.insecta.occurrences)} ڕوودانی Insecta و ${digits(lang, GBIF_IRAQ.insecta.distinctSpeciesKeys)} کلیلی جۆر تۆمار کراون. ئەم ژمارانە بنەمایەکی دیجیتاڵن؛ توێژینەوەی خوارەوە قووڵاییی ناوچەیی دەبەخشن کە GBIF بەتەنها ناتوانێت پڕی بکاتەوە.`,
                 ar: `في لقطة GBIF للعراق (${GBIF_IRAQ.retrieved}) سُجّل ${digits(lang, GBIF_IRAQ.insecta.occurrences)} تواجداً لـInsecta و${digits(lang, GBIF_IRAQ.insecta.distinctSpeciesKeys)} مفتاح نوع. هذه أرقام رقمية؛ والأبحاث أدناه تمنح عمقاً إقليمياً لا يوفره GBIF وحده.`,
                 en: `Iraq’s GBIF snapshot (${GBIF_IRAQ.retrieved}) holds ${digits(lang, GBIF_IRAQ.insecta.occurrences)} Insecta occurrences and ${digits(lang, GBIF_IRAQ.insecta.distinctSpeciesKeys)} species keys. Those are digital baselines; the studies below supply regional depth GBIF alone cannot.`,
               })}
             </p>
             <p>
               {t(lang, {
-                ku: "ئەم تۆمارە لە چوارچێوەی زانکۆی ڕاپەڕین · کۆلێژی زانست · بەشی بایۆلۆجی ئامادە کراوە، وەک بەشێک لە ئەتڵەسی مێرووناسی — سێ زمان، یەک ستانداردی ئەکادیمی.",
+                ku: "ئەم تۆمارە لە چوارچێوەی زانکۆی ڕاپەڕین · کۆلێژی زانست · بەشی بایۆلۆجی ئامادە کراوە، وەک بەشێک لە ئەتڵەسی مێرووناسی: سێ زمان، یەک ستانداردی ئەکادیمی.",
                 ar: "أُعدّ هذا السجل في إطار جامعة رابرين · كلية العلوم · قسم علوم الحياة، ضمن أطلس علم الحشرات — ثلاث لغات ومعيار أكاديمي واحد.",
                 en: "Prepared within the University of Raparin · College of Science · Biology Department, as part of the Atlas of Entomology — three languages, one academic standard.",
               })}
@@ -160,7 +160,7 @@ export default function KurdistanLedger({ lang }) {
             </h2>
             <p className="ento-ch1-lead">
               {t(lang, {
-                ku: "دوای خوێندنی تۆمارەکە، خوێندکار دەبێت بتوانێت ئەم سێ ئامانجە جێبەجێ بکات.",
+                ku: "دوای خوێندنەوەی تۆمارەکە، خوێندکار دەبێت بتوانێت ئەم سێ ئامانجە جێبەجێ بکات.",
                 ar: "بعد دراسة السجل ينبغي أن يحقق المتعلم هذه المخرجات الثلاث.",
                 en: "After studying the ledger, a learner should meet these three outcomes.",
               })}
@@ -192,7 +192,7 @@ export default function KurdistanLedger({ lang }) {
             </h2>
             <p className="ento-ch1-lead">
               {t(lang, {
-                ku: "هەر کارتێک پوختەیەکی فەرمیی توێژینەوەیەکە بە هەمان قووڵایی لە هەر سێ زماندا. فلتەر بەپێی ئۆردەر بەکاربهێنە.",
+                ku: "هەر کارتێک پوختەیەکی فەرمیی یەک توێژینەوەیە، بە هەمان قووڵایی لە هەر سێ زماندا. ئەگەر پێویست بوو، بەپێی ئۆردەر بیپاڵێوە.",
                 ar: "كل بطاقة خلاصة رسمية لبحث واحد بنفس العمق في اللغات الثلاث. استخدم التصفية حسب الرتبة.",
                 en: "Each card is a formal digest of one study, written to equal depth in all three languages. Filter by order as needed.",
               })}
@@ -241,7 +241,7 @@ export default function KurdistanLedger({ lang }) {
                   rel="noopener noreferrer"
                 >
                   {t(lang, {
-                    ku: "سەیری توێژینەوەکە بکە",
+                    ku: "کردنەوەی توێژینەوەکە",
                     ar: "اطّلع على البحث",
                     en: "Open the study",
                   })}
@@ -304,7 +304,7 @@ export default function KurdistanLedger({ lang }) {
             </h2>
             <p className="ento-ch1-lead">
               {t(lang, {
-                ku: "بۆ وتار و پرۆژەی خوێندکاری؛ DOIی توێژینەوەکان لەسەرەوە بەکاربهێنە، نەک تەنها ئەم تۆمارە.",
+                ku: "بۆ وتار و پرۆژەی خوێندکاری، DOIی توێژینەوەکانی سەرەوە بەکاربهێنە؛ ئەم تۆمارە بەتەنها جێگەی سەرچاوەی سەرەکی ناگرێتەوە.",
                 ar: "للمقالات ومشاريع الطلبة؛ استخدم DOI للأبحاث أعلاه، لا هذا السجل وحده.",
                 en: "For essays and student projects; cite the primary DOIs above, not this ledger alone.",
               })}
@@ -359,7 +359,7 @@ export default function KurdistanLedger({ lang }) {
           <div className="ento-ch1-prose">
             <p>
               {t(lang, {
-                ku: "١) تەنها توێژینەوەی بڵاوکراو یان داتابەسی دامەزراو (GBIF، Catalogue of Life، ITIS، NCBI، BOLD، EPPO، IUCN) دەخرێنە تۆمارەکە. ٢) هەر دەقێکی فێرکاری بە سێ زمان دەنووسرێتەوە؛ کورتکردنەوەی زمانێک بەرامبەر ئەوی دیکە قەدەغەیە. ٣) ناوی زانستی لاتینی و DOI دەمێننەوە. ٤) ئەم تۆمارە «کار لە پێشە»ـیە و لەگەڵ بڵاوبوونەوەی نوێ نوێ دەکرێتەوە.",
+                ku: "١) تەنها توێژینەوەی بڵاوکراو یان داتابەسی دامەزراو (GBIF، Catalogue of Life، ITIS، NCBI، BOLD، EPPO، IUCN) دەخرێنە تۆمارەکە. ٢) هەر دەقێکی فێرکاری بە سێ زمان دەنووسرێتەوە؛ کورتکردنەوەی زمانێک بەرامبەر ئەوی دیکە قەدەغەیە. ٣) ناوی زانستیی لاتینی و DOI دەمێننەوە. ٤) ئەم تۆمارە بەڵگەنامەیەکی زیندووە و لەگەڵ بڵاوبوونەوەی توێژینەوەی نوێ، خۆیشی نوێ دەکرێتەوە.",
                 ar: "١) تُدرج فقط الأبحاث المنشورة أو قواعد البيانات المؤسسية (GBIF وCatalogue of Life وITIS وNCBI وBOLD وEPPO وIUCN). ٢) يُكتب كل نص تعليمي باللغات الثلاث؛ ويُمنع اختصار لغة مقابل أخرى. ٣) تبقى الأسماء العلمية اللاتينية ومعرّفات DOI. ٤) السجل عمل جارٍ يُحدَّث مع المنشورات الجديدة.",
                 en: "1) Only published studies or institutional databases (GBIF, Catalogue of Life, ITIS, NCBI, BOLD, EPPO, IUCN) enter the ledger. 2) Every instructional passage is authored in all three languages; shortening one language against another is forbidden. 3) Latin binomials and DOIs are retained. 4) The ledger is a living document, revised as new papers appear.",
               })}

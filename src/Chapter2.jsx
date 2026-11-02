@@ -19,7 +19,7 @@ const SECTIONS = [
       en: "Advanced Definition",
     },
     body: {
-      ku: `ئێنتۆمۆلۆجی (Entomology) لقێکی زانستی زیندەوەرە کە مێرووەکان (Insecta) دەخوێنێتەوە: مۆرفۆلۆجی، فیزیۆلۆجی، ژینگەناسی (Ecology)، ڕەفتار، پۆلێنکردن (Taxonomy و Systematics)، پەرەسەندن (Phylogeny)، و کارلێکیان لەگەڵ مرۆڤ و کشتوکاڵ. وشەکە لە یۆنانیی کۆنەوە هاتووە: ἔντομον (éntomon) «بڕدراو/مێروو» و -λογία «زانست». مێروو لەناو فایلەمی Arthropoda ـدان و بە tagmosis جیا دەکرێنەوە: سێ تاگماتا — سەر، سنگ و سک؛ شەش قاچ (hexapod)؛ یەک جووت ئەنتێنا؛ و زۆرجار باڵ لەسەر مزۆ- و مێتاتۆراکس. هەناسە trachaea + spiracles؛ سوڕ hemolymphی کراوە؛ cuticle لە α-chitin و sclerotin. بەپێی Stork (٢٠١٨) نزیکەی ١ ملیۆن جۆر وەسف کراوە، بەڵام خەمڵاندنی جیهانی ~${(GLOBAL.stork2018.insectsEstimated / 1e6).toFixed(1)} ملیۆن مێروو و ~${GLOBAL.stork2018.undescribedPctApprox}٪ هێشتا نەدۆزراوەتەوە — بۆیە «یەک ملیۆن» تەنها کۆتاییی وەسفە، نەک کۆتاییی سروشت.`,
+      ku: `ئێنتۆمۆلۆجی (Entomology) لقێکی زانستی زیندەوەرە کە مێرووەکان (Insecta) دەخوێنێتەوە: شێوەناسی، فیزیۆلۆجی، ژینگەناسی، ڕەفتار، پۆلێن و سیستماتیک، پەرەسەندن، و کارلێکیان لەگەڵ مرۆڤ و کشتوکاڵ. وشەکە لە یۆنانیی کۆنەوە هاتووە: ἔντομον (éntomon) «بڕدراو/مێروو» و -λογία «زانست». مێروو لەناو فایلەمی Arthropoda دان و بە تاگمۆسیس جیا دەکرێنەوە: سێ تاگماتا — سەر، سنگ و سک؛ شەش قاچ (hexapod)؛ یەک جووت ئەنتێنا؛ و زۆرجار باڵ لەسەر سنگە ناوەندی و دواوە. هەناسەدان بە بۆریی هەوا و کونی هەناسە دەبێت؛ سوڕی خوێن کراوەیە؛ پێستەکە لە کایتین و پرۆتینی ڕەقکراو پێک دێت. بەپێی Stork (٢٠١٨) نزیکەی ١ ملیۆن جۆر وەسف کراوە، بەڵام خەمڵاندنی جیهانی ~${(GLOBAL.stork2018.insectsEstimated / 1e6).toFixed(1)} ملیۆن مێروو و ~${GLOBAL.stork2018.undescribedPctApprox}٪ هێشتا نەدۆزراوەتەوە — بۆیە «یەک ملیۆن» تەنها کۆتاییی وەسفە، نەک کۆتاییی سروشت.`,
       ar: `علم الحشرات يدرس Insecta: الشكل والوظيفة والبيئة والسلوك والتصنيف والتطور وعلاقتها بالإنسان والزراعة. من اليونانية ἔντομον و-λογία. ضمن Arthropoda بثلاث tagmata وست أرجل وزوج قرون. تنفس قصبي ودوران مفتوح وكيوتيكل من الكايتين. وفق Stork (٢٠١٨) وُصف نحو مليون نوع، لكن التقدير العالمي ~${(GLOBAL.stork2018.insectsEstimated / 1e6).toFixed(1)} مليون حشرة وما زال ~${GLOBAL.stork2018.undescribedPctApprox}٪ غير مكتشف.`,
       en: `Entomology studies Insecta — morphology, physiology, ecology, behaviour, taxonomy/systematics, phylogeny, and human–agricultural interactions. From Greek ἔντομον + -λογία. Insects are arthropods with three tagmata, six uniramous legs, one antennal pair, tracheal gas exchange, open hemolymph circulation and a chitin–sclerotin cuticle. Stork (2018) places ~1 million described insect species against a global estimate of ~${(GLOBAL.stork2018.insectsEstimated / 1e6).toFixed(1)} million (~${GLOBAL.stork2018.undescribedPctApprox}% still undescribed) — so “one million” is the named fraction, not the biota.`,
     },
@@ -36,7 +36,7 @@ const SECTIONS = [
       en: "In-depth Scientific History",
     },
     body: {
-      ku: "لە Historia Animalium ـدا ئەرستۆ (سەدەی ٤ پ.ز.) مێرووی وەک ἔντομα جیا کردەوە و گۆڕانەپەڕەی تێبینی کرد. Carl Linnaeus لە Systema Naturae (١٠یەم چاپ، ١٧٥٨) ناوی دووانەی زانستی (binomial nomenclature) جێگیر کرد: Genus + specific epithet، وەک Apis mellifera. Jan Swammerdam (سەدەی ١٧) بە توێکاریی ورد سەلماندی کە لارڤا و گەورە هەمان زیندەوەرن و کۆئەندامی ناوەکی ئاڵۆزیان هەیە. William Kirby و William Spence لە Introduction to Entomology (١٨١٥–١٨٢٦) بناغەی ئێنتۆمۆلۆجیی مۆدێرنیان دانا. Charles Darwin و Alfred Russel Wallace تیۆری هەڵبژاردنی سروشتییان هێنا؛ دواتر co-evolution لە نێوان مێروو و Angiosperms ڕوون کرایەوە. لە سەدەی ٢٠دا karyotype، DNA barcoding (COI) و phylogenomics پۆلێنکردن و پەرەسەندنی مێروویان گۆڕی.",
+      ku: "لە Historia Animalium ـدا ئەرستۆ (سەدەی ٤ پ.ز.) مێرووی وەک ἔντομα جیا کردەوە و گۆڕانەپەڕەی تێبینی کرد. Carl Linnaeus لە Systema Naturae (١٠یەم چاپ، ١٧٥٨) ناوی دووانەی زانستی جێگیر کرد: ناوی ڕەگەز و ناوی جۆر، وەک Apis mellifera. Jan Swammerdam (سەدەی ١٧) بە توێکاریی ورد سەلماندی کە لارڤا و گەورە هەمان زیندەوەرن و کۆئەندامی ناوەکیی ئاڵۆزیان هەیە. William Kirby و William Spence لە Introduction to Entomology (١٨١٥–١٨٢٦) بناغەی مێرووناسیی مۆدێرنیان دانا. Charles Darwin و Alfred Russel Wallace تیۆری هەڵبژاردنی سروشتییان هێنا؛ دواتر پەرەسەندنی هاوبەش لە نێوان مێروو و ڕووەکی گوڵدار ڕوون کرایەوە. لە سەدەی ٢٠دا کاریۆتایپ، بارکۆدی دی ئێن ئەی (COI) و فایلۆجینۆمی پۆلێن و پەرەسەندنی مێروویان گۆڕی.",
       ar: "في Historia Animalium ميّز أرسطو (ق ٤ ق.م) الحشرات ἔντομα ولاحظ التحول. ثبّت لينيوس في Systema Naturae (ط ١٠، ١٧٥٨) التسمية الثنائية: الجنس والاسم النوعي، مثل Apis mellifera. أثبت سوامردام بالتشريح أن اليرقة والبالغ كائن واحد له أجهزة داخلية معقدة. وضع كيربي وسبنس أسس علم الحشرات الحديث (١٨١٥–١٨٢٦). جاء داروين ووالاس بالانتخاب الطبيعي؛ ثم وُضح التطور المشترك مع كاسيات البذور. في القرن ٢٠ غيّرت الـkaryotype وDNA barcoding (COI) والـphylogenomics التصنيف والتطور.",
       en: "In Historia Animalium Aristotle (4th c. BCE) separated insects as ἔντομα and noted metamorphosis. Linnaeus’s Systema Naturae (10th ed., 1758) fixed binomial nomenclature — Genus + specific epithet, e.g. Apis mellifera. Swammerdam’s micro-dissections showed larva and adult are one organism with complex organs. Kirby & Spence’s Introduction to Entomology (1815–1826) founded modern entomology as a discipline. Darwin and Wallace framed natural selection; co-evolution with angiosperms followed. In the 20th–21st centuries karyotypes, COI DNA barcoding and phylogenomics reshaped insect systematics.",
     },
@@ -60,16 +60,16 @@ const SECTIONS = [
       en: "Influential Scientists",
     },
     body: {
-      ku: "ئەم زانایانە کاریگەرییەکی گەورەیان لە گەشەی ئێنتۆمۆلۆجیدا هەبووە.",
+      ku: "ئەم زانایانە کاریگەرییەکی گەورەیان لە گەشەی مێرووناسیدا هەبووە.",
       ar: "أسهم هؤلاء الرواد في وضع أسس علم الحشرات الحديث.",
       en: "These pioneers shaped the foundations of modern entomology.",
     },
     scientists: [
       { initials:"AR", name:"Aristotle",       roleKu:"یەکەم وەسفی جیدی مێرووەکان",     roleAr:"أول وصف جاد للحشرات",           roleEn:"First serious account of insects" },
-      { initials:"CL", name:"Carl Linnaeus",   roleKu:"داهێنەری Binomial Nomenclature", roleAr:"مؤسس نظام التسمية الثنائية", roleEn:"Father of Taxonomy" },
-      { initials:"WK", name:"William Kirby",   roleKu:"باوکی ئێنتۆمۆلۆجی",             roleAr:"أب علم الحشرات",              roleEn:"Father of Entomology" },
-      { initials:"JS", name:"Jan Swammerdam",  roleKu:"پیشەوای Micro-dissection",        roleAr:"رائد التشريح المجهري",         roleEn:"Pioneer of Micro-dissection" },
-      { initials:"CD", name:"Charles Darwin",  roleKu:"تیۆری Co-evolution",              roleAr:"نظرية التطور المشترك",        roleEn:"Co-evolution Theory" },
+      { initials:"CL", name:"Carl Linnaeus",   roleKu:"داهێنەری ناوی دووانەی زانستی", roleAr:"مؤسس نظام التسمية الثنائية", roleEn:"Father of Taxonomy" },
+      { initials:"WK", name:"William Kirby",   roleKu:"باوکی مێرووناسی",             roleAr:"أب علم الحشرات",              roleEn:"Father of Entomology" },
+      { initials:"JS", name:"Jan Swammerdam",  roleKu:"پیشەوای توێکاریی ورد",        roleAr:"رائد التشريح المجهري",         roleEn:"Pioneer of Micro-dissection" },
+      { initials:"CD", name:"Charles Darwin",  roleKu:"تیۆری پەرەسەندنی هاوبەش",              roleAr:"نظرية التطور المشترك",        roleEn:"Co-evolution Theory" },
     ],
   },
   {
@@ -84,7 +84,7 @@ const SECTIONS = [
     },
     mapImg: "/images/headers/chapter2-map.webp",
     body: {
-      ku: `هەرێمی کوردستان و زنجیرەچیاکانی زاگرۆس لە ناوچەی Irano-Anatolian biodiversity hotspot ـدان: گۆڕانی بەرزی، نیمچە وشک و دارستانی ئاوێتە، ژینگەی جیاواز بۆ Lepidoptera، Coleoptera، Hymenoptera و Orthoptera دروست دەکات. لە GBIF (وێنەی ${GBIF_IRAQ.retrieved}) بۆ عێراق: نزیکەی ${GBIF_IRAQ.insecta.occurrences.toLocaleString("en-US")} ڕوودانی Insecta و ${GBIF_IRAQ.insecta.distinctSpeciesKeys.toLocaleString("en-US")} speciesKeyی جیاواز — بەڵام ناوچەکە undersampledـە؛ نەبوونی تۆمار واتای نەبوونی جۆر نییە. چکلیستی Ephemeropteraی عێراق (٢٠٢١) ٣٧ جۆر تۆمار دەکات، بەشێکیان لە کوردستانی عێراق. توێژینەوە ئەکادیمییەکان جەخت لە: (١) تۆماری فەونای ناوخۆیی و endemic؛ (٢) IPM و economic threshold؛ (٣) پەیتاندن و Apis mellifera؛ (٤) phenology و گۆڕانی کەشوهەوا.`,
+      ku: `هەرێمی کوردستان و زنجیرەچیاکانی زاگرۆس لە ناوچەی هەمەجۆریی Irano-Anatolian دان: گۆڕانی بەرزی، کەشوهەوای نیمچە وشک و دارستانی ئاوێتە ژینگەی جیاواز بۆ پەپوولەباڵ، قوڕقوڕەباڵ، پەڕەباڵ و جڕوشک دروست دەکەن. لە وێنەی GBIF (${GBIF_IRAQ.retrieved}) بۆ عێراق: نزیکەی ${GBIF_IRAQ.insecta.occurrences.toLocaleString("en-US")} ڕوودانی Insecta و ${GBIF_IRAQ.insecta.distinctSpeciesKeys.toLocaleString("en-US")} کلیلی جۆری جیاواز هەن — بەڵام ناوچەکە هێشتا بە تەواوی نمونە نەکراوە؛ نەبوونی تۆمار واتای نەبوونی جۆر نییە. لیستی مێشوولەی ئاوی عێراق (٢٠٢١) ٣٧ جۆر تۆمار دەکات، بەشێکیان لە کوردستانی عێراق. توێژینەوە ئەکادیمییەکان جەخت لەم تەوەرانە دەکەنەوە: (١) تۆماری فەونای ناوخۆیی و جۆری تایبەت بە ناوچە؛ (٢) بەڕێوەبردنی تێکەڵاوی زیانبەخش و ئاستی زیانی ئابووری؛ (٣) پەیتاندن و Apis mellifera؛ (٤) کاتی سوڕی ژیان و گۆڕانی کەشوهەوا.`,
       ar: `تقع كردستان وجبال زاغروس ضمن نقطة التنوع Irano-Anatolian. في لقطة GBIF (${GBIF_IRAQ.retrieved}) للعراق: نحو ${GBIF_IRAQ.insecta.occurrences.toLocaleString("en-US")} سجل تواجد لـInsecta و${GBIF_IRAQ.insecta.distinctSpeciesKeys.toLocaleString("en-US")} مفتاح نوع متمايز — مع نقص واضح في العينات. قائمة ذباب مايو في العراق (٢٠٢١) تذكر ٣٧ نوعاً. محاور البحث: جرد الفونة، IPM، التلقيح، والـphenology.`,
       en: `Kurdistan and the Zagros lie in the Irano-Anatolian biodiversity hotspot. A GBIF snapshot (${GBIF_IRAQ.retrieved}) for Iraq lists ~${GBIF_IRAQ.insecta.occurrences.toLocaleString("en-US")} Insecta occurrences and ${GBIF_IRAQ.insecta.distinctSpeciesKeys.toLocaleString("en-US")} distinct species keys — still a severe undersample; missing records ≠ missing species. Iraq’s mayfly checklist (2021) lists 37 Ephemeroptera species, including Kurdistan survey material. Research axes: faunistics/endemics, IPM thresholds, Apis mellifera pollination, and climate phenology.`,
     },
@@ -106,17 +106,17 @@ const SECTIONS = [
       en: "Strategic Importance",
     },
     body: {
-      ku: "مێروو لە چەند بواری ستراتیژیدا سەرەکین. (١) Bioindicators: Ephemeroptera، Plecoptera و Trichoptera (EPT) لە ئاو هەستیاریان بە پیسبوون هەیە؛ گۆڕانی کۆمەڵگەی مێروو دەری دەخات کە کوالێتی ئاو یان خاک گۆڕاوە. (٢) Forensic entomology: Calliphoridae و Sarcophagidae لەسەر تەرم؛ گەشەی لارڤا و ADD (accumulated degree days) بۆ خەمڵاندنی PMI. (٣) پەیتاندن: زیاتر لە ٧٥٪ی بەرهەمە کشتوکاڵییە سەرەکییەکان سوود لە ئاژەڵی پەیتاندن وەردەگرن؛ Apis و solitary bees و Syrphidae. (٤) IPM: چاودێری، ئاستی زیان، دوژمنی سروشتی، و کیمیایی وەک دوا هەنگاو. (٥) بیۆتەکنەلۆجی: Bombyx mori (ائبریشم)، Lac، و مێروو وەک سەرچاوەی پرۆتین (entomophagy).",
+      ku: "مێروو لە چەند بواری ستراتیژیدا سەرەکین. (١) نیشاندەری زیندوو: Ephemeroptera، Plecoptera و Trichoptera (EPT) لە ئاو هەستیاریان بە پیسبوون هەیە؛ گۆڕانی کۆمەڵگەی مێروو دەر دەخات کە کوالێتی ئاو یان خاک گۆڕاوە. (٢) مێرووناسیی دادوەری: Calliphoridae و Sarcophagidae لەسەر تەرم؛ گەشەی لارڤا و کۆی پلەی گەرمی بۆ خەمڵاندنی کاتی مردن. (٣) پەیتاندن: زیاتر لە ٧٥٪ی بەرهەمە کشتوکاڵییە سەرەکییەکان سوود لە ئاژەڵی پەیتاندن وەردەگرن؛ Apis، هەنگی تەنها و Syrphidae. (٤) بەڕێوەبردنی تێکەڵاوی زیانبەخش: چاودێری، ئاستی زیان، دوژمنی سروشتی، و کیمیایی وەک دوا هەنگاو. (٥) تەکنەلۆجیای زیندوو: Bombyx mori (ئاوریشم)، لاک، و مێروو وەک سەرچاوەی پرۆتین.",
       ar: "للحشرات أدوار استراتيجية: (١) مؤشرات حيوية — EPT حساسة لتلوث الماء؛ (٢) حشرات جنائية — Calliphoridae ودرجة الحرارة المتراكمة لتقدير PMI؛ (٣) التلقيح — أكثر من ٧٥٪ من المحاصيل الرئيسية تستفيد من الملقحات؛ (٤) IPM — الرصد والعتبة والأعداء الطبيعيون ثم الكيميائي؛ (٥) تقانة حيوية — الحرير واللك والحشرات كبروتين.",
       en: "Insects matter strategically: (1) bioindicators — EPT taxa track freshwater quality; (2) forensic entomology — calliphorid growth and accumulated degree-days estimate PMI; (3) pollination — over 75% of leading food crops benefit from animal pollinators (Apis, solitary bees, hoverflies); (4) IPM — monitoring, thresholds, natural enemies, chemistry last; (5) biotech and food — silk, lac, and edible insects as protein.",
     },
     apps: {
       ku: [
-        "EPT bioindicators — کوالێتی ئاو",
-        "Forensic Entomology — PMI / ADD",
-        "Pollination — Apis · solitary bees · Syrphidae",
-        "IPM — economic threshold + biocontrol",
-        "Sericulture / entomophagy — پرۆتین و ائبریشم",
+        "نیشاندەری EPT — کوالێتی ئاو",
+        "مێرووناسیی دادوەری — کاتی مردن و کۆی پلەی گەرمی",
+        "پەیتاندن — Apis · هەنگی تەنها · Syrphidae",
+        "بەڕێوەبردنی تێکەڵ — ئاستی زیانی ئابووری و کۆنترۆڵی زیندوو",
+        "ئاوریشم و مێرووی خۆراکی — پرۆتین",
       ],
       ar: [
         "مؤشرات EPT — جودة المياه",
@@ -144,14 +144,14 @@ const SECTIONS = [
       en: "Economic & Medical Challenges",
     },
     body: {
-      ku: "سێ تەوەری سەرەکی هەیە. (١) نەخۆشیی vector-borne: Anopheles spp. پلاسمۆدیۆمی مەلاریا دەگوازێتەوە؛ Aedes aegypti / Albopictus دەنگێ و زیکا و چیکونگونیا؛ Phlebotomus لەیشمانیا. گواستنەوە دەکرێت mechanical بێت یان biological (سوڕ لەناو جەستەی مێروودا). (٢) جۆری invasive: بێ دوژمنی سروشتی، ڕکابەری و نەخۆشی دەهێنن و زنجیرەی خۆراک دەگۆڕن. (٣) ئاسایشی خۆراک: Aphididae، Noctuidae، Tephritidae و Coleopteraی زیانبەخش دەتوانن زیانی ئابووریی گەورە بکەن؛ بەرگریی دژەکیمیایی (insecticide resistance) — وەک لە voltage-gated sodium channels یان acetylcholinesterase — IPM ناکارامە دەکات ئەگەر تەنها کیمیایی بەکار بهێنرێت.",
+      ku: "سێ تەوەری سەرەکی هەیە. (١) نەخۆشیی گەیەنەر: Anopheles spp. پلاسمۆدیۆمی مەلاریا دەگوازێتەوە؛ Aedes aegypti و Aedes albopictus دێنگ، زیکا و چیکونگونیا؛ Phlebotomus لەیشمانیا. گواستنەوە دەکرێت میکانیکی بێت یان بایۆلۆجی، واتە سوڕ لەناو جەستەی مێروودا. (٢) جۆری داگیرکەر: بێدوژمنی سروشتی، ڕکابەری و نەخۆشی دەهێنن و زنجیرەی خۆراک دەگۆڕن. (٣) ئاسایشی خۆراک: Aphididae، Noctuidae، Tephritidae و قوڕقوڕەی زیانبەخش دەتوانن زیانی ئابووریی گەورە بکەن؛ بەرگری دژ بە سم، وەک لە کەناڵی سۆدیۆم یان ئەنزیمی ئەسیتیلکۆلین، بەڕێوەبردنی تێکەڵ ناکارامە دەکات ئەگەر تەنها کیمیایی بەکار بهێنرێت.",
       ar: "ثلاثة محاور: (١) أمراض النواقل — Anopheles للملاريا، Aedes للدنج والزيكا، Phlebotomus للّيشمانيا؛ النقل آلي أو بيولوجي؛ (٢) أنواع غازية بلا أعداء طبيعيين؛ (٣) أمن غذائي — منّ وليلية وذباب الفاكهة وخنافس، مع مقاومة المبيدات التي تُضعف الاعتماد على الكيمياء وحدها.",
       en: "Three axes: (1) vector-borne disease — Anopheles and Plasmodium, Aedes and dengue/Zika/chikungunya, Phlebotomus and Leishmania; transmission may be mechanical or biological; (2) invasive species without natural enemies; (3) food security — aphids, noctuids, fruit flies and pest beetles, compounded by insecticide resistance (e.g. sodium-channel or AChE mutations) when chemistry is used alone.",
     },
     threats: [
-      { icon:"", nameKu:"Vector-borne disease", nameAr:"أمراض النواقل", nameEn:"Vector-borne disease", eg:"Anopheles · Aedes · Phlebotomus" },
-      { icon:"", nameKu:"Invasive species", nameAr:"أنواع غازية", nameEn:"Invasive species", eg:"بێ دوژمنی سروشتی · ڕکابەری" },
-      { icon:"", nameKu:"Crop loss + resistance", nameAr:"خسائر ومقاومة مبيدات", nameEn:"Crop loss + resistance", eg:"Aphididae · Noctuidae · IPM" },
+      { icon:"", nameKu:"نەخۆشیی گەیەنەر", nameAr:"أمراض النواقل", nameEn:"Vector-borne disease", eg:"Anopheles · Aedes · Phlebotomus" },
+      { icon:"", nameKu:"جۆری داگیرکەر", nameAr:"أنواع غازية", nameEn:"Invasive species", eg:"بێدوژمنی سروشتی · ڕکابەری" },
+      { icon:"", nameKu:"زیانی بەرهەم و بەرگریی سم", nameAr:"خسائر ومقاومة مبيدات", nameEn:"Crop loss + resistance", eg:"Aphididae · Noctuidae · IPM" },
     ],
   },
   {
@@ -171,9 +171,9 @@ const SECTIONS = [
     },
     glossary: [
       { term:"Holometabola", ku:"گۆڕانەپەڕەی تەواو — هێلکە، لارڤا، پیت (پوپا)، گەورە", ar:"تحول كامل — بيضة، يرقة، عذراء، بالغ", en:"Complete metamorphosis — egg, larva, pupa, adult" },
-      { term:"Hemimetabola", ku:"گۆڕانەپەڕەی ناتەواو — هێلکە، نەمف، گەورە (بێ پیت)", ar:"تحول ناقص — بيضة، حورية، بالغ", en:"Incomplete metamorphosis — egg, nymph, adult" },
+      { term:"Hemimetabola", ku:"گۆڕانەپەڕەی ناتەواو — هێلکە، نەمف، گەورە (بێپیت)", ar:"تحول ناقص — بيضة، حورية، بالغ", en:"Incomplete metamorphosis — egg, nymph, adult" },
       { term:"Phylogeny", ku:"دارەی پەرەسەندن — پەیوەندیی باوباپیری هاوبەش", ar:"شجرة النشوء — أسلاف مشتركة", en:"Evolutionary tree — shared ancestry" },
-      { term:"DNA barcoding", ku:"ناسنامەی گەردی — زۆرجار ژنێ COIی مایتۆکۆندریا", ar:"باركود DNA — غالباً جين COI", en:"Molecular ID — often mitochondrial COI" },
+      { term:"DNA barcoding", ku:"ناسنامەی گەردی — زۆرجار جینی COIی مایتۆکۆندریا", ar:"باركود DNA — غالباً جين COI", en:"Molecular ID — often mitochondrial COI" },
       { term:"Parasitoid", ku:"زیندەوەرێک کە خانەخوێ دەکوژێت پێش تەواوبوونی گەشە", ar:"طفيل يقتل عائله قبل تمام نموه", en:"An organism that kills its host before finishing development" },
       { term:"Eusociality", ku:"کۆمەڵگە — دابەشکردنی کار، نەوەی هاوپێچ، چاودێریی هاوبەشی نەوە", ar:"حياة اجتماعية — تقسيم عمل ورعاية مشتركة", en:"Castes, overlapping generations, cooperative brood care" },
       { term:"Economic threshold", ku:"ئاستی زیان کە دەستتێوەردان تێیدا سوودەکەی زیاترە لە تێچوو", ar:"عتبة اقتصادية — التدخل أجدى من التكلفة", en:"Pest density where control costs less than expected loss" },

@@ -68,7 +68,7 @@ export function AppFooter({ lang }) {
           <p className="ento-footer-tagline">
             {t(
               lang,
-              "ئەتڵەسی ئەکادیمیی فەرمیی مێرووناسی — کوردی، عەرەبی و ئینگلیزی بە یەک ئاست. زانکۆی ڕاپەڕین · کۆلێژی زانست.",
+              "ئەتڵەسێکی ئەکادیمیی فەرمی بۆ مێرووناسی — کوردی، عەرەبی و ئینگلیزی بە یەک ستانداردی زانستی. زانکۆی ڕاپەڕین · کۆلێژی زانست.",
               "أطلس أكاديمي رسمي لعلم الحشرات — كردية وعربية وإنجليزية بمعيار واحد. جامعة رابرين · كلية العلوم.",
               "A formal academic entomology atlas — Kurdish, Arabic and English at one standard. University of Raparin · College of Science."
             )}

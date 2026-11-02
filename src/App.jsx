@@ -98,7 +98,7 @@ function Hero({ lang }) {
   }, [allowVideo]);
 
   const heroDesc = {
-    ku: "ئەتڵەسی ئەکادیمیی سێ زمانە بۆ مێرووناسی — بنەما، ئۆردەر، تۆماری فەونای کوردستان، کلیل و کویز. زانکۆی ڕاپەڕین · کۆلێژی زانست.",
+    ku: "ئەتڵەسێکی ئەکادیمیی سێ زمانە بۆ مێرووناسی — بنەماکان، ئۆردەرەکان، تۆماری فەونای کوردستان، کلیلی ناسینەوە و کویز. زانکۆی ڕاپەڕین · کۆلێژی زانست.",
     ar: "أطلس أكاديمي ثلاثي اللغة لعلم الحشرات — أسس ورتب وسجل فونة كردستان ومفتاح واختبار. جامعة رابرين · كلية العلوم.",
     en: "A trilingual academic atlas of entomology — foundations, orders, Kurdistan faunal ledger, identification key and quiz. University of Raparin · College of Science.",
   };
@@ -162,14 +162,14 @@ function HomeScreen({ lang }) {
         <p className="ento-prospectus-kicker" dir="ltr">Acta · Atlas of Entomology</p>
         <h2 className="ento-prospectus-title">
           {lang === "ku"
-            ? "پڕۆسپێکتوسی ئەکادیمی"
+            ? "نامیلکەی ئەکادیمی"
             : lang === "ar"
             ? "نشرة أكاديمية"
             : "Academic prospectus"}
         </h2>
         <p className="ento-prospectus-body">
           {lang === "ku"
-            ? "ئەم ئەتڵەسە سەرچاوەیەکی فێرکاریی فەرمیی سێ زمانەیە: هەر دەقێک بە کوردی، عەرەبی و ئینگلیزی بە هەمان قووڵایی دەنووسرێتەوە؛ ناوی زانستی لاتینی دەمێنێتەوە؛ و تۆماری فەونای کوردستان لە توێژینەوەی زانکۆکانی ناوچەکە و GBIF دەبەستێتەوە."
+            ? "ئەم ئەتڵەسە سەرچاوەیەکی فێرکاریی فەرمیی سێ زمانەیە: هەر دەقێک بە کوردی، عەرەبی و ئینگلیزی بە هەمان قووڵایی دەنووسرێتەوە؛ ناوی زانستیی لاتینی وەک خۆی دەمێنێتەوە؛ و تۆماری فەونای کوردستان توێژینەوەی زانکۆکانی ناوچەکە بە GBIF دەبەستێتەوە."
             : lang === "ar"
             ? "هذا الأطلس مصدر تعليمي رسمي ثلاثي اللغة: كل نص يُكتب بالكردية والعربية والإنجليزية بنفس العمق؛ وتبقى الأسماء العلمية اللاتينية؛ ويُربط سجل فونة كردستان بأبحاث جامعات المنطقة وGBIF."
             : "This atlas is a formal trilingual teaching resource: every passage is authored in Kurdish, Arabic and English at equal depth; Latin binomials are retained; and the Kurdistan faunal ledger binds regional university research to GBIF."}
@@ -191,7 +191,7 @@ function HomeScreen({ lang }) {
         <hr className="ento-home-rule" />
         <p className="ento-path-lead">
           {lang === "ku"
-            ? "بەم ڕیزە بخوێنە: دەستپێک، ئۆردەرەکان، تۆماری فەونا، کار و کلیل، پاشان کویز. هەر هەنگاوێک بە سێ زمانە."
+            ? "بەم ڕیزە بخوێنەوە: دەستپێک، ئۆردەرەکان، تۆماری فەونای کوردستان، کاری کێڵگە و کلیل، پاشان کویز. هەر هەنگاوێک بە هەر سێ زمانە."
             : lang === "ar"
             ? "اقرأ بهذا الترتيب: البداية، الرتب، سجل الفونة، العمل والمفتاح، ثم الاختبار. كل خطوة باللغات الثلاث."
             : "Read in this order: start, orders, faunal ledger, field and key, then the quiz. Every step is trilingual."}
@@ -382,7 +382,7 @@ export default function EntomologyPage() {
                 <div className="ento-chapter-nav-top">
                   <ol className="ento-breadcrumb">
                     <li><a href="#/">{lang === "ku" ? "سەرەکی" : lang === "ar" ? "الرئيسية" : "Home"}</a></li>
-                    <li aria-current="page">{lang === "ku" ? "تۆماری فەونا" : lang === "ar" ? "سجل الفونة" : "Faunal ledger"}</li>
+                    <li aria-current="page">{lang === "ku" ? "فەونای کوردستان" : lang === "ar" ? "سجل الفونة" : "Faunal ledger"}</li>
                   </ol>
                 </div>
               </nav>

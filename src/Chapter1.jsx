@@ -35,7 +35,7 @@ const OUTCOMES = [
       en: "Digitising academic content",
     },
     body: {
-      ku: "گواستنەوەی زانیاریی مێرووناسی لە فۆرمی کاغەز و وانەی کلاسیک بۆ پلاتفۆرمێکی وێبیی سێ زمانە، گونجاو بۆ خوێندن و پێداچوونەوە.",
+      ku: "گواستنەوەی زانیاریی مێرووناسی لە کتێب و وانەی کلاسیکەوە بۆ سەکۆیەکی وێبیی سێ زمانە، گونجاو بۆ خوێندن و پێداچوونەوە.",
       ar: "نقل معرفة علم الحشرات من الورق والمحاضرة إلى منصة ويب ثلاثية اللغة للمطالعة والمراجعة.",
       en: "Moving entomological knowledge from print and lecture notes into a trilingual web platform for study and revision.",
     },
@@ -61,7 +61,7 @@ const OUTCOMES = [
       en: "Interactive classification and identification",
     },
     body: {
-      ku: "ڕوونکردنەوەی ئۆردەر و خێزان، کلیلی ناسینەوە، و نموونەی ناوچەیی بۆ جیاکردنەوەی pollinator و pest و vector.",
+      ku: "ڕوونکردنەوەی ئۆردەر و خێزان، کلیلی ناسینەوە، و نموونەی ناوچەیی بۆ جیاکردنەوەی پەیتێنەر، زیانبەخش و گەیەنەری نەخۆشی.",
       ar: "توضيح الرتب والفصائل ومفتاح التعريف وأمثلة إقليمية لتمييز الملقّح والآفة والناقل.",
       en: "Explaining orders and families, an identification key, and regional examples that separate pollinators, pests and vectors.",
     },
@@ -74,7 +74,7 @@ const OUTCOMES = [
       en: "Linking region and environment",
     },
     body: {
-      ku: "تیشک خستنە سەر فەونای کوردستان و ناوچەی Irano-Anatolian، و ڕۆڵی مێروو وەک bioindicator و لە کشتوکاڵدا.",
+      ku: "تیشک خستنە سەر فەونای کوردستان لە ناوچەی هەمەجۆریی Irano-Anatolian، و ڕۆڵی مێروو وەک نیشاندەری زیندوو و لە کشتوکاڵدا.",
       ar: "إبراز فونة كردستان ونقطة Irano-Anatolian ودور الحشرات كمؤشرات حيوية وفي الزراعة.",
       en: "Highlighting Kurdistan’s fauna within the Irano-Anatolian hotspot, and insects as bioindicators and agricultural agents.",
     },
@@ -87,7 +87,7 @@ const OUTCOMES = [
       en: "Supporting study and early research",
     },
     body: {
-      ku: "دابینکردنی چوارچێوەیەکی ڕێکخراو بۆ خوێندکارانی بایۆلۆجی: فەرهەنگ، کویز، و میتۆدی کێڵگە و لەیبڵ.",
+      ku: "دابینکردنی چوارچێوەیەکی ڕێکخراو بۆ خوێندکارانی زیندەزانی: فەرهەنگ، کویز، و ڕێبازی کێڵگە و لەیبڵی نمونە.",
       ar: "توفير إطار منظم لطلاب علوم الحياة: مسرد واختبار وطرائق الحقل والبطاقة.",
       en: "Providing a structured frame for biology students: glossary, quiz, and field-and-label methods.",
     },
@@ -100,7 +100,7 @@ const OUTCOMES = [
       en: "Awareness and insect conservation",
     },
     body: {
-      ku: "گۆڕینی تێڕوانینی نەرێنی بەرامبەر مێروو، و پێشنیاری IPM و پاراستنی habitat لەبری پشتبەستنی تەنها بە سم.",
+      ku: "گۆڕینی تێڕوانینی نەرێنی بەرامبەر مێروو، و پێشنیاری بەڕێوەبردنی تێکەڵاوی زیانبەخش و پاراستنی شوێنی ژیان، لەبری پشتبەستن بە سم بەتەنها.",
       ar: "تعديل النظرة السلبية إلى الحشرات واقتراح IPM وحفظ الموائل بدل الاعتماد على المبيدات وحدها.",
       en: "Shifting negative attitudes toward insects and promoting IPM and habitat care over chemistry-only control.",
     },
@@ -147,7 +147,7 @@ const HOW_TO = [
     step: "01",
     title: { ku: "نەخشەی فێرکاری", ar: "مسار التعلم", en: "Learning path" },
     body: {
-      ku: "لە سەرەکیەوە بە ڕیز بخوێنە: دەستپێک → ئۆردەرەکان → کێڵگە و کلیل → کویز.",
+      ku: "لە سەرەکییەوە بە ڕیز بخوێنەوە: دەستپێک، ئۆردەرەکان، کێڵگە و کلیل، پاشان کویز.",
       ar: "من الرئيسية اقرأ بالترتيب: البداية ثم الرتب ثم الحقل والمفتاح ثم الاختبار.",
       en: "From Home, follow the path: foundations → orders → field and key → quiz.",
     },
@@ -260,14 +260,14 @@ export default function Chapter1({ lang }) {
           <div className="ento-ch1-prose">
             <p>
               {t(lang, {
-                ku: "مێرووناسی (Entomology) لقێکی زانستی زیندەوەرە کە Insecta دەخوێنێتەوە: مۆرفۆلۆجی، فیزیۆلۆجی، ئیکۆلۆجی، ڕەفتار، پۆلێنکردن و پەیوەندی لەگەڵ مرۆڤ و کشتوکاڵ. لە زۆر ناوچەدا سەرچاوەی ئەکادیمی بە زمانی دایک کەمە؛ ئەم پرۆژەیە بۆ پڕکردنەوەی ئەو بۆشاییە دانراوە.",
+                ku: "مێرووناسی (Entomology) لقێکی زانستی زیندەوەرە کە پۆلی Insecta دەخوێنێتەوە: شێوە، کارکرد، ژینگە، ڕەفتار، پۆلێن و پەیوەندی لەگەڵ مرۆڤ و کشتوکاڵ. لە زۆر ناوچەدا سەرچاوەی ئەکادیمی بە زمانی دایک کەمە؛ ئەم پرۆژەیە بۆ پڕکردنەوەی ئەو بۆشاییە دانراوە.",
                 ar: "علم الحشرات فرع من علم الأحياء يدرس طائفة Insecta: الشكل والوظيفة والبيئة والسلوك والتصنيف وعلاقة الحشرات بالإنسان والزراعة. في كثير من المناطق تقل المصادر الأكاديمية باللغة الأم؛ وُضع هذا المشروع لسدّ تلك الفجوة.",
                 en: "Entomology is the biological study of Insecta—morphology, physiology, ecology, behaviour, systematics and human–agricultural interactions. Academic resources in the mother tongue are scarce in many regions; this project was built to narrow that gap.",
               })}
             </p>
             <p>
               {t(lang, {
-                ku: "ئامانجی سەرەکی بریتییە لە پێشکەشکردنی دەقی ورد، نموونەی ناوچەیی، و ئامرازی ناسینەوە و تاقیکردنەوە — بە شێوازێک کە بۆ وانە، خۆخوێندن و پێداچوونەوەی تاقیکردنەوە گونجاو بێت.",
+                ku: "ئامانجی سەرەکی بریتییە لە پێشکەشکردنی دەقێکی ورد، نموونەی ناوچەیی، و ئامرازی ناسینەوە و تاقیکردنەوە — بە شێوازێک کە بۆ وانە، خۆخوێندن و پێداچوونەوەی تاقیکردنەوە گونجاو بێت.",
                 ar: "الهدف الرئيس تقديم نص دقيق وأمثلة إقليمية وأدوات تعريف واختبار بأسلوب يصلح للمحاضرة والدراسة الذاتية ومراجعة الامتحان.",
                 en: "The primary aim is precise text, regional examples, and tools for identification and assessment—suitable for lectures, self-study and exam revision.",
               })}

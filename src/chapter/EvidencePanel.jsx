@@ -107,7 +107,7 @@ export default function EvidencePanel({ lang }) {
         </h2>
         <p className="ento-ch1-lead">
           {t(lang, {
-            ku: "ژمارە و ناوی زانستی لەم ئەتڵەسەدا لە داتابەسە باوەڕپێکراوەکان وەردەگیرێن؛ خوێندکار دەبێت بتوانێت خۆی سەیریان بکاتەوە.",
+            ku: "ژمارە و ناوی زانستی لەم ئەتڵەسەدا لە داتابەسە باوەڕپێکراوەکان وەردەگیرێن؛ خوێندکار دەبێت بتوانێت خۆی، بە سەربەخۆ، بیانپشکنێتەوە و بگەڕێتەوە سەر سەرچاوەکە.",
             ar: "تُستمد الأرقام والأسماء العلمية هنا من قواعد موثوقة؛ وينبغي أن يتمكن الطالب من التحقق بنفسه.",
             en: "Figures and binomials here are anchored in trusted repositories; learners should be able to verify them independently.",
           })}
@@ -144,7 +144,7 @@ export default function EvidencePanel({ lang }) {
               <dd dir="ltr">{digits(lang, iq.occurrences)}</dd>
             </div>
             <div>
-              <dt>{t(lang, { ku: "speciesKeyی جیاواز", ar: "speciesKey متمايزة", en: "Distinct species keys" })}</dt>
+              <dt>{t(lang, { ku: "کلیلی جۆری جیاواز", ar: "speciesKey متمايزة", en: "Distinct species keys" })}</dt>
               <dd dir="ltr">{digits(lang, iq.distinctSpeciesKeys)}</dd>
             </div>
             <div>
@@ -242,7 +242,7 @@ export default function EvidencePanel({ lang }) {
       </ul>
       <p className="ento-evidence-note" style={{ marginTop: 18 }}>
         {t(lang, {
-          ku: "بۆ پوختەی فەرمیی سێ زمانە و فەرهەنگ و ئاماژەدان بڕۆ بۆ ",
+          ku: "بۆ پوختەی فەرمیی سێ زمانە، فەرهەنگی زاراوە و شێوازی ئاماژەدان بڕۆ بۆ ",
           ar: "للخلاصة الرسمية ثلاثية اللغة والمعجم والاستشهاد انتقل إلى ",
           en: "For the formal trilingual digest, lexicon and citation apparatus see the ",
         })}

@@ -14,7 +14,7 @@ export const DATABASES = [
     full: "Global Biodiversity Information Facility",
     url: "https://www.gbif.org/",
     role: {
-      ku: "تۆماری ڕوودانی جیهانی (occurrence) و ناوی زانستی",
+      ku: "تۆماری جیهانیی ڕوودانی بوون و ناوی زانستی",
       ar: "سجلات التواجد العالمية والأسماء العلمية",
       en: "Global occurrence records and scientific names",
     },
@@ -25,7 +25,7 @@ export const DATABASES = [
     full: "Catalogue of Life",
     url: "https://www.catalogueoflife.org/",
     role: {
-      ku: "چکلیستی تاکسۆنۆمیی یەکگرتوو",
+      ku: "لیستی یەکگرتووی پۆلێنی تاکسۆنۆمی",
       ar: "قائمة تصنيفية موحدة",
       en: "Unified taxonomic checklist",
     },
@@ -36,7 +36,7 @@ export const DATABASES = [
     full: "Integrated Taxonomic Information System",
     url: "https://www.itis.gov/",
     role: {
-      ku: "ناوی قبوڵکراو و synonymی باوەڕپێکراو",
+      ku: "ناوی قبوڵکراو و هاوناوی باوەڕپێکراو",
       ar: "الأسماء المقبولة والمرادفات المعتمدة",
       en: "Accepted names and trusted synonyms",
     },
@@ -47,7 +47,7 @@ export const DATABASES = [
     full: "NCBI Taxonomy Browser",
     url: "https://www.ncbi.nlm.nih.gov/taxonomy",
     role: {
-      ku: "گرێدانی تاکسۆن بە DNA / GenBank",
+      ku: "بەستنەوەی تاکسۆن بە زنجیرەی دی ئێن ئەی و GenBank",
       ar: "ربط التصنيف بـ DNA وGenBank",
       en: "Linking taxa to DNA / GenBank",
     },
@@ -58,7 +58,7 @@ export const DATABASES = [
     full: "Barcode of Life Data System",
     url: "https://www.boldsystems.org/",
     role: {
-      ku: "DNA barcoding (زۆرجار COI)",
+      ku: "بارکۆدی دی ئێن ئەی (زۆرجار جینی COI)",
       ar: "باركود DNA (غالباً COI)",
       en: "DNA barcoding (often COI)",
     },
@@ -91,7 +91,7 @@ export const DATABASES = [
     full: "WHO vector literature & PubMed",
     url: "https://pubmed.ncbi.nlm.nih.gov/",
     role: {
-      ku: "vector-borne disease و توێژینەوەی پزیشکی",
+      ku: "نەخۆشیی گەیەنەر و ئەدەبیاتی پزیشکی",
       ar: "أمراض النواقل والأبحاث الطبية",
       en: "Vector-borne disease and medical literature",
     },
@@ -122,7 +122,7 @@ export const GLOBAL = {
     Odonata: 6_000,
     Neuroptera: 6_000,
     note: {
-      ku: "ژمارەی وەسفکراو بەپێی ساڵ و چکلیست دەگۆڕێت؛ بۆ وانە وەک مەودا بەکاربهێنە.",
+      ku: "ژمارەی جۆری وەسفکراو بەپێی ساڵ و لیستی پۆلێن دەگۆڕێت؛ لە وانەدا وەک مەودا بەکاری بهێنە، نەک وەک ژمارەیەکی داخراو.",
       ar: "أعداد الأنواع الموصوفة تتغير حسب السنة والقائمة؛ استخدمها كنطاق تعليمي.",
       en: "Described counts shift by year and checklist; use as teaching ranges.",
     },
@@ -150,7 +150,7 @@ export const GBIF_IRAQ = {
     Neuroptera: { taxonKey: 1501, occurrences: 70, distinctSpeciesKeys: 24 },
   },
   caveat: {
-    ku: "GBIF تەنها ئەو تۆمارانە پیشان دەدات کە بڵاوکراونەتەوە؛ فەونای کوردستان زۆر undersampledـە. نەبوونی تۆمار ≠ نەبوونی جۆر.",
+    ku: "GBIF تەنها ئەو تۆمارانە پیشان دەدات کە بڵاوکراونەتەوە؛ فەونای کوردستان هێشتا بە تەواوی نمونە نەکراوە. نەبوونی تۆمار واتای نەبوونی جۆر نییە.",
     ar: "GBIF يعكس فقط السجلات المنشورة؛ فونة كردستان ناقصة العينة. غياب السجل لا يعني غياب النوع.",
     en: "GBIF shows published records only; Kurdistan’s fauna is undersampled. Absence of records ≠ absence of the species.",
   },
@@ -165,7 +165,7 @@ export const SPECIES = {
     order: "Lepidoptera",
     family: "Papilionidae",
     note: {
-      ku: "swallowtailی Palearctic؛ EPPO PAPIMA؛ لە عێراق تۆماری GBIF هەیە.",
+      ku: "پەپوولەی کلکەهەڵۆی ناوچەی Palearctic؛ کۆدی EPPO بریتییە لە PAPIMA؛ لە عێراق تۆماری GBIFی هەیە.",
       ar: "أبو ذيل بالياركتي؛ رمز EPPO PAPIMA؛ له سجلات GBIF في العراق.",
       en: "Palearctic swallowtail; EPPO PAPIMA; GBIF records exist for Iraq.",
     },
@@ -177,7 +177,7 @@ export const SPECIES = {
     order: "Lepidoptera",
     family: "Nymphalidae",
     note: {
-      ku: "یەکێک لە بەرزترین تۆمارەکانی Lepidoptera لە GBIFـی عێراق.",
+      ku: "یەکێکە لە بەرزترین تۆمارەکانی پەپوولەباڵ لە GBIFـی عێراق.",
       ar: "من أعلى سجلات الفراشات في GBIF العراق.",
       en: "Among the best-documented butterflies in Iraq GBIF data.",
     },
@@ -196,7 +196,7 @@ export const SPECIES = {
     order: "Coleoptera",
     family: "Coccinellidae",
     note: {
-      ku: "predatorی شەتەک؛ Palearctic و لە biocontrolدا باو.",
+      ku: "نێچیرگری شەتەک؛ لە ناوچەی Palearctic و لە کۆنترۆڵی زیندوودا باوە.",
       ar: "مفترس للمن؛ بالياركتي وشائع في المكافحة الحيوية.",
       en: "Aphid predator; Palearctic and common in biocontrol.",
     },
@@ -208,7 +208,7 @@ export const SPECIES = {
     order: "Hymenoptera",
     family: "Apidae",
     note: {
-      ku: "زۆرترین تۆماری Hymenoptera لەم لیستەدا لە GBIFـی عێراق.",
+      ku: "بەرزترین تۆماری پەڕەباڵ لەم لیستەدا، لە GBIFـی عێراق.",
       ar: "أعلى سجلات النحل في هذه القائمة ضمن GBIF العراق.",
       en: "Highest Hymenoptera count in this atlas list for Iraq GBIF.",
     },
@@ -220,7 +220,7 @@ export const SPECIES = {
     order: "Diptera",
     family: "Culicidae",
     note: {
-      ku: "لە ئەدەبیاتی پزیشکی (Sulaymaniyah / باکووری عێراق) vectorی مەلاریا بووە؛ کەمیی GBIF ≠ کەمیی مێژوو.",
+      ku: "لە ئەدەبیاتی پزیشکیی سلێمانی و باکووری عێراق گەیەنەرێکی مێژوویی بۆ مەلاریا بووە؛ کەمیی تۆماری GBIF واتای نەبوونی ئەو مێژووە نییە.",
       ar: "في الأدبيات الطبية شمال العراق ناقل ملاريا تاريخي؛ قلة GBIF لا تنفي التاريخ.",
       en: "Historical malaria vector in N. Iraq literature (e.g. Sulaymaniyah); sparse GBIF ≠ no history.",
     },
@@ -264,7 +264,7 @@ export const SPECIES = {
     order: "Neuroptera",
     family: "Chrysopidae",
     note: {
-      ku: "لارڤا aphidophagous؛ لە augmentative biocontrolدا بەکاردێت.",
+      ku: "لارڤاکەی شەتەک دەخوات؛ لە کۆنترۆڵی زیندووی زیادکراودا بەکاردێت.",
       ar: "يرقتها تفترس المن؛ تُستخدم في المكافحة الحيوية التعزيزية.",
       en: "Aphidophagous larva; used in augmentative biocontrol.",
     },
@@ -339,7 +339,7 @@ export const REGIONAL_LITERATURE = [
     year: 2025,
     venue: "Biodiversity Data Journal · Erbil · NHMUK",
     finding: {
-      ku: "١٤ جۆری پارازیتۆید نوێ بۆ عێراق لە هەولێر (Malaise trap).",
+      ku: "١٤ جۆری پارازیتۆیدی نوێ بۆ عێراق لە هەولێر، بە تەڵەی مالایز.",
       ar: "١٤ نوعاً من أشباه الطفيليات جديدة للعراق من أربيل (مصيدة مالايز).",
       en: "14 parasitoid species new to Iraq from Erbil (Malaise trap).",
     },
@@ -351,7 +351,7 @@ export const REGIONAL_LITERATURE = [
     year: 2021,
     venue: "Biodiversity Data Journal",
     finding: {
-      ku: "٣٧ جۆری Ephemeroptera لە عێراق؛ بەشێک لە کوردستانی عێراق کۆکراونەتەوە.",
+      ku: "٣٧ جۆری مێشوولەی ئاو لە عێراق؛ بەشێک لە ڕووپێویەکە لە کوردستانی عێراق کۆکراوەتەوە.",
       ar: "٣٧ نوعاً من ذباب مايو في العراق؛ جزء من المسح في كردستان العراق.",
       en: "37 mayfly species listed for Iraq; survey includes Iraqi Kurdistan.",
     },
@@ -375,7 +375,7 @@ export const REGIONAL_LITERATURE = [
     year: null,
     venue: "Conservation International / CEPF framework",
     finding: {
-      ku: "زاگرۆس و کوردستان لەنێو hotspotـدان؛ بەرزی و نیمچە وشک → هەمەجۆریی مێروو.",
+      ku: "زاگرۆس و کوردستان لە ناوچەی هەمەجۆریی زیندەوەریدان؛ بەرزی و کەشوهەوای نیمچە وشک هەمەجۆریی مێروو ڕێک دەخەن.",
       ar: "زاغروس وكردستان ضمن نقطة التنوع؛ ارتفاعات ومناخ شبه جاف → تنوع حشري.",
       en: "Zagros–Kurdistan sits in this hotspot; elevation and semi-arid climate structure insect diversity.",
     },
