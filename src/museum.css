@@ -514,6 +514,175 @@ input, textarea, button { caret-color:var(--accent); }
 .ento-gloss-term { font-size:1rem; color:var(--accent); display:block; }
 .ento-gloss-ku { color:var(--text-secondary); font-size:.82rem; }
 
+/* ── CHAPTER 1 — academic preface ── */
+.ento-ch1-hero {
+  position:relative; min-height:clamp(280px,46svh,420px);
+  display:flex; align-items:flex-end; justify-content:center;
+  text-align:center; overflow:hidden; padding:0;
+  background:#12160f;
+}
+.ento-ch1-hero-img {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center 35%;
+}
+.ento-ch1-hero-shade {
+  position:absolute; inset:0;
+  background:
+    linear-gradient(180deg, rgba(10,12,8,.35) 0%, rgba(10,12,8,.72) 48%, rgba(10,12,8,.94) 100%);
+}
+.ento-ch1-hero-copy {
+  position:relative; z-index:1;
+  width:min(920px, 100%);
+  padding:clamp(48px,8vw,88px) clamp(16px,4vw,32px) clamp(28px,5vw,44px);
+}
+.ento-ch1-wrap {
+  max-width:880px;
+  margin:0 auto;
+  padding:clamp(8px,2vw,16px) clamp(14px,4vw,28px) clamp(36px,6vw,64px);
+  display:flex; flex-direction:column; gap:clamp(28px,5vw,48px);
+}
+.ento-ch1-block {
+  opacity:0; transform:translateY(18px);
+  transition:opacity .55s var(--ease-out), transform .55s var(--ease-out);
+}
+.ento-ch1-block.ento-visible { opacity:1; transform:none; }
+.ento-ch1-head {
+  margin-bottom:16px; padding-bottom:12px;
+  border-bottom:1px solid var(--border-card);
+}
+.ento-ch1-title {
+  margin:0 0 6px;
+  font-size:clamp(1.15rem,2.8vw,1.45rem); font-weight:800;
+  color:var(--text-primary); line-height:1.3;
+}
+.ento-ch1-lead {
+  margin:0; font-size:.9rem; line-height:1.7; color:var(--text-muted);
+}
+.ento-ch1-prose {
+  display:flex; flex-direction:column; gap:14px;
+}
+.ento-ch1-prose p {
+  margin:0; font-size:clamp(.9rem,2vw,1.02rem);
+  line-height:1.9; color:var(--text-secondary);
+}
+.ento-ch1-meta {
+  margin:0; display:flex; flex-direction:column; gap:0;
+  border:1px solid var(--border-card); background:var(--bg-card);
+}
+.ento-ch1-meta-row {
+  display:grid; grid-template-columns:minmax(7rem,9.5rem) 1fr;
+  gap:12px; padding:12px 14px;
+  border-bottom:1px solid var(--border-card);
+}
+.ento-ch1-meta-row:last-child { border-bottom:none; }
+.ento-ch1-meta-row dt {
+  margin:0; font-family:var(--font-mono); font-size:.68rem;
+  letter-spacing:.08em; text-transform:uppercase; color:var(--accent);
+  padding-top:3px;
+}
+.ento-ch1-meta-row dd {
+  margin:0; font-size:.9rem; line-height:1.65; color:var(--text-primary);
+}
+.ento-ch1-outcomes {
+  list-style:none; margin:0; padding:0;
+  display:flex; flex-direction:column; gap:12px;
+}
+.ento-ch1-outcomes li {
+  display:grid; grid-template-columns:auto 1fr; gap:12px;
+  padding:14px 16px; background:var(--bg-card);
+  border:1px solid var(--border-card);
+}
+.ento-ch1-outcome-num {
+  font-family:var(--font-mono); font-size:.72rem; font-weight:700;
+  color:var(--accent); letter-spacing:.08em; padding-top:3px;
+}
+.ento-ch1-outcomes strong {
+  display:block; margin-bottom:4px;
+  font-size:.95rem; color:var(--text-primary);
+}
+.ento-ch1-outcomes p {
+  margin:0; font-size:.86rem; line-height:1.7; color:var(--text-secondary);
+}
+.ento-ch1-steps {
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px;
+}
+.ento-ch1-step {
+  background:var(--bg-card); border:1px solid var(--border-card);
+  padding:16px;
+}
+.ento-ch1-step-num {
+  display:inline-block; margin-bottom:10px;
+  font-family:var(--font-mono); font-size:.7rem; letter-spacing:.12em;
+  color:var(--accent);
+}
+.ento-ch1-step h3 {
+  margin:0 0 8px; font-size:.95rem; color:var(--text-primary);
+}
+.ento-ch1-step p {
+  margin:0; font-size:.84rem; line-height:1.7; color:var(--text-secondary);
+}
+.ento-ch1-institution { display:flex; }
+.ento-ch1-inst-card {
+  width:100%; background:var(--bg-card);
+  border:1px solid var(--border-card); padding:clamp(18px,3vw,28px);
+}
+.ento-ch1-inst-kicker {
+  margin:0 0 6px; font-family:var(--font-mono);
+  font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent);
+}
+.ento-ch1-inst-card h3 {
+  margin:0 0 10px; font-size:1.15rem; color:var(--text-primary);
+}
+.ento-ch1-inst-card > p {
+  margin:0 0 14px; font-size:.9rem; line-height:1.75; color:var(--text-secondary);
+}
+.ento-ch1-links {
+  list-style:none; margin:0; padding:0;
+  display:flex; flex-direction:column; gap:8px;
+}
+.ento-ch1-links a {
+  color:var(--accent); text-decoration:none; font-size:.88rem; font-weight:650;
+}
+.ento-ch1-links a:hover { text-decoration:underline; text-underline-offset:3px; }
+.ento-ch1-author {
+  display:grid; grid-template-columns:minmax(140px,200px) 1fr;
+  gap:clamp(16px,3vw,28px); align-items:start;
+  background:var(--bg-card); border:1px solid var(--border-card);
+  padding:clamp(14px,2.5vw,22px);
+}
+.ento-ch1-author-photo {
+  aspect-ratio:4/5; overflow:hidden; background:rgba(26,36,24,.08);
+}
+.ento-ch1-author-photo img {
+  width:100%; height:100%; object-fit:cover; object-position:center 18%;
+}
+.ento-ch1-author-body h3 {
+  margin:0 0 4px; font-size:1.1rem; color:var(--text-primary);
+}
+.ento-ch1-author-latin {
+  margin:0 0 10px; font-family:var(--font-mono);
+  font-size:.74rem; color:var(--text-muted); letter-spacing:.02em;
+}
+.ento-ch1-author-role {
+  margin:0 0 6px; font-size:.88rem; font-weight:700; color:var(--accent);
+}
+.ento-ch1-author-aff {
+  margin:0 0 14px; font-size:.84rem; color:var(--text-secondary); line-height:1.6;
+}
+.ento-ch1-author-note {
+  margin:0; font-size:.82rem; line-height:1.75; color:var(--text-muted);
+  padding-top:12px; border-top:1px solid var(--border-card);
+}
+@media (max-width:720px) {
+  .ento-ch1-steps { grid-template-columns:1fr; }
+  .ento-ch1-author { grid-template-columns:1fr; }
+  .ento-ch1-author-photo { max-width:220px; margin-inline:auto; }
+  .ento-ch1-meta-row { grid-template-columns:1fr; gap:4px; }
+}
+@media (hover:none) {
+  .ento-ch1-links a { font-weight:700; }
+}
+
 /* ── TEAM SECTION ── */
 .ento-team-section {
   max-width:1100px; margin:0 auto clamp(32px,5vw,56px);
