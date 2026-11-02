@@ -26,11 +26,13 @@ npm start
 ناوخۆیی: `http://localhost:3017`
 
 ```bash
-npm run build    # بەرهەمهێنان
+npm run build    # بەرهەمهێنان (+ PWA / service worker)
 npm test         # تاقیکردنەوەی خێرا
 npm run lint     # پشکنینی کۆد
 npm run deploy   # بڵاوکردنەوە بۆ GitHub Pages
 ```
+
+دوای دیپلۆی، لە مۆبایل/دێسکتۆپ دەتوانیت وەک **PWA** دایبمەزرێنیت (Add to Home Screen / Install).
 
 وردەکاریی دیپلۆی و Google Sheets: بڕوانە `DEPLOY_README.md`.
 
