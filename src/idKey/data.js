@@ -136,7 +136,7 @@ export const KEY_NODES = {
       en: "What does the insect you see look like?",
     },
     hint: {
-      ku: "سەیری باڵ و قۆناغی ژیان بکە. ئەگەر دڵنیانیت، ئەوە هەڵبژێرە کە نزیکترە.",
+      ku: "سەیری باڵ و قۆناغی ژیان بکە. ئەگەر دڵنیا نیت، ئەوە هەڵبژێرە کە نزیکترە.",
       ar: "انظر إلى الأجنحة ومرحلة الحياة. إن لم تكن متأكداً اختر الأقرب.",
       en: "Look at the wings and life stage. If unsure, pick the closest match.",
     },
