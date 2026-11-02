@@ -404,7 +404,7 @@ export const QUIZ = [
     q: { ku: "ئەگەر مێروو یەک جووت باڵی فڕینی هەبێت، کام ئۆردەرە؟", ar: "إذا كان للحشرة زوج أجنحة طيران واحد، فأي رتبة؟", en: "If an insect has one pair of flying wings, which order is it?" },
     opts: { ku: ["Coleoptera", "Diptera", "Lepidoptera", "Orthoptera"], ar: ["Coleoptera", "Diptera", "Lepidoptera", "Orthoptera"], en: ["Coleoptera", "Diptera", "Lepidoptera", "Orthoptera"] },
     correct: 1,
-    why: { ku: "Diptera یەک جووت باڵ و هەڵتەری هەیە. کلیلی چاپتەری چواردەهەم ئەم هەنگاوە دەگرێت.", ar: "لـ Diptera زوج أجنحة ودبوس توازن. مفتاح الفصل الرابع عشر يمر بهذه الخطوة.", en: "Diptera has one pair of wings and halteres. The Chapter 14 key takes that step." },
+    why: { ku: "Diptera یەک جووت باڵ و هەڵتەری هەیە. کلیلی چاپتەری سێزدەهەم ئەم هەنگاوە دەگرێت.", ar: "لـ Diptera زوج أجنحة ودبوس توازن. مفتاح الفصل الثالث عشر يمر بهذه الخطوة.", en: "Diptera has one pair of wings and halteres. The Chapter 13 key takes that step." },
   },
   {
     id: 46,

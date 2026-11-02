@@ -16,11 +16,18 @@ describe("catalog", () => {
     expect(ids.sort()).toEqual(CHAPTERS.map((c) => c.id).sort());
   });
 
-  it("neighbors wrap the atlas ends", () => {
+  it("neighbors follow the teaching order", () => {
     expect(neighbors("ch1").prev).toBeNull();
     expect(neighbors("ch1").next.id).toBe("ch2");
-    expect(neighbors("ch14").next).toBeNull();
-    expect(neighbors("ch14").prev.id).toBe("ch13");
+    expect(neighbors("ch3").next.id).toBe("ch5");
+    expect(neighbors("ch14").prev.id).toBe("ch12");
+    expect(neighbors("ch14").next.id).toBe("ch4");
+    expect(neighbors("ch4").prev.id).toBe("ch14");
+    expect(neighbors("ch4").next).toBeNull();
+    expect(CHAPTERS.map((c) => c.id)).toEqual([
+      "ch1", "ch2", "ch3", "ch5", "ch6", "ch7", "ch8",
+      "ch10", "ch11", "ch13", "ch9", "ch12", "ch14", "ch4",
+    ]);
   });
 
   it("search finds latin and Kurdish titles", () => {

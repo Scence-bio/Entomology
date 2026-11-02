@@ -101,7 +101,7 @@ export default function Chapter4({ lang }) {
   return (
     <div className="ento-chapter-page">
       <div className="ento-chapter-hero">
-        <div className="ento-chapter-hero-num">{lang === "ku" ? "چاپتەری چوارەم" : lang === "ar" ? "الفصل الرابع" : "Chapter 4"}</div>
+        <div className="ento-chapter-hero-num">{lang === "ku" ? "چاپتەری چواردەهەم" : lang === "ar" ? "الفصل الرابع عشر" : "Chapter 14"}</div>
         <span className="ento-chapter-hero-icon"><Mark name="card" /></span>
         <h1 className="ento-chapter-hero-title">
           {lang === "ku" ? "کویز" : lang === "ar" ? "اختبار" : "Quiz"}

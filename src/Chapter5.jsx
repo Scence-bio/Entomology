@@ -643,7 +643,7 @@ export default function Chapter5({ lang }) {
         <div style={{position:"relative",zIndex:2}}>
     
         <div className="ento-chapter-hero-num">
-          {lang === "ku" ? "چاپتەری پێنجەم" : lang === "ar" ? "الفصل الخامس" : "Chapter 5"}
+          {lang === "ku" ? "چاپتەری چوارەم" : lang === "ar" ? "الفصل الرابع" : "Chapter 4"}
         </div>
         <span className="ento-chapter-hero-icon"><Mark name="butterfly" /></span>
         <h1 className="ento-chapter-hero-title">

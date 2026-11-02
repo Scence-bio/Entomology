@@ -104,7 +104,7 @@ const HYMENOPTERA = {
   image: "/images/plates/ch6-bee.jpg",
   icon: "bee",
   latin: "Hymenoptera",
-  num: { ku: "چاپتەری شەشەم", ar: "الفصل السادس", en: "Chapter 6" },
+  num: { ku: "چاپتەری پێنجەم", ar: "الفصل الخامس", en: "Chapter 5" },
   title: { ku: "مێروولە، هەنگ و زەنبوور", ar: "النمل والنحل والزنابير", en: "Ants, bees and wasps" },
   blocks: [
     {
@@ -182,7 +182,7 @@ const COLEOPTERA = {
   icon: "beetle",
   latin: "Coleoptera",
   focus: "center 42%",
-  num: { ku: "چاپتەری حەوتەم", ar: "الفصل السابع", en: "Chapter 7" },
+  num: { ku: "چاپتەری شەشەم", ar: "الفصل السادس", en: "Chapter 6" },
   title: { ku: "قوڕقوڕەکان", ar: "الخنافس", en: "Beetles" },
   blocks: [
     {
@@ -259,7 +259,7 @@ const DIPTERA = {
   image: "/images/plates/ch8-mosquito.jpg",
   icon: "fly",
   latin: "Diptera",
-  num: { ku: "چاپتەری هەشتەم", ar: "الفصل الثامن", en: "Chapter 8" },
+  num: { ku: "چاپتەری حەوتەم", ar: "الفصل السابع", en: "Chapter 7" },
   title: { ku: "مێش و مێشوولە", ar: "الذباب والبعوض", en: "Flies and mosquitoes" },
   blocks: [
     {
@@ -348,7 +348,7 @@ function FieldChapter({ lang, quiz }) {
         image: "/images/plates/ch9-net.jpg",
         focus: "center 62%",
         icon: "net",
-        num: { ku: "چاپتەری نۆیەم", ar: "الفصل التاسع", en: "Chapter 9" },
+        num: { ku: "چاپتەری یازدەهەم", ar: "الفصل الحادي عشر", en: "Chapter 11" },
         title: { ku: "کێڵگە و لەیبڵ", ar: "الحقل والبطاقة", en: "Field and label" },
       }} />
       <div className="ento-container" dir={dir}>
@@ -435,7 +435,7 @@ const HEMIPTERA = {
   image: "/images/plates/ch10-bug.jpg",
   icon: "bug",
   latin: "Hemiptera",
-  num: { ku: "چاپتەری دەیەم", ar: "الفصل العاشر", en: "Chapter 10" },
+  num: { ku: "چاپتەری هەشتەم", ar: "الفصل الثامن", en: "Chapter 8" },
   title: { ku: "شەتەک و سنە", ar: "المن والبق", en: "Aphids and true bugs" },
   blocks: [
     {
@@ -512,7 +512,7 @@ const JUMPERS = {
   image: "/images/plates/ch11-dragon.jpg",
   icon: "dragon",
   latin: "Orthoptera · Odonata",
-  num: { ku: "چاپتەری یازدەهەم", ar: "الفصل الحادي عشر", en: "Chapter 11" },
+  num: { ku: "چاپتەری نۆیەم", ar: "الفصل التاسع", en: "Chapter 9" },
   title: { ku: "جڕوشک و مێرووی ئاو", ar: "الجنادب والرعاشات", en: "Grasshoppers and dragonflies" },
   blocks: [
     {
@@ -690,7 +690,7 @@ const NEUROPTERA = {
   image: "/images/plates/ch13-lacewing.jpg",
   icon: "lace",
   latin: "Neuroptera",
-  num: { ku: "چاپتەری سێزدەهەم", ar: "الفصل الثالث عشر", en: "Chapter 13" },
+  num: { ku: "چاپتەری دەیەم", ar: "الفصل العاشر", en: "Chapter 10" },
   title: { ku: "تۆڕباڵ", ar: "أسد المن والشبكيات", en: "Lacewings" },
   blocks: [
     {
@@ -814,42 +814,42 @@ const KEY_NODES = {
   },
   lepidoptera: {
     result: { ku: "Lepidoptera — پەپوولە", ar: "Lepidoptera — فراشة", en: "Lepidoptera — butterfly or moth" },
-    note: { ku: "باڵەکە بە قاو داپۆشراوە. چاپتەری پێنجەم.", ar: "الجناح مغطى بالحراشف. الفصل الخامس.", en: "The wing is covered in scales. Chapter 5." },
+    note: { ku: "باڵەکە بە قاو داپۆشراوە. چاپتەری چوارەم.", ar: "الجناح مغطى بالحراشف. الفصل الرابع.", en: "The wing is covered in scales. Chapter 4." },
     href: "#/ch5",
   },
   hymenoptera: {
     result: { ku: "Hymenoptera — مێروولە، هەنگ یان زەنبوور", ar: "Hymenoptera — نمل أو نحل أو زنابير", en: "Hymenoptera — ant, bee or wasp" },
-    note: { ku: "کەمەری باریک و باڵی پەردەیی. چاپتەری شەشەم.", ar: "خصر ضيق وأجنحة غشائية. الفصل السادس.", en: "A narrow waist and membranous wings. Chapter 6." },
+    note: { ku: "کەمەری باریک و باڵی پەردەیی. چاپتەری پێنجەم.", ar: "خصر ضيق وأجنحة غشائية. الفصل الخامس.", en: "A narrow waist and membranous wings. Chapter 5." },
     href: "#/ch6",
   },
   coleoptera: {
     result: { ku: "Coleoptera — قوڕقوڕە", ar: "Coleoptera — خنفساء", en: "Coleoptera — beetle" },
-    note: { ku: "elytra قاوغی ڕەقە. چاپتەری حەوتەم.", ar: "الأغماد elytra صلبة. الفصل السابع.", en: "The elytra are hard covers. Chapter 7." },
+    note: { ku: "elytra قاوغی ڕەقە. چاپتەری شەشەم.", ar: "الأغماد elytra صلبة. الفصل السادس.", en: "The elytra are hard covers. Chapter 6." },
     href: "#/ch7",
   },
   diptera: {
     result: { ku: "Diptera — مێش یان مێشوولە", ar: "Diptera — ذبابة أو بعوضة", en: "Diptera — fly or mosquito" },
-    note: { ku: "یەک جووت باڵ و هەڵتەر. چاپتەری هەشتەم.", ar: "زوج أجنحة ودبوس توازن. الفصل الثامن.", en: "One pair of wings and halteres. Chapter 8." },
+    note: { ku: "یەک جووت باڵ و هەڵتەر. چاپتەری حەوتەم.", ar: "زوج أجنحة ودبوس توازن. الفصل السابع.", en: "One pair of wings and halteres. Chapter 7." },
     href: "#/ch8",
   },
   hemiptera: {
     result: { ku: "Hemiptera — شەتەک یان سنە", ar: "Hemiptera — من أو بق", en: "Hemiptera — aphid or true bug" },
-    note: { ku: "دەمی کونکەر. چاپتەری دەیەم.", ar: "فم ثاقب ماص. الفصل العاشر.", en: "A piercing-sucking beak. Chapter 10." },
+    note: { ku: "دەمی کونکەر. چاپتەری هەشتەم.", ar: "فم ثاقب ماص. الفصل الثامن.", en: "A piercing-sucking beak. Chapter 8." },
     href: "#/ch10",
   },
   orthoptera: {
     result: { ku: "Orthoptera — جڕوشک یان سیسرک", ar: "Orthoptera — جندب أو صرصار", en: "Orthoptera — grasshopper or cricket" },
-    note: { ku: "بازدان بە قاچی دواوە. چاپتەری یازدەهەم.", ar: "قفز بالأرجل الخلفية. الفصل الحادي عشر.", en: "A jump with the hind legs. Chapter 11." },
+    note: { ku: "بازدان بە قاچی دواوە. چاپتەری نۆیەم.", ar: "قفز بالأرجل الخلفية. الفصل التاسع.", en: "A jump with the hind legs. Chapter 9." },
     href: "#/ch11",
   },
   odonata: {
     result: { ku: "Odonata — مێرووی ئاو", ar: "Odonata — رعاش", en: "Odonata — dragonfly or damselfly" },
-    note: { ku: "چاوی گەورە و باڵی تۆڕاوی. چاپتەری یازدەهەم.", ar: "عين كبيرة وجناح شبكي. الفصل الحادي عشر.", en: "Large eyes and netted wings. Chapter 11." },
+    note: { ku: "چاوی گەورە و باڵی تۆڕاوی. چاپتەری نۆیەم.", ar: "عين كبيرة وجناح شبكي. الفصل التاسع.", en: "Large eyes and netted wings. Chapter 9." },
     href: "#/ch11",
   },
   neuroptera: {
     result: { ku: "Neuroptera — تۆڕباڵ", ar: "Neuroptera — أسد المن", en: "Neuroptera — lacewing" },
-    note: { ku: "باڵی تۆڕاوی نەرم، بێ کەمەر. چاپتەری سێزدەهەم.", ar: "جناح شبكي لين بلا خصر. الفصل الثالث عشر.", en: "Soft netted wings, no waist. Chapter 13." },
+    note: { ku: "باڵی تۆڕاوی نەرم، بێ کەمەر. چاپتەری دەیەم.", ar: "جناح شبكي لين بلا خصر. الفصل العاشر.", en: "Soft netted wings, no waist. Chapter 10." },
     href: "#/ch13",
   },
 };
@@ -883,7 +883,7 @@ function KeyChapter({ lang, quiz }) {
       <Hero lang={lang} chapter={{
         image: "/images/plates/ch14-key.jpg",
         icon: "key",
-        num: { ku: "چاپتەری چواردەهەم", ar: "الفصل الرابع عشر", en: "Chapter 14" },
+        num: { ku: "چاپتەری سێزدەهەم", ar: "الفصل الثالث عشر", en: "Chapter 13" },
         title: { ku: "کلیلی ناسینەوە", ar: "مفتاح التعريف", en: "Identification key" },
       }} />
       <div className="ento-container" dir={dir}>
