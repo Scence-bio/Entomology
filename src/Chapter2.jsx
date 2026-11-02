@@ -2,6 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import { QuizSection } from "./quiz/Quiz";
 import PhotoHero from "./chapter/PhotoHero";
 import SectionPills from "./chapter/SectionPills";
+import EvidencePanel from "./chapter/EvidencePanel";
+import { GBIF_IRAQ, GLOBAL } from "./data/trustedSources";
 
 const SCIENTIST_IMGS = {};
 
@@ -17,9 +19,9 @@ const SECTIONS = [
       en: "Advanced Definition",
     },
     body: {
-      ku: "ئێنتۆمۆلۆجی (Entomology) لقێکی زانستی زیندەوەرە کە مێرووەکان (Insecta) دەخوێنێتەوە: مۆرفۆلۆجی، فیزیۆلۆجی، ژینگەناسی (Ecology)، ڕەفتار، پۆلێنکردن (Taxonomy و Systematics)، پەرەسەندن (Phylogeny)، و کارلێکیان لەگەڵ مرۆڤ و کشتوکاڵ. وشەکە لە یۆنانیی کۆنەوە هاتووە: ἔντομον (éntomon) «بڕدراو/مێروو» و -λογία «زانست». مێروو لەناو فایلەمی Arthropoda ـدان و بە tagmosis جیا دەکرێنەوە: سێ تاگماتا — سەر (cephalon)، سنگ (thorax) و سک (abdomen)؛ شەش قاچی یەکجۆر (hexapod)؛ یەک جووت ئەنتێنا؛ و زۆرجار باڵ لەسەر مزۆ- و مێتاتۆراکس. سیستەمی هەناسەدانیان تراکیاییە (tracheae + spiracles)، سوڕی خوێنیان کراوەیە (hemolymph)، و پەیەکەری دەرەکییان لە کایتین و پرۆتین پێک هاتووە. نزیکەی یەک ملیۆن جۆری وەسفکراو تۆمار کراوە — زیاتر لە هەموو پۆلەکانی تر پێکەوە.",
-      ar: "علم الحشرات (Entomology) فرع من علم الأحياء يدرس طائفة الحشرات Insecta: الشكل والوظيفة والبيئة والسلوك والتصنيف (Taxonomy وSystematics) والتطور (Phylogeny) وعلاقتها بالإنسان والزراعة. الكلمة من اليونانية: ἔντομον و-λογία. الحشرات ضمن شعبة مفصليات الأرجل، وتتميز بـ tagmosis إلى ثلاثة أقسام: رأس وصدر وبطن، وست أرجل، وزوج واحد من قرون الاستشعار، وأجنحة غالباً على الصدر الأوسط والخلفي. تنفسها قصبي (tracheae وspiracles)، ودورانها مفتوح (hemolymph)، وهيكلها الخارجي من الكايتين والبروتين. وُصف نحو مليون نوع — أكثر من بقية الطوائف مجتمعة.",
-      en: "Entomology is the biological science of the class Insecta: morphology, physiology, ecology, behaviour, taxonomy and systematics, phylogeny, and interactions with humans and agriculture. The name is from Ancient Greek ἔντομον (éntomon) and -λογία. Insects sit in phylum Arthropoda and are defined by tagmosis into three tagmata — head, thorax and abdomen — six uniramous legs, one pair of antennae, and usually wings on the meso- and metathorax. Gas exchange is tracheal (tracheae and spiracles), circulation is open (hemolymph), and the cuticle is chitin–protein. Roughly one million described species are known — more than all other animal classes combined.",
+      ku: `ئێنتۆمۆلۆجی (Entomology) لقێکی زانستی زیندەوەرە کە مێرووەکان (Insecta) دەخوێنێتەوە: مۆرفۆلۆجی، فیزیۆلۆجی، ژینگەناسی (Ecology)، ڕەفتار، پۆلێنکردن (Taxonomy و Systematics)، پەرەسەندن (Phylogeny)، و کارلێکیان لەگەڵ مرۆڤ و کشتوکاڵ. وشەکە لە یۆنانیی کۆنەوە هاتووە: ἔντομον (éntomon) «بڕدراو/مێروو» و -λογία «زانست». مێروو لەناو فایلەمی Arthropoda ـدان و بە tagmosis جیا دەکرێنەوە: سێ تاگماتا — سەر، سنگ و سک؛ شەش قاچ (hexapod)؛ یەک جووت ئەنتێنا؛ و زۆرجار باڵ لەسەر مزۆ- و مێتاتۆراکس. هەناسە trachaea + spiracles؛ سوڕ hemolymphی کراوە؛ cuticle لە α-chitin و sclerotin. بەپێی Stork (٢٠١٨) نزیکەی ١ ملیۆن جۆر وەسف کراوە، بەڵام خەمڵاندنی جیهانی ~${(GLOBAL.stork2018.insectsEstimated / 1e6).toFixed(1)} ملیۆن مێروو و ~${GLOBAL.stork2018.undescribedPctApprox}٪ هێشتا نەدۆزراوەتەوە — بۆیە «یەک ملیۆن» تەنها کۆتاییی وەسفە، نەک کۆتاییی سروشت.`,
+      ar: `علم الحشرات يدرس Insecta: الشكل والوظيفة والبيئة والسلوك والتصنيف والتطور وعلاقتها بالإنسان والزراعة. من اليونانية ἔντομον و-λογία. ضمن Arthropoda بثلاث tagmata وست أرجل وزوج قرون. تنفس قصبي ودوران مفتوح وكيوتيكل من الكايتين. وفق Stork (٢٠١٨) وُصف نحو مليون نوع، لكن التقدير العالمي ~${(GLOBAL.stork2018.insectsEstimated / 1e6).toFixed(1)} مليون حشرة وما زال ~${GLOBAL.stork2018.undescribedPctApprox}٪ غير مكتشف.`,
+      en: `Entomology studies Insecta — morphology, physiology, ecology, behaviour, taxonomy/systematics, phylogeny, and human–agricultural interactions. From Greek ἔντομον + -λογία. Insects are arthropods with three tagmata, six uniramous legs, one antennal pair, tracheal gas exchange, open hemolymph circulation and a chitin–sclerotin cuticle. Stork (2018) places ~1 million described insect species against a global estimate of ~${(GLOBAL.stork2018.insectsEstimated / 1e6).toFixed(1)} million (~${GLOBAL.stork2018.undescribedPctApprox}% still undescribed) — so “one million” is the named fraction, not the biota.`,
     },
     terms: ["Entomology","Insecta","Arthropoda","Tagmosis","Hexapoda","Tracheae","Hemolymph","Systematics"],
   },
@@ -82,15 +84,15 @@ const SECTIONS = [
     },
     mapImg: "/images/headers/chapter2-map.webp",
     body: {
-      ku: "هەرێمی کوردستان و زنجیرەچیاکانی زاگرۆس لە ناوچەی Irano-Anatolian biodiversity hotspot ـدان: گۆڕانی بەرزی، نیمچە وشک و دارستانی ئاوێتە، ژینگەی جیاواز بۆ Lepidoptera، Coleoptera، Hymenoptera و Orthoptera دروست دەکات. توێژینەوە ئەکادیمییەکان (وەک لە زانکۆی ڕاپەڕین و دامەزراوەکانی ناوچەکە) جەخت لە: (١) تۆماری فەونای ناوخۆیی و جۆری endemic؛ (٢) مێرووی زیانبەخشی کشتوکاڵی و IPM — تێکەڵکردنی کۆنترۆڵی بایۆلۆجی، کلتووری و کیمیایی بەپێی ئاستی زیان (economic threshold)؛ (٣) پەیتاندن و تەندروستیی هەنگ (Apis mellifera)؛ (٤) کاریگەریی گۆڕانی کەشوهەوا لەسەر phenologyی مێروو. زانینی ئۆردەر و خێزان یارمەتی دەدات بۆ جیاکردنەوەی pollinator لە pest و vector.",
-      ar: "تقع كردستان وجبال زاغروس ضمن نقطة التنوع Irano-Anatolian: ارتفاعات ومناخ شبه جاف وغابات مختلطة تهيئ موائل لـ Lepidoptera وColeoptera وHymenoptera وOrthoptera. تركز الأبحاث على: (١) جرد الفونة والأنواع المتوطنة؛ (٢) الآفات وIPM عند العتبة الاقتصادية؛ (٣) التلقيح وصحة نحل العسل؛ (٤) أثر تغير المناخ على الـphenology. معرفة الرتب والفصائل تميز الملقّح عن الآفة والناقل.",
-      en: "The Kurdistan Region and the Zagros lie in the Irano-Anatolian biodiversity hotspot: elevation gradients, semi-arid climate and mixed woodland create habitats for Lepidoptera, Coleoptera, Hymenoptera and Orthoptera. Academic work focuses on (1) local faunistics and endemics; (2) crop pests and IPM keyed to economic thresholds; (3) pollination and Apis mellifera health; (4) climate effects on insect phenology. Knowing orders and families separates pollinators from pests and disease vectors.",
+      ku: `هەرێمی کوردستان و زنجیرەچیاکانی زاگرۆس لە ناوچەی Irano-Anatolian biodiversity hotspot ـدان: گۆڕانی بەرزی، نیمچە وشک و دارستانی ئاوێتە، ژینگەی جیاواز بۆ Lepidoptera، Coleoptera، Hymenoptera و Orthoptera دروست دەکات. لە GBIF (وێنەی ${GBIF_IRAQ.retrieved}) بۆ عێراق: نزیکەی ${GBIF_IRAQ.insecta.occurrences.toLocaleString("en-US")} ڕوودانی Insecta و ${GBIF_IRAQ.insecta.distinctSpeciesKeys.toLocaleString("en-US")} speciesKeyی جیاواز — بەڵام ناوچەکە undersampledـە؛ نەبوونی تۆمار واتای نەبوونی جۆر نییە. چکلیستی Ephemeropteraی عێراق (٢٠٢١) ٣٧ جۆر تۆمار دەکات، بەشێکیان لە کوردستانی عێراق. توێژینەوە ئەکادیمییەکان جەخت لە: (١) تۆماری فەونای ناوخۆیی و endemic؛ (٢) IPM و economic threshold؛ (٣) پەیتاندن و Apis mellifera؛ (٤) phenology و گۆڕانی کەشوهەوا.`,
+      ar: `تقع كردستان وجبال زاغروس ضمن نقطة التنوع Irano-Anatolian. في لقطة GBIF (${GBIF_IRAQ.retrieved}) للعراق: نحو ${GBIF_IRAQ.insecta.occurrences.toLocaleString("en-US")} سجل تواجد لـInsecta و${GBIF_IRAQ.insecta.distinctSpeciesKeys.toLocaleString("en-US")} مفتاح نوع متمايز — مع نقص واضح في العينات. قائمة ذباب مايو في العراق (٢٠٢١) تذكر ٣٧ نوعاً. محاور البحث: جرد الفونة، IPM، التلقيح، والـphenology.`,
+      en: `Kurdistan and the Zagros lie in the Irano-Anatolian biodiversity hotspot. A GBIF snapshot (${GBIF_IRAQ.retrieved}) for Iraq lists ~${GBIF_IRAQ.insecta.occurrences.toLocaleString("en-US")} Insecta occurrences and ${GBIF_IRAQ.insecta.distinctSpeciesKeys.toLocaleString("en-US")} distinct species keys — still a severe undersample; missing records ≠ missing species. Iraq’s mayfly checklist (2021) lists 37 Ephemeroptera species, including Kurdistan survey material. Research axes: faunistics/endemics, IPM thresholds, Apis mellifera pollination, and climate phenology.`,
     },
     stats: [
+      { icon:"", label:`GBIF IQ Insecta · ${GBIF_IRAQ.insecta.distinctSpeciesKeys} spp.` },
       { icon:"", label:"Irano-Anatolian Hotspot" },
-      { icon:"", label:"Endemic / Faunistics" },
-      { icon:"", label:"IPM · Economic threshold" },
-      { icon:"", label:"Pollinators · Apis" },
+      { icon:"", label:"Ephemeroptera IQ · 37 spp." },
+      { icon:"", label:"IPM · Pollinators · Apis" },
     ],
   },
   {
@@ -265,6 +267,7 @@ const CH2_NAV = [
   { id: "history", ku: "مێژوو", ar: "التاريخ", en: "History" },
   { id: "scientists", ku: "زانایان", ar: "العلماء", en: "Scientists" },
   { id: "kurdistan", ku: "کوردستان", ar: "كردستان", en: "Kurdistan" },
+  { id: "evidence", ku: "داتابەس", ar: "القواعد", en: "Databases" },
   { id: "importance", ku: "گرنگی", ar: "الأهمية", en: "Importance" },
   { id: "challenges", ku: "ئاڵۆزییەکان", ar: "التحديات", en: "Challenges" },
   { id: "glossary", ku: "فەرهەنگ", ar: "المسرد", en: "Glossary" },
@@ -289,7 +292,7 @@ function useInView(ref, { threshold = 0.07, rootMargin = "0px 0px -20px 0px" } =
 function useActiveSection() {
   const [active, setActive] = useState("");
   useEffect(() => {
-    const ids = ["intro", ...SECTIONS.map(s => s.id), "quiz"];
+    const ids = ["intro", ...SECTIONS.map(s => s.id), "evidence", "quiz"];
     const h = () => {
       for (const id of ids) {
         const el = document.getElementById(id);
@@ -538,6 +541,7 @@ export default function Chapter2({ lang }) {
           <SectionCard key={s.id} section={s} delay={i * 50} lang={lang} />
         ))}
       </div>
+      <EvidencePanel lang={lang} />
       <QuizSection lang={lang} chapter="ch2" />
     </div>
   );

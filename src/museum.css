@@ -704,6 +704,79 @@ input, textarea, button { caret-color:var(--accent); }
   .ento-ch1-links a { font-weight:700; }
 }
 
+/* ── TRUSTED EVIDENCE (GBIF / databases) ── */
+.ento-evidence-panel {
+  max-width:880px; margin:0 auto;
+  padding:clamp(8px,2vw,16px) clamp(14px,4vw,28px) clamp(28px,5vw,48px);
+}
+.ento-evidence-grid {
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px;
+  margin-bottom:20px;
+}
+.ento-evidence-card, .ento-evidence-strip {
+  background:var(--bg-card); border:1px solid var(--border-card);
+  padding:clamp(14px,2.5vw,20px);
+}
+.ento-evidence-card h3, .ento-evidence-sub {
+  margin:0 0 12px; font-size:.95rem; color:var(--text-primary);
+}
+.ento-evidence-sub { margin-top:22px; }
+.ento-evidence-kicker {
+  margin:0 0 10px; font-family:var(--font-mono); font-size:.62rem;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--accent);
+}
+.ento-evidence-metrics {
+  margin:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px;
+}
+.ento-evidence-metrics dt {
+  margin:0; font-size:.68rem; color:var(--text-muted); line-height:1.35;
+}
+.ento-evidence-metrics dd {
+  margin:4px 0 0; font-family:var(--font-mono); font-size:1.05rem;
+  font-weight:700; color:var(--text-primary);
+}
+.ento-evidence-note, .ento-evidence-meta {
+  margin:12px 0 0; font-size:.74rem; line-height:1.55; color:var(--text-muted);
+}
+.ento-evidence-meta a, .ento-evidence-dbs a, .ento-species-evidence a {
+  color:var(--accent); text-decoration:none;
+}
+.ento-evidence-meta a:hover, .ento-evidence-dbs a:hover, .ento-species-evidence a:hover {
+  text-decoration:underline; text-underline-offset:3px;
+}
+.ento-evidence-table-wrap { overflow-x:auto; margin-bottom:8px; }
+.ento-evidence-table td, .ento-evidence-table th { white-space:nowrap; }
+.ento-evidence-dbs {
+  list-style:none; margin:0; padding:0;
+  display:flex; flex-direction:column; gap:12px;
+}
+.ento-evidence-dbs li {
+  background:var(--bg-card); border:1px solid var(--border-card);
+  padding:12px 14px;
+}
+.ento-evidence-dbs p {
+  margin:6px 0 0; font-size:.84rem; line-height:1.65; color:var(--text-secondary);
+}
+.ento-evidence-db-full { font-size:.72rem; color:var(--text-muted); }
+.ento-evidence-strip { margin:0 0 16px; }
+.ento-species-evidence {
+  margin:10px 0 0; padding:10px 12px;
+  background:rgba(26,36,24,.04); border:1px solid var(--border-card);
+}
+.ento-species-evidence .ento-binomial { margin:0 0 6px; font-size:.95rem; }
+.ento-authorship { font-style:normal; font-weight:500; color:var(--text-muted); font-size:.78rem; }
+.ento-evidence-bullets {
+  list-style:none; margin:0; padding:0;
+  display:flex; flex-direction:column; gap:4px;
+}
+.ento-evidence-bullets li {
+  font-size:.78rem; line-height:1.55; color:var(--text-secondary);
+}
+@media (max-width:720px) {
+  .ento-evidence-grid { grid-template-columns:1fr; }
+  .ento-evidence-metrics { grid-template-columns:1fr; }
+}
+
 /* ── TEAM SECTION ── */
 .ento-team-section {
   max-width:1100px; margin:0 auto clamp(32px,5vw,56px);

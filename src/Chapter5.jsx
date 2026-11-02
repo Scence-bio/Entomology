@@ -24,6 +24,8 @@ import { QuizSection } from "./quiz/Quiz";
 import { SPECIMENS } from "./butterflies";
 import PhotoHero from "./chapter/PhotoHero";
 import SectionPills from "./chapter/SectionPills";
+import { GbifOrderStrip, SpeciesEvidence } from "./chapter/EvidencePanel";
+import { GBIF_IRAQ, GLOBAL } from "./data/trustedSources";
 
 /* ═══════════════════════════════════════════════
    LANG CONFIG (mirror from App.js)
@@ -65,9 +67,9 @@ const LEPIDO_SECTIONS = [
       en: "Defining Lepidoptera",
     },
     body: {
-      ku: "Lepidoptera (~١٨٠٠٠٠+ جۆر) پەپوولە (Rhopalocera / butterflies) و پەپوولەی شەو (Heterocera / moths) دەگرێتەوە. λεπίς «قاو» + πτερόν «باڵ»: باڵ و زۆرجار جەستە بە scalesی کایتینی داپۆشراون — ڕەنگی pigmentary و structural (interference) دروست دەکەن. دەمی گەورە زۆرجار siphoning proboscisـە (galeaeی maxilla). لارڤا (caterpillar) chewing mandiblesی هەیە و زۆرجار host-plantـی تایبەت (oligophagy / monophagy). گۆڕانەپەڕە holometabolousـە. جیاوازیی کرداری: ئەنتێنای clubbed و باڵی داخراو لەسەر پشت → زۆرجار پەپوولە؛ ئەنتێنای filiform/pectinate و باڵی بڵاوکراو → زۆرجار moth.",
-      ar: "Lepidoptera أكثر من ١٨٠ ألف نوع: فراشات وعث. حراشف كيتينية؛ خرطوم ماص؛ يرقة قارضة على عائل نباتي. تحول كامل. الفرق العملي: قرون صولجانية وراحة يومية للفراشات غالباً.",
-      en: "Lepidoptera (180,000+ species) includes butterflies and moths. Scaled wings produce pigmentary and structural colour. Adults typically have a galea-formed siphoning proboscis; larvae have chewing mandibles and often specialised host plants. Development is holometabolous. Practical split: clubbed antennae and vertical wing rest often mark butterflies; filiform/pectinate antennae and roof-like wings often mark moths.",
+      ku: `Lepidoptera (~${Math.round(GLOBAL.describedOrdersApprox.Lepidoptera / 1000)} هەزار+ جۆری وەسفکراو) پەپوولە و moth دەگرێتەوە. λεπίς «قاو» + πτερόν «باڵ»: scalesی کایتینی ڕەنگی pigmentary و structural دروست دەکەن؛ دەم siphoning proboscis؛ لارڤا chewing + host-plant. گۆڕانەپەڕە holometabolousـە. لە GBIFـی عێراق: ${GBIF_IRAQ.orders.Lepidoptera.occurrences.toLocaleString("en-US")} ڕوودان و ${GBIF_IRAQ.orders.Lepidoptera.distinctSpeciesKeys} speciesKey — Vanessa cardui و Papilio machaon لەنێو نموونە تۆمارکراوەکانن.`,
+      ar: `Lepidoptera (~${Math.round(GLOBAL.describedOrdersApprox.Lepidoptera / 1000)} ألف+ نوع موصوف): فراشات وعث؛ حراشف وخرطوم ويرقة على عائل. في GBIF العراق: ${GBIF_IRAQ.orders.Lepidoptera.occurrences.toLocaleString("en-US")} سجل و${GBIF_IRAQ.orders.Lepidoptera.distinctSpeciesKeys} مفتاح نوع — منها Vanessa cardui وPapilio machaon.`,
+      en: `Lepidoptera (~${Math.round(GLOBAL.describedOrdersApprox.Lepidoptera / 1000)}k+ described species) spans butterflies and moths: chitinous scales, siphoning proboscis, chewing larvae on host plants, holometaboly. Iraq GBIF currently holds ${GBIF_IRAQ.orders.Lepidoptera.occurrences.toLocaleString("en-US")} occurrences and ${GBIF_IRAQ.orders.Lepidoptera.distinctSpeciesKeys} species keys — including Vanessa cardui and Papilio machaon.`,
     },
     terms: ["Lepidoptera", "Scales", "Proboscis", "Holometabola", "Host plant", "Structural colour"],
   },
@@ -650,6 +652,9 @@ export default function Chapter5({ lang }) {
       />
       <SectionPills lang={lang} items={CH5_NAV} />
       <div className="ento-container">
+        <GbifOrderStrip lang={lang} order="Lepidoptera" />
+        <SpeciesEvidence lang={lang} name="Papilio machaon" />
+        <SpeciesEvidence lang={lang} name="Vanessa cardui" />
         {LEPIDO_SECTIONS.map((s, i) => (
           <LepidoCard key={s.id} section={s} delay={i * 50} lang={lang} />
         ))}

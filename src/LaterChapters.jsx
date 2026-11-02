@@ -3,6 +3,8 @@ import { QuizSection } from "./quiz/Quiz";
 import { IdKey } from "./idKey/IdKey";
 import PhotoHero from "./chapter/PhotoHero";
 import SectionPills from "./chapter/SectionPills";
+import { GbifOrderStrip, SpeciesEvidence } from "./chapter/EvidencePanel";
+import { SPECIES } from "./data/trustedSources";
 
 function text(lang, pack) {
   return pack[lang] || pack.en;
@@ -49,26 +51,45 @@ function FamilyPicker({ lang, families }) {
 
 function SpeciesTable({ lang, species }) {
   const heads = {
-    ku: ["ناوی زانستی", "خێزان", "ناوی باو", "شوێن"],
-    ar: ["الاسم العلمي", "الفصيلة", "الاسم الشائع", "الموطن"],
-    en: ["Scientific name", "Family", "Common name", "Where"],
-  }[lang] || ["Scientific name", "Family", "Common name", "Where"];
+    ku: ["ناوی زانستی", "خێزان", "ناوی باو", "شوێن", "GBIF IQ"],
+    ar: ["الاسم العلمي", "الفصيلة", "الاسم الشائع", "الموطن", "GBIF IQ"],
+    en: ["Scientific name", "Family", "Common name", "Where", "GBIF IQ"],
+  }[lang] || ["Scientific name", "Family", "Common name", "Where", "GBIF IQ"];
   return (
-    <table className="ento-record">
-      <thead>
-        <tr>{heads.map((head) => <th key={head}>{head}</th>)}</tr>
-      </thead>
-      <tbody>
-        {species.map((row) => (
-          <tr key={row.name}>
-            <td className="ento-binomial">{row.name}</td>
-            <td className="ento-binomial">{row.family}</td>
-            <td>{text(lang, row.common)}</td>
-            <td>{text(lang, row.where)}</td>
-          </tr>
+    <>
+      <table className="ento-record">
+        <thead>
+          <tr>{heads.map((head) => <th key={head}>{head}</th>)}</tr>
+        </thead>
+        <tbody>
+          {species.map((row) => {
+            const ev = SPECIES[row.name];
+            return (
+              <tr key={row.name}>
+                <td className="ento-binomial">
+                  {row.name}
+                  {ev?.authorship ? (
+                    <span className="ento-authorship"> {ev.authorship}</span>
+                  ) : null}
+                </td>
+                <td className="ento-binomial">{row.family}</td>
+                <td>{text(lang, row.common)}</td>
+                <td>{text(lang, row.where)}</td>
+                <td dir="ltr">
+                  {ev?.iqOccurrences != null ? ev.iqOccurrences : "—"}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      {species
+        .filter((row) => SPECIES[row.name])
+        .slice(0, 2)
+        .map((row) => (
+          <SpeciesEvidence key={`ev-${row.name}`} lang={lang} name={row.name} />
         ))}
-      </tbody>
-    </table>
+    </>
   );
 }
 
@@ -83,11 +104,13 @@ function TaxonChapter({ lang, chapter, quiz }) {
     })),
     { id: "quiz", ku: "کویز", ar: "اختبار", en: "Quiz" },
   ];
+  const orderName = chapter.latin?.split("·")[0]?.trim() || chapter.latin;
   return (
     <div className="ento-chapter-page ento-ch1">
       <Hero lang={lang} chapter={chapter} />
       <SectionPills lang={lang} items={pills} />
       <div className="ento-container" dir={dir}>
+        {orderName ? <GbifOrderStrip lang={lang} order={orderName} /> : null}
         {chapter.blocks.map((block) => (
           <article key={block.id} id={block.id} className="ento-card ento-visible" style={{ direction: dir }}>
             <div className="ento-card-header">
@@ -332,12 +355,12 @@ const DIPTERA = {
       num: "٠٣ · 03",
       title: { ku: "جۆرە باوەکانی ناوچەکە", ar: "أنواع شائعة في المنطقة", en: "Common species of the region" },
       body: {
-        ku: "Anopheles superpictus لە گوازەرەوەکانی مەلاریای ئەم ناوچەیە بووە. وێنەی سەرەوە مێشوولەیەکی Anopheles ـە، بۆ نیشاندانی شێوەکە.",
-        ar: "Anopheles superpictus من نواقل الملاريا في هذه المنطقة. الصورة أعلاه بعوضة Anopheles لبيان الشكل.",
-        en: "Anopheles superpictus has been a malaria vector in this region. The picture above is an Anopheles mosquito, to show the shape.",
+        ku: "Anopheles superpictus Grassi, 1899 لە ئەدەبیاتی پزیشکی باکووری عێراق (Sulaymaniyah / Kirkuk، ڕووبار و برنج) وەک vectorی Plasmodium تۆمار کراوە؛ لەگەڵ A. sacharovi لە هەڵمەتی WHO–Iraqـی ساڵانی ١٩٥٠دا. لە GBIFـی عێراق ئێستا تۆماری occurrenceی کەمە — کەمیی داتای دیجیتاڵ ≠ کەمیی مێژووی نەخۆشی. Musca domestica و Eristalis tenax نموونەی mechanical vector و pollinator / Batesian mimicـن.",
+        ar: "Anopheles superpictus Grassi, 1899 موثّق في الأدبيات الطبية لشمال العراق (السليمانية/كركوك) كناقل لـPlasmodium مع A. sacharovi في حملة WHO. قلة سجلات GBIF لا تنفي التاريخ الطبي. Musca وEristalis يمثلان ناقلاً آلياً وملقّحاً/محاكياً.",
+        en: "Anopheles superpictus Grassi, 1899 is documented in N. Iraq medical entomology (Sulaymaniyah/Kirkuk rivers and rice) as a Plasmodium vector alongside A. sacharovi in the mid-century WHO–Iraq campaign. Sparse modern GBIF occurrences do not erase that history. Musca domestica and Eristalis tenax illustrate mechanical vectors versus pollinator/mimic roles.",
       },
       species: [
-        { name: "Anopheles superpictus", family: "Culicidae", common: { ku: "مێشوولەی مەلاریا", ar: "بعوض الملاريا", en: "A malaria mosquito" }, where: { ku: "ئاو و دۆڵ", ar: "ماء ووديان", en: "Water and valleys" } },
+        { name: "Anopheles superpictus", family: "Culicidae", common: { ku: "مێشوولەی مەلاریا", ar: "بعوض الملاريا", en: "A malaria mosquito" }, where: { ku: "ئاو و دۆڵ · باکووری عێراق", ar: "ماء ووديان · شمال العراق", en: "Water & valleys · N. Iraq" } },
         { name: "Musca domestica", family: "Muscidae", common: { ku: "مێشی ماڵەوە", ar: "الذبابة المنزلية", en: "House fly" }, where: { ku: "ماڵ و بازاڕ", ar: "بيوت وأسواق", en: "Houses and markets" } },
         { name: "Eristalis tenax", family: "Syrphidae", common: { ku: "مێشی گوڵ", ar: "ذبابة الأزهار", en: "Drone fly" }, where: { ku: "گوڵ و ئاو", ar: "زهر وماء", en: "Flowers and water" } },
       ],
