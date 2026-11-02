@@ -32,6 +32,7 @@ const INSTITUTION = [
 const APP_LINKS = [
   { href: "#/", ku: "سەرەکی", ar: "الرئيسية", en: "Home" },
   { href: "#/#path", ku: "نەخشەی فێرکاری", ar: "مسار التعلم", en: "Learning path" },
+  { href: "#/ledger", ku: "تۆماری فەونای کوردستان", ar: "سجل فونة كردستان", en: "Kurdistan faunal ledger" },
   { href: "#/#chapters", ku: "بەشەکان", ar: "الفصول", en: "Chapters" },
   { href: "#/ch14", ku: "کلیلی ناسینەوە", ar: "مفتاح التعريف", en: "Identification key" },
   { href: "#/ch4", ku: "کویز و بڕوانامە", ar: "الاختبار والشهادة", en: "Quiz & certificate" },
@@ -67,9 +68,9 @@ export function AppFooter({ lang }) {
           <p className="ento-footer-tagline">
             {t(
               lang,
-              "ئەپڵیکەیشنی فێرکاریی مێرووناسی — کوردی، عەرەبی و ئینگلیزی. زانکۆی ڕاپەڕین.",
-              "تطبيق تعليمي لعلم الحشرات — كردية وعربية وإنجليزية. جامعة رابرين.",
-              "Educational entomology web app — Kurdish, Arabic & English. University of Raparin."
+              "ئەتڵەسی ئەکادیمیی فەرمیی مێرووناسی — کوردی، عەرەبی و ئینگلیزی بە یەک ئاست. زانکۆی ڕاپەڕین · کۆلێژی زانست.",
+              "أطلس أكاديمي رسمي لعلم الحشرات — كردية وعربية وإنجليزية بمعيار واحد. جامعة رابرين · كلية العلوم.",
+              "A formal academic entomology atlas — Kurdish, Arabic and English at one standard. University of Raparin · College of Science."
             )}
           </p>
           <div className="ento-footer-badges" dir="ltr">

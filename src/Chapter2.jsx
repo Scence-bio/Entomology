@@ -542,6 +542,20 @@ export default function Chapter2({ lang }) {
         ))}
       </div>
       <EvidencePanel lang={lang} />
+      <p className="ento-ch1-lead" style={{ maxWidth: 880, margin: "0 auto 28px", padding: "0 clamp(14px,4vw,28px)" }} dir={lang === "en" ? "ltr" : "rtl"}>
+        {lang === "ku"
+          ? "بۆ قووڵایی ناوچەیی: "
+          : lang === "ar"
+          ? "للعمق الإقليمي: "
+          : "For regional depth: "}
+        <a href="#/ledger" style={{ color: "var(--accent)", fontWeight: 600 }}>
+          {lang === "ku"
+            ? "تۆماری فەونای مێرووی کوردستان"
+            : lang === "ar"
+            ? "سجل فونة حشرات كردستان"
+            : "Kurdistan Entomofauna Ledger"}
+        </a>
+      </p>
       <QuizSection lang={lang} chapter="ch2" />
     </div>
   );

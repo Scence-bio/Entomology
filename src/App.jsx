@@ -9,6 +9,7 @@ import { AppFooter } from "./Footer";
 import { InstallPrompt } from "./InstallPrompt";
 
 const later = (name) => lazy(() => import("./LaterChapters").then((m) => ({ default: m[name] })));
+const KurdistanLedger = lazy(() => import("./KurdistanLedger"));
 const CHAPTER_PAGES = {
   ch1: lazy(() => import("./Chapter1")),
   ch2: lazy(() => import("./Chapter2")),
@@ -97,9 +98,9 @@ function Hero({ lang }) {
   }, [allowVideo]);
 
   const heroDesc = {
-    ku: "سەرچاوەیەکی ئەکادیمیی فێرکاری بۆ مێرووناسی — پێناسە، ئۆردەر، کلیل و کویز",
-    ar: "مرجع أكاديمي تعليمي لعلم الحشرات — تعريف ورتب ومفتاح واختبار",
-    en: "An academic learning atlas of entomology — concepts, orders, key and quiz",
+    ku: "ئەتڵەسی ئەکادیمیی سێ زمانە بۆ مێرووناسی — بنەما، ئۆردەر، تۆماری فەونای کوردستان، کلیل و کویز. زانکۆی ڕاپەڕین · کۆلێژی زانست.",
+    ar: "أطلس أكاديمي ثلاثي اللغة لعلم الحشرات — أسس ورتب وسجل فونة كردستان ومفتاح واختبار. جامعة رابرين · كلية العلوم.",
+    en: "A trilingual academic atlas of entomology — foundations, orders, Kurdistan faunal ledger, identification key and quiz. University of Raparin · College of Science.",
   };
 
   return (
@@ -118,20 +119,32 @@ function Hero({ lang }) {
       )}
       <div className="ento-hero-overlay" />
       <div className="ento-hero-body" style={{ direction: lang === "en" ? "ltr" : "rtl" }}>
-        <p className="ento-hero-kicker">University of Raparin · College of Science</p>
-        <h1 className="ento-hero-title-en">Atlas of Entomology</h1>
-        <div className="ento-hero-title-ku">
-          {lang === "ku" ? "ئەتڵەسی مێرووناسی" : lang === "ar" ? "أطلس علم الحشرات" : "The Atlas of Entomology"}
-        </div>
+        <p className="ento-hero-kicker">
+          {lang === "ku"
+            ? "زانکۆی ڕاپەڕین · کۆلێژی زانست · بەشی بایۆلۆجی"
+            : lang === "ar"
+            ? "جامعة رابرين · كلية العلوم · قسم علوم الحياة"
+            : "University of Raparin · College of Science · Biology"}
+        </p>
+        <h1 className="ento-hero-title-brand">
+          {lang === "ku" ? "ئەتڵەسی مێرووناسی" : lang === "ar" ? "أطلس علم الحشرات" : "Atlas of Entomology"}
+        </h1>
+        <p className="ento-hero-title-tri" dir="ltr">
+          <span>ئەتڵەسی مێرووناسی</span>
+          <span aria-hidden="true"> · </span>
+          <span>أطلس علم الحشرات</span>
+          <span aria-hidden="true"> · </span>
+          <span>Atlas of Entomology</span>
+        </p>
         <p className="ento-hero-desc" style={{ direction: lang === "en" ? "ltr" : "rtl", textAlign: "center" }}>
           {heroDesc[lang]}
         </p>
         <div className="ento-hero-ctas">
-          <a className="ento-hero-cta" href="#id-key">
-            {lang === "ku" ? "مێروو بناسەوە" : lang === "ar" ? "عرّف الحشرة" : "Identify an insect"}
+          <a className="ento-hero-cta" href="#/ledger">
+            {lang === "ku" ? "تۆماری فەونای کوردستان" : lang === "ar" ? "سجل فونة كردستان" : "Kurdistan faunal ledger"}
           </a>
-          <a className="ento-hero-cta ento-hero-cta-ghost" href="#chapters">
-            {lang === "ku" ? "بەشێک هەڵبژێرە" : lang === "ar" ? "اختر فصلاً" : "Choose a chapter"}
+          <a className="ento-hero-cta ento-hero-cta-ghost" href="#id-key">
+            {lang === "ku" ? "مێروو بناسەوە" : lang === "ar" ? "عرّف الحشرة" : "Identify an insect"}
           </a>
         </div>
       </div>
@@ -145,6 +158,32 @@ function HomeScreen({ lang }) {
   const dir = lang === "en" ? "ltr" : "rtl";
   return (
     <div className="ento-home" id="chapters" dir={dir}>
+      <aside className="ento-prospectus" id="prospectus">
+        <p className="ento-prospectus-kicker" dir="ltr">Acta · Atlas of Entomology</p>
+        <h2 className="ento-prospectus-title">
+          {lang === "ku"
+            ? "پڕۆسپێکتوسی ئەکادیمی"
+            : lang === "ar"
+            ? "نشرة أكاديمية"
+            : "Academic prospectus"}
+        </h2>
+        <p className="ento-prospectus-body">
+          {lang === "ku"
+            ? "ئەم ئەتڵەسە سەرچاوەیەکی فێرکاریی فەرمیی سێ زمانەیە: هەر دەقێک بە کوردی، عەرەبی و ئینگلیزی بە هەمان قووڵایی دەنووسرێتەوە؛ ناوی زانستی لاتینی دەمێنێتەوە؛ و تۆماری فەونای کوردستان لە توێژینەوەی زانکۆکانی ناوچەکە و GBIF دەبەستێتەوە."
+            : lang === "ar"
+            ? "هذا الأطلس مصدر تعليمي رسمي ثلاثي اللغة: كل نص يُكتب بالكردية والعربية والإنجليزية بنفس العمق؛ وتبقى الأسماء العلمية اللاتينية؛ ويُربط سجل فونة كردستان بأبحاث جامعات المنطقة وGBIF."
+            : "This atlas is a formal trilingual teaching resource: every passage is authored in Kurdish, Arabic and English at equal depth; Latin binomials are retained; and the Kurdistan faunal ledger binds regional university research to GBIF."}
+        </p>
+        <div className="ento-prospectus-actions">
+          <a className="ento-hero-cta" href="#/ledger">
+            {lang === "ku" ? "بڕۆ بۆ تۆماری فەونا" : lang === "ar" ? "إلى سجل الفونة" : "Open the faunal ledger"}
+          </a>
+          <a className="ento-hero-cta ento-hero-cta-ghost" href="#path">
+            {lang === "ku" ? "نەخشەی فێرکاری" : lang === "ar" ? "مسار التعلم" : "Learning path"}
+          </a>
+        </div>
+      </aside>
+
       <div className="ento-path" id="path">
         <h2 className="ento-home-label">
           {lang === "ku" ? "نەخشەی فێرکاری" : lang === "ar" ? "مسار التعلم" : "Learning path"}
@@ -152,10 +191,10 @@ function HomeScreen({ lang }) {
         <hr className="ento-home-rule" />
         <p className="ento-path-lead">
           {lang === "ku"
-            ? "بەم ڕیزە بخوێنە: دەستپێک، ئۆردەرەکان، کار و کلیل، پاشان کویز."
+            ? "بەم ڕیزە بخوێنە: دەستپێک، ئۆردەرەکان، تۆماری فەونا، کار و کلیل، پاشان کویز. هەر هەنگاوێک بە سێ زمانە."
             : lang === "ar"
-            ? "اقرأ بهذا الترتيب: البداية، الرتب، العمل والمفتاح، ثم الاختبار."
-            : "Read in this order: start, orders, field and key, then the quiz."}
+            ? "اقرأ بهذا الترتيب: البداية، الرتب، سجل الفونة، العمل والمفتاح، ثم الاختبار. كل خطوة باللغات الثلاث."
+            : "Read in this order: start, orders, faunal ledger, field and key, then the quiz. Every step is trilingual."}
         </p>
         <div className="ento-path-grid">
           {LEARNING_PATH.map((step, i) => (
@@ -232,6 +271,7 @@ function pageFromHash() {
   if (!hash.startsWith("#/")) return null;
   const id = decodeURIComponent(hash.slice(2).split(/[/?#]/)[0]);
   if (!id || id === "home") return "home";
+  if (id === "ledger") return "ledger";
   if (CHAPTER_PAGES[id]) return id;
   return "notfound";
 }
@@ -332,6 +372,21 @@ export default function EntomologyPage() {
           </>
         )}
         {page === "notfound" && <NotFoundPage lang={lang} />}
+        {page === "ledger" && (
+          <Suspense fallback={<div className="ento-chapter-page ento-chapter-loading" aria-busy="true" />}>
+            <div className="ento-chapter-shell">
+              <nav className="ento-chapter-nav" dir={lang === "en" ? "ltr" : "rtl"} aria-label={lang === "ku" ? "گەڕانەوە" : lang === "ar" ? "رجوع" : "Back"}>
+                <div className="ento-chapter-nav-top">
+                  <ol className="ento-breadcrumb">
+                    <li><a href="#/">{lang === "ku" ? "سەرەکی" : lang === "ar" ? "الرئيسية" : "Home"}</a></li>
+                    <li aria-current="page">{lang === "ku" ? "تۆماری فەونا" : lang === "ar" ? "سجل الفونة" : "Faunal ledger"}</li>
+                  </ol>
+                </div>
+              </nav>
+              <KurdistanLedger lang={lang} />
+            </div>
+          </Suspense>
+        )}
         {ChapterPage && (
           <Suspense fallback={<div className="ento-chapter-page ento-chapter-loading" aria-busy="true" />}>
             <div className="ento-chapter-shell">

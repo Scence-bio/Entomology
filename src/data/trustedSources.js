@@ -274,6 +274,30 @@ export const SPECIES = {
 /** Regional literature anchors (not GBIF). */
 export const REGIONAL_LITERATURE = [
   {
+    id: "geometridae-kr-2025",
+    title: "An inventory of geometrid moths (Lepidoptera: Geometridae) of Iraqi Kurdistan",
+    year: 2025,
+    venue: "Zootaxa · University of Sulaimani",
+    finding: {
+      ku: "١٣٤ جۆری Geometridae؛ ٦٤ تۆماری نوێ بۆ عێراق — توێژینەوەی زانکۆی سلێمانی.",
+      ar: "١٣٤ نوعاً من Geometridae؛ ٦٤ سجلاً جديداً للعراق — بحث جامعة السليمانية.",
+      en: "134 Geometridae species; 64 new to Iraq — University of Sulaimani research.",
+    },
+    url: "https://doi.org/10.11646/zootaxa.5875.1.1",
+  },
+  {
+    id: "weevils-kr-2019",
+    title: "Survey of weevils (Curculionoidea) from Kurdistan Region–Iraq",
+    year: 2019,
+    venue: "Bull. Iraq Nat. Hist. Mus. · University of Duhok",
+    finding: {
+      ku: "٤١ جۆر؛ ٢٥ تۆماری نوێ بۆ عێراق — زانکۆی دهۆک.",
+      ar: "٤١ نوعاً؛ ٢٥ سجلاً جديداً للعراق — جامعة دهوك.",
+      en: "41 species; 25 new to Iraq — University of Duhok.",
+    },
+    url: "https://doi.org/10.26842/binhm.7.2019.15.3.0319",
+  },
+  {
     id: "ephemeroptera-iraq-2021",
     title: "Updated check-list of the mayflies (Insecta: Ephemeroptera) of Iraq",
     year: 2021,
@@ -284,6 +308,18 @@ export const REGIONAL_LITERATURE = [
       en: "37 mayfly species listed for Iraq; survey includes Iraqi Kurdistan.",
     },
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8016820/",
+  },
+  {
+    id: "iraq-lep-cesa-2018",
+    title: "Synonymous and distributional list of the Lepidoptera of Iraq",
+    year: 2018,
+    venue: "Priamus (Cesa)",
+    finding: {
+      ku: "١٢٣٦ جۆری Lepidoptera لە عێراق؛ ١٥٧ پەپوولە.",
+      ar: "١٢٣٦ نوعاً من Lepidoptera في العراق؛ ١٥٧ فراشة.",
+      en: "1,236 Lepidoptera species in Iraq; 157 butterflies.",
+    },
+    url: "https://www.academia.edu/37369239/A_synonymous_and_distributional_list_of_the_Lepidoptera_of_Iraq_based_on_the_info_systems_of_the_Cesa",
   },
   {
     id: "irano-anatolian",
