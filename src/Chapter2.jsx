@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import { Mark } from "./marks";
 import { QuizSection } from "./quiz/Quiz";
 import PhotoHero from "./chapter/PhotoHero";
 import SectionPills from "./chapter/SectionPills";

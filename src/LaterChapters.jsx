@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Mark } from "./marks";
 import { QuizSection } from "./quiz/Quiz";
 import { IdKey } from "./idKey/IdKey";
+import PhotoHero from "./chapter/PhotoHero";
+import SectionPills from "./chapter/SectionPills";
 
 function text(lang, pack) {
   return pack[lang] || pack.en;
@@ -9,20 +10,17 @@ function text(lang, pack) {
 
 function Hero({ lang, chapter }) {
   return (
-    <div className="ento-chapter-hero" style={{ position: "relative", overflow: "hidden", minHeight: 420, padding: 0 }}>
-      <img
-        src={chapter.image}
-        alt=""
-        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: chapter.focus || "center" }}
-      />
-      <div className="ento-chapter-hero-scrim" />
-      <div style={{ position: "relative", zIndex: 2, minHeight: 420, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "clamp(36px,6vw,64px) 20px" }}>
-        <div className="ento-chapter-hero-num">{text(lang, chapter.num)}</div>
-        <span className="ento-chapter-hero-icon"><Mark name={chapter.icon} /></span>
-        <h1 className="ento-chapter-hero-title">{text(lang, chapter.title)}</h1>
-        {chapter.latin && <div className="ento-binomial">{chapter.latin}</div>}
-      </div>
-    </div>
+    <PhotoHero
+      lang={lang}
+      image={chapter.image}
+      imageAlt={chapter.alt || chapter.title}
+      focus={chapter.focus || "center 42%"}
+      num={chapter.num}
+      icon={chapter.icon}
+      title={chapter.title}
+      subtitle={chapter.subtitle}
+      latin={chapter.latin}
+    />
   );
 }
 
@@ -76,9 +74,19 @@ function SpeciesTable({ lang, species }) {
 
 function TaxonChapter({ lang, chapter, quiz }) {
   const dir = lang === "en" ? "ltr" : "rtl";
+  const pills = [
+    ...chapter.blocks.map((block) => ({
+      id: block.id,
+      ku: text("ku", block.title),
+      ar: text("ar", block.title),
+      en: text("en", block.title),
+    })),
+    { id: "quiz", ku: "کویز", ar: "اختبار", en: "Quiz" },
+  ];
   return (
-    <div className="ento-chapter-page">
+    <div className="ento-chapter-page ento-ch1">
       <Hero lang={lang} chapter={chapter} />
+      <SectionPills lang={lang} items={pills} />
       <div className="ento-container" dir={dir}>
         {chapter.blocks.map((block) => (
           <article key={block.id} id={block.id} className="ento-card ento-visible" style={{ direction: dir }}>
@@ -341,15 +349,32 @@ function FieldChapter({ lang, quiz }) {
   const [pin, setPin] = useState(pins[0].id);
   const chosen = pins.find((item) => item.id === pin);
   const dir = lang === "en" ? "ltr" : "rtl";
+  const pills = [
+    { id: "field-collect", ku: "کۆکردنەوە", ar: "الجمع", en: "Collecting" },
+    { id: "field-pin", ku: "شوێنی دەرزە", ar: "موضع الدبوس", en: "Pinning" },
+    { id: "field-label", ku: "لەیبڵ", ar: "البطاقة", en: "Label" },
+    { id: "quiz", ku: "کویز", ar: "اختبار", en: "Quiz" },
+  ];
   return (
-    <div className="ento-chapter-page">
+    <div className="ento-chapter-page ento-ch1">
       <Hero lang={lang} chapter={{
         image: "/images/plates/ch9-net.jpg",
         focus: "center 62%",
         icon: "net",
         num: { ku: "چاپتەری یازدەهەم", ar: "الفصل الحادي عشر", en: "Chapter 11" },
         title: { ku: "کێڵگە و لەیبڵ", ar: "الحقل والبطاقة", en: "Field and label" },
+        subtitle: {
+          ku: "کۆکردنەوە · دەرز · تۆماری مۆزەخانە",
+          ar: "الجمع · التثبيت · سجل المتحف",
+          en: "Collecting · pinning · museum record",
+        },
+        alt: {
+          ku: "تۆڕی کۆکردنەوەی مێروو",
+          ar: "شبكة جمع حشرات",
+          en: "Insect collecting net",
+        },
       }} />
+      <SectionPills lang={lang} items={pills} />
       <div className="ento-container" dir={dir}>
         <article className="ento-card ento-visible" id="field-collect" style={{ direction: dir }}>
           <div className="ento-card-header">
@@ -621,15 +646,31 @@ function MetaChapter({ lang, quiz }) {
   const path = META_PATHS.find((item) => item.id === id);
   const stages = path.stages[lang] || path.stages.en;
   const dir = lang === "en" ? "ltr" : "rtl";
+  const pills = [
+    { id: "meta-compare", ku: "پیت هەیە یان نییە", ar: "شرنقة أو لا", en: "Pupa or none" },
+    { id: "meta-water", ku: "مێرووی ئاو", ar: "الرعاش", en: "Dragonfly" },
+    { id: "quiz", ku: "کویز", ar: "اختبار", en: "Quiz" },
+  ];
   return (
-    <div className="ento-chapter-page">
+    <div className="ento-chapter-page ento-ch1">
       <Hero lang={lang} chapter={{
         image: "/images/plates/ch12-chrysalis.jpg",
         focus: "center 42%",
         icon: "butterfly",
         num: { ku: "چاپتەری دوازدەهەم", ar: "الفصل الثاني عشر", en: "Chapter 12" },
         title: { ku: "دوو گۆڕانەپەڕە", ar: "تحولان", en: "Two metamorphoses" },
+        subtitle: {
+          ku: "Holometabola · Hemimetabola",
+          ar: "Holometabola · Hemimetabola",
+          en: "Holometabola · Hemimetabola",
+        },
+        alt: {
+          ku: "پیتی سەوزی پەپوولە",
+          ar: "شرنقة فراشة خضراء",
+          en: "Green butterfly chrysalis",
+        },
       }} />
+      <SectionPills lang={lang} items={pills} />
       <div className="ento-container" dir={dir}>
         <article className="ento-card ento-visible" id="meta-compare" style={{ direction: dir }}>
           <div className="ento-card-header">
@@ -751,14 +792,30 @@ const NEUROPTERA = {
 
 function KeyChapter({ lang, quiz }) {
   const dir = lang === "en" ? "ltr" : "rtl";
+  const pills = [
+    { id: "key-how", ku: "چۆنیەتی", ar: "كيف", en: "How to" },
+    { id: "key-run", ku: "کلیلەکە", ar: "المفتاح", en: "The key" },
+    { id: "quiz", ku: "کویز", ar: "اختبار", en: "Quiz" },
+  ];
   return (
-    <div className="ento-chapter-page">
+    <div className="ento-chapter-page ento-ch1">
       <Hero lang={lang} chapter={{
         image: "/images/plates/ch14-key.jpg",
         icon: "key",
         num: { ku: "چاپتەری سێزدەهەم", ar: "الفصل الثالث عشر", en: "Chapter 13" },
         title: { ku: "کلیلی ناسینەوە", ar: "مفتاح التعريف", en: "Identification key" },
+        subtitle: {
+          ku: "پرسیار بە پرسیار · نیشانەکان",
+          ar: "سؤالاً بسؤال · الصفات",
+          en: "Step by step · traits",
+        },
+        alt: {
+          ku: "کۆکراوەی مێرووی دەرزکراو",
+          ar: "مجموعة حشرات مثبتة",
+          en: "Pinned insect collection",
+        },
       }} />
+      <SectionPills lang={lang} items={pills} />
       <div className="ento-container" dir={dir}>
         <article className="ento-card ento-visible" id="key-how" style={{ direction: dir }}>
           <div className="ento-card-header">
