@@ -1,13 +1,21 @@
 import { Mark } from "./marks";
 
 const LANG_CONFIG = {
-  ku: { label: "کوردی" },
-  ar: { label: "العربية" },
-  en: { label: "English" },
+  ku: { label: "کوردی", short: "ک" },
+  ar: { label: "العربية", short: "ع" },
+  en: { label: "EN", short: "EN" },
 };
 
 function t(lang, ku, ar, en) {
   return lang === "ku" ? ku : lang === "ar" ? ar : en;
+}
+
+function pageTitle(lang, page) {
+  if (page === "home") return t(lang, "ئەتڵەسی مێرووناسی", "أطلس علم الحشرات", "Atlas of Entomology");
+  if (page === "notfound") return t(lang, "نەدۆزرایەوە", "غير موجود", "Not found");
+  if (page === "ch14") return t(lang, "کلیلی ناسینەوە", "مفتاح التعريف", "ID Key");
+  if (page === "ch4") return t(lang, "کویز", "الاختبار", "Quiz");
+  return t(lang, "بەش", "فصل", "Chapter");
 }
 
 function LangSwitcher({ lang, setLang }) {
@@ -21,55 +29,92 @@ function LangSwitcher({ lang, setLang }) {
           onClick={() => setLang(code)}
           aria-pressed={lang === code}
           aria-label={cfg.label}
+          title={cfg.label}
         >
-          {cfg.label}
+          <span className="ento-lang-full">{cfg.label}</span>
+          <span className="ento-lang-short">{cfg.short}</span>
         </button>
       ))}
     </div>
   );
 }
 
-const NAV = [
-  { id: "home", href: "#/", match: (page) => page === "home", ku: "سەرەکی", ar: "الرئيسية", en: "Home" },
-  { id: "chapters", href: "#/#chapters", match: () => false, ku: "بەشەکان", ar: "الفصول", en: "Chapters" },
-  { id: "key", href: "#/ch14", match: (page) => page === "ch14", ku: "کلیل", ar: "المفتاح", en: "Key" },
-  { id: "path", href: "#/#path", match: () => false, ku: "ڕێڕەو", ar: "المسار", en: "Path" },
+function isChapterBrowse(page) {
+  return /^ch\d+$/.test(page) && page !== "ch4" && page !== "ch14";
+}
+
+const TABS = [
+  {
+    id: "home",
+    href: "#/",
+    mark: "beetle",
+    match: (page) => page === "home",
+    ku: "سەرەکی",
+    ar: "الرئيسية",
+    en: "Home",
+  },
+  {
+    id: "chapters",
+    href: "#/#chapters",
+    mark: "book",
+    match: isChapterBrowse,
+    ku: "بەشەکان",
+    ar: "الفصول",
+    en: "Chapters",
+  },
+  {
+    id: "key",
+    href: "#/ch14",
+    mark: "key",
+    match: (page) => page === "ch14",
+    ku: "کلیل",
+    ar: "المفتاح",
+    en: "Key",
+  },
+  {
+    id: "quiz",
+    href: "#/ch4",
+    mark: "check",
+    match: (page) => page === "ch4",
+    ku: "کویز",
+    ar: "اختبار",
+    en: "Quiz",
+  },
+  {
+    id: "path",
+    href: "#/#path",
+    mark: "net",
+    match: () => false,
+    ku: "ڕێڕەو",
+    ar: "المسار",
+    en: "Path",
+  },
 ];
 
 export function AppHeader({ lang, setLang, page, isDark, onThemeCycle }) {
+  const title = pageTitle(lang, page);
   return (
     <header className="ento-appbar" role="banner">
       <div className="ento-appbar-inner">
         <div className="ento-appbar-start">
-          {page !== "home" && (
-            <a className="ento-appbar-back" href="#/" aria-label={t(lang, "گەڕانەوە بۆ سەرەکی", "العودة للرئيسية", "Back to home")}>
-              <span aria-hidden="true">{lang === "en" ? "←" : "→"}</span>
-              <span className="ento-appbar-back-label">{t(lang, "سەرەکی", "الرئيسية", "Home")}</span>
+          {page !== "home" ? (
+            <a
+              className="ento-appbar-back"
+              href="#/"
+              aria-label={t(lang, "گەڕانەوە", "رجوع", "Back")}
+            >
+              <span aria-hidden="true">{lang === "en" ? "‹" : "›"}</span>
             </a>
-          )}
-          <a className="ento-brand" href="#/" aria-label="Atlas of Entomology">
-            <Mark name="beetle" />
-            <span className="ento-brand-text">
-              Atlas of <span>Entomology</span>
+          ) : (
+            <span className="ento-appbar-mark" aria-hidden="true">
+              <Mark name="beetle" />
             </span>
-          </a>
+          )}
+          <div className="ento-appbar-titles">
+            <p className="ento-appbar-kicker" dir="ltr">Entomo</p>
+            <h1 className="ento-appbar-title">{title}</h1>
+          </div>
         </div>
-
-        <nav className="ento-appbar-nav" aria-label={t(lang, "ناڤیگەیشتنی سەرەکی", "التنقل الرئيسي", "Primary")}>
-          {NAV.map((item) => {
-            const active = item.match(page);
-            return (
-              <a
-                key={item.id}
-                href={item.href}
-                className={`ento-appbar-link${active ? " is-active" : ""}`}
-                aria-current={active ? "page" : undefined}
-              >
-                {t(lang, item.ku, item.ar, item.en)}
-              </a>
-            );
-          })}
-        </nav>
 
         <div className="ento-appbar-end">
           <LangSwitcher lang={lang} setLang={setLang} />
@@ -88,26 +133,26 @@ export function AppHeader({ lang, setLang, page, isDark, onThemeCycle }) {
 }
 
 export function AppDock({ lang, page }) {
-  const items = [
-    { id: "home", href: "#/", active: page === "home", ku: "سەرەکی", ar: "الرئيسية", en: "Home", mark: "beetle" },
-    { id: "chapters", href: "#/#chapters", active: false, ku: "بەشەکان", ar: "الفصول", en: "Chapters", mark: "book" },
-    { id: "key", href: "#/ch14", active: page === "ch14", ku: "کلیل", ar: "المفتاح", en: "Key", mark: "key" },
-    { id: "quiz", href: "#/ch4", active: page === "ch4", ku: "کویز", ar: "اختبار", en: "Quiz", mark: "check" },
-  ];
-
   return (
-    <nav className="ento-dock" aria-label={t(lang, "ناڤیگەیشتنی خێرا", "تنقل سريع", "Quick navigation")}>
-      {items.map((item) => (
-        <a
-          key={item.id}
-          href={item.href}
-          className={`ento-dock-item${item.active ? " is-active" : ""}`}
-          aria-current={item.active ? "page" : undefined}
-        >
-          <Mark name={item.mark} />
-          <span>{t(lang, item.ku, item.ar, item.en)}</span>
-        </a>
-      ))}
+    <nav className="ento-tabs" aria-label={t(lang, "تابەکان", "علامات التبويب", "Tabs")}>
+      <div className="ento-tabs-inner">
+        {TABS.map((item) => {
+          const active = item.match(page);
+          return (
+            <a
+              key={item.id}
+              href={item.href}
+              className={`ento-tab${active ? " is-active" : ""}`}
+              aria-current={active ? "page" : undefined}
+            >
+              <span className="ento-tab-icon">
+                <Mark name={item.mark} />
+              </span>
+              <span className="ento-tab-label">{t(lang, item.ku, item.ar, item.en)}</span>
+            </a>
+          );
+        })}
+      </div>
     </nav>
   );
 }

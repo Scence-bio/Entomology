@@ -74,7 +74,7 @@ function Hero({ lang }) {
       />
       <div className="ento-hero-overlay" />
       <div className="ento-hero-body" style={{ direction: lang === "en" ? "ltr" : "rtl" }}>
-        <p className="ento-hero-kicker">Entomo · Web App</p>
+        <p className="ento-hero-kicker">Entomo</p>
         <h1 className="ento-hero-title-en">Atlas of Entomology</h1>
         <div className="ento-hero-title-ku">
           {lang === "ku" ? "ئەتڵەسی مێرووناسی" : lang === "ar" ? "أطلس علم الحشرات" : "The Atlas of Entomology"}
