@@ -4,6 +4,14 @@ function t(lang, ku, ar, en) {
   return lang === "ku" ? ku : lang === "ar" ? ar : en;
 }
 
+function isStandaloneApp() {
+  if (typeof window === "undefined") return false;
+  return (
+    window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true
+  );
+}
+
 export function InstallPrompt({ lang }) {
   const [deferred, setDeferred] = useState(null);
   const [hidden, setHidden] = useState(() => {
@@ -13,21 +21,17 @@ export function InstallPrompt({ lang }) {
       return false;
     }
   });
-  const [standalone, setStandalone] = useState(false);
+  const [standalone] = useState(isStandaloneApp);
 
   useEffect(() => {
-    const isStandalone =
-      window.matchMedia("(display-mode: standalone)").matches ||
-      window.navigator.standalone === true;
-    setStandalone(isStandalone);
-
+    if (standalone) return undefined;
     const onBeforeInstall = (e) => {
       e.preventDefault();
       setDeferred(e);
     };
     window.addEventListener("beforeinstallprompt", onBeforeInstall);
     return () => window.removeEventListener("beforeinstallprompt", onBeforeInstall);
-  }, []);
+  }, [standalone]);
 
   if (standalone || hidden || !deferred) return null;
 
@@ -55,7 +59,7 @@ export function InstallPrompt({ lang }) {
           {t(
             lang,
             "وەک ئەپ لەسەر مۆبایل یان کۆمپیوتەر دایبمەزرێنە — خێراتر و ئۆفلاین.",
-            "ثبّته كتطبيق على الجوال أو الحاسوب — أسرع وبعمله دون اتصال.",
+            "ثبّته كتطبيق على الجوال أو الحاسوب — أسرع ويعمل دون اتصال.",
             "Add it as an app on phone or desktop — faster, works offline."
           )}
         </span>
