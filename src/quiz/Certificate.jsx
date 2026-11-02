@@ -1,5 +1,3 @@
-import { useRef } from "react";
-
 const t = (lang, ku, ar, en) => (lang === "ku" ? ku : lang === "ar" ? ar : en);
 
 function digits(lang, value) {
@@ -8,22 +6,11 @@ function digits(lang, value) {
 }
 
 export function QuizCertificate({ lang, score, total, pct, scope }) {
-  const ref = useRef(null);
   const when = new Date().toLocaleDateString(lang === "en" ? "en-GB" : lang === "ar" ? "ar" : "ckb-IQ");
-
-  const printCert = () => {
-    const node = ref.current;
-    if (!node) return;
-    document.body.classList.add("ento-cert-print");
-    window.print();
-    const done = () => document.body.classList.remove("ento-cert-print");
-    window.addEventListener("afterprint", done, { once: true });
-    setTimeout(done, 1000);
-  };
 
   return (
     <div className="ento-cert-wrap">
-      <div ref={ref} className="ento-cert" dir={lang === "en" ? "ltr" : "rtl"}>
+      <div className="ento-cert" dir={lang === "en" ? "ltr" : "rtl"}>
         <p className="ento-cert-eyebrow">Atlas of Entomology</p>
         <h3 className="ento-cert-title">
           {t(lang, "شەهادەی کویز", "شهادة الاختبار", "Quiz certificate")}
@@ -45,9 +32,6 @@ export function QuizCertificate({ lang, score, total, pct, scope }) {
           )}
         </p>
       </div>
-      <button type="button" className="ento-quiz-share-btn" onClick={printCert}>
-        {t(lang, "چاپکردنی شەهادە", "طباعة الشهادة", "Print certificate")}
-      </button>
     </div>
   );
 }

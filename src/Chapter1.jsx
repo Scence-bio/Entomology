@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import { Mark } from "./marks";
+import PhotoHero from "./chapter/PhotoHero";
+import SectionPills from "./chapter/SectionPills";
 
 function t(lang, pack) {
   return pack[lang] || pack.en;
@@ -196,18 +197,6 @@ function useInView(ref, { threshold = 0.08, rootMargin = "0px 0px -24px 0px" } =
   return visible;
 }
 
-function SectionNav({ lang }) {
-  return (
-    <nav className="ento-section-nav" aria-label={t(lang, { ku: "بەشەکانی چاپتەر", ar: "أقسام الفصل", en: "Chapter sections" })}>
-      {NAV.map((item) => (
-        <a key={item.id} className="ento-snav-pill" href={`#${item.id}`}>
-          {item[lang]}
-        </a>
-      ))}
-    </nav>
-  );
-}
-
 function Block({ id, lang, title, lead, children }) {
   const ref = useRef(null);
   const visible = useInView(ref);
@@ -233,44 +222,29 @@ export default function Chapter1({ lang }) {
 
   return (
     <div className="ento-chapter-page ento-ch1">
-      <div className="ento-chapter-hero ento-ch1-hero">
-        <img
-          className="ento-ch1-hero-img"
-          src="/images/plates/ch1-college-science.jpg"
-          alt={t(lang, {
-            ku: "کۆلێژی زانست · زانکۆی ڕاپەڕین",
-            ar: "كلية العلوم · جامعة رابرين",
-            en: "College of Science · University of Raparin",
-          })}
-          loading="eager"
-          decoding="async"
-          width="1600"
-          height="1060"
-        />
-        <div className="ento-ch1-hero-shade" aria-hidden="true" />
-        <div className="ento-ch1-hero-copy">
-          <div className="ento-chapter-hero-num">
-            {t(lang, { ku: "چاپتەری یەکەم", ar: "الفصل الأول", en: "Chapter 1" })}
-          </div>
-          <span className="ento-chapter-hero-icon"><Mark name="pin" /></span>
-          <h1 className="ento-chapter-hero-title">
-            {t(lang, {
-              ku: "پێشەکی و دامەزراوە",
-              ar: "المقدمة والمؤسسة",
-              en: "Preface and institution",
-            })}
-          </h1>
-          <p className="ento-chapter-hero-en">
-            {t(lang, {
-              ku: "چوارچێوەی ئەکادیمی · زانکۆی ڕاپەڕین",
-              ar: "إطار أكاديمي · جامعة رابرين",
-              en: "Academic frame · University of Raparin",
-            })}
-          </p>
-        </div>
-      </div>
+      <PhotoHero
+        lang={lang}
+        image="/images/plates/ch1-college-science.jpg"
+        imageAlt={{
+          ku: "کۆلێژی زانست · زانکۆی ڕاپەڕین",
+          ar: "كلية العلوم · جامعة رابرين",
+          en: "College of Science · University of Raparin",
+        }}
+        num={{ ku: "چاپتەری یەکەم", ar: "الفصل الأول", en: "Chapter 1" }}
+        icon="pin"
+        title={{
+          ku: "پێشەکی و دامەزراوە",
+          ar: "المقدمة والمؤسسة",
+          en: "Preface and institution",
+        }}
+        subtitle={{
+          ku: "چوارچێوەی ئەکادیمی · زانکۆی ڕاپەڕین",
+          ar: "إطار أكاديمي · جامعة رابرين",
+          en: "Academic frame · University of Raparin",
+        }}
+      />
 
-      <SectionNav lang={lang} />
+      <SectionPills lang={lang} items={NAV} />
 
       <div className="ento-ch1-wrap" dir={dir}>
         <Block

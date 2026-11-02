@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { Mark } from "./marks";
 import { QuizSection } from "./quiz/Quiz";
+import PhotoHero from "./chapter/PhotoHero";
+import SectionPills from "./chapter/SectionPills";
 
 const SCIENTIST_IMGS = {};
 
@@ -228,35 +230,50 @@ const SECTIONS = [
     },
     apps: {
       ku: [
-        "🌿 پاراستنی ژینگەی سروشتی و جەنگەکان",
-        "🚫 کەمکردنەوەی بەکارهێنانی پێستیسایدەکان",
-        "🌡️ بەرەنگاربوونەوەی گەرمبوونی زەوی",
-        "🔬 توێژینەوەی زانستی بۆ پاراستنی جۆرەکان",
-        "📚 هۆشیارکردنەوەی کۆمەڵگە",
+        "پاراستنی habitatی سروشتی، دارستان و گوڵی ناوخۆیی بۆ pollinators",
+        "کەمکردنەوەی insecticideی فراوان و جێگیرکردنی IPM لە کشتوکاڵدا",
+        "بەرەنگاربوونەوەی گۆڕانی کەشوهەوا و light pollution",
+        "توێژینەوە و monitoringی درێژخایەن (Malaise، light trap، transect)",
+        "هۆشیارکردنەوەی کۆمەڵگە و فێرکردنی قوتابیان لەسەر ڕۆڵی مێروو",
       ],
       ar: [
-        "🌿 حماية الموائل الطبيعية والغابات",
-        "🚫 تقليل استخدام المبيدات الحشرية",
-        "🌡️ مواجهة تغير المناخ",
-        "🔬 البحث العلمي لحماية الأنواع",
-        "📚 التوعية المجتمعية",
+        "حماية الموائل والغابات والنباتات المحلية للملقحات",
+        "تقليل المبيدات واسعة الطيف واعتماد IPM في الزراعة",
+        "مواجهة تغير المناخ وتلوث الضوء",
+        "البحث والرصد طويل الأمد (مصائد مالِيز والضوء والمقاطع)",
+        "التوعية المجتمعية وتعليم الطلاب دور الحشرات",
       ],
       en: [
-        "🌿 Natural habitat and forest preservation",
-        "🚫 Reduction of pesticide use",
-        "🌡️ Climate change mitigation",
-        "🔬 Scientific research for species protection",
-        "📚 Community awareness and education",
+        "Protect habitats, woodland and native floral resources for pollinators",
+        "Reduce broad-spectrum insecticides and embed IPM in agriculture",
+        "Mitigate climate change and light pollution",
+        "Long-term research and monitoring (Malaise, light traps, transects)",
+        "Community awareness and student education on insect roles",
       ],
     },
   },
 ];
 
 const LANG_CONFIG = {
-  ku: { label: "کوردی", dir: "rtl", flag: "🟡" },
-  ar: { label: "عربی",  dir: "rtl", flag: "🟢" },
-  en: { label: "English", dir: "ltr", flag: "🔵" },
+  ku: { label: "کوردی", dir: "rtl" },
+  ar: { label: "عربی", dir: "rtl" },
+  en: { label: "English", dir: "ltr" },
 };
+
+const CH2_NAV = [
+  { id: "intro", ku: "پێشەکی", ar: "المقدمة", en: "Preface" },
+  { id: "def", ku: "پێناسە", ar: "التعريف", en: "Definition" },
+  { id: "history", ku: "مێژوو", ar: "التاريخ", en: "History" },
+  { id: "scientists", ku: "زانایان", ar: "العلماء", en: "Scientists" },
+  { id: "kurdistan", ku: "کوردستان", ar: "كردستان", en: "Kurdistan" },
+  { id: "importance", ku: "گرنگی", ar: "الأهمية", en: "Importance" },
+  { id: "challenges", ku: "ئاڵۆزییەکان", ar: "التحديات", en: "Challenges" },
+  { id: "glossary", ku: "فەرهەنگ", ar: "المسرد", en: "Glossary" },
+  { id: "biocontrol", ku: "کۆنترۆڵ", ar: "المكافحة", en: "Biocontrol" },
+  { id: "ants", ku: "مێروولە", ar: "النمل", en: "Ants" },
+  { id: "conservation", ku: "پارێزگاری", ar: "الحفاظ", en: "Conservation" },
+  { id: "quiz", ku: "کویز", ar: "اختبار", en: "Quiz" },
+];
 function useInView(ref, { threshold = 0.07, rootMargin = "0px 0px -20px 0px" } = {}) {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -291,36 +308,6 @@ function useActiveSection() {
 /* ═══════════════════════════════════════════════
    THREE.JS HERO CANVAS
 ═══════════════════════════════════════════════ */
-function SectionNav({ active, lang }) {
-  const allNavItems = [
-    { id: "intro",        ku: "ناسنامە",     ar: "مقدمة",      en: "Intro" },
-    { id: "def",          ku: "پێناسە",      ar: "التعريف",    en: "Definition" },
-    { id: "history",      ku: "مێژوو",       ar: "التاريخ",    en: "History" },
-    { id: "scientists",   ku: "زانایان",     ar: "العلماء",    en: "Scientists" },
-    { id: "kurdistan",    ku: "کوردستان",    ar: "كردستان",    en: "Kurdistan" },
-    { id: "importance",   ku: "گرنگی",       ar: "الأهمية",    en: "Importance" },
-    { id: "challenges",   ku: "ئاڵۆزییەکان", ar: "التحديات",   en: "Challenges" },
-    { id: "glossary",     ku: "فەرهەنگ",     ar: "المسرد",     en: "Glossary" },
-    { id: "biocontrol",   ku: "کۆنترۆڵ",     ar: "المكافحة",   en: "Control" },
-    { id: "ants",         ku: "مێروولە",     ar: "النمل",      en: "Ants" },
-    { id: "conservation", ku: "پارێزگاری",   ar: "الحفاظ",     en: "Conservation" },
-    { id: "quiz",         ku: "کویز",        ar: "اختبار",     en: "Quiz" },
-  ];
-  return (
-    <nav className="ento-section-nav" aria-label="Section navigation" style={{ direction: lang === "en" ? "ltr" : "rtl" }}>
-      {allNavItems.map(item => (
-        <a
-          key={item.id}
-          className={`ento-snav-pill ${active === item.id ? "active" : ""}`}
-          href={`#${item.id}`}
-        >
-          {item[lang]}
-        </a>
-      ))}
-    </nav>
-  );
-}
-
 /* ═══════════════════════════════════════════════
    SECTION CARD
 ═══════════════════════════════════════════════ */
@@ -393,10 +380,10 @@ function SectionCard({ section, delay = 0, lang }) {
           />
           <p className="ento-map-caption">
             {lang === "ku"
-              ? "🗺️ کوردستان — ناوچەی ئیکۆلۆجی و جێگای مێرووەکان"
+              ? "کوردستان — ناوچەی ئیکۆلۆجی، Irano-Anatolian hotspot و جێگای مێروو"
               : lang === "ar"
-              ? "🗺️ كردستان — المناطق البيئية وموائل النمل"
-              : "🗺️ Kurdistan — Ecological Zones & Ant Habitats"}
+              ? "كردستان — المناطق البيئية ونقطة Irano-Anatolian وموائل الحشرات"
+              : "Kurdistan — ecological zones, Irano-Anatolian hotspot and insect habitats"}
           </p>
         </div>
       )}
@@ -469,90 +456,84 @@ function TimelineRow({ item, delay }) {
   );
 }
 
-/* ═══════════════════════════════════════════════
-   TEAM SECTION
-═══════════════════════════════════════════════ */
 const INTRO = {
   ku: {
-    quote: "لە هەر شوێنێکی ئەم هەسارەیەدا بیت، لە ژێر هەر بەردێک و لە نێوان هەر گەڵایەکدا، جیهانێکی ئاڵۆز و سەرسوڕهێنەر هەیە کە زۆرجار بە چاوی ئاسایی نابینرێت.",
-    body:  "مێرووەکان ئەو ئەندازیارە بچووکانەن کە ملیۆنان ساڵە نەخشەی ژیان لەسەر زەوی دەکێشن و بەبێ دەنگ هاوسەنگیی سروشت ڕادەگرن. لێرە، لە «ئەتڵەسی ئێنتۆمۆلۆجی»، ئێمە ڕێبەری تۆین بۆ چوونە ناو ئەم جیهانە. زانست لێرەدا لە وشەیەکی وشکەوە دەبێتە ئەزموونێکی بینراو، لە قووڵایی پۆلێنکردنی ئەکادیمییەوە تا جوانیی وردەکاریی جەستەی مێروو.",
-    close: "باوەڕمان وایە ناسینی ئەم بوونەوەرانە تەنها فێربوونی بایۆلۆجی نییە، بەڵکو تێگەیشتنە لە زمانێکی نهێنی، کە سروشت پێی دەدوێت. بەخێر بێیت بۆ ناو دڵی ژیان، بۆ ئەو شوێنەی زانست و جوانی تێیدا یەک دەگرن.",
+    title: "پێشەکیی چاپتەر",
+    lead: "ئەم چاپتەرە بنەمای زانستی مێرووناسی دەخاتە ڕوو: پێناسە، مێژوو، ناوچە، گرنگی، ئاڵۆزی و پاراستن.",
+    p1: "مێروو (Insecta) زیاتر لە هەموو پۆلەکانی تری ئاژەڵ پێکەوە جۆری وەسفکراویان هەیە — نزیکەی یەک ملیۆن. لە ژێر بەرد، لە نێوان گەڵا، لە خاک و ئاو و هەوادا، سیستەمی ئیکۆلۆجی بەبێ دەنگ ڕادەگرن: پەیتاندن، decomposition، predation، و گواستنەوەی نەخۆشی.",
+    p2: "لێرەدا ئێنتۆمۆلۆجی وەک زانستی ئەکادیمی دەخوێنرێتەوە: لە پێناسەی tagmosis و hexapodyەوە تا Linnaeus و DNA barcoding؛ لە فەونای کوردستان و Irano-Anatolian hotspotەوە تا IPM، biocontrol و پاراستنی habitat. ئامانج ئەوەیە خوێندکار بتوانێت مێروو وەک pollinator، pest، vector یان bioindicator جیا بکاتەوە.",
+    p3: "دوای ئەم چاپتەرە، چاپتەری سێیەم (Arthropoda) پێکهاتەی جەستە قووڵتر دەکات؛ ئینجا ئۆردەرەکان (Lepidoptera، Hymenoptera، Coleoptera و هی دیکە) نموونەی ناوچەیی دەهێنن.",
   },
   ar: {
-    quote: "أينما كنتَ في هذا الكون، تحت كلّ حجر وبين كلّ شجرة، ثمّة عالَم بالغ التعقيد والروعة، كثيرًا ما يخفى عن العين المجرّدة.",
-    body:  "الحشرات هي تلك المهندسات الصغيرات اللواتي يرسمن خريطة الحياة على وجه الأرض منذ ملايين السنين، وتحافظن بصمت على توازن الطبيعة. هنا في «أطلس علم الحشرات» نكون دليلك إلى هذا العالم. هنا يتحوّل العلم من كلمة جافّة إلى تجربة بصرية حيّة؛ من أعماق التصنيفات الأكاديمية وصولًا إلى جمال التفاصيل الدقيقة في أجساد الحشرات.",
-    close: "نؤمن بأن معرفة هذه الكائنات ليست مجرّد تعلّم للأحياء، بل هي فهم للغة السرّية التي تتحدّث بها الطبيعة. أهلًا بك في قلب الحياة، أهلًا بك حيث يلتقي العلم بالجمال.",
+    title: "مقدمة الفصل",
+    lead: "يعرض هذا الفصل أسس علم الحشرات: التعريف والتاريخ والمنطقة والأهمية والتحديات والحفظ.",
+    p1: "الحشرات Insecta أكثر الطوائف الحيوانية أنواعاً موصوفة — نحو مليون نوع. تحت الحجارة وبين الأوراق وفي التربة والماء والهواء تحافظ بصمت على النظم البيئية: التلقيح والتحلل والافتراس ونقل الأمراض.",
+    p2: "يُدرَس علم الحشرات هنا أكاديمياً: من tagmosis وhexapody إلى لينيوس وDNA barcoding؛ ومن فونة كردستان ونقطة Irano-Anatolian إلى IPM والمكافحة الحيوية وحفظ الموائل. الهدف أن يميّز الطالب الملقّح والآفة والناقل والمؤشر الحيوي.",
+    p3: "بعد هذا الفصل يعمّق الفصل الثالث (Arthropoda) تركيب الجسم؛ ثم تأتي الرتب بأمثلة إقليمية.",
   },
   en: {
-    quote: "Wherever you are in this vast universe — beneath every stone and between every blade of grass — there exists a complex and astonishing world that is often invisible to the naked eye.",
-    body:  "Insects are those tiny engineers who have been mapping life on Earth for millions of years, silently sustaining nature's balance. Here at the Atlas of Entomology, we become your guide into this world. Science transforms from a dry word into a vivid visual experience — from the depths of academic classification all the way to the exquisite detail of the insect body.",
-    close: "We believe that knowing these creatures is not merely learning biology, but understanding the secret language in which nature speaks. Welcome to the heart of life — welcome to where science and beauty meet.",
+    title: "Chapter preface",
+    lead: "This chapter lays the scientific foundations of entomology: definition, history, region, importance, challenges and conservation.",
+    p1: "Insects (Insecta) hold more described species than all other animal classes combined — roughly one million. Under stones, among leaves, in soil, water and air they quietly sustain ecosystems through pollination, decomposition, predation and disease transmission.",
+    p2: "Here entomology is taught as an academic science: from tagmosis and hexapody to Linnaeus and DNA barcoding; from Kurdistan’s fauna and the Irano-Anatolian hotspot to IPM, biocontrol and habitat protection. The aim is that a learner can separate pollinator, pest, vector and bioindicator.",
+    p3: "Chapter 3 (Arthropoda) then deepens body plan; later order chapters bring regional examples.",
   },
 };
 
 function IntroSection({ lang }) {
   const ref = useRef(null);
   const visible = useInView(ref);
-  const isRtl = lang !== "en";
-  const t = INTRO[lang] || INTRO.ku;
+  const dir = LANG_CONFIG[lang]?.dir || "rtl";
+  const pack = INTRO[lang] || INTRO.ku;
   return (
     <section
       ref={ref}
       id="intro"
-      className={`ento-intro-section ${visible ? "ento-visible" : ""}`}
-      dir={isRtl ? "rtl" : "ltr"}
+      className={`ento-ch1-block ${visible ? "ento-visible" : ""}`}
+      dir={dir}
+      style={{ maxWidth: 880, margin: "0 auto", padding: "clamp(8px,2vw,16px) clamp(14px,4vw,28px) 0" }}
     >
-      <div className="ento-intro-inner">
-        {/* decorative leaf */}
-        <div className="ento-intro-leaf" aria-hidden="true"></div>
-
-        <p className="ento-intro-label">
-          {lang === "ku" ? "پێشەکی"
-           : lang === "ar" ? "المقدمة"
-           : "Preface"}
-        </p>
-
-        <blockquote className="ento-intro-quote">
-          <span className="ento-intro-qmark">"</span>
-          {t.quote}
-          <span className="ento-intro-qmark">"</span>
-        </blockquote>
-
-        <p className="ento-intro-body">{t.body}</p>
-
-        <p className="ento-intro-close">{t.close}</p>
-
-        <div className="ento-intro-divider">
-          <span>🐛</span>
-          <span className="ento-intro-line" />
-          <span>🌿</span>
-          <span className="ento-intro-line" />
-          <span>🐝</span>
-        </div>
+      <header className="ento-ch1-head">
+        <h2 className="ento-ch1-title">{pack.title}</h2>
+        <p className="ento-ch1-lead">{pack.lead}</p>
+      </header>
+      <div className="ento-ch1-prose">
+        <p>{pack.p1}</p>
+        <p>{pack.p2}</p>
+        <p>{pack.p3}</p>
       </div>
     </section>
   );
 }
 
-/* ═══════════════════════════════════════════════
-   STRATEGIC GOALS SECTION
-═══════════════════════════════════════════════ */
 export default function Chapter2({ lang }) {
   const active = useActiveSection();
   return (
-    <div className="ento-chapter-page">
-      <div className="ento-chapter-hero">
-        <div className="ento-chapter-hero-num">{lang === "ku" ? "چاپتەری دووەم" : lang === "ar" ? "الفصل الثاني" : "Chapter 2"}</div>
-        <span className="ento-chapter-hero-icon"><Mark name="beetle" /></span>
-        <h1 className="ento-chapter-hero-title">
-          {lang === "ku" ? "دەستپێکی ئێنتۆمۆلۆجی" : lang === "ar" ? "مقدمة علم الحشرات" : "Introduction to Entomology"}
-        </h1>
-        <div className="ento-chapter-hero-en">Introduction to Entomology · ئێنتۆمۆلۆجی</div>
-      </div>
+    <div className="ento-chapter-page ento-ch1">
+      <PhotoHero
+        lang={lang}
+        image="/images/plates/ch2-drawer.jpg"
+        imageAlt={{
+          ku: "کاشێفی قوڕقوڕەی مۆزەخانە",
+          ar: "درج خنافس في متحف",
+          en: "Museum beetle drawer",
+        }}
+        focus="center 40%"
+        num={{ ku: "چاپتەری دووەم", ar: "الفصل الثاني", en: "Chapter 2" }}
+        icon="beetle"
+        title={{
+          ku: "دەستپێکی ئێنتۆمۆلۆجی",
+          ar: "مقدمة علم الحشرات",
+          en: "Introduction to Entomology",
+        }}
+        subtitle={{
+          ku: "پێناسە · مێژوو · ناوچە · پاراستن",
+          ar: "التعريف · التاريخ · المنطقة · الحفظ",
+          en: "Definition · history · region · conservation",
+        }}
+      />
+      <SectionPills lang={lang} items={CH2_NAV} active={active} />
       <IntroSection lang={lang} />
-      <div className="ento-container" style={{ paddingBottom: 0 }}>
-        <SectionNav active={active} lang={lang} />
-      </div>
       <div className="ento-container">
         {SECTIONS.map((s, i) => (
           <SectionCard key={s.id} section={s} delay={i * 50} lang={lang} />

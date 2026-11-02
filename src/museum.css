@@ -1642,7 +1642,6 @@ html[lang="en"] .ento-chapter-hero-title {
   overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:100%;
 }
 .ento-nav-dir { opacity:.7; flex-shrink:0; }
-.ento-nav-btn-print { flex-shrink:0; padding:6px 10px !important; font-size:.74rem !important; }
 .ento-nav-btn {
   display:inline-flex; align-items:center; gap:6px; min-width:0;
   background:var(--bg-card); color:var(--text-primary);
@@ -1877,23 +1876,5 @@ html[lang="en"] .ento-chapter-hero-title {
 .ento-idkey.is-compact { margin:0; max-width:none; }
 .ento-idkey.is-compact .ento-idkey-panel {
   box-shadow:none; border:none; padding:0; background:transparent;
-}
-
-@media print {
-  .ento-appbar, .ento-tabs, .ento-install, .ento-chapter-nav-actions, .ento-quiz-section, .ento-footer, .ento-hero-video,
-  .ento-path, .ento-search, .ento-theme-btn, .ento-lang-switcher { display:none !important; }
-  .ento-app .ento-main { padding:0 !important; }
-  .ento-root, .ento-chapter-page, .ento-card { background:#fff !important; color:#111 !important; box-shadow:none !important; }
-  .ento-chapter-nav { margin-top:0; position:static; }
-  body.ento-cert-print .ento-root > *:not(.ento-main),
-  body.ento-cert-print .ento-appbar,
-  body.ento-cert-print .ento-tabs,
-  body.ento-cert-print .ento-footer,
-  body.ento-cert-print .ento-quiz-header,
-  body.ento-cert-print .ento-quiz-actions,
-  body.ento-cert-print .ento-quiz-review,
-  body.ento-cert-print .ento-quiz-board { display:none !important; }
-  body.ento-cert-print .ento-cert-wrap, body.ento-cert-print .ento-cert { display:block !important; }
-  body.ento-cert-print .ento-quiz-share-btn { display:none !important; }
 }
 

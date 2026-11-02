@@ -17,9 +17,6 @@ export function ChapterNav({ lang, chapterId }) {
           <li><a href="#/">{t(lang, "سەرەکی", "الرئيسية", "Home")}</a></li>
           <li aria-current="page">{chapter.num[lang]}</li>
         </ol>
-        <button type="button" className="ento-nav-btn ento-nav-btn-print" onClick={() => window.print()}>
-          {t(lang, "چاپ", "طباعة", "Print")}
-        </button>
       </div>
       <div className="ento-chapter-siblings">
         {prev ? (
