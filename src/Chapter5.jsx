@@ -21,7 +21,6 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Mark } from "./marks";
-import { AppFooter } from "./Footer";
 import { QuizSection } from "./quiz/Quiz";
 import { SPECIMENS } from "./butterflies";
 
@@ -670,7 +669,6 @@ export default function Chapter5({ lang }) {
       <ButterflyGallery lang={lang} />
 
       <QuizSection lang={lang} chapter="ch5" />
-      <AppFooter lang={lang} />
     </div>
   );
 }

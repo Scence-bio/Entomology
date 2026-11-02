@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Mark } from "./marks";
-import { AppFooter } from "./Footer";
 import { QuizSection } from "./quiz/Quiz";
 import { IdKey } from "./idKey/IdKey";
 
@@ -96,7 +95,6 @@ function TaxonChapter({ lang, chapter, quiz }) {
         ))}
       </div>
       <QuizSection lang={lang} chapter={quiz} />
-      <AppFooter lang={lang} />
     </div>
   );
 }
@@ -427,7 +425,6 @@ function FieldChapter({ lang, quiz }) {
         </article>
       </div>
       <QuizSection lang={lang} chapter={quiz} />
-      <AppFooter lang={lang} />
     </div>
   );
 }
@@ -682,7 +679,6 @@ function MetaChapter({ lang, quiz }) {
         </article>
       </div>
       <QuizSection lang={lang} chapter={quiz} />
-      <AppFooter lang={lang} />
     </div>
   );
 }
@@ -790,7 +786,6 @@ function KeyChapter({ lang, quiz }) {
         </article>
       </div>
       <QuizSection lang={lang} chapter={quiz} />
-      <AppFooter lang={lang} />
     </div>
   );
 }

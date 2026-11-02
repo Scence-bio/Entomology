@@ -20,16 +20,31 @@ export default defineConfig({
         name: "Atlas of Entomology — ئەتڵەسی مێرووناسی",
         short_name: "Entomo",
         description:
-          "ئەتڵەسی مێرووناسی: پێناسە، ئۆردەرەکان، کلیلی ناسینەوە و کویز بە کوردی، عەرەبی و ئینگلیزی.",
-        theme_color: "#1a2418",
+          "ئەپڵیکەیشنی فێرکاریی مێرووناسی: پێناسە، ئۆردەر، کلیل و کویز — کوردی، عەرەبی، ئینگلیزی.",
+        theme_color: "#12180f",
         background_color: "#f3efe4",
         display: "standalone",
+        display_override: ["standalone", "minimal-ui"],
         orientation: "any",
-        start_url: "/",
+        start_url: "/?source=pwa",
         scope: "/",
         lang: "ku",
         dir: "rtl",
         categories: ["education", "books"],
+        shortcuts: [
+          {
+            name: "Identification key",
+            short_name: "Key",
+            url: "/#/ch14",
+            icons: [{ src: "icons/icon-192.png", sizes: "192x192" }],
+          },
+          {
+            name: "Chapters",
+            short_name: "Chapters",
+            url: "/#/#chapters",
+            icons: [{ src: "icons/icon-192.png", sizes: "192x192" }],
+          },
+        ],
         icons: [
           {
             src: "icons/icon-192.png",

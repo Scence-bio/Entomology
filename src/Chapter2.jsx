@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import { Mark } from "./marks";
-import { AppFooter } from "./Footer";
 import { QuizSection } from "./quiz/Quiz";
 
 const SCIENTIST_IMGS = {};
@@ -560,7 +559,6 @@ export default function Chapter2({ lang }) {
         ))}
       </div>
       <QuizSection lang={lang} chapter="ch2" />
-      <AppFooter lang={lang} sections={SECTIONS} />
     </div>
   );
 }

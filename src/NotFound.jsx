@@ -1,4 +1,3 @@
-import { AppFooter } from "./Footer";
 
 export default function NotFoundPage({ lang }) {
   const dir = lang === "en" ? "ltr" : "rtl";
@@ -25,7 +24,6 @@ export default function NotFoundPage({ lang }) {
           </a>
         </div>
       </div>
-      <AppFooter lang={lang} />
     </div>
   );
 }

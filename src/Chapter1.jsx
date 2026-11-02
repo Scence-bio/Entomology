@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import { Mark } from "./marks";
-import { AppFooter } from "./Footer";
 
 const TEAM = [
   {
@@ -287,7 +286,6 @@ export default function Chapter1({ lang }) {
       </div>
       <TeamSection lang={lang} />
       <GoalsSection lang={lang} />
-      <AppFooter lang={lang} sections={SECTIONS} />
     </div>
   );
 }

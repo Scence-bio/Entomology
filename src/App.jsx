@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef, useCallback, lazy, Suspense } from "react";
-import { Mark } from "./marks";
 import "./museum.css";
 import { CHAPTERS, LEARNING_PATH, searchChapters } from "./catalog";
 import { ChapterNav } from "./ChapterNav";
 import NotFoundPage from "./NotFound";
 import { IdKey } from "./idKey/IdKey";
+import { AppHeader, AppDock } from "./AppHeader";
+import { AppFooter } from "./Footer";
+import { InstallPrompt } from "./InstallPrompt";
 
 const later = (name) => lazy(() => import("./LaterChapters").then((m) => ({ default: m[name] })));
 const CHAPTER_PAGES = {
@@ -24,20 +26,11 @@ const CHAPTER_PAGES = {
   ch14: later("Chapter14"),
 };
 
-/* ═══════════════════════════════════════════════
-   LANGUAGE DATA
-═══════════════════════════════════════════════ */
-
 const LANG_CONFIG = {
-  ku: { label: "کوردی", dir: "rtl", flag: "🟡" },
-  ar: { label: "العربية", dir: "rtl", flag: "🟢" },
-  en: { label: "English", dir: "ltr", flag: "🔵" },
+  ku: { label: "کوردی", dir: "rtl" },
+  ar: { label: "العربية", dir: "rtl" },
+  en: { label: "English", dir: "ltr" },
 };
-
-/* ═══════════════════════════════════════════════
-   STYLES
-═══════════════════════════════════════════════ */
-
 
 function useTheme() {
   const [mode, setMode] = useState(() => {
@@ -63,34 +56,11 @@ function useTheme() {
   return { mode, isDark, cycle };
 }
 
-/* ═══════════════════════════════════════════════
-   LANGUAGE SWITCHER COMPONENT
-═══════════════════════════════════════════════ */
-function LangSwitcher({ lang, setLang }) {
-  return (
-    <div className="ento-lang-switcher" dir="ltr">
-      {Object.entries(LANG_CONFIG).map(([code, cfg]) => (
-        <button
-          key={code}
-          className={`ento-lang-btn ${lang === code ? "active" : ""}`}
-          onClick={() => setLang(code)}
-          aria-label={`Switch to ${cfg.label}`}
-        >
-          {cfg.label}
-        </button>
-      ))}
-    </div>
-  );
-}
-
-/* ═══════════════════════════════════════════════
-   HERO
-═══════════════════════════════════════════════ */
 function Hero({ lang }) {
   const heroDesc = {
-    ku: "پلاتفۆرمێکی زانستییە بۆ ڕوونکردنەوەی مێروو، بە شێوازێکی ئەکادیمی و ئاسان",
-    ar: "دراسة العلاقات التطورية والتصنيف — علم أكاديمي متخصص في الحشرات",
-    en: "Phylogeny & Taxonomy Analysis — The academic science of insects explained clearly",
+    ku: "ئەپڵیکەیشنی فێرکاریی مێرووناسی — پێناسە، ئۆردەر، کلیل و کویز",
+    ar: "تطبيق تعليمي لعلم الحشرات — تعريف ورتب ومفتاح واختبار",
+    en: "An entomology learning web app — definition, orders, key and quiz",
   };
   return (
     <section className="ento-hero">
@@ -104,6 +74,7 @@ function Hero({ lang }) {
       />
       <div className="ento-hero-overlay" />
       <div className="ento-hero-body" style={{ direction: lang === "en" ? "ltr" : "rtl" }}>
+        <p className="ento-hero-kicker">Entomo · Web App</p>
         <h1 className="ento-hero-title-en">Atlas of Entomology</h1>
         <div className="ento-hero-title-ku">
           {lang === "ku" ? "ئەتڵەسی مێرووناسی" : lang === "ar" ? "أطلس علم الحشرات" : "The Atlas of Entomology"}
@@ -122,15 +93,6 @@ function Hero({ lang }) {
   );
 }
 
-/* ═══════════════════════════════════════════════
-   APP
-═══════════════════════════════════════════════ */
-/* ═══════════════════════════════════════════════
-   CHAPTER DEFINITIONS
-═══════════════════════════════════════════════ */
-
-
-/* ── Home Screen ── */
 function HomeScreen({ lang }) {
   const [query, setQuery] = useState("");
   const results = searchChapters(query, lang);
@@ -204,14 +166,10 @@ function HomeScreen({ lang }) {
           ))}
         </div>
       )}
-      <p className="ento-home-meta">Atlas of Entomology</p>
+      <p className="ento-home-meta">Atlas of Entomology · Web App</p>
     </div>
   );
 }
-
-/* ═══════════════════════════════════════════════
-   MAIN APP
-═══════════════════════════════════════════════ */
 
 function pageFromHash() {
   const hash = window.location.hash;
@@ -237,7 +195,6 @@ export default function EntomologyPage() {
   const [page, setPage] = useState(() => pageFromHash() || "home");
   const skipFirstScroll = useRef(true);
 
-
   const setLang = useCallback((value) => {
     setLangState(value);
     try { localStorage.setItem("lang", value); } catch {}
@@ -246,17 +203,34 @@ export default function EntomologyPage() {
   useEffect(() => {
     document.documentElement.dir = LANG_CONFIG[lang].dir;
     document.documentElement.lang = lang === "ku" ? "ckb" : lang;
+    document.documentElement.dataset.app = "entomo";
   }, [lang]);
 
-  // Links like "#team" scroll inside the chapter; letting them change the
-  // hash would drop "#/ch1" and a reload would land on the home page.
   useEffect(() => {
     const onClick = (e) => {
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       const link = e.target.closest && e.target.closest('a[href^="#"]');
       if (!link) return;
       const href = link.getAttribute("href");
-      if (href.startsWith("#/")) return;
+      if (href.startsWith("#/")) {
+        // "#/#chapters" → go home then scroll to section
+        const rest = href.slice(2);
+        if (rest.startsWith("#")) {
+          e.preventDefault();
+          const sectionId = decodeURIComponent(rest.slice(1));
+          const go = () => {
+            const target = document.getElementById(sectionId);
+            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+          };
+          if (page !== "home") {
+            window.location.hash = "#/";
+            setTimeout(go, 80);
+          } else {
+            go();
+          }
+        }
+        return;
+      }
       const target = document.getElementById(decodeURIComponent(href.slice(1)));
       if (!target) return;
       e.preventDefault();
@@ -264,7 +238,7 @@ export default function EntomologyPage() {
     };
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);
-  }, []);
+  }, [page]);
 
   useEffect(() => {
     const sync = () => {
@@ -286,37 +260,30 @@ export default function EntomologyPage() {
   const ChapterPage = CHAPTER_PAGES[page] || null;
 
   return (
-    <div className={`ento-root ${isDark ? "ento-dark" : ""}`}>
-      <header className="ento-topbar" style={{ direction: "ltr" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          {page !== "home" && (
-            <a className="ento-topbar-back" href="#/">
-              {lang === "en" ? "← Home" : lang === "ar" ? "← الرئيسية" : "← سەرەکی"}
-            </a>
-          )}
-          <a className="ento-brand" href="#/" aria-label="Atlas of Entomology"><Mark name="beetle" /> <span className="ento-brand-text">Atlas of <span>Entomology</span></span></a>
-        </div>
-        <div className="ento-topbar-right">
-          <LangSwitcher lang={lang} setLang={setLang} />
-          <button className="ento-theme-btn" aria-label="Toggle Theme" onClick={cycle}><Mark name={isDark ? "moon" : "sun"} /></button>
-        </div>
-      </header>
+    <div className={`ento-root ento-app ${isDark ? "ento-dark" : ""}`}>
+      <AppHeader lang={lang} setLang={setLang} page={page} isDark={isDark} onThemeCycle={cycle} />
 
-      {page === "home" && (
-        <>
-          <Hero lang={lang} />
-          <HomeScreen lang={lang} />
-        </>
-      )}
-      {page === "notfound" && <NotFoundPage lang={lang} />}
-      {ChapterPage && (
-        <Suspense fallback={<div className="ento-chapter-page" />}>
-          <div className="ento-chapter-shell">
-            <ChapterNav lang={lang} chapterId={page} />
-            <ChapterPage lang={lang} />
-          </div>
-        </Suspense>
-      )}
+      <main className="ento-main" id="main">
+        {page === "home" && (
+          <>
+            <Hero lang={lang} />
+            <HomeScreen lang={lang} />
+          </>
+        )}
+        {page === "notfound" && <NotFoundPage lang={lang} />}
+        {ChapterPage && (
+          <Suspense fallback={<div className="ento-chapter-page ento-chapter-loading" aria-busy="true" />}>
+            <div className="ento-chapter-shell">
+              <ChapterNav lang={lang} chapterId={page} />
+              <ChapterPage lang={lang} />
+            </div>
+          </Suspense>
+        )}
+      </main>
+
+      <AppFooter lang={lang} />
+      <AppDock lang={lang} page={page} />
+      <InstallPrompt lang={lang} />
     </div>
   );
 }

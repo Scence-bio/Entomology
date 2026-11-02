@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import { Mark } from "./marks";
-import { AppFooter } from "./Footer";
 import { QuizSection } from "./quiz/Quiz";
 
 const VIDEOS = [
@@ -110,7 +109,6 @@ export default function Chapter4({ lang }) {
       </div>
       <QuizSection lang={lang} />
       <VideoSection lang={lang} />
-      <AppFooter lang={lang} sections={SECTIONS} />
     </div>
   );
 }

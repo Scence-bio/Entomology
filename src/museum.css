@@ -16,6 +16,10 @@
   --font-mono:'Space Mono',monospace;
   --safe-top:env(safe-area-inset-top,0px);
   --safe-bottom:env(safe-area-inset-bottom,0px);
+  --appbar-h:56px;
+  --dock-h:64px;
+  --chrome:#12180f;
+  --chrome-line:rgba(224,181,106,.22);
   --selection-bg:rgba(138,78,18,0.22);
   --selection-fg:#1a2418;
 }
@@ -47,12 +51,19 @@ input, textarea, button { caret-color:var(--accent); }
 .ento-root {
   font-family:var(--font-arabic);
   overflow-x:hidden;
-  min-height:100vh;
+  min-height:100dvh;
   background:var(--bg-page);
   background-attachment:fixed;
   color:var(--text-primary);
   -webkit-overflow-scrolling:touch;
   scroll-behavior:smooth;
+  display:flex;
+  flex-direction:column;
+}
+.ento-app .ento-main {
+  flex:1 0 auto;
+  padding-top:calc(var(--appbar-h) + var(--safe-top));
+  padding-bottom:calc(var(--dock-h) + var(--safe-bottom) + 12px);
 }
 .ento-dark.ento-root {
   background:var(--bg-page);
@@ -62,16 +73,54 @@ input, textarea, button { caret-color:var(--accent); }
   box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 
-/* ── TOPBAR ── */
-.ento-topbar {
+/* ── APP BAR ── */
+.ento-appbar {
   position:fixed; top:0; left:0; right:0; z-index:200;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:0 clamp(12px,3vw,24px); height:60px;
-  background:#1a2418;
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(0,0,0,0.15);
-  transition:background .3s;
+  height:calc(var(--appbar-h) + var(--safe-top));
+  padding-top:var(--safe-top);
+  background:var(--chrome);
+  border-bottom:1px solid var(--chrome-line);
+  box-shadow:0 10px 28px rgba(0,0,0,.22);
 }
+.ento-appbar-inner {
+  height:var(--appbar-h);
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 clamp(12px,3vw,22px);
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  direction:ltr;
+}
+.ento-appbar-start,
+.ento-appbar-end {
+  display:flex; align-items:center; gap:8px; min-width:0;
+}
+.ento-appbar-nav {
+  display:flex; align-items:center; gap:2px;
+  flex:1; justify-content:center;
+}
+.ento-appbar-link {
+  color:rgba(246,241,230,.62);
+  text-decoration:none;
+  font-size:.78rem; font-weight:600;
+  font-family:var(--font-arabic);
+  padding:7px 12px; border-radius:2px;
+  transition:color .2s, background .2s;
+  white-space:nowrap;
+}
+.ento-appbar-link:hover { color:#fff; background:rgba(255,255,255,.06); }
+.ento-appbar-link.is-active {
+  color:#1a140c; background:#e0b56a;
+}
+.ento-appbar-back {
+  display:inline-flex; align-items:center; gap:6px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(232,214,176,.2);
+  color:#f3efe4; border-radius:2px; padding:6px 10px;
+  font-size:.78rem; font-family:var(--font-arabic);
+  text-decoration:none; white-space:nowrap;
+  transition:background .2s, border-color .2s;
+}
+.ento-appbar-back:hover { background:rgba(255,255,255,.14); border-color:rgba(232,214,176,.4); }
 .ento-brand {
   display:flex; align-items:center; gap:10px;
   text-decoration:none; font-weight:600;
@@ -81,7 +130,6 @@ input, textarea, button { caret-color:var(--accent); }
 }
 .ento-brand svg { width:22px; height:22px; color:#e0b56a; flex-shrink:0; }
 .ento-brand-text span { color:#e0b56a; }
-.ento-topbar-right { display:flex; align-items:center; gap:8px; }
 
 /* ── LANGUAGE SWITCHER ── */
 .ento-lang-switcher {
@@ -124,10 +172,16 @@ input, textarea, button { caret-color:var(--accent); }
 /* ── HERO ── */
 .ento-hero {
   position:relative; overflow:hidden;
-  min-height:clamp(380px,65svh,620px);
+  min-height:clamp(380px,62svh,600px);
   background:#122d09;
   display:flex; align-items:center; justify-content:center;
-  text-align:center; padding-top:60px;
+  text-align:center; padding-top:0;
+}
+.ento-hero-kicker {
+  margin:0 0 10px;
+  font-family:var(--font-mono);
+  font-size:.68rem; letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(224,181,106,.9);
 }
 .ento-hero-canvas {
   position:absolute; inset:0; width:100%; height:100%; display:block;
@@ -843,13 +897,24 @@ input, textarea, button { caret-color:var(--accent); }
 
 /* ── FOOTER ── */
 .ento-footer {
-  background:#1a2418;
-  color:#fff; border-top:2px solid rgba(245,158,11,.25); margin-top:8px;
+  background:var(--chrome);
+  color:#fff; border-top:1px solid var(--chrome-line);
+  margin-top:auto;
+  flex-shrink:0;
 }
 .ento-footer-inner {
   max-width:1100px; margin:0 auto;
-  padding:clamp(28px,5vw,56px) clamp(16px,5vw,32px) 0;
-  display:grid; grid-template-columns:1.3fr 1fr 1.1fr 1fr; gap:clamp(16px,3vw,36px);
+  padding:clamp(28px,5vw,48px) clamp(16px,5vw,32px) 0;
+  display:grid; grid-template-columns:1.35fr 1fr 1fr 1fr; gap:clamp(16px,3vw,32px);
+}
+.ento-footer-badges {
+  display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;
+}
+.ento-footer-badge {
+  font-family:var(--font-mono); font-size:.62rem; letter-spacing:.06em;
+  color:rgba(246,241,230,.72);
+  border:1px solid rgba(224,181,106,.28);
+  padding:4px 8px; border-radius:2px;
 }
 @media(max-width:900px){
   .ento-footer-inner { grid-template-columns:1fr 1fr; gap:clamp(20px,4vw,32px); }
@@ -917,7 +982,7 @@ input, textarea, button { caret-color:var(--accent); }
 }
 .ento-footer-bottom {
   max-width:1100px; margin:0 auto;
-  padding:clamp(12px,2vw,18px) clamp(16px,5vw,32px) clamp(18px,3vw,28px);
+  padding:clamp(12px,2vw,18px) clamp(16px,5vw,32px) calc(clamp(18px,3vw,28px) + 4px);
   display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px;
 }
 .ento-footer-copy {
@@ -1052,7 +1117,7 @@ input, textarea, button { caret-color:var(--accent); }
 
 /* ══ CHAPTER PAGE WRAPPER ══ */
 .ento-chapter-page {
-  min-height:100vh; padding-top:60px;
+  min-height:auto; padding-top:0;
 }
 .ento-chapter-hero {
   background:
@@ -1090,25 +1155,16 @@ html[lang="en"] .ento-chapter-hero-title {
   font-family:var(--font-arabic); letter-spacing:.01em;
 }
 
-/* back button in topbar context */
-.ento-topbar-back {
-  display:inline-flex; align-items:center; gap:6px;
-  background:rgba(255,255,255,.08); border:1px solid rgba(232,214,176,.22);
-  color:#f3efe4; border-radius:2px; padding:6px 12px;
-  font-size:.8rem; font-family:var(--font-arabic);
-  cursor:pointer; transition:background .2s, border-color .2s;
-  white-space:nowrap; text-decoration:none;
+@media(max-width:900px){
+  .ento-appbar-nav { display:none; }
 }
-.ento-topbar-back:hover { background:rgba(255,255,255,.14); border-color:rgba(232,214,176,.4); }
-
 @media(max-width:640px){
-  .ento-topbar { padding:0 10px; gap:6px; }
   .ento-brand { font-size:.82rem; gap:6px; min-width:0; }
-  .ento-topbar-back + .ento-brand .ento-brand-text { display:none; }
+  .ento-appbar-back-label { display:none; }
+  .ento-appbar-back + .ento-brand .ento-brand-text { display:none; }
   .ento-lang-switcher { gap:2px; padding:2px; }
   .ento-lang-btn { padding:4px 7px; font-size:.68rem; }
   .ento-theme-btn { width:32px; height:32px; flex-shrink:0; }
-  .ento-topbar-right { gap:4px; flex-shrink:0; }
   .ento-chapters-grid { grid-template-columns:1fr; }
   .ento-section-nav {
     flex-wrap:nowrap; justify-content:flex-start;
@@ -1117,6 +1173,64 @@ html[lang="en"] .ento-chapter-hero-title {
   }
   .ento-snav-pill { flex-shrink:0; }
 }
+
+/* ── MOBILE DOCK ── */
+.ento-dock {
+  position:fixed; left:0; right:0; bottom:0; z-index:210;
+  display:none;
+  height:calc(var(--dock-h) + var(--safe-bottom));
+  padding:6px 8px calc(6px + var(--safe-bottom));
+  background:rgba(18,24,15,.94);
+  backdrop-filter:blur(16px);
+  border-top:1px solid var(--chrome-line);
+  grid-template-columns:repeat(4,1fr);
+  gap:4px;
+}
+.ento-dock-item {
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px;
+  text-decoration:none; color:rgba(246,241,230,.55);
+  font-size:.62rem; font-weight:600; font-family:var(--font-arabic);
+  border-radius:2px; padding:6px 4px;
+  transition:color .2s, background .2s;
+}
+.ento-dock-item svg { width:18px; height:18px; }
+.ento-dock-item.is-active,
+.ento-dock-item:hover { color:#e0b56a; background:rgba(224,181,106,.1); }
+@media(max-width:900px){
+  .ento-dock { display:grid; }
+}
+@media(min-width:901px){
+  .ento-app .ento-main { padding-bottom:24px; }
+}
+
+/* ── INSTALL PROMPT ── */
+.ento-install {
+  position:fixed; z-index:220;
+  left:50%; bottom:calc(var(--dock-h) + var(--safe-bottom) + 14px);
+  transform:translateX(-50%);
+  width:min(520px, calc(100% - 24px));
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  background:#1a2418; color:#f3efe4;
+  border:1px solid var(--chrome-line);
+  box-shadow:0 16px 40px rgba(0,0,0,.35);
+  padding:12px 14px; border-radius:2px;
+}
+@media(min-width:901px){
+  .ento-install { bottom:22px; }
+}
+.ento-install-copy { display:flex; flex-direction:column; gap:2px; min-width:0; }
+.ento-install-copy strong { font-size:.88rem; }
+.ento-install-copy span { font-size:.74rem; color:rgba(243,239,228,.68); line-height:1.45; }
+.ento-install-actions { display:flex; gap:6px; flex-shrink:0; }
+.ento-install-go,
+.ento-install-skip {
+  border:none; cursor:pointer; border-radius:2px;
+  font-family:var(--font-arabic); font-weight:700; font-size:.78rem;
+  padding:8px 12px;
+}
+.ento-install-go { background:#e0b56a; color:#1a140c; }
+.ento-install-skip { background:transparent; color:rgba(243,239,228,.7); border:1px solid rgba(232,214,176,.25); }
+.ento-chapter-loading { min-height:40vh; }
 /* Professional shell — home path stays ivory even in dark mode */
 .ento-sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
 .ento-path {
@@ -1190,8 +1304,8 @@ html[lang="en"] .ento-chapter-hero-title {
 .ento-chapter-shell { padding-top:0; }
 .ento-chapter-shell .ento-chapter-page { padding-top:0; }
 .ento-chapter-nav {
-  position:sticky; top:60px; z-index:40;
-  max-width:1100px; margin:60px auto 0; padding:12px 20px 12px;
+  position:sticky; top:calc(var(--appbar-h) + var(--safe-top)); z-index:40;
+  max-width:1100px; margin:12px auto 0; padding:12px 20px 12px;
   display:flex; flex-direction:column; gap:10px;
   border-bottom:1px solid var(--border-card);
   background:var(--bg-page);
@@ -1443,11 +1557,15 @@ html[lang="en"] .ento-chapter-hero-title {
 }
 
 @media print {
-  .ento-topbar, .ento-chapter-nav-actions, .ento-quiz-section, .ento-footer, .ento-hero-video,
+  .ento-appbar, .ento-dock, .ento-install, .ento-chapter-nav-actions, .ento-quiz-section, .ento-footer, .ento-hero-video,
   .ento-path, .ento-search, .ento-theme-btn, .ento-lang-switcher { display:none !important; }
+  .ento-app .ento-main { padding:0 !important; }
   .ento-root, .ento-chapter-page, .ento-card { background:#fff !important; color:#111 !important; box-shadow:none !important; }
-  .ento-chapter-nav { margin-top:0; }
-  body.ento-cert-print .ento-root > *:not(.ento-quiz-section),
+  .ento-chapter-nav { margin-top:0; position:static; }
+  body.ento-cert-print .ento-root > *:not(.ento-main),
+  body.ento-cert-print .ento-appbar,
+  body.ento-cert-print .ento-dock,
+  body.ento-cert-print .ento-footer,
   body.ento-cert-print .ento-quiz-header,
   body.ento-cert-print .ento-quiz-actions,
   body.ento-cert-print .ento-quiz-review,

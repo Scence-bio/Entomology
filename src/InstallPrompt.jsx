@@ -21,12 +21,12 @@ export function InstallPrompt({ lang }) {
       window.navigator.standalone === true;
     setStandalone(isStandalone);
 
-    const on bip = (e) => {
+    const onBeforeInstall = (e) => {
       e.preventDefault();
       setDeferred(e);
     };
-    window.addEventListener("beforeinstallprompt", onbip);
-    return () => window.removeEventListener("beforeinstallprompt", onbip);
+    window.addEventListener("beforeinstallprompt", onBeforeInstall);
+    return () => window.removeEventListener("beforeinstallprompt", onBeforeInstall);
   }, []);
 
   if (standalone || hidden || !deferred) return null;
