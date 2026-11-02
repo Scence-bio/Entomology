@@ -4,6 +4,7 @@ import "./museum.css";
 import { CHAPTERS, LEARNING_PATH, searchChapters } from "./catalog";
 import { ChapterNav } from "./ChapterNav";
 import NotFoundPage from "./NotFound";
+import { IdKey } from "./idKey/IdKey";
 
 const later = (name) => lazy(() => import("./LaterChapters").then((m) => ({ default: m[name] })));
 const CHAPTER_PAGES = {
@@ -108,9 +109,14 @@ function Hero({ lang }) {
           {lang === "ku" ? "ئەتڵەسی مێرووناسی" : lang === "ar" ? "أطلس علم الحشرات" : "The Atlas of Entomology"}
         </div>
         <p className="ento-hero-desc" style={{ direction: lang === "en" ? "ltr" : "rtl", textAlign: "center" }}>{heroDesc[lang]}</p>
-        <a className="ento-hero-cta" href="#chapters">
-          {lang === "ku" ? "بەشێک هەڵبژێرە" : lang === "ar" ? "اختر فصلاً" : "Choose a chapter"}
-        </a>
+        <div className="ento-hero-ctas">
+          <a className="ento-hero-cta" href="#id-key">
+            {lang === "ku" ? "مێروو بناسەوە" : lang === "ar" ? "عرّف الحشرة" : "Identify an insect"}
+          </a>
+          <a className="ento-hero-cta ento-hero-cta-ghost" href="#chapters">
+            {lang === "ku" ? "بەشێک هەڵبژێرە" : lang === "ar" ? "اختر فصلاً" : "Choose a chapter"}
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -161,6 +167,8 @@ function HomeScreen({ lang }) {
           ))}
         </div>
       </div>
+
+      <IdKey lang={lang} />
 
       <h2 className="ento-home-label">
         {lang === "ku" ? "بەشەکان" : lang === "ar" ? "الفصول" : "Chapters"}

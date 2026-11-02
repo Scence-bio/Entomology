@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Mark } from "./marks";
 import { AppFooter } from "./Footer";
 import { QuizSection } from "./quiz/Quiz";
+import { IdKey } from "./idKey/IdKey";
 
 function text(lang, pack) {
   return pack[lang] || pack.en;
