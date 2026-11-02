@@ -77,7 +77,7 @@ export function AppFooter({ lang, sections }) {
         <hr className="ento-footer-divider" />
 
         <div className="ento-footer-bottom" style={{ direction: "ltr" }}>
-          <span className="ento-footer-copy">© 2025–2026 Atlas of Entomology · v0.2.0 · Academic Reference</span>
+          <span className="ento-footer-copy">© 2025–2026 Atlas of Entomology · Academic Reference</span>
         </div>
       </footer>
   );

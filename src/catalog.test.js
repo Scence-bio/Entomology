@@ -1,10 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { CHAPTERS, LEARNING_PATH, neighbors, searchChapters, chapterById, VERSION } from "./catalog";
+import { CHAPTERS, LEARNING_PATH, neighbors, searchChapters, chapterById } from "./catalog";
 import { QUIZ } from "./quiz/questions";
 
 describe("catalog", () => {
-  it("ships fourteen teaching chapters at v0.2.0", () => {
-    expect(VERSION).toBe("0.2.0");
+  it("ships fourteen teaching chapters", () => {
     expect(CHAPTERS).toHaveLength(14);
     expect(chapterById("ch13")?.latin).toBe("Neuroptera");
     expect(chapterById("ch14")?.title.en).toMatch(/key/i);

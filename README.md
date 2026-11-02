@@ -1,7 +1,7 @@
 # Atlas of Entomology — ئەتڵەسی مێرووناسی
 
 سەرچاوەیەکی فێرکاریی کراوە بۆ مێرووناسی، بە **کوردی**، **عەرەبی** و **ئینگلیزی**.  
-ماڵپەڕ: [www.entomo.online](https://www.entomo.online) · وەشان **0.2.0**
+ماڵپەڕ: [www.entomo.online](https://www.entomo.online)
 
 An open teaching atlas of entomology in Kurdish, Arabic, and English.  
 أطلس تعليمي مفتوح لعلم الحشرات بالكردية والعربية والإنجليزية.

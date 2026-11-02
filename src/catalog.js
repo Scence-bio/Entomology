@@ -1,7 +1,6 @@
 /** Shared chapter catalog — home, nav, search, sitemap. */
 
 export const SITE_URL = "https://www.entomo.online";
-export const VERSION = "0.2.0";
 
 export const CHAPTERS = [
   {

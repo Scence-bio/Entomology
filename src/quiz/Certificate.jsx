@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import { VERSION } from "../catalog";
 
 const t = (lang, ku, ar, en) => (lang === "ku" ? ku : lang === "ar" ? ar : en);
 
@@ -25,7 +24,7 @@ export function QuizCertificate({ lang, score, total, pct, scope }) {
   return (
     <div className="ento-cert-wrap">
       <div ref={ref} className="ento-cert" dir={lang === "en" ? "ltr" : "rtl"}>
-        <p className="ento-cert-eyebrow">Atlas of Entomology · v{VERSION}</p>
+        <p className="ento-cert-eyebrow">Atlas of Entomology</p>
         <h3 className="ento-cert-title">
           {t(lang, "شەهادەی کویز", "شهادة الاختبار", "Quiz certificate")}
         </h3>

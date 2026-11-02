@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback, lazy, Suspense } from "react";
 import { Mark } from "./marks";
 import "./museum.css";
-import { CHAPTERS, LEARNING_PATH, searchChapters, VERSION } from "./catalog";
+import { CHAPTERS, LEARNING_PATH, searchChapters } from "./catalog";
 import { ChapterNav } from "./ChapterNav";
 import NotFoundPage from "./NotFound";
 
@@ -196,7 +196,7 @@ function HomeScreen({ lang }) {
           ))}
         </div>
       )}
-      <p className="ento-home-meta">Atlas of Entomology · v{VERSION}</p>
+      <p className="ento-home-meta">Atlas of Entomology</p>
     </div>
   );
 }
