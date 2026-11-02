@@ -176,8 +176,8 @@ const SECTIONS = [
       { term:"DNA barcoding", ku:"ناسنامەی گەردی — زۆرجار جینی COIی مایتۆکۆندریا", ar:"باركود DNA — غالباً جين COI", en:"Molecular ID — often mitochondrial COI" },
       { term:"Parasitoid", ku:"زیندەوەرێک کە خانەخوێ دەکوژێت پێش تەواوبوونی گەشە", ar:"طفيل يقتل عائله قبل تمام نموه", en:"An organism that kills its host before finishing development" },
       { term:"Eusociality", ku:"کۆمەڵگە — دابەشکردنی کار، نەوەی هاوپێچ، چاودێریی هاوبەشی نەوە", ar:"حياة اجتماعية — تقسيم عمل ورعاية مشتركة", en:"Castes, overlapping generations, cooperative brood care" },
-      { term:"Economic threshold", ku:"ئاستی زیان کە دەستتێوەردان تێیدا سوودەکەی زیاترە لە تێچوو", ar:"عتبة اقتصادية — التدخل أجدى من التكلفة", en:"Pest density where control costs less than expected loss" },
-      { term:"Phenology", ku:"کاتی ڕووداوەکانی سوڕی ژیان لە ساڵدا", ar:"فينولوجيا — توقيت أحداث دورة الحياة", en:"Seasonal timing of life-cycle events" },
+      { term:"Economic threshold", ku:"ئاستی چڕیی زیانبەخش کە دەستتێوەردان تێیدا سوودەکەی زیاترە لە تێچوو", ar:"عتبة اقتصادية — التدخل أجدى من التكلفة", en:"Pest density where control costs less than expected loss" },
+      { term:"Phenology", ku:"کاتی ڕووداوەکانی سوڕی ژیان لە درێژاییی ساڵدا", ar:"فينولوجيا — توقيت أحداث دورة الحياة", en:"Seasonal timing of life-cycle events" },
     ],
   },
   {
