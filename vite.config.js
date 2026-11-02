@@ -6,4 +6,9 @@ export default defineConfig({
   base: "/",
   server: { port: 3017 },
   build: { outDir: "build" },
+  test: {
+    environment: "node",
+    include: ["src/**/*.test.js"],
+  },
 });
+

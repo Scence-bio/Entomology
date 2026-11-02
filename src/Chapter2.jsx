@@ -10,7 +10,7 @@ const SECTIONS = [
     id: "def",
     num: "٠١",
     numEn: "01",
-    icon: "🔬",
+    icon: "",
     titles: {
       ku: "پێناسەی وردی ئێنتۆمۆلۆجی",
       ar: "التعريف الأكاديمي لعلم الحشرات",
@@ -27,7 +27,7 @@ const SECTIONS = [
     id: "history",
     num: "٠٢",
     numEn: "02",
-    icon: "📜",
+    icon: "",
     titles: {
       ku: "مێژووی قووڵی زانستەکە",
       ar: "التاريخ العلمي العميق",
@@ -50,7 +50,7 @@ const SECTIONS = [
     id: "scientists",
     num: "٠٣",
     numEn: "03",
-    icon: "🧑‍🔬",
+    icon: "",
     titles: {
       ku: "زانا کاریگەرەکان",
       ar: "العلماء المؤثرون",
@@ -73,7 +73,7 @@ const SECTIONS = [
     id: "kurdistan",
     num: "٠٤",
     numEn: "04",
-    icon: "🌿",
+    icon: "",
     titles: {
       ku: "ئێنتۆمۆلۆجی لە کوردستان",
       ar: "علم الحشرات في كردستان",
@@ -86,16 +86,16 @@ const SECTIONS = [
       en: "Kurdistan is recognized as a Biodiversity Hotspot. Academic research focuses on the preservation of Endemic Species and controlling agricultural pests using Integrated Pest Management (IPM) techniques.",
     },
     stats: [
-      { icon:"🌍", label:"Biodiversity Hotspot" },
-      { icon:"🦋", label:"Endemic Species" },
-      { icon:"🔬", label:"IPM Research" },
+      { icon:"", label:"Biodiversity Hotspot" },
+      { icon:"", label:"Endemic Species" },
+      { icon:"", label:"IPM Research" },
     ],
   },
   {
     id: "importance",
     num: "٠٥",
     numEn: "05",
-    icon: "⚗️",
+    icon: "",
     titles: {
       ku: "سوودە ستراتیژییەکان",
       ar: "الأهمية الاستراتيجية",
@@ -142,16 +142,16 @@ const SECTIONS = [
       en: "Major challenges include Vector-borne Diseases like Malaria and Zika, alongside the impact of Invasive Species that disrupt local ecosystems and threaten food security.",
     },
     threats: [
-      { icon:"🦟", nameKu:"Vector-borne Diseases", nameAr:"الأمراض المنقولة بالنواقل", nameEn:"Vector-borne Diseases", eg:"Malaria, Zika, Dengue" },
-      { icon:"🐛", nameKu:"Invasive Species",       nameAr:"الأنواع الغازية",           nameEn:"Invasive Species",       eg:"Ecosystem disruption" },
-      { icon:"🌾", nameKu:"Food Security",           nameAr:"الأمن الغذائي",             nameEn:"Food Security",           eg:"Agricultural pests" },
+      { icon:"", nameKu:"Vector-borne Diseases", nameAr:"الأمراض المنقولة بالنواقل", nameEn:"Vector-borne Diseases", eg:"Malaria, Zika, Dengue" },
+      { icon:"", nameKu:"Invasive Species",       nameAr:"الأنواع الغازية",           nameEn:"Invasive Species",       eg:"Ecosystem disruption" },
+      { icon:"", nameKu:"Food Security",           nameAr:"الأمن الغذائي",             nameEn:"Food Security",           eg:"Agricultural pests" },
     ],
   },
   {
     id: "glossary",
     num: "٠٧",
     numEn: "07",
-    icon: "📖",
+    icon: "",
     titles: {
       ku: "فەرهەنگی زاراوەکان",
       ar: "المسرد العلمي",
@@ -175,7 +175,7 @@ const SECTIONS = [
     id: "biocontrol",
     num: "٠٨",
     numEn: "08",
-    icon: "🐞",
+    icon: "",
     titles: {
       ku: "کۆنترۆڵی بایۆلۆجی",
       ar: "المكافحة الحيوية",
@@ -192,7 +192,7 @@ const SECTIONS = [
     id: "ants",
     num: "٠٩",
     numEn: "09",
-    icon: "🐜",
+    icon: "",
     titles: {
       ku: "مێروولە — Formicidae",
       ar: "النمل — Formicidae",
@@ -210,7 +210,7 @@ const SECTIONS = [
     id: "conservation",
     num: "١٠",
     numEn: "10",
-    icon: "🌱",
+    icon: "",
     titles: {
       ku: "پارێزگاری لە مێرووەکان",
       ar: "الحفاظ على الحشرات",
@@ -334,7 +334,7 @@ function SectionCard({ section, delay = 0, lang }) {
       style={{ transitionDelay: `${delay}ms`, direction: dir }}
     >
       <div className="ento-card-header">
-        <div className="ento-card-icon">{section.icon}</div>
+        {section.icon ? <div className="ento-card-icon" aria-hidden="true">{section.icon}</div> : null}
         <div>
           <div className="ento-card-num">{section.num} · {section.numEn}</div>
           <div className="ento-card-title-ku">{title}</div>
@@ -499,7 +499,7 @@ function IntroSection({ lang }) {
     >
       <div className="ento-intro-inner">
         {/* decorative leaf */}
-        <div className="ento-intro-leaf" aria-hidden="true">🦋</div>
+        <div className="ento-intro-leaf" aria-hidden="true"></div>
 
         <p className="ento-intro-label">
           {lang === "ku" ? "پێشەکی"

@@ -3,6 +3,7 @@ import { QUIZ } from "./questions";
 import { cachedSheetQuestions, loadSheetQuestions } from "./sheet";
 import { buildRound } from "./rounds";
 import { leaderboardEnabled, fetchTop, submitScore } from "./leaderboard";
+import { QuizCertificate } from "./Certificate";
 
 const TIMER_SEC = 30;
 const SITE = "https://www.entomo.online/";
@@ -338,6 +339,8 @@ export function QuizSection({ lang, chapter, id = "quiz" }) {
               <strong>{digits(lang, `${best.score} / ${best.total}`)}</strong>
             </p>
           )}
+
+          <QuizCertificate lang={lang} score={score} total={round.length} pct={pct} scope={scope} />
 
           <div className="ento-quiz-actions">
             <button type="button" className="ento-quiz-start-btn" onClick={start}>

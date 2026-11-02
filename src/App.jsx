@@ -1,5 +1,9 @@
 import { useState, useEffect, useRef, useCallback, lazy, Suspense } from "react";
 import { Mark } from "./marks";
+import { CHAPTERS, LEARNING_PATH, searchChapters, VERSION } from "./catalog";
+import { ChapterNav } from "./ChapterNav";
+import SourcesPage from "./Sources";
+import NotFoundPage from "./NotFound";
 
 const later = (name) => lazy(() => import("./LaterChapters").then((m) => ({ default: m[name] })));
 const CHAPTER_PAGES = {
@@ -1063,6 +1067,102 @@ const CSS = `
   }
   .ento-snav-pill { flex-shrink:0; }
 }
+/* Professional shell */
+.ento-sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+.ento-path { margin:0 0 36px; }
+.ento-path-lead { color:var(--text-secondary); font-size:.95rem; margin:0 0 16px; max-width:42rem; }
+.ento-path-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-bottom:8px; }
+.ento-path-card {
+  background:var(--bg-card); border:1px solid var(--border-card); border-radius:2px;
+  padding:14px 16px; box-shadow:var(--shadow-card);
+}
+.ento-path-num { font-family:var(--font-mono); font-size:.72rem; color:#8a4e12; letter-spacing:.06em; }
+.ento-dark .ento-path-num { color:var(--accent); }
+.ento-path-title { font-weight:700; margin:6px 0 4px; color:var(--text-primary); }
+.ento-path-desc { font-size:.84rem; color:var(--text-secondary); margin-bottom:10px; }
+.ento-path-links { display:flex; flex-wrap:wrap; gap:6px; }
+.ento-path-links a {
+  font-family:var(--font-mono); font-size:.72rem; text-decoration:none;
+  color:#8a4e12; border:1px solid var(--border-card); padding:3px 8px; border-radius:2px;
+}
+.ento-dark .ento-path-links a { color:var(--accent); }
+.ento-path-links a:hover, .ento-path-links a:focus-visible { border-color:#8a4e12; outline:none; }
+.ento-search { display:block; margin:0 0 18px; }
+.ento-search input {
+  width:100%; max-width:420px; box-sizing:border-box;
+  background:var(--bg-card); color:var(--text-primary);
+  border:1px solid var(--border-card); border-radius:2px;
+  padding:10px 12px; font-family:var(--font-arabic); font-size:.92rem;
+}
+.ento-search input:focus-visible { outline:2px solid #8a4e12; outline-offset:2px; }
+.ento-home-meta { margin:28px 0 8px; font-size:.84rem; color:var(--text-muted); }
+.ento-home-meta a { color:#8a4e12; }
+.ento-dark .ento-home-meta a { color:var(--accent); }
+.ento-chapter-shell { padding-top:0; }
+.ento-chapter-shell .ento-chapter-page { padding-top:0; }
+.ento-chapter-nav {
+  max-width:1100px; margin:60px auto 0; padding:12px 20px 8px;
+  display:flex; flex-direction:column; gap:10px;
+}
+.ento-breadcrumb {
+  list-style:none; display:flex; flex-wrap:wrap; gap:6px; margin:0; padding:0;
+  font-size:.82rem; color:var(--text-muted);
+}
+.ento-breadcrumb li:not(:last-child)::after { content:"/"; margin-inline-start:6px; opacity:.5; }
+.ento-breadcrumb a { color:#8a4e12; text-decoration:none; }
+.ento-dark .ento-breadcrumb a { color:var(--accent); }
+.ento-chapter-nav-actions { display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; align-items:center; }
+.ento-chapter-siblings { display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; flex:1; }
+.ento-nav-btn {
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--bg-card); color:var(--text-primary);
+  border:1px solid var(--border-card); border-radius:2px;
+  padding:8px 12px; font-family:var(--font-arabic); font-size:.82rem;
+  text-decoration:none; cursor:pointer;
+}
+.ento-nav-btn:hover, .ento-nav-btn:focus-visible { border-color:#8a4e12; outline:none; }
+.ento-nav-btn-accent { background:#8a4e12; color:#fff; border-color:#8a4e12; }
+.ento-dark .ento-nav-btn-accent { background:var(--accent); color:#1a140c; }
+.ento-lang-btn:focus-visible, .ento-theme-btn:focus-visible, .ento-quiz-opt:focus-visible, .ento-quiz-start-btn:focus-visible {
+  outline:2px solid #e0b56a; outline-offset:2px;
+}
+.ento-notfound { padding:120px 20px 64px; text-align:center; }
+.ento-notfound-code { font-family:var(--font-mono); font-size:3rem; color:#8a4e12; margin:0; }
+.ento-notfound-title { font-size:1.6rem; margin:8px 0 12px; }
+.ento-field-form { display:flex; flex-direction:column; gap:12px; }
+.ento-field-form label { display:flex; flex-direction:column; gap:6px; font-size:.86rem; color:var(--text-secondary); }
+.ento-field-form input, .ento-field-form textarea {
+  background:var(--bg-page); color:var(--text-primary);
+  border:1px solid var(--border-card); border-radius:2px;
+  padding:10px 12px; font-family:var(--font-arabic); font-size:.92rem;
+}
+.ento-field-form input:focus-visible, .ento-field-form textarea:focus-visible { outline:2px solid #8a4e12; outline-offset:2px; }
+.ento-cert-wrap { margin:18px 0; display:flex; flex-direction:column; align-items:center; gap:12px; }
+.ento-cert {
+  width:min(100%,420px); border:1px solid var(--border-card); background:var(--bg-card);
+  padding:28px 24px; text-align:center; border-radius:2px;
+}
+.ento-cert-eyebrow { font-family:var(--font-mono); font-size:.72rem; color:var(--text-muted); margin:0 0 8px; }
+.ento-cert-title { margin:0 0 10px; font-size:1.25rem; }
+.ento-cert-score { font-size:1.6rem; font-weight:800; color:#8a4e12; margin:0 0 8px; }
+.ento-dark .ento-cert-score { color:var(--accent); }
+.ento-cert-meta, .ento-cert-note { font-size:.84rem; color:var(--text-secondary); margin:0; }
+.ento-cert-note { margin-top:12px; }
+
+@media print {
+  .ento-topbar, .ento-chapter-nav-actions, .ento-quiz-section, .ento-footer, .ento-hero-video,
+  .ento-path, .ento-search, .ento-theme-btn, .ento-lang-switcher { display:none !important; }
+  .ento-root, .ento-chapter-page, .ento-card { background:#fff !important; color:#111 !important; box-shadow:none !important; }
+  .ento-chapter-nav { margin-top:0; }
+  body.ento-cert-print .ento-root > *:not(.ento-quiz-section),
+  body.ento-cert-print .ento-quiz-header,
+  body.ento-cert-print .ento-quiz-actions,
+  body.ento-cert-print .ento-quiz-review,
+  body.ento-cert-print .ento-quiz-board { display:none !important; }
+  body.ento-cert-print .ento-cert-wrap, body.ento-cert-print .ento-cert { display:block !important; }
+  body.ento-cert-print .ento-quiz-share-btn { display:none !important; }
+}
+
 `;
 
 function useTheme() {
@@ -1149,154 +1249,82 @@ function Hero({ lang }) {
 /* ═══════════════════════════════════════════════
    CHAPTER DEFINITIONS
 ═══════════════════════════════════════════════ */
-const CHAPTERS = [
-  {
-    id: "ch1",
-    num: { ku: "چاپتەری یەکەم", en: "Chapter 1", ar: "الفصل الأول" },
-    icon: "pin",
-    image: "/images/plates/ch1-raparin.jpg",
-    title: { ku: "زانیاری زیادە", en: "Additional Information", ar: "معلومات إضافية" },
-    desc: { ku: "دەربارەی پرۆژە، تیم و زانکۆ", en: "About the project, team & university", ar: "عن المشروع والفريق والجامعة" },
-  },
-  {
-    id: "ch2",
-    num: { ku: "چاپتەری دووەم", en: "Chapter 2", ar: "الفصل الثاني" },
-    icon: "beetle",
-    image: "/images/plates/ch2-drawer.jpg",
-    title: { ku: "دەستپێکی ئێنتۆمۆلۆجی", en: "Introduction to Entomology", ar: "مقدمة علم الحشرات" },
-    desc: { ku: "پێناسە، مێژوو و گرنگیی مێرووناسی", en: "Definition, history & importance of entomology", ar: "التعريف والتاريخ وأهمية علم الحشرات" },
-  },
-  {
-    id: "ch3",
-    num: { ku: "چاپتەری سێیەم", en: "Chapter 3", ar: "الفصل الثالث" },
-    icon: "legs",
-    image: "/images/plates/ch3-dragonfly.jpg",
-    latin: "Arthropoda",
-    title: { ku: "فایلەمی جومگەپێیەکان", en: "Phylum Arthropoda", ar: "شعبة مفصليات الأرجل" },
-    desc: { ku: "سیستەمی هەناسەدان، پەیەکەری دەرەکی، چاوی ئاڵۆز و فەرهەنگ", en: "Respiratory system, exoskeleton, compound eyes & glossary", ar: "الجهاز التنفسي والهيكل الخارجي والعيون المركبة والمصطلحات" },
-  },
-  {
-    id: "ch4",
-    num: { ku: "چاپتەری چوارەم", en: "Chapter 4", ar: "الفصل الرابع" },
-    icon: "card",
-    image: "/images/plates/ch4-study.jpg",
-    title: { ku: "کویز", en: "Quiz", ar: "اختبار" },
-    desc: { ku: "تاقیکردنەوەی زانیاریت بە پرسیار و ڤیدیۆ", en: "Test your knowledge with questions & videos", ar: "اختبر معلوماتك بالأسئلة والفيديوهات" },
-  },
-  {
-    id: "ch5",
-    num: { ku: "چاپتەری پێنجەم", en: "Chapter 5", ar: "الفصل الخامس" },
-    icon: "butterfly",
-    image: "/images/plates/ch5-machaon.jpg",
-    latin: "Lepidoptera",
-    title: { ku: "پەپوولەکان", en: "Butterflies", ar: "الفراشات" },
-    desc: { ku: "ناسنامە، بایۆلۆجی و جۆرە کوردستانییەکان", en: "Identity, biology & Kurdistan species", ar: "الهوية والبيولوجيا وأنواع كردستان" },
-  },
-  {
-    id: "ch6",
-    num: { ku: "چاپتەری شەشەم", en: "Chapter 6", ar: "الفصل السادس" },
-    icon: "bee",
-    image: "/images/plates/ch6-bee.jpg",
-    latin: "Hymenoptera",
-    title: { ku: "مێروولە، هەنگ و زەنبوور", en: "Ants, bees and wasps", ar: "النمل والنحل والزنابير" },
-    desc: { ku: "سێ خێزان و جۆرە باوەکانی ناوچەکە", en: "Three families and common species of the region", ar: "ثلاث فصائل وأنواع شائعة في المنطقة" },
-  },
-  {
-    id: "ch7",
-    num: { ku: "چاپتەری حەوتەم", en: "Chapter 7", ar: "الفصل السابع" },
-    icon: "beetle",
-    image: "/images/plates/ch7-ladybird.jpg",
-    focus: "center 42%",
-    latin: "Coleoptera",
-    title: { ku: "قوڕقوڕەکان", en: "Beetles", ar: "الخنافس" },
-    desc: { ku: "قاوغی باڵ، خاڵخاڵۆکە و جۆرەکانی ناوچەکە", en: "Elytra, ladybirds and regional species", ar: "الأغماد والدعسوقة وأنواع المنطقة" },
-  },
-  {
-    id: "ch8",
-    num: { ku: "چاپتەری هەشتەم", en: "Chapter 8", ar: "الفصل الثامن" },
-    icon: "fly",
-    image: "/images/plates/ch8-mosquito.jpg",
-    latin: "Diptera",
-    title: { ku: "مێش و مێشوولە", en: "Flies and mosquitoes", ar: "الذباب والبعوض" },
-    desc: { ku: "یەک جووت باڵ، مەلاریا و مێشی گوڵ", en: "One pair of wings, malaria and hoverflies", ar: "زوج أجنحة والملاريا وذباب الأزهار" },
-  },
-  {
-    id: "ch9",
-    num: { ku: "چاپتەری نۆیەم", en: "Chapter 9", ar: "الفصل التاسع" },
-    icon: "net",
-    image: "/images/plates/ch9-net.jpg",
-    focus: "center 62%",
-    title: { ku: "کێڵگە و لەیبڵ", en: "Field and label", ar: "الحقل والبطاقة" },
-    desc: { ku: "کۆکردنەوە، شوێنی دەرزە و لەیبڵی نموونە", en: "Collecting, where to pin, and the specimen label", ar: "الجمع وموضع الدبوس وبطاقة العينة" },
-  },
-  {
-    id: "ch10",
-    num: { ku: "چاپتەری دەیەم", en: "Chapter 10", ar: "الفصل العاشر" },
-    icon: "bug",
-    image: "/images/plates/ch10-bug.jpg",
-    latin: "Hemiptera",
-    title: { ku: "شەتەک و سنە", en: "Aphids and true bugs", ar: "المن والبق" },
-    desc: { ku: "دەمی کونکەر، و ئەو مێرووەی خاڵخاڵۆکە دەیخوات", en: "A piercing beak, and the insect a ladybird eats", ar: "فم ثاقب، والحشرة التي تأكلها الدعسوقة" },
-  },
-  {
-    id: "ch11",
-    num: { ku: "چاپتەری یازدەهەم", en: "Chapter 11", ar: "الفصل الحادي عشر" },
-    icon: "dragon",
-    image: "/images/plates/ch11-dragon.jpg",
-    latin: "Orthoptera · Odonata",
-    title: { ku: "جڕوشک و مێرووی ئاو", en: "Grasshoppers and dragonflies", ar: "الجنادب والرعاشات" },
-    desc: { ku: "بازدان، چاوی گەورە، و بچووکێک لە ناو ئاو", en: "A jump, a large eye, and a nymph in the water", ar: "قفزة وعين كبيرة وحورية في الماء" },
-  },
-  {
-    id: "ch12",
-    num: { ku: "چاپتەری دوازدەهەم", en: "Chapter 12", ar: "الفصل الثاني عشر" },
-    icon: "butterfly",
-    image: "/images/plates/ch12-chrysalis.jpg",
-    focus: "center 42%",
-    title: { ku: "دوو گۆڕانەپەڕە", en: "Two metamorphoses", ar: "تحولان" },
-    desc: { ku: "پیت هەیە، یان نییە", en: "A pupa, or none", ar: "شرنقة أو لا شرنقة" },
-  },
-  {
-    id: "ch13",
-    num: { ku: "چاپتەری سێزدەهەم", en: "Chapter 13", ar: "الفصل الثالث عشر" },
-    icon: "lace",
-    image: "/images/plates/ch13-lacewing.jpg",
-    latin: "Neuroptera",
-    title: { ku: "تۆڕباڵ", en: "Lacewings", ar: "أسد المن والشبكيات" },
-    desc: { ku: "باڵی تۆڕاوی، و کۆڵۆکێک کە شەتەک دەخوات", en: "Netted wings, and a larva that eats aphids", ar: "أجنحة شبكية ويرقة تأكل المن" },
-  },
-  {
-    id: "ch14",
-    num: { ku: "چاپتەری چواردەهەم", en: "Chapter 14", ar: "الفصل الرابع عشر" },
-    icon: "key",
-    image: "/images/plates/ch14-key.jpg",
-    title: { ku: "کلیلی ناسینەوە", en: "Identification key", ar: "مفتاح التعريف" },
-    desc: { ku: "پرسیار بە پرسیار ئۆردەرەکە بدۆزەوە", en: "Find the order, one question at a time", ar: "اعثر على الرتبة سؤالاً بسؤال" },
-  },
-];
+
 
 /* ── Home Screen ── */
 function HomeScreen({ lang }) {
+  const [query, setQuery] = useState("");
+  const results = searchChapters(query, lang);
+  const dir = lang === "en" ? "ltr" : "rtl";
   return (
-    <div className="ento-home" id="chapters" dir={lang === "en" ? "ltr" : "rtl"}>
+    <div className="ento-home" id="chapters" dir={dir}>
+      <div className="ento-path" id="path">
+        <h2 className="ento-home-label">
+          {lang === "ku" ? "نەخشەی فێرکاری" : lang === "ar" ? "مسار التعلم" : "Learning path"}
+        </h2>
+        <p className="ento-path-lead">
+          {lang === "ku"
+            ? "بەم ڕیزە بخوێنە: دەستپێک، ئۆردەرەکان، کار و کلیل، پاشان کویز."
+            : lang === "ar"
+            ? "اقرأ بهذا الترتيب: البداية، الرتب، العمل والمفتاح، ثم الاختبار."
+            : "Read in this order: start, orders, field and key, then the quiz."}
+        </p>
+        <div className="ento-path-grid">
+          {LEARNING_PATH.map((step, i) => (
+            <div key={step.id} className="ento-path-card">
+              <div className="ento-path-num">{String(i + 1).padStart(2, "0")}</div>
+              <div className="ento-path-title">{step.title[lang]}</div>
+              <div className="ento-path-desc">{step.desc[lang]}</div>
+              <div className="ento-path-links">
+                {step.chapters.map((id) => {
+                  const ch = CHAPTERS.find((c) => c.id === id);
+                  return ch ? (
+                    <a key={id} href={`#/${id}`}>{ch.num.en.replace("Chapter ", "Ch ")}</a>
+                  ) : null;
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <h2 className="ento-home-label">
         {lang === "ku" ? "بەشەکان" : lang === "ar" ? "الفصول" : "Chapters"}
       </h2>
-      <div className="ento-chapters-grid">
-        {CHAPTERS.map((ch) => (
-          <a key={ch.id} className="ento-chapter-card" href={`#/${ch.id}`}>
-            <div className="ento-plate-photo">
-              <img src={ch.image} alt="" loading="lazy" style={{ objectPosition: ch.focus || "center" }} />
-            </div>
-            <div className="ento-plate-label">
-              <div className="ento-ch-num">{ch.num.en}</div>
-              <div className="ento-ch-title">{ch.title[lang]}</div>
-              {ch.latin && <div className="ento-binomial">{ch.latin}</div>}
-              <div className="ento-ch-desc">{ch.desc[lang]}</div>
-            </div>
-          </a>
-        ))}
-      </div>
+      <label className="ento-search">
+        <span className="ento-sr-only">
+          {lang === "ku" ? "گەڕان لە بەشەکان" : lang === "ar" ? "بحث في الفصول" : "Search chapters"}
+        </span>
+        <input
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder={lang === "ku" ? "گەڕان: ناو، وەسف، یان ناوی زانستی…" : lang === "ar" ? "ابحث: اسم أو وصف أو اسم علمي…" : "Search title, description, or scientific name…"}
+          aria-label={lang === "ku" ? "گەڕان لە بەشەکان" : lang === "ar" ? "بحث في الفصول" : "Search chapters"}
+        />
+      </label>
+      {results.length === 0 ? (
+        <p className="ento-body">{lang === "ku" ? "هیچ بەشێک نەدۆزرایەوە." : lang === "ar" ? "لم يُعثر على فصل." : "No chapters found."}</p>
+      ) : (
+        <div className="ento-chapters-grid">
+          {results.map((ch) => (
+            <a key={ch.id} className="ento-chapter-card" href={`#/${ch.id}`}>
+              <div className="ento-plate-photo">
+                <img src={ch.image} alt={ch.alt?.[lang] || ch.title[lang]} loading="lazy" style={{ objectPosition: ch.focus || "center" }} />
+              </div>
+              <div className="ento-plate-label">
+                <div className="ento-ch-num">{ch.num.en}</div>
+                <div className="ento-ch-title">{ch.title[lang]}</div>
+                {ch.latin && <div className="ento-binomial">{ch.latin}</div>}
+                <div className="ento-ch-desc">{ch.desc[lang]}</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+      <p className="ento-home-meta">
+        Atlas of Entomology · v{VERSION} ·{" "}
+        <a href="#/sources">{lang === "ku" ? "سەرچاوە و مۆڵەت" : lang === "ar" ? "المصادر والتراخيص" : "Sources & licenses"}</a>
+      </p>
     </div>
   );
 }
@@ -1320,7 +1348,9 @@ function pageFromHash() {
   if (!hash.startsWith("#/")) return null;
   const id = decodeURIComponent(hash.slice(2).split(/[/?#]/)[0]);
   if (!id || id === "home") return "home";
-  return CHAPTER_PAGES[id] ? id : "home";
+  if (id === "sources") return "sources";
+  if (CHAPTER_PAGES[id]) return id;
+  return "notfound";
 }
 
 function savedLang() {
@@ -1383,7 +1413,7 @@ export default function EntomologyPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [page]);
 
-  const ChapterPage = page === "home" ? null : CHAPTER_PAGES[page];
+  const ChapterPage = CHAPTER_PAGES[page] || null;
 
   return (
     <div className={`ento-root ${isDark ? "ento-dark" : ""}`}>
@@ -1408,9 +1438,14 @@ export default function EntomologyPage() {
           <HomeScreen lang={lang} />
         </>
       )}
+      {page === "sources" && <SourcesPage lang={lang} />}
+      {page === "notfound" && <NotFoundPage lang={lang} />}
       {ChapterPage && (
         <Suspense fallback={<div className="ento-chapter-page" />}>
-          <ChapterPage lang={lang} />
+          <div className="ento-chapter-shell">
+            <ChapterNav lang={lang} chapterId={page} />
+            <ChapterPage lang={lang} />
+          </div>
         </Suspense>
       )}
     </div>
