@@ -97,15 +97,16 @@ export const FAUNAL_STUDIES = [
       en: "Faunistic study of butterflies of Sulaymaniyah",
     },
     finding: {
-      ku: "چکلیست و تۆماری فەونای Papilionoidea بۆ پارێزگای سلێمانی؛ بەڵگەیەکی سەرەکیی ناوچەیی بۆ خوێندنی Lepidoptera لە باشووری کوردستان.",
-      ar: "قائمة وتوثيق فوني لـPapilionoidea في محافظة السليمانية؛ مرجع إقليمي أساسي لتدريس Lepidoptera في جنوب كردستان.",
-      en: "A provincial Papilionoidea checklist and faunistic documentation for Sulaymaniyah — a core regional reference for teaching Lepidoptera in southern Kurdistan.",
+      ku: "یەکەم لێکۆڵینەوەی چڕی فەونای پەپوولەی سلێمانی (٢٠١٦–٢٠٢١): ١٠٣ جۆر لە پێنج خێزان لە ٣٤ شوێن؛ هەشت جۆر تۆماری نوێ بۆ فەونای پەپوولەی عێراق. نمونەکان لە تاقیگەی مێرووناسیی زانکۆی سلێمانی پارێزراون.",
+      ar: "أول دراسة فونية مكثفة لفراشات السليمانية (٢٠١٦–٢٠٢١): ١٠٣ أنواعاً في خمس فصائل من ٣٤ موقعاً؛ ثمانية أنواع سجلات جديدة لفونة فراشات العراق. العينات محفوظة في مختبر الحشرات بجامعة السليمانية.",
+      en: "First intensive Sulaymaniyah butterfly survey (2016–2021): 103 species in five families from 34 localities; eight species new to Iraq’s butterfly fauna. Specimens deposited in the University of Sulaimani entomology laboratory.",
     },
     metrics: [
-      { ku: "Papilionoidea", ar: "Papilionoidea", en: "Papilionoidea" },
-      { ku: "سلێمانی", ar: "السليمانية", en: "Sulaymaniyah" },
+      { ku: "١٠٣ جۆر", ar: "١٠٣ نوعاً", en: "103 species" },
+      { ku: "٨ تۆماری نوێ بۆ عێراق", ar: "٨ سجلات جديدة للعراق", en: "8 new to Iraq" },
+      { ku: "٣٤ شوێن", ar: "٣٤ موقعاً", en: "34 localities" },
     ],
-    url: "https://bdj.pensoft.net/article/82612/",
+    url: "https://doi.org/10.3897/BDJ.10.e82612",
   },
   {
     id: "weevils-kr-2019",
