@@ -20,9 +20,10 @@
  */
 
 import { useState, useRef, useEffect } from "react";
-import { Mark } from "./marks";
 import { QuizSection } from "./quiz/Quiz";
 import { SPECIMENS } from "./butterflies";
+import PhotoHero from "./chapter/PhotoHero";
+import SectionPills from "./chapter/SectionPills";
 
 /* ═══════════════════════════════════════════════
    LANG CONFIG (mirror from App.js)
@@ -86,10 +87,10 @@ const LEPIDO_SECTIONS = [
       en: "Holometabolism: egg → multi-instar larva → pupa (naked chrysalis in many butterflies; often cocooned in moths) → imago. Pupal histolysis/histogenesis rebuilds the adult from imaginal discs. Ecdysone drives molts; falling juvenile hormone permits pupation and adulthood. Timing tracks species and thermal degree-days.",
     },
     metamorphStages: [
-      { icon: "🥚", ku: "هێلکە (Egg)", ar: "البيضة", en: "Egg", detail: "3–14 days" },
-      { icon: "🐛", ku: "کۆڵۆک (Larva)", ar: "اليرقة", en: "Caterpillar", detail: "14–28 days" },
-      { icon: "🫘", ku: "پیت (Pupa)", ar: "الشرنقة", en: "Chrysalis", detail: "7–21 days" },
-      { icon: "🦋", ku: "پەپوولە (Imago)", ar: "الحشرة الكاملة", en: "Adult", detail: "2 weeks – 1 year" },
+      { step: "01", ku: "هێلکە (Egg)", ar: "البيضة", en: "Egg", detail: "3–14 days" },
+      { step: "02", ku: "کۆڵۆک (Larva)", ar: "اليرقة", en: "Caterpillar", detail: "14–28 days" },
+      { step: "03", ku: "پیت (Pupa)", ar: "الشرنقة", en: "Chrysalis", detail: "7–21 days" },
+      { step: "04", ku: "پەپوولە (Imago)", ar: "الحشرة الكاملة", en: "Adult", detail: "2 weeks – 1 year" },
     ],
     terms: ["Holometabolism", "Chrysalis", "Instar", "Ecdysone", "Pheromone"],
   },
@@ -109,11 +110,11 @@ const LEPIDO_SECTIONS = [
       en: "Modern classifications organise Lepidoptera into superfamilies (Papilionoidea, Noctuoidea, Geometroidea, Bombycoidea…). Butterfly vs moth is a practical grade: clubbed antennae and diurnal vertical rest often mark butterflies; filiform/pectinate antennae and nocturnal roof-like wings often mark moths — not a perfect monophyly shortcut.",
     },
     classification: [
-      { family: "Nymphalidae",  emoji: "🌿", ku: "گەورەترین خێزانی پەپوولە؛ زۆرجار forelegی کەمبوو — Vanessa، Danaus", ar: "أكبر عائلات الفراشات؛ الرجل الأمامية مختزلة غالباً", en: "Largest butterfly family; often reduced forelegs — Vanessa, Danaus" },
-      { family: "Papilionidae", emoji: "🌸", ku: "swallowtails؛ زۆرجار tails لە hindwing — Papilio machaon", ar: "أبو دقيق الذيل؛ غالباً ذيول على الجناح الخلفي", en: "Swallowtails; often hindwing tails — Papilio machaon" },
-      { family: "Lycaenidae",   emoji: "💙", ku: "blues/coppers؛ زۆرجار myrmecophily لەگەڵ مێروولە", ar: "الزرقاء والنحاسية؛ تعايش مع النمل شائع", en: "Blues/coppers; frequent myrmecophily with ants" },
-      { family: "Pieridae",     emoji: "🤍", ku: "whites/yellows؛ glucosinolate hosts لە Brassicaceae — Pieris، Colias", ar: "البيضاء والصفراء؛ عوائل صليبية شائعة", en: "Whites/yellows; often Brassicaceae hosts — Pieris, Colias" },
-      { family: "Saturniidae",  emoji: "🌙", ku: "giant silk moths؛ گەورە بێ functional proboscis — Attacus atlas", ar: "عث الحرير العملاقة؛ غالباً بلا خرطوم وظيفي", en: "Giant silk moths; often non-feeding adults — Attacus atlas" },
+      { family: "Nymphalidae", ku: "گەورەترین خێزانی پەپوولە؛ زۆرجار forelegی کەمبوو — Vanessa، Danaus", ar: "أكبر عائلات الفراشات؛ الرجل الأمامية مختزلة غالباً", en: "Largest butterfly family; often reduced forelegs — Vanessa, Danaus" },
+      { family: "Papilionidae", ku: "swallowtails؛ زۆرجار tails لە hindwing — Papilio machaon", ar: "أبو دقيق الذيل؛ غالباً ذيول على الجناح الخلفي", en: "Swallowtails; often hindwing tails — Papilio machaon" },
+      { family: "Lycaenidae", ku: "blues/coppers؛ زۆرجار myrmecophily لەگەڵ مێروولە", ar: "الزرقاء والنحاسية؛ تعايش مع النمل شائع", en: "Blues/coppers; frequent myrmecophily with ants" },
+      { family: "Pieridae", ku: "whites/yellows؛ glucosinolate hosts لە Brassicaceae — Pieris، Colias", ar: "البيضاء والصفراء؛ عوائل صليبية شائعة", en: "Whites/yellows; often Brassicaceae hosts — Pieris, Colias" },
+      { family: "Saturniidae", ku: "giant silk moths؛ گەورە بێ functional proboscis — Attacus atlas", ar: "عث الحرير العملاقة؛ غالباً بلا خرطوم وظيفي", en: "Giant silk moths; often non-feeding adults — Attacus atlas" },
     ],
     terms: ["Nymphalidae", "Papilionidae", "Lycaenidae", "Pieridae", "Saturniidae"],
   },
@@ -272,7 +273,7 @@ function LepidoCard({ section, delay = 0, lang }) {
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 16 }}>
           {section.metamorphStages.map((st, i) => (
             <div key={i} className="ento-stage-chip">
-              <div style={{ fontSize: "2rem", marginBottom: 6 }}>{st.icon}</div>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: ".72rem", letterSpacing: ".12em", color: "var(--accent)", marginBottom: 6 }}>{st.step}</div>
               <div style={{ fontWeight: 800, fontSize: ".85rem", color: "var(--text-primary)", marginBottom: 4 }}>
                 {lang === "ku" ? st.ku : lang === "ar" ? st.ar : st.en}
               </div>
@@ -287,9 +288,9 @@ function LepidoCard({ section, delay = 0, lang }) {
       {/* Classification table */}
       {section.classification && (
         <div style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 16 }}>
-          {section.classification.map((c, i) => (
-            <div key={i} className="ento-app-row" style={{ alignItems: "flex-start" }}>
-              <span style={{ fontSize: "1.4rem", flexShrink: 0 }} aria-hidden="true">{c.emoji}</span>
+          {section.classification.map((c) => (
+            <div key={c.family} className="ento-app-row" style={{ alignItems: "flex-start" }}>
+              <div className="ento-app-dot" aria-hidden="true" />
               <div>
                 <div className="ento-binomial" style={{ fontSize: "1rem", color: "var(--accent)", marginBottom: 3 }}>{c.family}</div>
                 <div style={{ fontSize: ".84rem", color: "var(--text-secondary)" }}>

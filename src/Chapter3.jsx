@@ -1,85 +1,7 @@
 import { useState, useRef, useEffect, Fragment } from "react";
-import { Mark } from "./marks";
 import { QuizSection } from "./quiz/Quiz";
-
-
-
-function ChapterHeroMedia({ lang, numKu, numAr, numEn, icon, titleKu, titleAr, titleEn, sub, video, image }) {
-  return (
-    <div
-      className="ento-chapter-hero"
-      style={{
-        position: "relative",
-        overflow: "hidden",
-        minHeight: "420px",
-        padding: 0,
-      }}
-    >
-      {video && (
-        <video
-          key={video}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          controls={false}
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            zIndex: 0,
-            opacity: 1,
-            display: "block",
-          }}
-        >
-          <source src={video} type="video/mp4" />
-        </video>
-      )}
-
-      {!video && image && (
-        <img
-          src={image}
-          alt=""
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            zIndex: 0,
-            display: "block",
-          }}
-        />
-      )}
-
-      <div className="ento-chapter-hero-scrim" />
-
-      <div
-        style={{
-          position: "relative",
-          zIndex: 2,
-          minHeight: "420px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-          padding: "clamp(36px,6vw,64px) clamp(16px,5vw,48px)",
-        }}
-      >
-        <div className="ento-chapter-hero-num">{lang === "ku" ? numKu : lang === "ar" ? numAr : numEn}</div>
-        <span className="ento-chapter-hero-icon"><Mark name={icon} /></span>
-        <h1 className="ento-chapter-hero-title">
-          {lang === "ku" ? titleKu : lang === "ar" ? titleAr : titleEn}
-        </h1>
-        <div className="ento-chapter-hero-en">{sub}</div>
-      </div>
-    </div>
-  );
-}
+import PhotoHero from "./chapter/PhotoHero";
+import SectionPills from "./chapter/SectionPills";
 
 function useInView(ref, { threshold = 0.07, rootMargin = "0px 0px -20px 0px" } = {}) {
   const [visible, setVisible] = useState(false);
@@ -99,7 +21,6 @@ const ARTHROPODA_SECTIONS = [
     id: "arth-respiratory",
     num: "٠١",
     numEn: "01",
-    icon: "🫁",
     image: "/images/arthropoda/image1.webp",
     titles: {
       ku: "سیستەمی هەناسەدان",
@@ -117,7 +38,6 @@ const ARTHROPODA_SECTIONS = [
     id: "arth-exoskeleton",
     num: "٠٢",
     numEn: "02",
-    icon: "🛡️",
     image: "/images/arthropoda/image4.webp",
     titles: {
       ku: "پەیەکەری دەرەکی",
@@ -135,7 +55,6 @@ const ARTHROPODA_SECTIONS = [
     id: "arth-circulatory",
     num: "٠٣",
     numEn: "03",
-    icon: "💧",
     image: "/images/arthropoda/image2.webp",
     titles: {
       ku: "سوڕی خوێنی کراوە",
@@ -153,7 +72,6 @@ const ARTHROPODA_SECTIONS = [
     id: "arth-compound-eyes",
     num: "٠٤",
     numEn: "04",
-    icon: "👁️",
     image: "/images/arthropoda/image3.webp",
     titles: {
       ku: "چاوە ئاڵۆزەکان",
@@ -171,11 +89,10 @@ const ARTHROPODA_SECTIONS = [
     id: "arth-glossary",
     num: "٠٧",
     numEn: "07",
-    icon: "📖",
     titles: {
       ku: "فەرهەنگی زاراوەکان",
       ar: "قاموس المصطلحات",
-      en: "Terms of Glossary",
+      en: "Scientific glossary",
     },
     body: {
       ku: "زاراوەی بنەڕەتیی پەیەکەر، هەناسە، سوڕ و بینین — بۆ خوێندنەوەی وردی مۆرفۆلۆجی و فیزیۆلۆجی.",
@@ -340,7 +257,6 @@ function ArthropodaCard({ section, delay = 0, lang }) {
       style={{ transitionDelay: `${delay}ms`, direction: lang === "en" ? "ltr" : "rtl" }}
     >
       <div className="ento-card-header">
-        <div className="ento-card-icon">{section.icon}</div>
         <div>
           <div className="ento-card-num">{section.num} · {section.numEn}</div>
           <div className="ento-card-title-ku">{section.titles[lang]}</div>
@@ -383,21 +299,43 @@ function ArthropodaCard({ section, delay = 0, lang }) {
   );
 }
 
+const CH3_NAV = [
+  { id: "arth-respiratory", ku: "هەناسە", ar: "التنفس", en: "Respiration" },
+  { id: "arth-exoskeleton", ku: "پەیەکەر", ar: "الهيكل", en: "Exoskeleton" },
+  { id: "arth-circulatory", ku: "سوڕی خوێن", ar: "الدوران", en: "Circulation" },
+  { id: "arth-compound-eyes", ku: "چاوی ئاڵۆز", ar: "العيون", en: "Compound eyes" },
+  { id: "arth-classes", ku: "پۆلەکان", ar: "المجموعات", en: "Classes" },
+  { id: "arth-body", ku: "جەستە", ar: "الجسم", en: "Body plan" },
+  { id: "arth-glossary", ku: "فەرهەنگ", ar: "المسرد", en: "Glossary" },
+  { id: "quiz", ku: "کویز", ar: "اختبار", en: "Quiz" },
+];
+
 export default function Chapter3({ lang }) {
   return (
-    <div className="ento-chapter-page">
-      <ChapterHeroMedia
+    <div className="ento-chapter-page ento-ch1">
+      <PhotoHero
         lang={lang}
-        numKu="چاپتەری سێیەم"
-        numAr="الفصل الثالث"
-        numEn="Chapter 3"
-        icon="legs"
-        titleKu="پۆلی جومگە پێیەکان Phylum Arthropods"
-        titleAr="شعبة مفصليات الأرجل"
-        titleEn="Phylum Arthropods"
-        sub="Phylum Arthropoda · جومگەپێیەکان · مفصليات الأرجل"
         image="/images/plates/ch3-dragonfly.jpg"
+        imageAlt={{
+          ku: "مێرووی ئاوی Libellula quadrimaculata",
+          ar: "رعاش Libellula quadrimaculata",
+          en: "Four-spotted chaser dragonfly",
+        }}
+        num={{ ku: "چاپتەری سێیەم", ar: "الفصل الثالث", en: "Chapter 3" }}
+        icon="legs"
+        title={{
+          ku: "فایلەمی جومگەپێیەکان",
+          ar: "شعبة مفصليات الأرجل",
+          en: "Phylum Arthropoda",
+        }}
+        latin="Arthropoda"
+        subtitle={{
+          ku: "هەناسە · پەیەکەر · چاو · پۆلەکان",
+          ar: "التنفس · الهيكل · العيون · المجموعات",
+          en: "Respiration · cuticle · eyes · classes",
+        }}
       />
+      <SectionPills lang={lang} items={CH3_NAV} />
       <div className="ento-container">
         {ARTHROPODA_SECTIONS.map((s, i) => (
           <Fragment key={s.id}>
