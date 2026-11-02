@@ -14,7 +14,7 @@ An open teaching atlas of entomology in Kurdish, Arabic, and English.
 
 ## تیم / Team
 
-BioNova — خوێندکارانی بایۆلۆجی، زانکۆی ڕاپەڕین (University of Raparin).
+خوێندکارانی بایۆلۆجی، زانکۆی ڕاپەڕین (University of Raparin).
 
 ## کارکردن لەسەر کۆمپیوتەر
 
