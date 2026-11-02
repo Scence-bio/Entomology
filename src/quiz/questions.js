@@ -8,7 +8,7 @@ export const QUIZ = [
     q: { ku: "وشەی Entomology لە بنەڕەتدا لە چ زمانێکەوە هاتووە؟", ar: "كلمة Entomology مشتقة أصلاً من أي لغة؟", en: "The word Entomology originally comes from which language?" },
     opts: { ku: ["لاتینی", "یۆنانی کۆن", "فەرەنسی", "ئەڵمانی"], ar: ["اللاتينية", "اليونانية القديمة", "الفرنسية", "الألمانية"], en: ["Latin", "Ancient Greek", "French", "German"] },
     correct: 1,
-    why: { ku: "لە entomon (مێروو) و logia (زانست)ەوەیە، هەردووکیان یۆنانی کۆنن.", ar: "من entomon (حشرة) وlogia (علم)، وكلاهما يوناني قديم.", en: "It comes from entomon (insect) and logia (study), both Ancient Greek." },
+    why: { ku: "لە ἔντομον (éntomon) و -λογία ـەوەیە؛ هەردووکیان یۆنانی کۆنن.", ar: "من ἔντομον و-λογία؛ يوناني قديم.", en: "From Greek ἔντομον (éntomon) and -λογία." },
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const QUIZ = [
     q: { ku: "کام زانا بە داهێنەری ناوی دووانەی زانستی دادەنرێت؟", ar: "من يُعد واضع التسمية الثنائية؟", en: "Who set down binomial nomenclature?" },
     opts: { ku: ["Jan Swammerdam", "Charles Darwin", "Carl Linnaeus", "William Kirby"], ar: ["يان سوامردام", "تشارلز داروين", "كارل لينيوس", "وليام كيربي"], en: ["Jan Swammerdam", "Charles Darwin", "Carl Linnaeus", "William Kirby"] },
     correct: 2,
-    why: { ku: "لە ١٧٥٨دا Linnaeus ناوی دووانەی جۆرەکانی داڕشت.", ar: "في ١٧٥٨ وضع لينيوس الاسم الثنائي للأنواع.", en: "In 1758 Linnaeus set down the two-part name of a species." },
+    why: { ku: "Systema Naturae (١٠یەم چاپ، ١٧٥٨): Genus + specific epithet.", ar: "Systema Naturae (ط ١٠، ١٧٥٨): الجنس والاسم النوعي.", en: "Systema Naturae (10th ed., 1758): Genus + specific epithet." },
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ export const QUIZ = [
     q: { ku: "جەستەی مێروو لە چەند بەشی سەرەکی پێک دێت؟", ar: "كم قسماً رئيسياً في جسم الحشرة؟", en: "How many main regions does an insect body have?" },
     opts: { ku: ["٢ بەش", "٣ بەش", "٤ بەش", "٥ بەش"], ar: ["قسمان", "٣ أقسام", "٤ أقسام", "٥ أقسام"], en: ["2", "3", "4", "5"] },
     correct: 1,
-    why: { ku: "سەر، سنگ و سک. ئەم دابەشبوونە پێی دەوترێت Tagmatization.", ar: "رأس وصدر وبطن. يسمى هذا التقسيم Tagmatization.", en: "Head, thorax, and abdomen. That division is called tagmatization." },
+    why: { ku: "سێ tagmata: cephalon، thorax، abdomen — tagmosisی Insecta.", ar: "ثلاثة tagmata: رأس وصدر وبطن.", en: "Three tagmata via tagmosis: head, thorax, abdomen." },
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ export const QUIZ = [
     q: { ku: "پەیەکەری دەرەکیی مێروو لە چ ماددەیەک دروست بووە؟", ar: "من أي مادة الهيكل الخارجي للحشرة؟", en: "What is the insect exoskeleton made of?" },
     opts: { ku: ["کالیسیۆم", "کایتین (Chitin)", "سیلۆلۆز", "کەرەتین"], ar: ["كالسيوم", "كايتين (Chitin)", "سليلوز", "كيراتين"], en: ["Calcium", "Chitin", "Cellulose", "Keratin"] },
     correct: 1,
-    why: { ku: "قاوغەکە لە کایتینە، و بۆ گەورەبوون توێژە کۆنەکە فڕێ دەدات.", ar: "الدرع من الكايتين، وينسلخ الكائن لينمو.", en: "The shell is chitin, and the animal molts in order to grow." },
+    why: { ku: "Cuticle لە α-chitin و sclerotin؛ گەشە بە ecdysis لەژێر ecdysone.", ar: "الكيوتيكل من الكايتين؛ النمو بالانسلاخ تحت الإكديسون.", en: "Cuticle is α-chitin + sclerotin; growth needs ecdysis under ecdysone." },
   },
   {
     id: 6,
@@ -62,7 +62,7 @@ export const QUIZ = [
     q: { ku: "هەناسەی مێروو لە ڕێگەی چ سیستەمێکە؟", ar: "بأي جهاز تتنفس الحشرة؟", en: "How does an insect breathe?" },
     opts: { ku: ["سییە", "بۆری هەوایی (Tracheae)", "هەناسەی پێست وەک ڕێگەی سەرەکی", "خوەین"], ar: ["رئتان", "قصبات هوائية (Tracheae)", "تنفس جلدي كطريق رئيسي", "خياشيم"], en: ["Lungs", "Tracheae", "Skin as the main route", "Gills"] },
     correct: 1,
-    why: { ku: "هەوا لە کونی Spiracles دێتە ناو بۆرییەکانی Tracheae و ڕاستەوخۆ دەگاتە خانەکان.", ar: "يدخل الهواء من الثغور إلى القصبات ويصل مباشرة إلى الخلايا.", en: "Air enters through spiracles into tracheae and reaches the tissues directly." },
+    why: { ku: "spiracles → tracheae → tracheoles؛ O₂ ڕاستەوخۆ بۆ خانە، نەک لە ڕێگەی hemolymphی سەرەکی.", ar: "ثغور فقصبات فقصيبات إلى الخلايا مباشرة.", en: "Spiracles → tracheae → tracheoles deliver O₂ to cells; hemolymph is not the main O₂ carrier." },
   },
   {
     id: 8,
@@ -170,7 +170,7 @@ export const QUIZ = [
     q: { ku: "گۆڕانەپەڕەی تەواوی پەپوولە چەند قۆناغە؟", ar: "كم مرحلة في التحول الكامل للفراشة؟", en: "How many stages are in a butterfly’s complete metamorphosis?" },
     opts: { ku: ["٢", "٣", "٤", "٥"], ar: ["٢", "٣", "٤", "٥"], en: ["2", "3", "4", "5"] },
     correct: 2,
-    why: { ku: "هێلکە، کۆڵۆک، پیت و پەپوولەی گەورە.", ar: "بيضة ويرقة وشرنقة وحشرة بالغة.", en: "Egg, caterpillar, chrysalis, and adult." },
+    why: { ku: "Holometabola: egg → larva → pupa (chrysalis) → imago.", ar: "تحول كامل: بيضة ويرقة وعذراء وبالغ.", en: "Holometabola: egg → larva → pupa (chrysalis) → imago." },
   },
   {
     id: 20,
@@ -215,7 +215,7 @@ export const QUIZ = [
     q: { ku: "باڵی پێشەوەی قوڕقوڕە بووە بە چی؟", ar: "ماذا صار الجناح الأمامي للخنفساء؟", en: "What have a beetle’s forewings become?" },
     opts: { ku: ["هەڵتەر", "قاوغی ڕەق (elytra)", "قاوی پەپوولە", "بێباڵ"], ar: ["دبوس توازن", "غمد صلب (elytra)", "حرشفة فراشة", "بلا جناح"], en: ["Halteres", "Hard covers (elytra)", "Butterfly scales", "No wings"] },
     correct: 1,
-    why: { ku: "elytra لە ناوەڕاستدا یەک دەگرن و باڵی ناسکی فڕین دەپارێزن.", ar: "تلتقي الأغماد على خط في الظهر وتحمي جناح الطيران الرقيق.", en: "The elytra meet down the back and protect the thin flying wings." },
+    why: { ku: "forewing → elytraی sclerotized لەسەر mid-dorsal suture؛ hindwingی membranous بۆ فڕین.", ar: "أغماد ظهرية تحمي جناح الطيران الغشائي.", en: "Sclerotized elytra meet mid-dorsally and shield membranous hindwings." },
   },
   {
     id: 25,
@@ -242,7 +242,7 @@ export const QUIZ = [
     q: { ku: "Diptera لە ئۆردەرەکانی تر بە چی جیا دەبێتەوە؟", ar: "بماذا تتميز Diptera عن الرتب الأخرى؟", en: "What sets Diptera apart from the other orders?" },
     opts: { ku: ["قاوغی ڕەق", "قاوی باڵ", "یەک جووت باڵ و هەڵتەر", "هەشت قاچ"], ar: ["غمد صلب", "حراشف الجناح", "زوج أجنحة ودبوسا توازن", "ثماني أرجل"], en: ["Hard elytra", "Wing scales", "One pair of wings and halteres", "Eight legs"] },
     correct: 2,
-    why: { ku: "جووتی دواوەی باڵ بووە بە هەڵتەر بۆ هاوسەنگی.", ar: "صار الزوج الخلفي دبابيس توازن.", en: "The hind pair of wings has become halteres for balance." },
+    why: { ku: "metathoracic wings → halteresی gyroscopic؛ تەنها mesothoracic flight wings دەمێننەوە.", ar: "الجناح الخلفي صار halteres للتوازن الدوراني.", en: "Metathoracic wings are gyroscopic halteres; only the mesothoracic pair flies." },
   },
   {
     id: 28,

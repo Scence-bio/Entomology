@@ -113,9 +113,9 @@ const HYMENOPTERA = {
       num: "٠١ · 01",
       title: { ku: "پێناسە", ar: "التعريف", en: "What they are" },
       body: {
-        ku: "Hymenoptera ئۆردەری مێروولە، هەنگ و زەنبوورە. ناوەکە لە hymen هاتووە، واتە پەردە، و لە pteron، واتە باڵ. دوو جووت باڵی پەردەییان هەیە و بە چنگە بچووکەکان، hamuli، بە یەکەوە دەبەسترێن. زۆربەیان کەمەرێکی باریکیان هەیە. کارگەری مێروولە باڵی نییە. گۆڕانەپەڕەیان تەواوە. هەنگ پەیتاندن دەکات، مێروولە خاک ئاوا دەکات، و زەنبووری پارازیتۆید هێلکەکەی لە ناو کۆڵۆکی زیانبەخشدا دادەنێت.",
-        ar: "Hymenoptera رتبة النمل والنحل والزنابير. الاسم من hymen (غشاء) وpteron (جناح): زوجان من الأجنحة الغشائية يربطهما خطاطيف صغيرة (hamuli). لمعظمها خصر ضيق. شغالة النمل بلا أجنحة. تحولها كامل. النحل يلقّح، والنمل يهوّي التربة، والزنبار الطفيلي يضع بيضه داخل يرقة الآفة.",
-        en: "Hymenoptera is the order of ants, bees and wasps. The name is hymen (membrane) and pteron (wing): two pairs of membranous wings locked together by tiny hooks, the hamuli. Most have a narrow waist. Ant workers have no wings. Their metamorphosis is complete. Bees move pollen, ants aerate soil, and a parasitoid wasp lays its egg inside a pest larva.",
+        ku: "Hymenoptera یەکێک لە گەورەترین ئۆردەرەکانە (Symphyta + Apocrita). ناوی hymen «پەردە» + pteron «باڵ»: دوو جووت باڵی membranous؛ لە Apocritaـدا hamuli باڵی پێش و دواوە دەبەستێتەوە بۆ یەک ڕووی فڕین. propodeum و petiole کەمەری باریک (wasp-waist) دروست دەکەن. گۆڕانەپەڕە holometabolousـە. Aculeata (هەنگ، زەنبوور، مێروولە) ovipositorیان بووە بە نیشتر؛ Parasitica زۆربەیان parasitoidن. haplodiploidy: نێر لە هێلکەی unfertilized (haploid)، مێ لە fertilized (diploid) — بنەمای تیۆری kin selection بۆ eusociality. ئیکۆلۆجی: pollination، predation، parasitism و bioturbation.",
+        ar: "Hymenoptera من أكبر الرتب (Symphyta وApocrita). جناحان غشائيان مع hamuli في Apocrita وخصر petiole. تحول كامل. Aculeata ذات حمة؛ كثير من Parasitica طفيليات. haplodiploidy يفسر جزئياً eusociality. أدوار: تلقيح وافتراس وتطفل وتهوية تربة.",
+        en: "Hymenoptera is among the largest orders (Symphyta + Apocrita). The name means membrane-wing: two membranous pairs; Apocrita couple them with hamuli. A petiole creates the narrow waist. Development is holometabolous. Aculeata have a sting derived from the ovipositor; many Parasitica are parasitoids. Haplodiploidy (haploid males, diploid females) underpins kin-selection models of eusociality. Roles: pollination, predation, parasitism and soil bioturbation.",
       },
     },
     {
@@ -123,9 +123,9 @@ const HYMENOPTERA = {
       num: "٠٢ · 02",
       title: { ku: "سێ خێزان", ar: "ثلاث فصائل", en: "Three families" },
       body: {
-        ku: "خێزانێک هەڵبژێرە. هەر سێکیان لە هەمان ئۆردەردان، بەڵام کارەکانیان جیاوازە.",
-        ar: "اختر فصيلة. الثلاث من الرتبة نفسها، وأعمالها مختلفة.",
-        en: "Choose a family. All three sit in this order, and each does a different job.",
+        ku: "سێ خێزانی Apocrita: eusocial Formicidae، pollinatorی Apidae، و parasitoidی Ichneumonidae — هەمان ئۆردەر، nicheی جیاواز.",
+        ar: "ثلاث فصائل: نمل اجتماعي ونحل ملقّح وزنابير طفيلية.",
+        en: "Three Apocrita families: eusocial ants, pollinating bees and parasitoid wasps — one order, divergent niches.",
       },
       families: [
         {
@@ -133,9 +133,9 @@ const HYMENOPTERA = {
           name: "Formicidae",
           title: { ku: "مێروولە", ar: "النمل", en: "Ants" },
           rows: {
-            ku: [["باڵ", "کارگەر بێباڵە"], ["کۆمەڵگە", "دایک، کارگەر، نێر"], ["کار", "خاک، تۆو، کەمکردنەوەی مێرووی تر"]],
-            ar: [["الأجنحة", "الشغالة بلا أجنحة"], ["المستعمرة", "ملكة وعمال وذكور"], ["العمل", "التربة والبذور وكبح حشرات أخرى"]],
-            en: [["Wings", "workers are wingless"], ["Colony", "queen, workers, males"], ["Work", "soil, seeds, holding other insects down"]],
+            ku: [["باڵ", "کارگەر apterous؛ alate تەنها بۆ nest founding"], ["کۆمەڵگە", "eusocial: queen / workers / males؛ caste polymorphism"], ["کار", "bioturbation، granivory (Messor)، predation/tending"]],
+            ar: [["الأجنحة", "الشغالة بلا جناح"], ["المستعمرة", "eusocial: ملكة وشغالة وذكور"], ["العمل", "تهوية تربة وبذور وافتراس"]],
+            en: [["Wings", "workers apterous; alates for dispersal"], ["Colony", "eusocial castes: queen, workers, males"], ["Work", "bioturbation, granivory, predation"]],
           },
         },
         {
@@ -143,9 +143,9 @@ const HYMENOPTERA = {
           name: "Apidae",
           title: { ku: "هەنگ", ar: "النحل", en: "Bees" },
           rows: {
-            ku: [["موو", "مووی لقڵق بۆ هەڵگرتنی هەڵاڵە"], ["خۆراک", "شیلەی گوڵ و هەڵاڵە"], ["نموونە", "Apis، هەنگی شاخ، Xylocopa"]],
-            ar: [["الشعر", "شعر متفرع يحمل اللقاح"], ["الغذاء", "رحيق الأزهار وحبوب اللقاح"], ["أمثلة", "Apis والنحل الطنان وXylocopa"]],
-            en: [["Hair", "branched hairs carry pollen"], ["Food", "nectar and pollen"], ["Examples", "Apis, bumblebees, Xylocopa"]],
+            ku: [["موو", "plumose hairs + corbicula/scopa بۆ pollen"], ["خۆراک", "nectar + pollen (گەورە و لارڤا)"], ["نموونە", "Apis mellifera، Bombus، Xylocopa"]],
+            ar: [["الشعر", "شعيرات متفرعة وسلة لقاح"], ["الغذاء", "رحيق وحبوب لقاح"], ["أمثلة", "Apis وBombus وXylocopa"]],
+            en: [["Hair", "plumose hairs; corbicula/scopa for pollen"], ["Food", "nectar and pollen"], ["Examples", "Apis mellifera, Bombus, Xylocopa"]],
           },
         },
         {
@@ -153,9 +153,9 @@ const HYMENOPTERA = {
           name: "Ichneumonidae",
           title: { ku: "زەنبووری پارازیتۆید", ar: "الزنابير الطفيلية", en: "Parasitoid wasps" },
           rows: {
-            ku: [["ئامراز", "ئۆڤیپۆزیتۆرێکی درێژ"], ["کار", "هێلکە لە ناو لارڤای خانەخوێ"], ["بەکارهێنان", "بەشێک لە کۆنترۆڵی بایۆلۆجی"]],
-            ar: [["الأداة", "حامل بيض طويل"], ["العمل", "بيضة داخل يرقة العائل"], ["الاستعمال", "جزء من المكافحة الحيوية"]],
-            en: [["Tool", "a long ovipositor"], ["Work", "an egg inside a host larva"], ["Use", "one part of biological control"]],
+            ku: [["ئامراز", "ovipositorی درێژ (endo/ecto-parasitoid)"], ["کار", "هێلکە لە/لەسەر host larva → host دەکوژرێت"], ["بەکارهێنان", "classical & augmentative biocontrol"]],
+            ar: [["الأداة", "حامل بيض طويل"], ["العمل", "طفيل يقتل العائل"], ["الاستعمال", "مكافحة حيوية"]],
+            en: [["Tool", "elongate ovipositor"], ["Work", "egg in/on host larva; host usually dies"], ["Use", "classical and augmentative biocontrol"]],
           },
         },
       ],
@@ -191,9 +191,9 @@ const COLEOPTERA = {
       num: "٠١ · 01",
       title: { ku: "پێناسە", ar: "التعريف", en: "What they are" },
       body: {
-        ku: "Coleoptera گەورەترین ئۆردەری مێرووە. ناوەکە لە coleos هاتووە، واتە قاوغ، و لە pteron، واتە باڵ. باڵی پێشەوە بووە بە قاوغێکی ڕەق، elytra. ئەم قاوغانە لە ناوەڕاستی پشتدا لەسەر هێڵێکی ڕاست یەک دەگرن و باڵی ناسکی فڕین دەپارێزن. گۆڕانەپەڕەیان تەواوە. خاڵخاڵۆکە، کە لە کۆنترۆڵی بایۆلۆجیدا شەتەک دەخوات، قوڕقوڕەیە.",
-        ar: "Coleoptera أكبر رتبة من الحشرات. الاسم من coleos (غمد) وpteron (جناح). الجناح الأمامي غمد صلب، elytra، يلتقي على خط مستقيم في الظهر ويحمي جناح الطيران الرقيق. تحولها كامل. الدعسوقة التي تأكل المن في المكافحة الحيوية خنفساء.",
-        en: "Coleoptera is the largest order of insects. The name is coleos (sheath) and pteron (wing). The forewings have become hard covers, the elytra, which meet in a straight line down the back and protect the thin flying wings. Metamorphosis is complete. The ladybird that eats aphids in biological control is a beetle.",
+        ku: "Coleoptera گەورەترین ئۆردەری Insectaـیە (~٤٠٠٠٠٠ جۆری وەسفکراو). coleos «قاوغ» + pteron «باڵ»: forewing بووە بە elytraی sclerotized کە لە mesothoraxـەوە دێن و لەسەر خطی mid-dorsal (suture) یەک دەگرن؛ hindwingی membranous بۆ فڕین دەپارێزرێت. pronotum گەورەیە؛ گۆڕانەپەڕە holometabolousـە (لارڤای campodeiform یان scarabaeiform). خێزانەکان: Coccinellidae (پێشەنگی biocontrolی شەتەک)، Carabidae (زەوی)، Scarabaeidae، Curculionidae (زیانبەخشی کشتوکاڵی). elytra ڕێگە دەدات بژیون لە ژینگەی وشک و ژێر قەڵبەدا.",
+        ar: "Coleoptera أكبر رتبة (~٤٠٠ ألف نوع). الأغماد elytra تحمي جناح الطيران. تحول كامل. Coccinellidae للمكافحة الحيوية؛ Curculionidae آفات مهمة.",
+        en: "Coleoptera is the largest insect order (~400,000 described species). Forewings are sclerotized elytra meeting at a mid-dorsal suture and shielding membranous hindwings. Development is holometabolous (campodeiform or scarabaeiform larvae). Key families: Coccinellidae (aphid biocontrol), Carabidae, Scarabaeidae, Curculionidae (major crop pests). Elytra enable life in dry and cryptic habitats.",
       },
     },
     {
@@ -211,9 +211,9 @@ const COLEOPTERA = {
           name: "Coccinellidae",
           title: { ku: "خاڵخاڵۆکە", ar: "الدعسوقيات", en: "Ladybirds" },
           rows: {
-            ku: [["شێوە", "خول و خاڵخاڵ"], ["خۆراک", "شەتەک"], ["کار", "کۆنترۆڵی بایۆلۆجی"]],
-            ar: [["الشكل", "مستدير ومنقّط"], ["الطعام", "المن"], ["العمل", "مكافحة حيوية"]],
-            en: [["Shape", "round and spotted"], ["Food", "aphids"], ["Work", "biological control"]],
+            ku: [["شێوە", "hemispherical؛ aposematic spots"], ["خۆراک", "لارڤا و گەورە زۆرجار aphidophagous"], ["کار", "predator لە IPM / biocontrol"]],
+            ar: [["الشكل", "نصف كروي ومنقّط"], ["الطعام", "المن غالباً"], ["العمل", "مفترس في المكافحة الحيوية"]],
+            en: [["Shape", "hemispherical; often aposematic"], ["Food", "larvae and adults often aphidophagous"], ["Work", "key predators in IPM"]],
           },
         },
         {
@@ -221,9 +221,9 @@ const COLEOPTERA = {
           name: "Carabidae",
           title: { ku: "قوڕقوڕەی زەوی", ar: "الخنافس الأرضية", en: "Ground beetles" },
           rows: {
-            ku: [["قاچ", "درێژ، بۆ ڕاکردن"], ["خۆراک", "زۆربەیان نێچیرخۆرن"], ["نموونە", "Calosoma کرم دەخوات"]],
-            ar: [["الأرجل", "طويلة للجري"], ["الطعام", "معظمها مفترس"], ["مثال", "Calosoma يأكل اليساريع"]],
-            en: [["Legs", "long, for running"], ["Food", "most are hunters"], ["Example", "Calosoma eats caterpillars"]],
+            ku: [["قاچ", "cursorial؛ زۆرجار nocturnal cursorial predators"], ["خۆراک", "زۆربە predatory (generalist)"], ["نموونە", "Calosoma sycophanta → Lepidoptera larvae"]],
+            ar: [["الأرجل", "عدّاءة"], ["الطعام", "مفترسات عامة غالباً"], ["مثال", "Calosoma على يرقات الفراش"]],
+            en: [["Legs", "cursorial runners"], ["Food", "mostly generalist predators"], ["Example", "Calosoma on lepidopteran larvae"]],
           },
         },
         {
@@ -231,9 +231,9 @@ const COLEOPTERA = {
           name: "Scarabaeidae",
           title: { ku: "قوڕقوڕەی قاوغ", ar: "الجعليات", en: "Scarabs" },
           rows: {
-            ku: [["ئەنتێنا", "کۆتاییەکەی وەک پەڕ"], ["خۆراک", "پەیین، ڕەگ، یان گوڵ"], ["نموونە", "Cetonia لەسەر گوڵ"]],
-            ar: [["القرون", "طرفها ورقي"], ["الطعام", "روث أو جذور أو أزهار"], ["مثال", "Cetonia على الأزهار"]],
-            en: [["Antennae", "the tip is a leaf-like club"], ["Food", "dung, roots, or flowers"], ["Example", "Cetonia on flowers"]],
+            ku: [["ئەنتێنا", "lamellate club"], ["خۆراک", "dung / roots / floral resources (guild جیاواز)"], ["نموونە", "Cetonia aurata — floricolous"]],
+            ar: [["القرون", "صولجان صفائحي"], ["الطعام", "روث أو جذور أو أزهار"], ["مثال", "Cetonia على الأزهار"]],
+            en: [["Antennae", "lamellate club"], ["Food", "dung, roots or flowers by guild"], ["Example", "Cetonia aurata on flowers"]],
           },
         },
       ],
@@ -268,9 +268,9 @@ const DIPTERA = {
       num: "٠١ · 01",
       title: { ku: "پێناسە", ar: "التعريف", en: "What they are" },
       body: {
-        ku: "Diptera تەنها یەک جووت باڵی فڕینی هەیە. ناوەکە لە di هاتووە، واتە دوو، و لە pteron، واتە باڵ. جووتی دواوە بووە بە هەڵتەر، واتە دوو گۆچانەی بچووک کە هاوسەنگی دەگرن. گۆڕانەپەڕەیان تەواوە. هەموویان گەز ناکەن. مێشوولەی مێینە خوێن دەمژێت، مێشی ماڵەوە شلە دەمژێت، و مێشی گوڵ سەردانی گوڵ دەکات.",
-        ar: "لـ Diptera زوج واحد من أجنحة الطيران. الاسم من di (اثنان) وpteron (جناح). الزوج الخلفي صار دبوساً للتوازن (halteres). تحولها كامل. ليست كلها تلسع: البعوض يمتص الدم، والذبابة المنزلية تمتص السوائل، وذباب الأزهار يزور الزهر.",
-        en: "Diptera has one pair of flying wings. The name is di (two) and pteron (wing). The hind pair has become halteres, two small clubs that keep balance. Metamorphosis is complete. They do not all bite: a mosquito takes blood, a house fly takes liquids, and a hoverfly visits flowers.",
+        ku: "Diptera («دوو-باڵ») تەنها یەک جووت باڵی فڕینی کارکردن هەیە لەسەر mesothorax؛ metathoracic wings بوونەتە halteres — هەستەوەری gyroscopic بۆ هاوسەنگی فڕین. گۆڕانەپەڕە holometabolousـە؛ لارڤا زۆرجار apodousـە (maggot). دەم جۆراوجۆرە: piercing-sucking (Culicidaeی مێینە)، sponging (Musca)، یان sucking لەسەر nectar (Syrphidae). Nematocera (مێشوولە و هاوشێوە) و Brachycera (مێشی ماڵ و گوڵ) دوو کلادی گەورەن. Culicidae: Anopheles → Plasmodium؛ Aedes → dengue/Zika؛ Culex → هەندێک arbovirus. forensic و pollination و veterinary entomology زۆر پشتی پێ دەبەستن.",
+        ar: "Diptera زوج طيران واحد وhalteres للتوازن. تحول كامل ويرقة غالباً بلا أرجل. أنوفثيلة تنقل الملاريا وأيدس الضنك والزيكا. أقسام Nematocera وBrachycera.",
+        en: "Diptera (‘two wings’) retain one functional flight pair; hindwings are gyroscopic halteres. Holometabolous; larvae often apodous maggots. Mouthparts range from piercing-sucking (female Culicidae) to sponging (Musca) or nectar-feeding (Syrphidae). Major clades: Nematocera and Brachycera. Medically: Anopheles–Plasmodium, Aedes–dengue/Zika. Critical for forensic, veterinary and pollination science.",
       },
     },
     {
@@ -288,9 +288,9 @@ const DIPTERA = {
           name: "Culicidae",
           title: { ku: "مێشوولە", ar: "البعوض", en: "Mosquitoes" },
           rows: {
-            ku: [["دەم", "خرتومێکی درێژ"], ["مێینە", "خوێن دەمژێت بۆ هێلکە"], ["نەخۆشی", "Anopheles مەلاریا، Aedes زیکا و دێنگ"]],
-            ar: [["الفم", "خرطوم طويل"], ["الأنثى", "تمتص الدم للبيض"], ["المرض", "Anopheles للملاريا، Aedes لزيكا والضنك"]],
-            en: [["Mouth", "a long proboscis"], ["Female", "takes blood for her eggs"], ["Disease", "Anopheles for malaria, Aedes for Zika and dengue"]],
+            ku: [["دەم", "proboscisی piercing-sucking؛ نێر nectar"], ["مێینە", "anautogeny: خوێن بۆ yolk"], ["نەخۆشی", "Anopheles–Plasmodium؛ Aedes–dengue/Zika"]],
+            ar: [["الفم", "خرطوم ثاقب ماص"], ["الأنثى", "دم لتشكيل البيض"], ["المرض", "Anopheles ملاريا؛ Aedes دنج/زيكا"]],
+            en: [["Mouth", "piercing-sucking; males often nectar"], ["Female", "blood meal for egg yolk (anautogeny)"], ["Disease", "Anopheles–Plasmodium; Aedes–dengue/Zika"]],
           },
         },
         {
@@ -298,9 +298,9 @@ const DIPTERA = {
           name: "Muscidae",
           title: { ku: "مێشی ماڵەوە", ar: "الذباب المنزلي", en: "House flies" },
           rows: {
-            ku: [["دەم", "ئسفنجی، بۆ شلە"], ["گەز", "Musca domestica ناگەزێت"], ["زیان", "میکرۆب لەسەر قاچ و دەمی هەڵدەگرێت"]],
-            ar: [["الفم", "إسفنجي للسوائل"], ["اللسع", "Musca domestica لا تلسع"], ["الضرر", "تحمل الجراثيم على أرجلها وفمها"]],
-            en: [["Mouth", "a sponge for liquids"], ["Bite", "Musca domestica does not bite"], ["Harm", "it carries germs on its feet and mouth"]],
+            ku: [["دەم", "sponging labellum (pseudotracheae)"], ["گەز", "M. domestica non-biting؛ Stomoxys دەگەزێت"], ["زیان", "mechanical vectorی pathogens لەسەر tarsi/labellum"]],
+            ar: [["الفم", "إسفنجي"], ["اللسع", "المنزلية لا تلسع"], ["الضرر", "ناقل آلي للجراثيم"]],
+            en: [["Mouth", "sponging labellum"], ["Bite", "M. domestica non-biting; stable flies bite"], ["Harm", "mechanical pathogen vector on tarsi/mouth"]],
           },
         },
         {
@@ -308,9 +308,9 @@ const DIPTERA = {
           name: "Syrphidae",
           title: { ku: "مێشی گوڵ", ar: "ذباب الأزهار", en: "Hoverflies" },
           rows: {
-            ku: [["شێوە", "لە هەنگ دەچێت، بەڵام یەک جووت باڵە"], ["گەورە", "پەیتاندن"], ["لارڤا", "زۆریان شەتەک دەخوات"]],
-            ar: [["الشكل", "يشبه النحلة، وبجناح واحد"], ["البالغ", "يلقّح"], ["اليرقة", "كثير منها يأكل المن"]],
-            en: [["Look", "bee-like, but one pair of wings"], ["Adult", "moves pollen"], ["Larva", "many eat aphids"]],
+            ku: [["شێوە", "Batesian mimicryی Apidae/Vespidae؛ ١ جووت باڵ + halteres"], ["گەورە", "pollinatorی کارا"], ["لارڤا", "زۆر aphidophagous (IPM)"]],
+            ar: [["الشكل", "تشبه النحل وبزوج واحد"], ["البالغ", "ملقّح"], ["اليرقة", "كثيرها يفترس المن"]],
+            en: [["Look", "bee/wasp mimic; one wing pair + halteres"], ["Adult", "active pollinator"], ["Larva", "many aphidophagous (IPM)"]],
           },
         },
       ],
@@ -362,10 +362,10 @@ function FieldChapter({ lang, quiz }) {
           </div>
           <p className="ento-body">
             {lang === "ku"
-              ? "تۆڕ بۆ پەپوولە و هەنگ بەکاردێت کاتێک لەسەر گوڵن. گەڵا بپشکنە بۆ خاڵخاڵۆکە و شەتەک. دەفرێک لە خاکدا بشاردەوە بۆ قوڕقوڕەی زەوی؛ ئەمە پێی دەوترێت pitfall. لە هەر شوێنێک کەم بگرە، و ناوی ڕووەکەکە یان ئاوەکە بنووسە. نموونەیەک بەبێ شوێن و بەروار تەنها وێنەیەکە، نەک تۆمار."
+              ? "sweep net / aerial net بۆ Rhopalocera و Apidae لەسەر گوڵ؛ beating tray یان گەڵابینین بۆ Coccinellidae و Aphididae؛ pitfall trap (دەفری نوقم لە خاک، زۆرجار + preservative) بۆ Carabidaeی epigeic. بۆ Culicidae: larval dipping لە ئاو؛ بۆ parasitoid: rearing لە host. protocolی voucher: GPS/ناوچە، elevation، habitat، host plant، collector، date (Roman month). sample size بچووک بێت (ethics + conservation)؛ بێ locality و date تەنها وێنەیە، نەک museum record."
               : lang === "ar"
-              ? "شبكة للفراشات والنحل على الزهر. تفحّص الأوراق للدعسوقة والمن. إناء غائر في التربة لخنافس الأرض، ويسمى pitfall. خذ القليل من كل مكان، واكتب اسم النبات أو الماء. عينة بلا مكان وتاريخ صورة، لا سجل."
-              : "A net for butterflies and bees on flowers. A look under leaves for ladybirds and aphids. A cup sunk in the soil for ground beetles, a pitfall. Take few from any one place, and write down the plant or the water. A specimen without a place and a date is a picture, not a record."}
+              ? "شبكة هوائية للفراش والنحل؛ فحص أوراق للمن والدعسوقة؛ مصيدة pitfall لخنافس الأرض. سجّل الإحداثيات والموطن والنبات العائل والجامع والتاريخ. بلا موقع وتاريخ ليست عينة علمية."
+              : "Aerial/sweep nets for butterflies and bees; leaf inspection or beating for ladybirds and aphids; pitfall traps for epigeic Carabidae. Mosquito work often uses larval dipping; parasitoids via host rearing. A voucher needs locality (ideally GPS), habitat, host plant, collector and date (day–Roman month–year). Without locality and date it is an image, not a museum record."}
           </p>
         </article>
 
@@ -378,10 +378,10 @@ function FieldChapter({ lang, quiz }) {
           </div>
           <p className="ento-body">
             {lang === "ku"
-              ? "دەرزەکە ئاژەڵەکە ڕادەگرێت، بەبێ ئەوەی ئەو بەشە داپۆشێت کە پێی دەناسرێتەوە. ئۆردەرێک هەڵبژێرە."
+              ? "entomological pin (زۆرجار #2–#3) لە لای ڕاستی mid-line تێدەچێت تا charactersی diagnostic (elytra suture، scutellum، wing venation، genitalia) نەشاردرێن. double-mount / minuten بۆ نمونەی زۆر بچووک. ئۆردەرێک هەڵبژێرە."
               : lang === "ar"
-              ? "الدبوس يمسك الحيوان دون أن يخفي الجزء الذي يُعرف به. اختر رتبة."
-              : "The pin holds the animal without hiding the part you name it by. Choose an order."}
+              ? "الدبوس يمر يمين الخط الوسطي دون إخفاء الصفات التشخيصية. للعينة الدقيقة يُستخدم حامل صغير. اختر رتبة."
+              : "A standard entomological pin (often #2–#3) pierces right of the midline so diagnostic characters stay visible. Tiny specimens use minuten or card points. Choose an order."}
           </p>
           <div className="ento-pick-row">
             {pins.map((item) => (
@@ -402,10 +402,10 @@ function FieldChapter({ lang, quiz }) {
           </div>
           <p className="ento-body">
             {lang === "ku"
-              ? "چوار دێڕ بەسن: شوێن، بەروار، ژینگە و کۆکەرەوە. ناوی زانستی لە ژێرەوەیە، بە لاتینی و بە شێوەی لار. بەروارەکە بە ڕێسای کۆن دەنووسرێت: ڕۆژ، مانگی ڕۆمی، ساڵ. ئەم کارتە نمونەیەکی فێرکارییە، نەک تۆمارێکی ڕاستەقینە. هەر ئەم خانانەش خشتەی پەپوولەی کوردستان پڕ دەکەنەوە: ناو، خێزان و شوێن."
+              ? "labelی standardization: (١) locality + وڵات/ناوچە، (٢) date وەک 12.v.2026 (ڕۆژ.مانگی ڕۆمی.ساڵ)، (٣) habitat / microhabitat، (٤) collector. identification labelی جیا: Genus species Author, Family — لاتینی italic. determination و revision دەتوانن labelی دووەم بن. ئەم کارتە teaching exampleـە، نەک voucherی ڕاستەقینە؛ هەر ئەم خانانە خشتەی پەپوولەی کوردستان پڕ دەکەنەوە."
               : lang === "ar"
-              ? "تكفي أربعة أسطر: المكان والتاريخ والموطن والجامع. الاسم العلمي تحتها، باللاتينية ومائل. يُكتب التاريخ على العرف القديم: اليوم، الشهر الروماني، السنة. هذه البطاقة مثال تعليمي، لا عينة مجموعة حقيقية. هذه الخانات نفسها تملأ جدول فراشات كردستان: الاسم والفصيلة والموطن."
-              : "Four lines are enough: place, date, habitat, and collector. The scientific name sits under them, in Latin and in italic. The date is written the old way: day, Roman month, year. This card is a teaching example, not a real capture. These are the same fields that fill the Kurdistan butterfly table: name, family, and place."}
+              ? "بطاقة قياسية: المكان والتاريخ (يوم.شهر روماني.سنة) والموطن والجامع؛ ثم الاسم العلمي مائلاً والفصيلة. هذه للتدريس لا كعينة حقيقية."
+              : "Standard data label: locality, date as day.Roman-month.year (e.g. 12.v.2026), habitat, collector. A separate ID label carries Genus species Author and Family in italic Latin. Det. slips record later revisions. This card is a teaching mock-up; the same fields power the Kurdistan butterfly table."}
           </p>
           <div dir="ltr" style={{
             fontFamily: "var(--font-mono)",
@@ -444,9 +444,9 @@ const HEMIPTERA = {
       num: "٠١ · 01",
       title: { ku: "پێناسە", ar: "التعريف", en: "What they are" },
       body: {
-        ku: "Hemiptera شەتەک، سنە، زنجرە و هاوشێوەکانی لەخۆگرتووە. هەموویان دەمێکی کونکەریان هەیە و شیلەی ڕووەک، یان هەندێک جار خوێن، دەمژن. ناوەکە لە hemi هاتووە، واتە نیوە، و لە pteron، واتە باڵ. لە سنەدا نیوەی باڵی پێشەوە قاوغە و نیوەکەی تری پەردەیە. شەتەک زۆرجار بێباڵە. گۆڕانەپەڕەیان ناتەواوە: هێلکە، بچووک و گەورە، بەبێ پیت. شەتەک هەر ئەو مێرووەیە کە خاڵخاڵۆکە و کۆڵۆکی زۆرێک لە مێشە گوڵەکان دەیخۆن.",
-        ar: "تضم Hemiptera المن والبق والزيز وما شابهها. لفمها جميعاً خرطوم يثقب ويمتص عصارة النبات، وأحياناً الدم. الاسم من hemi (نصف) وpteron (جناح): في البق نصف الجناح الأمامي غمد ونصفه غشاء. المن غالباً بلا أجنحة. تحولها ناقص: بيضة وحورية وبالغة، بلا شرنقة. المن هو الحشرة التي تأكلها الدعسوقة ويرقات كثير من ذباب الأزهار.",
-        en: "Hemiptera holds aphids, true bugs, cicadas and their kin. All of them have a beak that pierces and sucks plant sap, and sometimes blood. The name is hemi (half) and pteron (wing): in a true bug the forewing is leathery at the base and membranous at the tip. Aphids are often wingless. Metamorphosis is incomplete: egg, nymph, adult, and no pupa. The aphid is the insect that ladybirds and many hoverfly larvae eat.",
+        ku: "Hemiptera (true bugs sensu lato) هەموویان rostrumی piercing-suckingیان هەیە (styletـەکان لە maxilla/mandible). دوو کلادی گەورە: Heteroptera (سنە — forewing = hemelytron: بنکە coriaceous و نووک membranous) و Sternorrhyncha/Auchenorrhyncha (شەتەک، زنجرە، whitefly). گۆڕانەپەڕە hemimetabolousـە. Aphididae زۆرجار parthenogenesis و telescoping generations؛ honeydew → sooty mold و گواستنەوەی plant virus. Pentatomidae وەک Nezara viridula زیانبەخشی کشتوکاڵین. شەتەک نێچیری سەرەکیی Coccinellidae، Chrysopidae و Syrphidaeـیە لە biocontrolدا.",
+        ar: "Hemiptera ذات فم ثاقب ماص. Heteroptera بأجنحة نصفية؛ المن غالباً توالد بكري وينقل فيروسات نباتية. فريسة رئيسية للمكافحة الحيوية.",
+        en: "Hemiptera share a piercing-sucking rostrum. Heteroptera have hemelytra; Sternorrhyncha include aphids with frequent parthenogenesis, honeydew and plant-virus transmission. Hemimetabolous. Aphids are prime prey for Coccinellidae, Chrysopidae and syrphid larvae in biocontrol; stink bugs such as Nezara viridula are major crop pests.",
       },
     },
     {
@@ -464,9 +464,9 @@ const HEMIPTERA = {
           name: "Aphididae",
           title: { ku: "شەتەک", ar: "المن", en: "Aphids" },
           rows: {
-            ku: [["قەبارە", "بچووکە، زۆرجار بێباڵە"], ["خۆراک", "شیلەی ڕووەک دەمژێت و شیلەیەکی شیرین دەر دەدات"], ["زۆربوون", "مێینە دەتوانێت بەبێ نێر منداڵی ببێت"]],
-            ar: [["الحجم", "صغير، وغالباً بلا أجنحة"], ["الطعام", "عصارة النبات، ويطرح ندوة عسلية"], ["التكاثر", "الأنثى تستطيع الولادة بلا ذكر"]],
-            en: [["Size", "small, and often wingless"], ["Food", "plant sap, and they leave honeydew"], ["Increase", "a female can bear young without a male"]],
+            ku: [["قەبارە", "بچووک؛ زۆرجار apterous + alate morphs"], ["خۆراک", "phloem sap → honeydew → sooty mold؛ virus vectors"], ["زۆربوون", "parthenogenesis + telescoping generations"]],
+            ar: [["الحجم", "صغير؛ غالباً بلا جناح"], ["الطعام", "عصارة ولسنا عسلية وفيروسات"], ["التكاثر", "توالد بكري سريع"]],
+            en: [["Size", "small; apterous and alate morphs"], ["Food", "phloem sap, honeydew, plant viruses"], ["Increase", "parthenogenesis; telescoping generations"]],
           },
         },
         {
@@ -474,9 +474,9 @@ const HEMIPTERA = {
           name: "Pentatomidae",
           title: { ku: "سنەی قەڵغان", ar: "البق الدرعي", en: "Shield bugs" },
           rows: {
-            ku: [["شێوە", "قەڵغانێکی پێنج قوژبن"], ["باڵ", "نیوەی قاوغە و نیوەی پەردەیە"], ["بۆن", "کاتێک دەترسێت بۆنێکی تیژ دەر دەدات"]],
-            ar: [["الشكل", "درع خماسي"], ["الجناح", "نصفه غمد ونصفه غشاء"], ["الرائحة", "تفرز رائحة حادة حين تخاف"]],
-            en: [["Shape", "a five-sided shield"], ["Wing", "half sheath, half membrane"], ["Scent", "a sharp smell when they are alarmed"]],
+            ku: [["شێوە", "scutellumی گەورە → شێوەی shield"], ["باڵ", "hemelytra (Heteroptera)"], ["بۆن", "metathoracic scent glands (alarm / defence)"]],
+            ar: [["الشكل", "درع بخمس زوايا"], ["الجناح", "أجنحة نصفية"], ["الرائحة", "غدد صدرية دفاعية"]],
+            en: [["Shape", "enlarged scutellum — shield outline"], ["Wing", "hemelytra"], ["Scent", "metathoracic defensive glands"]],
           },
         },
         {
@@ -484,9 +484,9 @@ const HEMIPTERA = {
           name: "Cicadellidae",
           title: { ku: "مێرووی گەڵا", ar: "نطاطات الأوراق", en: "Leafhoppers" },
           rows: {
-            ku: [["جووڵە", "باز دەدەن"], ["خۆراک", "شیلەی گەڵا"], ["زیان", "هەندێکیان نەخۆشی ڕووەک دەگوازنەوە"]],
-            ar: [["الحركة", "تقفز"], ["الطعام", "عصارة الورق"], ["الضرر", "بعضها ينقل مرض النبات"]],
-            en: [["Movement", "they hop"], ["Food", "leaf sap"], ["Harm", "some carry plant disease"]],
+            ku: [["جووڵە", "saltatorial hind legs (Auchenorrhyncha)"], ["خۆراک", "xylem/phloem sap لە گەڵا"], ["زیان", "vectorی phytoplasma / bacteriaی ڕووەک"]],
+            ar: [["الحركة", "قفز"], ["الطعام", "عصارة الورق"], ["الضرر", "نواقل أمراض نباتية"]],
+            en: [["Movement", "saltatorial hoppers"], ["Food", "leaf xylem/phloem sap"], ["Harm", "vectors of phytoplasmas and plant bacteria"]],
           },
         },
       ],
@@ -521,9 +521,9 @@ const JUMPERS = {
       num: "٠١ · 01",
       title: { ku: "دوو ئۆردەر، یەک گۆڕان", ar: "رتبتان وتحول واحد", en: "Two orders, one kind of change" },
       body: {
-        ku: "هەردووکیان گۆڕانەپەڕەیەکی ناتەواویان هەیە، واتە پیتیان نییە. بچووکی جڕوشک لە گەورەکەی دەچێت، تەنها باڵەکانی کورتترن. مێرووی ئاو وا نییە: بچووکەکەی لە ئاودا دەژی و لە گەورەکەی فڕیو ناچێت، بەڵام هەر پیتی نییە. جڕوشک بە ڕانی گەورەی قاچی دواوە باز دەدات. مێرووی ئاو دوو جووت باڵی تۆڕاوی و چاوێکی گەورەی هەیە، و نێچیر دەگرێت.",
-        ar: "لكليهما تحول ناقص: لا شرنقة. حورية الجندب تشبه البالغ وأجنحتها أقصر. الرعاش ليس كذلك: حوريته تعيش في الماء ولا تشبه البالغ الطائر، ولكنها بلا شرنقة أيضاً. الجندب يقفز بفخذ خلفي كبير. للرعاش زوجان من الأجنحة الشبكية وعين كبيرة، وهو صياد.",
-        en: "Both have incomplete metamorphosis: there is no pupa. A grasshopper nymph looks like the adult, with shorter wings. A dragonfly does not: its nymph lives in water and does not look like the flying adult, and it still has no pupa. A grasshopper jumps with a large hind femur. A dragonfly has two pairs of netted wings and a large eye, and it hunts.",
+        ku: "Orthoptera و Odonata هەردووکیان hemimetabolousـن (بێ پوپا)، بەڵام ئیکۆلۆجی و مۆرفۆلۆجییان جیاوازە. Orthoptera: hind femurی گەورە بۆ saltatorial jump؛ forewing زۆرجار tegmenی چەرمین؛ زۆر جۆر stridulation بۆ دۆزینەوەی هاوسەر. nymph لە گەورە دەچێت بە wing padی کورت. Odonata: دوو جووت باڵی net-veined یەکسان؛ چاوی ئاڵۆزی زۆر گەورە؛ گەورە aerial predatorـە. naiad/nymphی ئاوی labiumی پێشەوەی extendable (mask) بۆ نێچیر بەکاردەهێنێت — لە گەورەی فڕیو ناچێت، بەڵام هەر بێ پیت دەمێنێتەوە. Anisoptera باڵ کراوە ڕادەگرێت؛ Zygoptera باڵ لەسەر پشت کۆدەکاتەوە.",
+        ar: "رتبتان بتحول ناقص. Orthoptera تقفز بفخذ خلفي وقد تصرصر. Odonata صياد جوي بعين كبيرة؛ حوريته مائية بفك مندفع. الرعاشات الكبيرة تبقي الجناح مفتوحاً والرعاشات الصغيرة تطويه.",
+        en: "Both orders are hemimetabolous but ecologically distinct. Orthoptera: enlarged hind femora for jumping, often tegmina and stridulation; nymphs resemble adults. Odonata: two equal net-veined wing pairs, huge compound eyes, aerial predators; aquatic nymphs capture prey with an extensible labial mask and do not look like adults, yet still lack a pupa. Anisoptera rest with wings open; Zygoptera fold them over the abdomen.",
       },
     },
     {
@@ -541,9 +541,9 @@ const JUMPERS = {
           name: "Acrididae",
           title: { ku: "جڕوشک", ar: "الجراد", en: "Short-horned grasshoppers" },
           rows: {
-            ku: [["ئەنتێنا", "کورت"], ["کات", "ڕۆژ"], ["نموونە", "مەڵەشە، Schistocerca"]],
-            ar: [["القرون", "قصيرة"], ["الوقت", "النهار"], ["مثال", "الجراد، Schistocerca"]],
-            en: [["Antennae", "short"], ["Time", "day"], ["Example", "locusts, Schistocerca"]],
+            ku: [["ئەنتێنا", "کورت (< قاچی جەستە) — Caelifera"], ["کات", "زۆرجار diurnal؛ phase polyphenism لە locusts"], ["نموونە", "Schistocerca gregaria (solitary ↔ gregarious)"]],
+            ar: [["القرون", "قصيرة"], ["الوقت", "نهاري؛ للجراد طوران"], ["مثال", "Schistocerca gregaria"]],
+            en: [["Antennae", "short (Caelifera)"], ["Time", "often diurnal; locust phase polyphenism"], ["Example", "Schistocerca gregaria"]],
           },
         },
         {
@@ -551,9 +551,9 @@ const JUMPERS = {
           name: "Gryllidae",
           title: { ku: "سیسرک", ar: "الصراصير", en: "Crickets" },
           rows: {
-            ku: [["ئەنتێنا", "درێژ"], ["دەنگ", "بە باڵ دەنگی لێ دەدەن"], ["کات", "زۆرجار شەو"]],
-            ar: [["القرون", "طويلة"], ["الصوت", "يصرّ بالجناح"], ["الوقت", "غالباً الليل"]],
-            en: [["Antennae", "long"], ["Sound", "they sing with the wings"], ["Time", "often night"]],
+            ku: [["ئەنتێنا", "درێژ — Ensifera"], ["دەنگ", "stridulation (tegmen file + scraper)"], ["کات", "زۆرجار nocturnal calling song"]],
+            ar: [["القرون", "طويلة"], ["الصوت", "صرير بالأجنحة"], ["الوقت", "غالباً ليلي"]],
+            en: [["Antennae", "long (Ensifera)"], ["Sound", "tegmen stridulation"], ["Time", "often nocturnal song"]],
           },
         },
         {
@@ -561,9 +561,9 @@ const JUMPERS = {
           name: "Libellulidae",
           title: { ku: "مێرووی ئاوی باڵکراوە", ar: "الرعاشات الكبيرة", en: "Dragonflies" },
           rows: {
-            ku: [["باڵ", "کراوە، ناتوانرێت لەسەر پشت کۆبکرێتەوە"], ["چاو", "گەورە، زۆربەی سەر دادەپۆشێت"], ["بچووک", "لە ئاو، بە چەناگەیەکی بازدەر نێچیر دەگرێت"]],
-            ar: [["الجناح", "مفتوح، لا يُطوى فوق الظهر"], ["العين", "كبيرة وتغطي معظم الرأس"], ["الحورية", "في الماء، وتصطاد بفك مندفع"]],
-            en: [["Wings", "held open, not folded over the back"], ["Eyes", "large, covering most of the head"], ["Nymph", "in water, hunting with a hinged jaw"]],
+            ku: [["باڵ", "Anisoptera: باڵ کراوە لە rest"], ["چاو", "compound eyes زۆر گەورە؛ aerial hunter"], ["naiad", "aquatic + labial mask؛ rectal gills"]],
+            ar: [["الجناح", "مفتوح عند الراحة"], ["العين", "كبيرة جداً"], ["الحورية", "مائية بفك مندفع"]],
+            en: [["Wings", "Anisoptera rest open"], ["Eyes", "huge; aerial predators"], ["Naiad", "aquatic labial mask; rectal gills"]],
           },
         },
         {
@@ -571,9 +571,9 @@ const JUMPERS = {
           name: "Coenagrionidae",
           title: { ku: "مێرووی ئاوی باریک", ar: "الرعاشات الصغيرة", en: "Damselflies" },
           rows: {
-            ku: [["باڵ", "لە کاتی وەستاندا لەسەر پشت کۆدەبێتەوە"], ["جەستە", "باریک"], ["بچووک", "هەر لە ئاودا"]],
-            ar: [["الجناح", "يُطوى فوق الظهر عند الراحة"], ["الجسم", "رفيع"], ["الحورية", "في الماء أيضاً"]],
-            en: [["Wings", "folded over the back at rest"], ["Body", "slender"], ["Nymph", "also in water"]],
+            ku: [["باڵ", "Zygoptera: باڵ لەسەر abdomen کۆدەبێتەوە"], ["جەستە", "باریک؛ چاو جیاوازتر لە Anisoptera"], ["naiad", "aquatic؛ زۆرجار caudal gillsی دەرەکی"]],
+            ar: [["الجناح", "مطوي فوق البطن"], ["الجسم", "رفيع"], ["الحورية", "مائية بخياشيم ذيلية غالباً"]],
+            en: [["Wings", "Zygoptera fold over abdomen"], ["Body", "slender; eyes more separated"], ["Naiad", "aquatic; often external caudal gills"]],
           },
         },
       ],
@@ -643,10 +643,10 @@ function MetaChapter({ lang, quiz }) {
           </div>
           <p className="ento-body">
             {lang === "ku"
-              ? "جیاوازییەکە تەنها ژمارەی قۆناغەکان نییە. لە گۆڕانی تەواودا کۆڵۆکەکە لە گەورەکە ناچێت، و پیتێک لە نێوانیاندا هەیە. لە گۆڕانی ناتەواودا پیت نییە. وێنەکە پیتی پەپوولەی Monarch ـە، Danaus plexippus. ئەمە نموونەیەکی جیهانییە و لەو پێنج جۆرەدا نییە کە بۆ کوردستان تۆمار کراون."
+              ? "Holometabola (Endopterygota): egg → larva (جیاواز لە گەورە) → pupa (histolysis/histogenesis، imaginal discs) → imago. Hemimetabola (Exopterygota): egg → nymph (لە گەورە دەچێت، wing pads دەرەکین) → adult، بێ پوپا. جیاوازییەکە تەنها ژمارەی قۆناغ نییە — پلانی گەشە و ژینگەی لارڤا جیاوازە. وێنەکە chrysalisی Danaus plexippusـە (نموونەی جیهانی؛ لە لیستی کوردستانیی ئەم ئەتڵەسەدا نییە)."
               : lang === "ar"
-              ? "الفرق ليس عدد المراحل وحده. في التحول الكامل لا تشبه اليرقة البالغ، وبينهما شرنقة. في التحول الناقص لا شرنقة. الصورة شرنقة فراشة الملكة، Danaus plexippus، وهي مثال عالمي وليست من أنواع كردستان الخمسة."
-              : "The difference is not only how many stages there are. In complete metamorphosis the larva does not look like the adult, and a pupa sits between them. In incomplete metamorphosis there is no pupa. The picture is a monarch chrysalis, Danaus plexippus, a world example, not one of the five Kurdistan species."}
+              ? "Holometabola: بيضة ويرقة مختلفة وعذراء ثم بالغ. Hemimetabola: بيضة وحورية تشبه البالغ ثم بالغ بلا عذراء. الصورة شرنقة Danaus plexippus كمثال عالمي."
+              : "Holometabola (Endopterygota): egg → dissimilar larva → pupa (imaginal discs) → imago. Hemimetabola (Exopterygota): egg → nymph with external wing pads → adult, no pupa. The split is developmental architecture, not mere stage count. Image: Danaus plexippus chrysalis (global example, not on this atlas’s Kurdistan shortlist)."}
           </p>
           <div className="ento-pick-row">
             {META_PATHS.map((item) => (
@@ -674,10 +674,10 @@ function MetaChapter({ lang, quiz }) {
           </div>
           <p className="ento-body" style={{ marginBottom: 0 }}>
             {lang === "ku"
-              ? "بچووکی جڕوشک و سنە لە گەورەکە دەچێت، و باڵێکی کورت یان تەنها نیشانەی باڵی لەسەرە. بچووکی مێرووی ئاو لە ئاودا دەژی و بە چەناگەی خوارەوە نێچیر دەگرێت، کە بە خێرایی دەر دەپەڕێت. کاتێک لە ئاو دێتە دەرەوە، گەورەکە لە پشتی دەر دەچێت. لەم ڕێگەیەدا پیت نییە."
+              ? "nymphی Orthoptera/Hemiptera terrestrialـە و لە imago دەچێت (external wing pads). naiadی Odonata aquaticـە؛ labiumی prehensile (mask) بۆ prey capture؛ rectal/ caudal gills بۆ هەناسە. emergence: exuvia لەسەر ڕووەک یان بەرد دەمێنێتەوە و imago دەر دەچێت — هێشتا بێ pupa (hemimetabolous)، بەڵام ecological nicheی nymph ≠ adult."
               : lang === "ar"
-              ? "حورية الجندب والبق تشبه البالغ وعليها أجنحة قصيرة أو براعم أجنحة. حورية الرعاش تعيش في الماء وتصطاد بفك مندفع. حين تخرج، يخرج البالغ من ظهرها. لا شرنقة في هذا الطريق."
-              : "A grasshopper or bug nymph looks like the adult and carries short wings, or only wing pads. A dragonfly nymph lives in water and hunts with a hinged jaw. When it climbs out, the adult comes out of its back. There is still no pupa on this path."}
+              ? "حورية الجندب والبق تشبه البالغ. حورية الرعاش مائية بفك مندفع وخياشيم؛ تخرج من جلد الانسلاخ بلا عذراء، لكن بيئتها تختلف عن البالغ."
+              : "Orthoptera/Hemiptera nymphs are terrestrial and adult-like with external wing pads. Odonata naiads are aquatic predators with a labial mask and gills; the imago emerges from an exuvia — still no pupa, yet nymph and adult niches differ sharply."}
           </p>
         </article>
       </div>
@@ -699,9 +699,9 @@ const NEUROPTERA = {
       num: "٠١ · 01",
       title: { ku: "پێناسە", ar: "التعريف", en: "What they are" },
       body: {
-        ku: "Neuroptera ئۆردەری تۆڕباڵ و شێری مێروولەیە. ناوەکە لە neuron هاتووە، واتە دەمار یان تۆڕ، و لە pteron، واتە باڵ. دوو جووت باڵی ناسکی تۆڕاویان هەیە، بێ قاو و بێ قاوغ. گۆڕانەپەڕەیان تەواوە. کۆڵۆکەکە نێچیرگرە و شەتەک دەخوات؛ بۆیە سێیەم نموونەی کۆنترۆڵی بایۆلۆجییە لە دوای خاڵخاڵۆکە و زەنبووری پارازیتۆید.",
-        ar: "Neuroptera رتبة أسد المن وأسد النمل. الاسم من neuron (شبكة) وpteron (جناح): زوجان من الأجنحة الرقيقة الشبكية بلا حراشف ولا أغماد. تحولها كامل. اليرقة مفترسة وتأكل المن؛ لذلك هي المثال الثالث للمكافحة الحيوية بعد الدعسوقة والزنبار الطفيلي.",
-        en: "Neuroptera is the order of lacewings and antlions. The name is neuron (nerve, or net) and pteron (wing): two pairs of soft netted wings, without scales and without hard covers. Metamorphosis is complete. The larva is a hunter and eats aphids, so it is the third biological-control example after the ladybird and the parasitoid wasp.",
+        ku: "Neuroptera («تۆڕ-باڵ») دوو جووت باڵی membranousی net-veinedی نەرم هەیە، بێ scales و بێ elytra؛ کەمەری باریکی Hymenopteraیان نییە. گۆڕانەپەڕە holometabolousـە. لارڤا campodeiform و زۆرجار piercing-sucking mandiblesی هەیە بۆ مژینی نێچیر — Chrysoperla carnea شەتەک دەخوات (biocontrol). Myrmeleontidae (شێری مێروولە) لارڤای pit-building لە لم. گەورە زۆرجار crepuscularـە و شهد/پەلکە دەخوات. لەگەڵ Megaloptera و Raphidioptera کلادی Neuropterida پێک دەهێنن.",
+        ar: "Neuroptera زوجان من أجنحة شبكية لينة بلا حراشف ولا أغماد ولا خصر نحل. تحول كامل. يرقة Chrysoperla تفترس المن؛ Myrmeleontidae تبني حفراً في الرمل. مع Megaloptera وRaphidioptera تكوّن Neuropterida.",
+        en: "Neuroptera have two soft net-veined wing pairs, without scales, elytra or a wasp waist. Holometabolous. Chrysoperla larvae are aphid predators (biocontrol); Myrmeleontidae larvae dig sand pits. With Megaloptera and Raphidioptera they form Neuropterida.",
       },
     },
     {
@@ -719,9 +719,9 @@ const NEUROPTERA = {
           name: "Chrysopidae",
           title: { ku: "تۆڕباڵی سەوز", ar: "أسد المن الأخضر", en: "Green lacewings" },
           rows: {
-            ku: [["شێوە", "باڵی سەوز، چاوی زێڕین"], ["خۆراکی کۆڵۆک", "شەتەک"], ["کار", "کۆنترۆڵی بایۆلۆجی"]],
-            ar: [["الشكل", "جناح أخضر وعين ذهبية"], ["طعام اليرقة", "المن"], ["الدور", "مكافحة حيوية"]],
-            en: [["Look", "Green wing, golden eye"], ["Larva food", "Aphids"], ["Role", "Biological control"]],
+            ku: [["شێوە", "باڵی green net-veined؛ چاوی زێڕین (golden eyes)"], ["لارڤا", "campodeiform؛ sickle mandibles → Aphididae"], ["کار", "augmentative biocontrol (Chrysoperla)"]],
+            ar: [["الشكل", "جناح أخضر شبكي وعين ذهبية"], ["اليرقة", "تفترس المن بفك منجلي"], ["الدور", "مكافحة حيوية"]],
+            en: [["Look", "green net-veined wings; golden eyes"], ["Larva", "campodeiform; sickle jaws on aphids"], ["Role", "augmentative biocontrol"]],
           },
         },
         {
@@ -729,9 +729,9 @@ const NEUROPTERA = {
           name: "Myrmeleontidae",
           title: { ku: "شێری مێروولە", ar: "أسد النمل", en: "Antlions" },
           rows: {
-            ku: [["شێوە", "باڵی درێژ، لە مێرووی ئاو دەچێت بەڵام لاوازترە"], ["خۆراکی کۆڵۆک", "مێروولە لە چاڵی لم"], ["شوێن", "خاکی وشک و لم"]],
-            ar: [["الشكل", "جناح طويل، يشبه الرعاش لكنه أضعف"], ["طعام اليرقة", "نمل في حفرة رمل"], ["الموطن", "تربة جافة ورمل"]],
-            en: [["Look", "Long wing, like a soft dragonfly"], ["Larva food", "Ants in a sand pit"], ["Where", "Dry soil and sand"]],
+            ku: [["شێوە", "باڵی درێژ net-veined؛ لە Odonata دەچێت بەڵام لاوازترە"], ["لارڤا", "pit-building لە لم؛ ants وەک prey"], ["شوێن", "sandy / dry soil microhabitats"]],
+            ar: [["الشكل", "جناح طويل شبكي"], ["اليرقة", "حفرة رملية تفترس النمل"], ["الموطن", "رمل وتربة جافة"]],
+            en: [["Look", "long net-veined wings; soft dragonfly-like"], ["Larva", "sand-pit ambush on ants"], ["Where", "sandy dry microhabitats"]],
           },
         },
       ],
