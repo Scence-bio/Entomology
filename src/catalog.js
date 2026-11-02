@@ -338,6 +338,22 @@ export const LEARNING_PATH = [
     chapters: ["ch5", "ch6", "ch7", "ch8", "ch10", "ch11", "ch13"],
   },
   {
+    id: "fauna",
+    title: { ku: "فەونای کوردستان", ar: "فونة كردستان", en: "Kurdistan fauna" },
+    desc: {
+      ku: "تۆماری فەرمیی توێژینەوەی ناوچەیی و GBIF",
+      ar: "السجل الرسمي للأبحاث الإقليمية وGBIF",
+      en: "Formal ledger of regional research and GBIF",
+    },
+    chapters: [],
+    href: "#/ledger",
+    hrefLabel: {
+      ku: "کردنەوەی تۆمار",
+      ar: "فتح السجل",
+      en: "Open ledger",
+    },
+  },
+  {
     id: "practice",
     title: { ku: "کار و کلیل", ar: "العمل والمفتاح", en: "Field and key" },
     desc: { ku: "کێڵگە، گۆڕانەپەڕە و ناسینەوە", ar: "الحقل والتحول والتعريف", en: "Field, metamorphosis, identification" },

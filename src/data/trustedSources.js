@@ -286,6 +286,18 @@ export const REGIONAL_LITERATURE = [
     url: "https://doi.org/10.11646/zootaxa.5875.1.1",
   },
   {
+    id: "sulaymaniyah-butterflies-2022",
+    title: "Faunistic study of butterflies of Sulaymaniyah Province, Kurdistan–Iraq",
+    year: 2022,
+    venue: "Biodiversity Data Journal · University of Sulaimani",
+    finding: {
+      ku: "١٠٣ جۆری پەپوولە؛ ٨ تۆماری نوێ بۆ عێراق — ٣٤ شوێن لە سلێمانی.",
+      ar: "١٠٣ نوع فراشة؛ ٨ سجلات جديدة للعراق — ٣٤ موقعاً في السليمانية.",
+      en: "103 butterfly species; 8 new to Iraq — 34 localities in Sulaymaniyah.",
+    },
+    url: "https://doi.org/10.3897/BDJ.10.e82612",
+  },
+  {
     id: "weevils-kr-2019",
     title: "Survey of weevils (Curculionoidea) from Kurdistan Region–Iraq",
     year: 2019,
@@ -296,6 +308,42 @@ export const REGIONAL_LITERATURE = [
       en: "41 species; 25 new to Iraq — University of Duhok.",
     },
     url: "https://doi.org/10.26842/binhm.7.2019.15.3.0319",
+  },
+  {
+    id: "weevils-kr-2025",
+    title: "Second contribution of the weevil fauna from the Kurdistan region of Iraq",
+    year: 2025,
+    venue: "Journal of Natural History",
+    finding: {
+      ku: "٧٥ جۆر؛ ٤٤ تۆماری نوێ بۆ عێراق — کۆکردنەوەی ٢٠٢١–٢٠٢٤.",
+      ar: "٧٥ نوعاً؛ ٤٤ سجلاً جديداً للعراق — جمع ٢٠٢١–٢٠٢٤.",
+      en: "75 species; 44 new to Iraq — field seasons 2021–2024.",
+    },
+    url: "https://doi.org/10.1080/00222933.2025.2612011",
+  },
+  {
+    id: "andrena-iraq-2024",
+    title: "First revision of the Andrena of Iraq (two new species from Kurdistan)",
+    year: 2024,
+    venue: "ZooKeys · Duhok collections",
+    finding: {
+      ku: "٥٩ جۆری Andrena؛ ٤٢ تۆماری یەکەم؛ A. duhokensis و A. baiocchii.",
+      ar: "٥٩ نوعاً من Andrena؛ ٤٢ تسجيلاً أولاً؛ A. duhokensis وA. baiocchii.",
+      en: "59 Andrena species; 42 first records; A. duhokensis & A. baiocchii.",
+    },
+    url: "https://doi.org/10.3897/zookeys.1203.120033",
+  },
+  {
+    id: "ichneumonidae-kr-2025",
+    title: "Ichneumonidae species new to Iraq recorded from Kurdistan",
+    year: 2025,
+    venue: "Biodiversity Data Journal · Erbil · NHMUK",
+    finding: {
+      ku: "١٤ جۆری پارازیتۆید نوێ بۆ عێراق لە هەولێر (Malaise trap).",
+      ar: "١٤ نوعاً من أشباه الطفيليات جديدة للعراق من أربيل (مصيدة مالايز).",
+      en: "14 parasitoid species new to Iraq from Erbil (Malaise trap).",
+    },
+    url: "https://doi.org/10.3897/BDJ.13.e161156",
   },
   {
     id: "ephemeroptera-iraq-2021",

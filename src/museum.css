@@ -753,6 +753,69 @@ input, textarea, button { caret-color:var(--accent); }
 .ento-prospectus-actions .ento-hero-cta:hover { transform:none; }
 
 /* ── KURDISTAN FAUNAL LEDGER ── */
+.ento-ledger-stats {
+  list-style:none; margin:0 0 clamp(22px,3vw,32px); padding:0;
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px 18px;
+}
+@media (min-width:720px) {
+  .ento-ledger-stats { grid-template-columns:repeat(4,minmax(0,1fr)); }
+}
+.ento-ledger-stats li {
+  display:flex; flex-direction:column; gap:4px;
+  padding:14px 16px;
+  border-top:1px solid var(--border-card);
+  border-bottom:1px solid var(--border-card);
+  background:var(--bg-card);
+}
+.ento-ledger-stats strong {
+  font-family:var(--font-serif); font-size:clamp(1.35rem,3vw,1.85rem);
+  font-weight:700; letter-spacing:-.02em; color:var(--text-primary);
+}
+.ento-ledger-stats span {
+  font-size:.78rem; line-height:1.35; color:var(--text-secondary);
+}
+.ento-ledger-filters {
+  display:flex; flex-wrap:wrap; gap:8px; margin:0 0 10px;
+}
+.ento-ledger-filter {
+  appearance:none; border:1px solid var(--border-card);
+  background:transparent; color:var(--text-primary);
+  font:inherit; font-size:.78rem; font-weight:600;
+  padding:7px 12px; cursor:pointer;
+  transition:border-color .15s ease, background .15s ease;
+}
+.ento-ledger-filter:hover { border-color:var(--accent); }
+.ento-ledger-filter.is-active {
+  background:rgba(26,36,24,.06); border-color:var(--accent);
+}
+.ento-ledger-filter-count {
+  margin:0 0 18px; font-size:.75rem; color:var(--text-muted);
+  letter-spacing:.04em;
+}
+.ento-ledger-cite { margin-top:4px; }
+.ento-ledger-cite-label {
+  margin:0 0 10px; font-size:.82rem; font-weight:600; color:var(--text-secondary);
+}
+.ento-ledger-cite-block {
+  margin:0 0 22px; padding:16px 18px;
+  border:1px solid var(--border-card);
+  background:var(--bg-card);
+  font-size:.92rem; line-height:1.55; color:var(--text-primary);
+}
+.ento-ledger-biblio {
+  margin:0; padding:0; list-style:none; display:grid; gap:12px;
+}
+.ento-ledger-biblio li {
+  display:grid; grid-template-columns:3.2rem 1fr; gap:10px 14px;
+  font-size:.84rem; line-height:1.45; padding-bottom:12px;
+  border-bottom:1px solid var(--border-card);
+}
+.ento-ledger-biblio-year {
+  font-variant-numeric:tabular-nums; font-weight:700; color:var(--accent);
+}
+.ento-ledger-biblio a { color:var(--accent); word-break:break-all; }
+.ento-ledger-biblio a:hover { text-decoration:underline; text-underline-offset:3px; }
 .ento-ledger-studies {
   display:flex; flex-direction:column; gap:14px;
 }

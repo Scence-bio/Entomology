@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import PhotoHero from "./chapter/PhotoHero";
 import SectionPills from "./chapter/SectionPills";
 import {
@@ -23,11 +24,34 @@ const NAV = [
   { id: "outcomes", ku: "ئامانج", ar: "المخرجات", en: "Outcomes" },
   { id: "studies", ku: "توێژینەوە", ar: "الأبحاث", en: "Studies" },
   { id: "lexicon", ku: "فەرهەنگ", ar: "المعجم", en: "Lexicon" },
+  { id: "cite", ku: "ئاماژە", ar: "الاستشهاد", en: "Cite" },
   { id: "method", ku: "میتۆد", ar: "المنهج", en: "Method" },
+];
+
+const ORDER_FILTERS = [
+  { id: "all", ku: "هەموو", ar: "الكل", en: "All" },
+  { id: "Lepidoptera", ku: "پەپوولەباڵ", ar: "حرشفيات الأجنحة", en: "Lepidoptera" },
+  { id: "Coleoptera", ku: "قوڕقوڕەباڵ", ar: "غمديات الأجنحة", en: "Coleoptera" },
+  { id: "Hymenoptera", ku: "پەڕەباڵ", ar: "غشائيات الأجنحة", en: "Hymenoptera" },
+  { id: "Ephemeroptera", ku: "مێشوولەی ئاو", ar: "ذباب مايو", en: "Ephemeroptera" },
 ];
 
 export default function KurdistanLedger({ lang }) {
   const dir = lang === "en" ? "ltr" : "rtl";
+  const [orderFilter, setOrderFilter] = useState("all");
+
+  const studies = useMemo(() => {
+    const list =
+      orderFilter === "all"
+        ? FAUNAL_STUDIES
+        : FAUNAL_STUDIES.filter((s) => s.order === orderFilter);
+    return [...list].sort((a, b) => b.year - a.year || a.id.localeCompare(b.id));
+  }, [orderFilter]);
+
+  const ordersCovered = useMemo(
+    () => new Set(FAUNAL_STUDIES.map((s) => s.order)).size,
+    []
+  );
 
   return (
     <div className="ento-chapter-page ento-ch1 ento-ledger">
@@ -63,6 +87,50 @@ export default function KurdistanLedger({ lang }) {
             </h2>
             <p className="ento-ch1-lead">{t(lang, LEDGER_META.preamble)}</p>
           </header>
+
+          <ul className="ento-ledger-stats" aria-label={t(lang, { ku: "پوختە", ar: "خلاصة", en: "Summary" })}>
+            <li>
+              <strong dir="ltr">{digits(lang, FAUNAL_STUDIES.length)}</strong>
+              <span>
+                {t(lang, {
+                  ku: "توێژینەوەی ناوچەیی",
+                  ar: "بحثاً إقليمياً",
+                  en: "regional studies",
+                })}
+              </span>
+            </li>
+            <li>
+              <strong dir="ltr">{digits(lang, ordersCovered)}</strong>
+              <span>
+                {t(lang, {
+                  ku: "ئۆردەری Insecta",
+                  ar: "رتباً من Insecta",
+                  en: "insect orders",
+                })}
+              </span>
+            </li>
+            <li>
+              <strong dir="ltr">{digits(lang, GBIF_IRAQ.insecta.occurrences)}</strong>
+              <span>
+                {t(lang, {
+                  ku: "ڕوودانی GBIF · عێراق",
+                  ar: "تواجداً في GBIF · العراق",
+                  en: "GBIF occurrences · Iraq",
+                })}
+              </span>
+            </li>
+            <li>
+              <strong dir="ltr">{digits(lang, ACADEMIC_LEXICON.length)}</strong>
+              <span>
+                {t(lang, {
+                  ku: "زاراوەی فەرهەنگ",
+                  ar: "مدخلاً معجمياً",
+                  en: "lexicon entries",
+                })}
+              </span>
+            </li>
+          </ul>
+
           <div className="ento-ch1-prose">
             <p>
               {t(lang, {
@@ -124,15 +192,33 @@ export default function KurdistanLedger({ lang }) {
             </h2>
             <p className="ento-ch1-lead">
               {t(lang, {
-                ku: "هەر کارتێک پوختەیەکی فەرمیی توێژینەوەیەکە بە هەمان قووڵایی لە هەر سێ زماندا.",
-                ar: "كل بطاقة خلاصة رسمية لبحث واحد بنفس العمق في اللغات الثلاث.",
-                en: "Each card is a formal digest of one study, written to equal depth in all three languages.",
+                ku: "هەر کارتێک پوختەیەکی فەرمیی توێژینەوەیەکە بە هەمان قووڵایی لە هەر سێ زماندا. فلتەر بەپێی ئۆردەر بەکاربهێنە.",
+                ar: "كل بطاقة خلاصة رسمية لبحث واحد بنفس العمق في اللغات الثلاث. استخدم التصفية حسب الرتبة.",
+                en: "Each card is a formal digest of one study, written to equal depth in all three languages. Filter by order as needed.",
               })}
             </p>
           </header>
 
+          <div className="ento-ledger-filters" role="group" aria-label={t(lang, { ku: "فلتەری ئۆردەر", ar: "تصفية الرتبة", en: "Order filter" })}>
+            {ORDER_FILTERS.map((f) => (
+              <button
+                key={f.id}
+                type="button"
+                className={`ento-ledger-filter${orderFilter === f.id ? " is-active" : ""}`}
+                aria-pressed={orderFilter === f.id}
+                onClick={() => setOrderFilter(f.id)}
+              >
+                <span dir={f.id === "all" ? undefined : "ltr"}>{t(lang, f)}</span>
+              </button>
+            ))}
+          </div>
+
+          <p className="ento-ledger-filter-count" dir="ltr">
+            {digits(lang, studies.length)} / {digits(lang, FAUNAL_STUDIES.length)}
+          </p>
+
           <div className="ento-ledger-studies">
-            {FAUNAL_STUDIES.map((study) => (
+            {studies.map((study) => (
               <article key={study.id} className="ento-ledger-study" id={study.id}>
                 <p className="ento-ch1-inst-kicker" dir="ltr">
                   {study.order} · {study.taxon} · {study.year}
@@ -204,6 +290,52 @@ export default function KurdistanLedger({ lang }) {
                 </dl>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section id="cite" className="ento-ch1-block ento-visible">
+          <header className="ento-ch1-head">
+            <h2 className="ento-ch1-title">
+              {t(lang, {
+                ku: "چۆنیەتی ئاماژەدان",
+                ar: "كيفية الاستشهاد",
+                en: "How to cite",
+              })}
+            </h2>
+            <p className="ento-ch1-lead">
+              {t(lang, {
+                ku: "بۆ وتار و پرۆژەی خوێندکاری؛ DOIی توێژینەوەکان لەسەرەوە بەکاربهێنە، نەک تەنها ئەم تۆمارە.",
+                ar: "للمقالات ومشاريع الطلبة؛ استخدم DOI للأبحاث أعلاه، لا هذا السجل وحده.",
+                en: "For essays and student projects; cite the primary DOIs above, not this ledger alone.",
+              })}
+            </p>
+          </header>
+          <div className="ento-ledger-cite">
+            <p className="ento-ledger-cite-label">
+              {t(lang, {
+                ku: "ئاماژەی پێشنیارکراو بۆ ئەتڵەسەکە",
+                ar: "استشهاد مقترح للأطلس",
+                en: "Suggested citation for the atlas",
+              })}
+            </p>
+            <blockquote className="ento-ledger-cite-block" dir="ltr" lang="en">
+              University of Raparin, College of Science, Biology Department.{" "}
+              <em>Atlas of Entomology — Kurdistan Entomofauna Ledger</em>. entomo.online.
+              Retrieved {GBIF_IRAQ.retrieved}.
+            </blockquote>
+            <ol className="ento-ledger-biblio" dir="ltr">
+              {FAUNAL_STUDIES.map((study) => (
+                <li key={`bib-${study.id}`}>
+                  <span className="ento-ledger-biblio-year">{study.year}</span>
+                  <span>
+                    {study.authors}. {study.venue}.{" "}
+                    <a href={study.url} target="_blank" rel="noopener noreferrer">
+                      {study.url.replace(/^https?:\/\//, "")}
+                    </a>
+                  </span>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 

@@ -240,6 +240,21 @@ export default function EvidencePanel({ lang }) {
           </li>
         ))}
       </ul>
+      <p className="ento-evidence-note" style={{ marginTop: 18 }}>
+        {t(lang, {
+          ku: "بۆ پوختەی فەرمیی سێ زمانە و فەرهەنگ و ئاماژەدان بڕۆ بۆ ",
+          ar: "للخلاصة الرسمية ثلاثية اللغة والمعجم والاستشهاد انتقل إلى ",
+          en: "For the formal trilingual digest, lexicon and citation apparatus see the ",
+        })}
+        <a href="#/ledger" style={{ color: "var(--accent)", fontWeight: 600 }}>
+          {t(lang, {
+            ku: "تۆماری فەونای کوردستان",
+            ar: "سجل فونة كردستان",
+            en: "Kurdistan Entomofauna Ledger",
+          })}
+        </a>
+        .
+      </p>
     </section>
   );
 }

@@ -137,6 +137,91 @@ export const FAUNAL_STUDIES = [
     url: "https://doi.org/10.26842/binhm.7.2019.15.3.0319",
   },
   {
+    id: "weevils-kr-2025",
+    taxon: "Curculionoidea",
+    order: "Coleoptera",
+    year: 2025,
+    venue: "Journal of Natural History",
+    authors: "Second Kurdistan weevil contribution",
+    affiliation: {
+      ku: "هەرێمی کوردستان · کۆکردنەوەی ٢٠٢١–٢٠٢٤",
+      ar: "إقليم كردستان · جمع ٢٠٢١–٢٠٢٤",
+      en: "Kurdistan Region · field seasons 2021–2024",
+    },
+    title: {
+      ku: "بەشداریی دووەمی فەونای قوڕقوڕەی لوولەدەم لە کوردستان",
+      ar: "المساهمة الثانية لفونة السوس في كردستان",
+      en: "Second contribution to the weevil fauna of Iraqi Kurdistan",
+    },
+    finding: {
+      ku: "٧٥ جۆر تۆمار کران؛ ٤٤ جۆر تۆماری نوێ بۆ عێراق. گۆڕانکاری تاکسۆنۆمی: Polydrusus roseiceps بۆ ژێرجێنوسی نوێ Denticonocetus؛ synonymی نوێ بۆ Phyllobius. پەیوەندیی ڕووەک و دابەشبوون بۆ هەر جۆرێک دراوە.",
+      ar: "٧٥ نوعاً؛ ٤٤ سجلاً جديداً للعراق. تعديلات تصنيفية: نقل Polydrusus roseiceps إلى تحت-جنس Denticonocetus؛ ومرادف جديد لـPhyllobius. ذُكر الارتباط النباتي والتوزيع لكل نوع.",
+      en: "75 species recovered; 44 new country records for Iraq. Taxonomic acts include moving Polydrusus roseiceps to subgenus Denticonocetus and a new Phyllobius synonymy, with plant associations and distributions.",
+    },
+    metrics: [
+      { ku: "٧٥ جۆر", ar: "٧٥ نوعاً", en: "75 species" },
+      { ku: "٤٤ تۆماری نوێ", ar: "٤٤ سجلاً جديداً", en: "44 new to Iraq" },
+    ],
+    url: "https://doi.org/10.1080/00222933.2025.2612011",
+  },
+  {
+    id: "andrena-iraq-2024",
+    taxon: "Andrena (Andrenidae)",
+    order: "Hymenoptera",
+    year: 2024,
+    venue: "ZooKeys",
+    authors: "Wood et al.",
+    affiliation: {
+      ku: "پارێزگای دهۆک · کۆکردنەوەی ٢٠٢٣ (+ پێداچوونەوەی نیشتمانی)",
+      ar: "محافظة دهوك · جمع ٢٠٢٣ (+ مراجعة وطنية)",
+      en: "Duhok Governorate · 2023 collections (+ national revision)",
+    },
+    title: {
+      ku: "یەکەم پێداچوونەوەی نوێی Andrenaی عێراق",
+      ar: "أول مراجعة حديثة لـAndrena في العراق",
+      en: "First modern revision of the Andrena of Iraq",
+    },
+    finding: {
+      ku: "لە ١٧ جۆری پێشوو بۆ ٥٩ جۆر بەرزکرایەوە؛ ٤٢ تۆماری یەکەم بۆ وڵات. دوو جۆری نوێ بۆ زانست لە کوردستان: Andrena duhokensis و A. baiocchii. Andrena bakrajoensis وەک synonymی A. variabilis دانرا. بەڵگەیە کە فەونای هەنگوی عێراق هێشتا زۆر کەم لێکۆڵدراوەتەوە بەراورد بە ئێران و تورکیا.",
+      ar: "ارتفع العدد من ١٧ إلى ٥٩ نوعاً؛ ٤٢ تسجيلاً أولاً للبلد. نوعان جديدان للعلم من كردستان: Andrena duhokensis وA. baiocchii. وُضع Andrena bakrajoensis مرادفاً لـA. variabilis. دليل على أن فونة نحل العراق ما زالت قليلة الدراسة مقارنة بإيران وتركيا.",
+      en: "Iraq’s Andrena list rises from 17 to 59 species; 42 first country records. Two species new to science from Kurdistan: Andrena duhokensis and A. baiocchii. Andrena bakrajoensis is synonymised with A. variabilis — evidence that Iraq’s bee fauna remains chronically understudied versus Iran and Turkey.",
+    },
+    metrics: [
+      { ku: "٥٩ جۆر", ar: "٥٩ نوعاً", en: "59 species" },
+      { ku: "٤٢ تۆماری یەکەم", ar: "٤٢ تسجيلاً أولاً", en: "42 first records" },
+      { ku: "٢ جۆری نوێ", ar: "نوعان جديدان", en: "2 spp. nov." },
+    ],
+    url: "https://doi.org/10.3897/zookeys.1203.120033",
+  },
+  {
+    id: "ichneumonidae-kr-2025",
+    taxon: "Ichneumonidae",
+    order: "Hymenoptera",
+    year: 2025,
+    venue: "Biodiversity Data Journal",
+    authors: "Kurdistan Malaise-trap survey",
+    affiliation: {
+      ku: "پارێزگای هەولێر · قەڵا سەنجی خواروو · NHMUK",
+      ar: "محافظة أربيل · قلا سنجي خوارو · NHMUK",
+      en: "Erbil Governorate · Qala Sngi Khwaru · NHMUK",
+    },
+    title: {
+      ku: "١٤ جۆری Ichneumonidaeی نوێ بۆ عێراق لە کوردستان",
+      ar: "أربعة عشر نوعاً من Ichneumonidae جديدة للعراق من كردستان",
+      en: "Fourteen Ichneumonidae species new to Iraq from Kurdistan",
+    },
+    finding: {
+      ku: "پێشتر تەنها ١٨ جۆری ناسراو لە عێراق هەبوون. بە Malaise trap لە هەولێر ١٤ جۆر بۆ یەکەمجار بۆ وڵات تۆمار کران (لەوانە Campoletis، Pimpla، Diadromus). نمونەکان لە مۆزەخانەی مێژووی سروشتیی لەندەن (NHMUK) پارێزراون — نموونەیەکی کلاسیکی پارازیتۆید بۆ وانەی biocontrol.",
+      ar: "كان العراق يعرف ١٨ نوعاً فقط. بمصيدة مالايز في أربيل سُجّل ١٤ نوعاً لأول مرة للبلد (منها Campoletis وPimpla وDiadromus). العينات محفوظة في متحف التاريخ الطبيعي بلندن (NHMUK) — مثال كلاسيكي للطفيليات في تدريس المكافحة الحيوية.",
+      en: "Iraq previously held only 18 identified ichneumonids. A Malaise-trap survey near Erbil adds 14 first country records (including Campoletis, Pimpla, Diadromus). Specimens deposited at NHMUK — a canonical parasitoid case for biocontrol teaching.",
+    },
+    metrics: [
+      { ku: "١٤ تۆماری نوێ", ar: "١٤ سجلاً جديداً", en: "14 new to Iraq" },
+      { ku: "Malaise trap", ar: "مصيدة مالايز", en: "Malaise trap" },
+    ],
+    url: "https://doi.org/10.3897/BDJ.13.e161156",
+  },
+  {
     id: "ephemeroptera-iraq-2021",
     taxon: "Ephemeroptera",
     order: "Ephemeroptera",
@@ -258,6 +343,36 @@ export const ACADEMIC_LEXICON = [
     ku: "نمونەی ڤاوچەر — نمونەی مۆزەخانەیی لەگەڵ لەیبڵی شوێن، بەروار و کۆکەر؛ بنەمای پشتڕاستکردنەوەی زانستی.",
     ar: "عينة مرجعية — عينة متحفية مع بطاقة الموقع والتاريخ والجامع؛ أساس التحقق العلمي.",
     en: "A museum specimen with locality, date and collector label — the basis of scientific verification.",
+  },
+  {
+    term: "Occurrence record",
+    ku: "تۆماری ڕوودان — داتای شوێن–کات بۆ بوونی تاکسۆنێک (وەک لە GBIF)؛ جیاوازە لە checklistی تاکسۆنۆمی.",
+    ar: "سجل تواجد — بيانات مكان–زمان لوجود وحدة تصنيفية (كما في GBIF)؛ تختلف عن القائمة التصنيفية.",
+    en: "A place–time datum that a taxon was observed or collected (as in GBIF); distinct from a taxonomic checklist.",
+  },
+  {
+    term: "Synonymy",
+    ku: "هاونایی — کاتێک دوو یان زیاتر ناوی زانستی بۆ هەمان تاکسۆن دەردەکەون؛ ناوی قبوڵکراو (accepted name) دەمێنێتەوە.",
+    ar: "الترادف التصنيفي — عندما يظهر أكثر من اسم علمي لنفس الوحدة؛ يبقى الاسم المقبول.",
+    en: "When two or more scientific names apply to one taxon; an accepted name is retained under the Code.",
+  },
+  {
+    term: "Parasitoid",
+    ku: "پارازیتۆید — مێروویەک کە لارڤاکەی میوان دەکوژێت (زۆرجار Ichneumonidae)؛ جیاوازە لە پارازیتی کلاسیکی.",
+    ar: "شبيه الطفيل — حشرة تقتل يرقاتها العائل (غالباً Ichneumonidae)؛ تختلف عن الطفيل التقليدي.",
+    en: "An insect whose larva develops on/in a host that is eventually killed (often Ichneumonidae); unlike a classic parasite.",
+  },
+  {
+    term: "Malaise trap",
+    ku: "تەڵەی مالایز — چادری کێڵگەیی بۆ گرتنی مێرووی فڕین؛ ستاندارد بۆ ڕووپێویی Hymenoptera.",
+    ar: "مصيدة مالايز — خيمة حقلية لالتقاط الحشرات الطائرة؛ معيار لمسح غشائيات الأجنحة.",
+    en: "A tent-like flight-intercept trap standard for surveying flying Hymenoptera and other insects.",
+  },
+  {
+    term: "EPT index",
+    ku: "پێوەری EPT — Ephemeroptera + Plecoptera + Trichoptera وەک بایۆئیندیکەیتەری کوالێتی ئاوی شیرین.",
+    ar: "مؤشر EPT — ذباب مايو وذباب الحجر وذباب القمص مؤشراً لجودة المياه العذبة.",
+    en: "Ephemeroptera + Plecoptera + Trichoptera used together as a freshwater-quality bioindicator suite.",
   },
 ];
 

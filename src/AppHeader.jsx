@@ -21,6 +21,13 @@ function pageTitle(lang, page) {
     });
   }
   if (page === "notfound") return t(lang, { ku: "نەدۆزرایەوە", ar: "غير موجود", en: "Not found" });
+  if (page === "ledger") {
+    return t(lang, {
+      ku: "تۆماری فەونای کوردستان",
+      ar: "سجل فونة كردستان",
+      en: "Kurdistan faunal ledger",
+    });
+  }
   const chapter = chapterById(page);
   if (chapter) return chapter.title[lang] || chapter.title.en;
   return "Entomo";
@@ -44,6 +51,13 @@ export const NAV_ITEMS = [
     mark: "book",
     match: isChapterBrowse,
     label: { ku: "بەشەکان", ar: "الفصول", en: "Chapters" },
+  },
+  {
+    id: "ledger",
+    href: "#/ledger",
+    mark: "pin",
+    match: (page) => page === "ledger",
+    label: { ku: "فەونا", ar: "الفونة", en: "Fauna" },
   },
   {
     id: "key",

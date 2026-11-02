@@ -203,6 +203,9 @@ function HomeScreen({ lang }) {
               <div className="ento-path-title">{step.title[lang]}</div>
               <div className="ento-path-desc">{step.desc[lang]}</div>
               <div className="ento-path-links">
+                {step.href ? (
+                  <a href={step.href}>{step.hrefLabel?.[lang] || step.title[lang]}</a>
+                ) : null}
                 {step.chapters.map((id) => {
                   const ch = CHAPTERS.find((c) => c.id === id);
                   return ch ? (
