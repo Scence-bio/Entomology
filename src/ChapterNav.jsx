@@ -23,12 +23,12 @@ export function ChapterNav({ lang, chapterId }) {
         <div className="ento-chapter-siblings">
           {prev ? (
             <a className="ento-nav-btn" href={`#/${prev.id}`}>
-              {lang === "en" ? `← ${prev.title.en}` : lang === "ar" ? `← ${prev.title.ar}` : `← ${prev.title.ku}`}
+              {lang === "en" ? `← ${prev.title.en}` : `← ${prev.title[lang]}`}
             </a>
           ) : <span />}
           {next ? (
             <a className="ento-nav-btn" href={`#/${next.id}`}>
-              {lang === "en" ? `${next.title.en} →` : lang === "ar" ? `${next.title.ar} →` : `${next.title.ku} →`}
+              {lang === "en" ? `${next.title.en} →` : `${next.title[lang]} →`}
             </a>
           ) : <span />}
         </div>
