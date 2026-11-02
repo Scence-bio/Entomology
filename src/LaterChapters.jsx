@@ -113,6 +113,8 @@ const HYMENOPTERA = {
   latin: "Hymenoptera",
   num: { ku: "چاپتەری پێنجەم", ar: "الفصل الخامس", en: "Chapter 5" },
   title: { ku: "مێروولە، هەنگ و زەنبوور", ar: "النمل والنحل والزنابير", en: "Ants, bees and wasps" },
+  subtitle: { ku: "Formicidae · Apidae · Vespidae", ar: "Formicidae · Apidae · Vespidae", en: "Formicidae · Apidae · Vespidae" },
+  alt: { ku: "هەنگی هەنگوین لە فڕیندا", ar: "نحلة عسل طائرة", en: "Honey bee in flight" },
   blocks: [
     {
       id: "hym-def",
@@ -191,6 +193,8 @@ const COLEOPTERA = {
   focus: "center 42%",
   num: { ku: "چاپتەری شەشەم", ar: "الفصل السادس", en: "Chapter 6" },
   title: { ku: "قوڕقوڕەکان", ar: "الخنافس", en: "Beetles" },
+  subtitle: { ku: "Elytra · Coccinellidae · Carabidae", ar: "الأغماد · Coccinellidae · Carabidae", en: "Elytra · Coccinellidae · Carabidae" },
+  alt: { ku: "خاڵخاڵۆکەی حەوت خاڵ", ar: "دعسوقة ذات سبع نقاط", en: "Seven-spot ladybird" },
   blocks: [
     {
       id: "col-def",
@@ -268,6 +272,8 @@ const DIPTERA = {
   latin: "Diptera",
   num: { ku: "چاپتەری حەوتەم", ar: "الفصل السابع", en: "Chapter 7" },
   title: { ku: "مێش و مێشوولە", ar: "الذباب والبعوض", en: "Flies and mosquitoes" },
+  subtitle: { ku: "Culicidae · Muscidae · Syrphidae", ar: "Culicidae · Muscidae · Syrphidae", en: "Culicidae · Muscidae · Syrphidae" },
+  alt: { ku: "مێشوولەی Anopheles", ar: "بعوضة Anopheles", en: "Anopheles mosquito" },
   blocks: [
     {
       id: "dip-def",
@@ -460,6 +466,8 @@ const HEMIPTERA = {
   latin: "Hemiptera",
   num: { ku: "چاپتەری هەشتەم", ar: "الفصل الثامن", en: "Chapter 8" },
   title: { ku: "شەتەک و سنە", ar: "المن والبق", en: "Aphids and true bugs" },
+  subtitle: { ku: "Aphididae · Pentatomidae · Cicadellidae", ar: "Aphididae · Pentatomidae · Cicadellidae", en: "Aphididae · Pentatomidae · Cicadellidae" },
+  alt: { ku: "سنەی سەوزی Nezara viridula", ar: "بق أخضر Nezara viridula", en: "Green shield bug" },
   blocks: [
     {
       id: "hem-def",
@@ -537,6 +545,8 @@ const JUMPERS = {
   latin: "Orthoptera · Odonata",
   num: { ku: "چاپتەری نۆیەم", ar: "الفصل التاسع", en: "Chapter 9" },
   title: { ku: "جڕوشک و مێرووی ئاو", ar: "الجنادب والرعاشات", en: "Grasshoppers and dragonflies" },
+  subtitle: { ku: "Orthoptera · Odonata", ar: "Orthoptera · Odonata", en: "Orthoptera · Odonata" },
+  alt: { ku: "مێرووی ئاوی Crocothemis erythraea", ar: "رعاش Crocothemis erythraea", en: "Scarlet darter dragonfly" },
   blocks: [
     {
       id: "jump-def",
@@ -730,6 +740,8 @@ const NEUROPTERA = {
   latin: "Neuroptera",
   num: { ku: "چاپتەری دەیەم", ar: "الفصل العاشر", en: "Chapter 10" },
   title: { ku: "تۆڕباڵ", ar: "أسد المن والشبكيات", en: "Lacewings" },
+  subtitle: { ku: "Chrysopidae · Myrmeleontidae", ar: "Chrysopidae · Myrmeleontidae", en: "Chrysopidae · Myrmeleontidae" },
+  alt: { ku: "تۆڕباڵی سەوز Chrysoperla carnea", ar: "أسد المن الأخضر Chrysoperla carnea", en: "Green lacewing" },
   blocks: [
     {
       id: "neu-def",

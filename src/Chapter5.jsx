@@ -175,10 +175,10 @@ const LEPIDO_SECTIONS = [
       en: "Roughly ~10% of assessed Lepidoptera are threatened (varies by Red List). Drivers: habitat fragmentation, broad-spectrum insecticides, climate phenological mismatch with hosts/nectar, and invasive plants. Responses: corridors, native host/nectar plants, IPM, and long-term transect monitoring.",
     },
     threats: [
-      { icon: "🏗️", nameKu: "وێرانبوونی ژینگە", nameAr: "تدمير الموائل", nameEn: "Habitat Loss", eg: "Deforestation, urbanisation" },
-      { icon: "☠️", nameKu: "ئافەتکوژ",         nameAr: "المبيدات الحشرية",  nameEn: "Pesticides",    eg: "Neonicotinoids, herbicides" },
-      { icon: "🌡️", nameKu: "گەرمبوونی زەوی",    nameAr: "تغير المناخ",       nameEn: "Climate Change", eg: "Phenological mismatch" },
-      { icon: "🌿", nameKu: "ڕووەکە تازەواردەکان", nameAr: "النباتات الغازية",  nameEn: "Invasive Plants", eg: "Displacing host plants" },
+      { nameKu: "وێرانبوونی ژینگە", nameAr: "تدمير الموائل", nameEn: "Habitat Loss", eg: "Deforestation, urbanisation" },
+      { nameKu: "ئافەتکوژ", nameAr: "المبيدات الحشرية", nameEn: "Pesticides", eg: "Neonicotinoids, herbicides" },
+      { nameKu: "گەرمبوونی زەوی", nameAr: "تغير المناخ", nameEn: "Climate Change", eg: "Phenological mismatch" },
+      { nameKu: "ڕووەکە تازەواردەکان", nameAr: "النباتات الغازية", nameEn: "Invasive Plants", eg: "Displacing host plants" },
     ],
   },
   {
@@ -254,7 +254,6 @@ function LepidoCard({ section, delay = 0, lang }) {
       style={{ transitionDelay: `${delay}ms`, direction: dir }}
     >
       <div className="ento-card-header">
-        <div className="ento-card-icon">{section.icon}</div>
         <div>
           <div className="ento-card-num">{section.num} · {section.numEn}</div>
           <div className="ento-card-title-ku">{section.titles[lang]}</div>
@@ -340,7 +339,7 @@ function LepidoCard({ section, delay = 0, lang }) {
         <div className="ento-threats">
           {section.threats.map(t => (
             <div key={t.nameEn} className="ento-threat">
-              <div className="ento-threat-ico">{t.icon}</div>
+              <div className="ento-threat-ico" aria-hidden="true" />
               <div className="ento-threat-name">
                 {lang === "ku" ? t.nameKu : lang === "ar" ? t.nameAr : t.nameEn}
               </div>
@@ -432,15 +431,10 @@ function ButterflyGallery({ lang }) {
       dir={lang === "en" ? "ltr" : "rtl"}
     >
       {/* Header */}
-      <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: "clamp(18px,3vw,28px)", paddingBottom: 16, borderBottom: "2px solid var(--accent-dim)" }}>
-        <span className="ento-ch-icon" style={{ color: "var(--accent)" }}><Mark name="butterfly" /></span>
-        <div>
-          <h2 style={{ fontSize: "clamp(1.1rem,3vw,1.4rem)", fontWeight: 900, color: "var(--text-primary)", margin: "0 0 4px" }}>
-            {labelGallery[lang]}
-          </h2>
-          <p style={{ fontSize: ".82rem", color: "var(--text-muted)", margin: 0 }}>{labelSub[lang]}</p>
-        </div>
-      </div>
+      <header className="ento-ch1-head" style={{ marginBottom: "clamp(18px,3vw,28px)" }}>
+        <h2 className="ento-ch1-title">{labelGallery[lang]}</h2>
+        <p className="ento-ch1-lead">{labelSub[lang]}</p>
+      </header>
 
       {/* Filters */}
       <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 20, alignItems: "center" }}>
@@ -619,56 +613,48 @@ function SpecCard({ s, onClick, lang, local }) {
 /* ═══════════════════════════════════════════════
    CHAPTER 5 — MAIN EXPORT
 ═══════════════════════════════════════════════ */
+const CH5_NAV = [
+  { id: "lepido-def", ku: "پێناسە", ar: "التعريف", en: "Definition" },
+  { id: "lepido-metamorphosis", ku: "گۆڕانەپەڕە", ar: "التحول", en: "Metamorphosis" },
+  { id: "lepido-classification", ku: "پۆلێن", ar: "التصنيف", en: "Classification" },
+  { id: "lepido-biology", ku: "بایۆلۆجی", ar: "البيولوجيا", en: "Biology" },
+  { id: "lepido-kurdistan", ku: "کوردستان", ar: "كردستان", en: "Kurdistan" },
+  { id: "lepido-conservation", ku: "پاراستن", ar: "الحفظ", en: "Conservation" },
+  { id: "lepido-mimicry", ku: "mimicry", ar: "المحاكاة", en: "Mimicry" },
+  { id: "lepido-glossary", ku: "فەرهەنگ", ar: "المسرد", en: "Glossary" },
+  { id: "lepido-gallery", ku: "گەلەری", ar: "المعرض", en: "Gallery" },
+  { id: "quiz", ku: "کویز", ar: "اختبار", en: "Quiz" },
+];
+
 export default function Chapter5({ lang }) {
   return (
-    <div className="ento-chapter-page">
-      {/* Hero */}
-      
-      <div className="ento-chapter-hero" style={{position:"relative",overflow:"hidden"}}>
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          style={{
-            position:"absolute",
-            inset:0,
-            width:"100%",
-            height:"100%",
-            objectFit:"cover",
-            zIndex:0,
-            opacity:.45
-          }}
-        >
-          <source src="/videos/chapter5.mp4" type="video/mp4" />
-        </video>
-
-        <div style={{position:"relative",zIndex:2}}>
-    
-        <div className="ento-chapter-hero-num">
-          {lang === "ku" ? "چاپتەری چوارەم" : lang === "ar" ? "الفصل الرابع" : "Chapter 4"}
-        </div>
-        <span className="ento-chapter-hero-icon"><Mark name="butterfly" /></span>
-        <h1 className="ento-chapter-hero-title">
-          {lang === "ku" ? "پەپوولەکان" : lang === "ar" ? "الفراشات" : "Butterflies"}
-          <span className="ento-binomial" style={{ display: "block" }}>Lepidoptera</span>
-        </h1>
-        <div className="ento-chapter-hero-en">
-          Lepidoptera · پەپوولەکان · حرشفيات الأجنحة
-        </div>
-      </div>
-      </div>
-
-      {/* Sections */}
+    <div className="ento-chapter-page ento-ch1">
+      <PhotoHero
+        lang={lang}
+        image="/images/plates/ch5-machaon.jpg"
+        imageAlt={{
+          ku: "پەپوولەی Papilio machaon",
+          ar: "فراشة Papilio machaon",
+          en: "Swallowtail butterfly Papilio machaon",
+        }}
+        focus="center 38%"
+        num={{ ku: "چاپتەری چوارەم", ar: "الفصل الرابع", en: "Chapter 4" }}
+        icon="butterfly"
+        title={{ ku: "پەپوولەکان", ar: "الفراشات", en: "Butterflies" }}
+        latin="Lepidoptera"
+        subtitle={{
+          ku: "ناسنامە · بایۆلۆجی · جۆرە کوردستانییەکان",
+          ar: "الهوية · البيولوجيا · أنواع كردستان",
+          en: "Identity · biology · Kurdistan species",
+        }}
+      />
+      <SectionPills lang={lang} items={CH5_NAV} />
       <div className="ento-container">
         {LEPIDO_SECTIONS.map((s, i) => (
           <LepidoCard key={s.id} section={s} delay={i * 50} lang={lang} />
         ))}
       </div>
-
-      {/* Interactive gallery */}
       <ButterflyGallery lang={lang} />
-
       <QuizSection lang={lang} chapter="ch5" />
     </div>
   );
