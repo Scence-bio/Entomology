@@ -763,7 +763,10 @@ html[lang="ckb"] .ento-prospectus-title {
 
 /* ── ACADEMIC PROSPECTUS (home is always ivory — ignore dark theme tokens) ── */
 .ento-prospectus {
-  max-width:920px; margin:0 auto clamp(28px,5vw,48px);
+  width:100%; max-width:920px;
+  margin-block:0 clamp(28px,5vw,48px);
+  margin-inline:auto;
+  box-sizing:border-box;
   padding:clamp(20px,4vw,32px);
   background:#fbf8f1; border:1px solid rgba(26,36,24,.16);
   color:#1a2418;
@@ -1594,6 +1597,10 @@ html[lang="ckb"] .ento-prospectus-title {
 .ento-home {
   display:flex; flex-direction:column;
   align-items:center; justify-content:flex-start;
+  width:100%;
+  max-width:none; /* full-bleed ivory — never shrink/RTL-pin the section */
+  margin-inline:0;
+  box-sizing:border-box;
   padding: clamp(24px,5vw,48px) clamp(14px,4vw,36px) clamp(28px,6vw,56px);
   background:
     radial-gradient(ellipse at 20% 0%, rgba(138,78,18,.05), transparent 42%),
@@ -1626,11 +1633,17 @@ html[lang="ckb"] .ento-prospectus-title {
   grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));
   gap:clamp(18px,2.6vw,26px);
   width:100%; max-width:1080px;
+  margin-inline:auto;
   box-sizing:border-box;
 }
 @media (min-width:1280px) {
   .ento-chapters-grid {
     grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));
+  }
+}
+@media (min-width:1600px) {
+  .ento-chapters-grid {
+    grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));
   }
 }
 .ento-chapter-card {
@@ -1799,21 +1812,21 @@ html[lang="en"] .ento-chapter-hero-title {
   .ento-app .ento-main { padding-bottom:28px; }
   .ento-footer { padding-bottom:0; }
   .ento-install { bottom:22px; }
-  .ento-home,
   .ento-footer-inner,
   .ento-footer-bottom,
   .ento-footer-divider,
   .ento-path,
   .ento-chapters-grid,
-  .ento-idkey { max-width:1100px; }
-  .ento-chapter-nav { max-width:1100px; }
+  .ento-idkey,
+  .ento-prospectus { max-width:1100px; margin-inline:auto; }
+  .ento-chapter-nav { max-width:1100px; margin-inline:auto; }
 }
 @media (min-width: 768px) and (max-width: 1099px) {
   .ento-desk-nav-link { padding:7px 8px; font-size:.74rem; }
   .ento-appbar-start { flex:0 1 200px; max-width:min(28vw,220px); }
 }
 @media (min-width: 1100px) {
-  .ento-appbar-inner { max-width:1240px; gap:16px; }
+  .ento-appbar-inner { max-width:1240px; margin-inline:auto; gap:16px; }
   .ento-appbar-start {
     flex:0 1 214px;
     max-width:224px;
@@ -1832,7 +1845,8 @@ html[lang="en"] .ento-chapter-hero-title {
 }
 @media (min-width: 1400px) {
   .ento-appbar-inner {
-    max-width:1320px;
+    max-width:1480px;
+    margin-inline:auto;
     gap:16px;
     padding-inline:max(20px, var(--safe-left)) max(20px, var(--safe-right));
   }
@@ -1840,6 +1854,9 @@ html[lang="en"] .ento-chapter-hero-title {
     flex:0 1 288px;
     max-width:320px;
   }
+}
+@media (min-width: 1680px) {
+  .ento-appbar-inner { max-width:1600px; }
 }
 @media (max-width:767px) {
   .ento-appbar-inner {
@@ -1927,7 +1944,9 @@ html[lang="en"] .ento-chapter-hero-title {
 /* Professional shell — home path stays ivory even in dark mode */
 .ento-sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
 .ento-path {
-  width:100%; max-width:1080px; margin:0 0 clamp(40px,6vw,56px);
+  width:100%; max-width:1080px;
+  margin-block:0 clamp(40px,6vw,56px);
+  margin-inline:auto;
   text-align:center;
   box-sizing:border-box;
 }
@@ -1951,35 +1970,60 @@ html[lang="en"] .ento-chapter-hero-title {
 @media (max-width:480px){
   .ento-path-grid { grid-template-columns:1fr; }
 }
-/* Shell widths AFTER component bases so cascade wins on large screens */
+/* Inner shells only — never max-width .ento-home (RTL would pin it to the side) */
 @media (min-width:768px) {
   .ento-path,
   .ento-chapters-grid,
   .ento-idkey,
-  .ento-home,
+  .ento-prospectus,
   .ento-footer-inner,
   .ento-footer-bottom,
-  .ento-footer-divider { max-width:1100px; }
+  .ento-footer-divider {
+    max-width:1100px;
+    width:100%;
+    margin-inline:auto;
+    box-sizing:border-box;
+  }
 }
 @media (min-width:1100px) {
   .ento-path,
   .ento-chapters-grid,
   .ento-idkey,
-  .ento-home,
+  .ento-prospectus,
   .ento-footer-inner,
   .ento-footer-bottom,
   .ento-footer-divider,
-  .ento-container { max-width:1240px; }
+  .ento-container {
+    max-width:1240px;
+    width:100%;
+    margin-inline:auto;
+    box-sizing:border-box;
+  }
 }
 @media (min-width:1400px) {
   .ento-path,
   .ento-chapters-grid,
   .ento-idkey,
-  .ento-home,
+  .ento-prospectus,
   .ento-footer-inner,
   .ento-footer-bottom,
   .ento-footer-divider,
-  .ento-container { max-width:1320px; }
+  .ento-container {
+    max-width:1480px;
+    width:100%;
+    margin-inline:auto;
+    box-sizing:border-box;
+  }
+}
+@media (min-width:1680px) {
+  .ento-path,
+  .ento-chapters-grid,
+  .ento-idkey,
+  .ento-prospectus,
+  .ento-footer-inner,
+  .ento-footer-bottom,
+  .ento-footer-divider,
+  .ento-container { max-width:1600px; }
 }
 .ento-path-card {
   background:#fbf8f1; color:#1a2418;
@@ -2189,7 +2233,9 @@ html[lang="en"] .ento-chapter-hero-title {
 
 /* ══ Identification key ══ */
 .ento-idkey {
-  width:100%; max-width:1080px; margin:0 0 clamp(40px,6vw,56px);
+  width:100%; max-width:1080px;
+  margin-block:0 clamp(40px,6vw,56px);
+  margin-inline:auto;
   text-align:center;
   box-sizing:border-box;
 }
