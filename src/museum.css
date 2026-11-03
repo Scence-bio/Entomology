@@ -764,37 +764,42 @@ html[lang="ckb"] .ento-prospectus-title {
   .ento-ch1-links a { font-weight:700; }
 }
 
-/* ── ACADEMIC PROSPECTUS (home) ── */
+/* ── ACADEMIC PROSPECTUS (home is always ivory — ignore dark theme tokens) ── */
 .ento-prospectus {
   max-width:920px; margin:0 auto clamp(28px,5vw,48px);
   padding:clamp(20px,4vw,32px);
-  background:var(--bg-card); border:1px solid var(--border-card);
+  background:#fbf8f1; border:1px solid rgba(26,36,24,.16);
+  color:#1a2418;
+  box-shadow:0 12px 28px rgba(48,36,18,.07);
 }
 .ento-prospectus-kicker {
   margin:0 0 8px; font-family:var(--font-mono); font-size:.62rem;
-  letter-spacing:.14em; text-transform:uppercase; color:var(--accent);
+  letter-spacing:.14em; text-transform:uppercase; color:#8a4e12;
 }
 .ento-prospectus-title {
   margin:0 0 12px; font-size:clamp(1.15rem,2.8vw,1.45rem);
-  font-weight:800; color:var(--text-primary); line-height:1.3;
+  font-weight:800; color:#1a2418; line-height:1.3;
 }
 .ento-prospectus-body {
   margin:0 0 18px; font-size:clamp(.9rem,2vw,1.02rem);
-  line-height:1.85; color:var(--text-secondary);
+  line-height:1.85; color:#3e4a3a;
 }
 .ento-prospectus-actions {
   display:flex; flex-wrap:wrap; gap:10px;
 }
 .ento-prospectus-actions .ento-hero-cta {
   box-shadow:none; transform:none;
-  background:var(--accent); color:#fbf8f1;
+  background:#8a4e12; color:#fbf8f1;
   padding:10px 16px; font-size:.86rem;
 }
 .ento-prospectus-actions .ento-hero-cta-ghost {
-  background:transparent; color:var(--text-primary);
-  border:1px solid var(--border-card);
+  background:transparent; color:#1a2418;
+  border:1px solid rgba(26,36,24,.22);
 }
-.ento-prospectus-actions .ento-hero-cta:hover { transform:none; }
+.ento-prospectus-actions .ento-hero-cta:hover { transform:none; background:#6f3e0e; }
+.ento-prospectus-actions .ento-hero-cta-ghost:hover {
+  background:rgba(138,78,18,.08); color:#1a2418;
+}
 
 /* ── KURDISTAN FAUNAL LEDGER ── */
 .ento-ledger-stats {
@@ -1801,9 +1806,11 @@ html[lang="en"] .ento-chapter-hero-title {
   .ento-appbar-start { flex:0 1 200px; max-width:min(28vw,220px); }
 }
 @media (min-width: 1100px) {
-  .ento-appbar-inner { max-width:1100px; gap:10px; }
-  .ento-appbar-start { flex:0 1 240px; max-width:min(32vw,260px); }
+  .ento-appbar-inner { max-width:1180px; gap:12px; }
+  .ento-appbar-start { flex:0 1 220px; max-width:min(26vw,240px); }
   .ento-appbar-title { max-width:100%; }
+  .ento-desk-nav { gap:2px; }
+  .ento-desk-nav-link { padding:7px 11px; font-size:.78rem; }
 }
 @media (max-width:767px) {
   .ento-appbar-inner {
@@ -1898,11 +1905,21 @@ html[lang="en"] .ento-chapter-hero-title {
   color:#3e4a3a; font-size:.95rem; margin:0 auto 22px; max-width:38rem; line-height:1.7;
 }
 .ento-path-grid {
-  display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px;
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:12px;
   text-align:start;
+  align-items:stretch;
 }
-@media (max-width:980px){ .ento-path-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media (max-width:560px){ .ento-path-grid { grid-template-columns:1fr; } }
+@media (max-width:1100px){
+  .ento-path-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+@media (max-width:720px){
+  .ento-path-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:480px){
+  .ento-path-grid { grid-template-columns:1fr; }
+}
 .ento-path-card {
   background:#fbf8f1; color:#1a2418;
   border:1px solid rgba(26,36,24,.16); border-radius:2px;
@@ -1910,6 +1927,9 @@ html[lang="en"] .ento-chapter-hero-title {
   box-shadow:0 10px 26px rgba(48,36,18,.07);
   transition:transform .3s var(--ease-out), box-shadow .3s var(--ease-out), border-color .2s;
   position:relative;
+  display:flex; flex-direction:column;
+  min-height:100%;
+  box-sizing:border-box;
 }
 .ento-path-card::before {
   content:""; position:absolute; inset-inline-start:0; top:12px; bottom:12px; width:2px;
@@ -1927,8 +1947,12 @@ html[lang="en"] .ento-chapter-hero-title {
 .ento-path-desc {
   font-size:.84rem; color:#3e4a3a; margin:0 0 12px; line-height:1.55;
   padding-inline-start:10px;
+  flex:1 1 auto;
 }
-.ento-path-links { display:flex; flex-wrap:wrap; gap:6px; padding-inline-start:10px; }
+.ento-path-links {
+  display:flex; flex-wrap:wrap; gap:6px; padding-inline-start:10px;
+  margin-top:auto;
+}
 .ento-path-links a {
   font-family:var(--font-mono); font-size:.7rem; letter-spacing:.04em; text-decoration:none;
   color:#8a4e12; background:#f3efe4; border:1px solid rgba(26,36,24,.14);
