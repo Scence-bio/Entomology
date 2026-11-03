@@ -8,15 +8,15 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-padding-top: calc(56px + env(safe-area-inset-top, 0px) + 8px);
-  scroll-padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px) + 8px);
+  scroll-padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px) + 8px);
   interpolate-size: allow-keywords;
 }
 
 body {
-  font-family: "IBM Plex Sans Arabic", "Noto Kufi Arabic", Tahoma, sans-serif;
+  font-family: "Noto Sans Arabic", "IBM Plex Sans Arabic", Tahoma, sans-serif;
   background: #f3efe4;
   color: #1a2418;
-  overflow-x: hidden;
+  overflow-x: clip;
   min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,6 +31,12 @@ button, a, input, select, textarea { touch-action: manipulation; }
 :focus-visible {
   outline: 2px solid #c47b2b;
   outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-bottom: 28px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
