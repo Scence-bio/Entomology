@@ -28,7 +28,7 @@ const ARTHROPODA_SECTIONS = [
       en: "Respiratory System",
     },
     body: {
-      ku: "لە Insectaـدا گازی ئۆکسجین بە شێوەی سەرەکی لە ڕێگەی سیستەمی تراکیایی دەگاتە خانەکان، نەک لە ڕێگەی خوێن وەک لە بڕبڕەدارەکان. spiracle ـەکان کونە کۆنترۆڵکراوەکانن لەسەر pleura؛ هەوا دەچێتە trachea و دواتر tracheoles کە ڕاستەوخۆ دەگەنە میتۆکۆندریا. جووڵەی سک و باڵ دەتوانێت ventilation چالاک بکات. لە لارڤای ئاوی و هەندێک گروپدا gill یان plastron دەردەکەوێت. Arachnida زۆرجار book lung یان trachea تێکەڵ بەکاردەهێنن؛ Crustacea زیاتر gillی ئاوی.",
+      ku: "لە Insectaـدا گازی ئۆکسجین بە شێوەی سەرەکی لە ڕێگەی سیستەمی بۆریی هەوا دەگاتە خانەکان، نەک لە ڕێگەی خوێن وەک لە بڕبڕەدارەکان. کونەکانی هەناسە کونی کۆنترۆڵکراون لەسەر لاکەی جەستە؛ هەوا دەچێتە بۆریی هەوا و دواتر بۆریی ورد کە ڕاستەوخۆ دەگاتە میتۆکۆندریا. جووڵەی سک و باڵ دەتوانێت هەواگۆڕین چالاک بکات. لە لارڤای ئاوی و هەندێک گروپدا ڕیشوو یان توێژاڵی هەوا دەر دەکەوێت. جاڵجاڵۆکەییەکان زۆرجار سیی کتێبی و بۆریی هەوا تێکەڵ بەکاردەهێنن؛ قڕژاڵییەکان زیاتر ڕیشووی ئاوی.",
       en: "In Insecta, O₂ reaches tissues mainly via the tracheal system, not via blood as in vertebrates. Valved spiracles on the pleura open into tracheae and fine tracheoles that terminate at mitochondria. Abdominal pumping and flight can drive active ventilation. Aquatic larvae may use gills or plastrons. Arachnids often mix book lungs and tracheae; crustaceans primarily use gills.",
       ar: "في الحشرات يصل الأكسجين عبر القصبات لا عبر الدم. الثغور التنفسية تفتح على قصبات وقصيبات تصل إلى الميتوكندريا. قد تنشط التهوية بحركة البطن. للعناكب رئات كتابية أو قصبات؛ وللقشريات خياشيم.",
     },
@@ -45,7 +45,7 @@ const ARTHROPODA_SECTIONS = [
       en: "Exoskeleton",
     },
     body: {
-      ku: "پەیەکەری دەرەکی (exoskeleton / cuticle) لە epicuticle (مۆم و lipids بۆ کەمکردنەوەی لەدەستدانی ئاو)، exocuticle و endocuticle پێک دێت؛ ماددەی سەرەکی α-chitin (پۆڵی N-acetylglucosamine) لەگەڵ sclerotin (پڕۆتینی ڕەقکراو). سوود: پاراستن، خاڵی پەیوەندیی ماسولکە، و سنووردانان بۆ وشکبوون. سنوور: گەشە تەنها بە ecdysis — فڕێدانی cuticleی کۆن لەژێر کۆنترۆڵی ecdysone و juvenile hormone. دوای molting، cuticleی نوێ نەرمە تا sclerotization تەواو ببێت.",
+      ku: "پەیەکەری دەرەکی لە سێ چین پێک دێت: چینی سەرەوە (مۆم و چەوری بۆ کەمکردنەوەی لەدەستدانی ئاو)، چینی دەرەوە و چینی ناوەوە. ماددەی سەرەکی کایتینی ئەلفا (پۆلی N-acetylglucosamine)ـە لەگەڵ پرۆتینی ڕەقکراو. سوودەکانی: پاراستن، خاڵی پەیوەندیی ماسولکە، و سنووردانان بۆ وشکبوون. سنوورەکەی: گەشە تەنها بە فڕێدانی پێستەکەی کۆن دەبێت، لەژێر کۆنترۆڵی هۆرمۆنی گۆڕان و هۆرمۆنی لاوی. دوای فڕێدان، پێستەکەی نوێ نەرمە تا ڕەقبوونەوەی تەواو ببێت.",
       en: "The arthropod cuticle has an epicuticle (waterproofing lipids), exo- and endocuticle; α-chitin plus sclerotized proteins form the hard shell. It protects, anchors muscles and limits desiccation, but growth requires ecdysis under ecdysone and juvenile-hormone control. Soft new cuticle hardens by sclerotization after the molt.",
       ar: "الهيكل الخارجي طبقات: فوقية شمعية ثم خارجية وداخلية من الكايتين والبروتين المتصلب. يحمي ويثبت العضلات، والنمو يتم بالانسلاخ تحت سيطرة الإكديسون وهرمون الحداثة.",
     },
@@ -62,7 +62,7 @@ const ARTHROPODA_SECTIONS = [
       en: "Open Circulatory System",
     },
     body: {
-      ku: "سوڕی خوێن کراوەیە (open circulatory system): hemolymph لە دڵی دۆرساڵ (دڕکێکی لولەیی لەسەر پشت) بە ڕێگەی ostia دەکشێنرێت و دەپەڕێتە ناو hemocoel، کە ئەندامەکان دەور دەدات. hemolymph خۆراک، هۆرمۆن و خانەی بەرگری (hemocytes) دەگوازێتەوە؛ لە زۆربەی مێروودا O₂ـی سەرەکی ناگوازێتەوە چونکە trachea ئەو کارە دەکات (جگە لە هەندێک گروپی خاوەن hemocyanin یان hemoglobinی تایبەت). فشار نزمترە لە سوڕی داخراوی بڕبڕەداران.",
+      ku: "سوڕی خوێن کراوەیە: شلەی جەستە لە دڵی پشتی، کە دڕکێکی لولەییە لەسەر پشت، بە ڕێگەی کونەکانی دڵ دەکشێنرێت و دەپەڕێتە ناو کەلێنی جەستە، کە ئەندامەکان دەور دەدات. ئەم شلەیە خۆراک، هۆرمۆن و خانەی بەرگری دەگوازێتەوە؛ لە زۆربەی مێروودا ئۆکسجینی سەرەکی ناگوازێتەوە، چونکە بۆریی هەوا ئەو کارە دەکات، جگە لە هەندێک گروپی خاوەن ڕەنگی خوێنی تایبەت. فشار نزمترە لە سوڕی داخراوی بڕبڕەداران.",
       en: "Circulation is open: a dorsal vessel pumps hemolymph through ostia into the hemocoel bathing the organs. Hemolymph carries nutrients, hormones and hemocytes; in most insects it is not the main O₂ carrier — tracheae are. Pressure is lower than in closed vertebrate systems. Some arthropods use hemocyanin or specialized hemoglobins.",
       ar: "الدوران مفتوح: وعاء ظهري يدفع اللمف الدموي إلى التجويف الحشوي. ينقل الغذاء والهرمونات والخلايا الدفاعية، بينما القصبات تنقل معظم الأكسجين في الحشرات.",
     },
@@ -79,7 +79,7 @@ const ARTHROPODA_SECTIONS = [
       en: "Compound Eyes",
     },
     body: {
-      ku: "چاوی ئاڵۆز (compound eye) لە هەزاران ommatidium پێک دێت؛ هەر یەکێک کۆرنیا، کڕیستاڵ و rhabdomی فۆتۆریسێپتۆری خۆی هەیە. دوو جۆری سەرەکی: apposition (ڕووناکی ڕۆژ، وەک هەنگ) و superposition (کەمڕووناکی، وەک زۆر پەپوولەی شەو). سوود: مەودای بینینی فراوان و هەستیاریی بەرز بۆ جووڵە (flicker fusion). سنوور: ڕوونیی وردەکاری کەمترە لە چاوی تاکی بڕبڕەداران. زۆر مێروو ocelliی سادەشیان هەیە بۆ تێگەیشتنی ڕووناکی و ئاسۆ. لە Odonataـدا چاوەکان زۆر گەورەن و نێچیر لە هەوادا دەگرن.",
+      ku: "چاوی ئاڵۆز لە هەزاران یەکەی بینایی پێک دێت؛ هەر یەکێک کۆرنیا، کڕیستاڵ و خانەی وەرگری ڕووناکیی خۆی هەیە. دوو جۆری سەرەکی هەیە: بینینی ڕووناکیی ڕۆژ، وەک هەنگ، و بینینی کەمڕووناکی، وەک زۆر پەپوولەی شەو. سوود: مەودای بینینی فراوان و هەستیاریی بەرز بۆ جووڵە. سنوور: ڕوونیی وردەکاری کەمترە لە چاوی تاکی بڕبڕەداران. زۆر مێروو چاوی سادەشیان هەیە بۆ هەستکردن بە ڕووناکی و ئاسۆ. لە مێرووی ئاودا چاوەکان زۆر گەورەن و نێچیر لە هەوادا دەگرن.",
       en: "Compound eyes mosaic vision from thousands of ommatidia (cornea, cone, rhabdom). Apposition eyes suit bright light; superposition eyes suit dim light (many moths). Strengths: panoramic view and high temporal resolution; spatial acuity is coarser than vertebrate camera eyes. Simple ocelli add horizon/light sensing. Dragonflies have enormous compound eyes for aerial prey capture.",
       ar: "العين المركبة آلاف الوحدات (ommatidia). نوعا التجاور والتراكب حسب الإضاءة. مجال واسع وحساسية حركة عالية. للرعاشات عيون ضخمة لصيد الهواء.",
     },
@@ -100,13 +100,13 @@ const ARTHROPODA_SECTIONS = [
       en: "Core terms for cuticle, gas exchange, circulation and vision.",
     },
       glossary: [
-      { term: "Chitin", ku: "α-chitin: پۆڵیسەکەریدی N-acetylglucosamine؛ ستوونی cuticle لەگەڵ sclerotin.", en: "α-chitin (N-acetylglucosamine polymer) plus sclerotin proteins build the cuticle.", ar: "كايتين α مع بروتينات متصلبة يشكّل الكيوتيكل." },
-      { term: "Ecdysis (Molting)", ku: "فڕێدانی cuticleی کۆن لەژێر ecdysone؛ JH ڕێگە بە metamorphic molt دەدات کاتێک دادەبەزێت.", en: "Shedding the old cuticle under ecdysone; falling JH permits metamorphic molts.", ar: "انسلاخ تحت الإكديسون؛ انخفاض هرمون الحداثة يسمح بتحول المنسلخ." },
-      { term: "Hemolymph", ku: "شلەی hemocoel: خۆراک، هۆرمۆن، hemocytes؛ O₂ زۆرجار لە ڕێگەی trachea نەک hemolymph.", en: "Hemocoel fluid carrying nutrients, hormones and hemocytes; O₂ usually via tracheae.", ar: "سائل الجوف الحشوي؛ الأكسجين غالباً عبر القصبات لا اللمف." },
-      { term: "Spiracles", ku: "کونە valvular لەسەر pleura → trachea → tracheoles بۆ میتۆکۆندریا.", en: "Valved pleural openings into tracheae and tracheoles at the mitochondria.", ar: "ثغور صدرية/بطنية تقود إلى القصبات والقصيبات." },
-      { term: "Ommatidia", ku: "یەکەی بیناییی compound eye؛ apposition یان superposition optics.", en: "Optical units of the compound eye (apposition or superposition).", ar: "وحدات العين المركبة — تقابل أو تراكب." },
-      { term: "Jointed Appendages", ku: "لقی segmented (قاچ، ئەنتێنا، palps) — ناوی Arthropoda «قاچی جومگەدار».", en: "Segmented limbs (legs, antennae, palps) — the defining arthropod trait.", ar: "زوائد مفصلية: أرجل وقرون وملامس." },
-      { term: "Exoskeleton", ku: "cuticleی دەرەکی: پاراستن، lever بۆ ماسولکە، و سنووری وشکبوون؛ گەشە تەنها بە molt.", en: "External cuticle: armour, muscle levers and waterproofing; growth only via molt.", ar: "هيكل خارجي واقي؛ النمو بالانسلاخ فقط." },
+      { term: "Chitin", ku: "کایتینی ئەلفا پۆلی N-acetylglucosamineـە؛ لەگەڵ پرۆتینی ڕەقکراو ستوونی پێستەکە پێک دەهێنێت.", en: "α-chitin (N-acetylglucosamine polymer) plus sclerotin proteins build the cuticle.", ar: "كايتين α مع بروتينات متصلبة يشكّل الكيوتيكل." },
+      { term: "Ecdysis (Molting)", ku: "فڕێدانی پێستەکەی کۆن لەژێر هۆرمۆنی گۆڕان؛ کاتێک هۆرمۆنی لاوی دادەبەزێت، گۆڕانەپەڕە ڕێگەپێدراو دەبێت.", en: "Shedding the old cuticle under ecdysone; falling JH permits metamorphic molts.", ar: "انسلاخ تحت الإكديسون؛ انخفاض هرمون الحداثة يسمح بتحول المنسلخ." },
+      { term: "Hemolymph", ku: "شلەی کەلێنی جەستە: خۆراک، هۆرمۆن و خانەی بەرگری دەگوازێتەوە؛ ئۆکسجین زۆرجار لە ڕێگەی بۆریی هەوا دەڕوات، نەک لەم شلەیە.", en: "Hemocoel fluid carrying nutrients, hormones and hemocytes; O₂ usually via tracheae.", ar: "سائل الجوف الحشوي؛ الأكسجين غالباً عبر القصبات لا اللمف." },
+      { term: "Spiracles", ku: "کونی دەرپۆشاو لەسەر لاکەی سنگ و سک؛ دەچنە بۆریی هەوا و بۆریی ورد تا میتۆکۆندریا.", en: "Valved pleural openings into tracheae and tracheoles at the mitochondria.", ar: "ثغور صدرية/بطنية تقود إلى القصبات والقصيبات." },
+      { term: "Ommatidia", ku: "یەکەی بیناییی چاوی ئاڵۆز؛ بینینی ڕووناکیی ڕۆژ یان بینینی کەمڕووناکی.", en: "Optical units of the compound eye (apposition or superposition).", ar: "وحدات العين المركبة — تقابل أو تراكب." },
+      { term: "Jointed Appendages", ku: "لقی جومگەدار — قاچ، ئەنتێنا و ملماس — تایبەتمەندیی فایلەمی جومگەپێیەکان.", en: "Segmented limbs (legs, antennae, palps) — the defining arthropod trait.", ar: "زوائد مفصلية: أرجل وقرون وملامس." },
+      { term: "Exoskeleton", ku: "پێستەکەی دەرەکی: پاراستن، خاڵی پشتیوانی بۆ ماسولکە، و ڕێگری لە وشکبوون؛ گەشە تەنها بە فڕێدانی پێست.", en: "External cuticle: armour, muscle levers and waterproofing; growth only via molt.", ar: "هيكل خارجي واقي؛ النمو بالانسلاخ فقط." },
     ],
   },
 ];
@@ -117,7 +117,7 @@ function ClassExplorer({ lang }) {
       id: "insecta", name: "Insecta",
       title: { ku: "مێرووەکان", ar: "الحشرات", en: "Insects" },
       rows: {
-        ku: [["قاچ", "٦ (hexapod، uniramous)"], ["ئەنتێنا", "١ جووت"], ["جەستە", "٣ tagmata: cephalon / thorax / abdomen"], ["نموونە", "Formicidae، Papilio، Musca"]],
+        ku: [["قاچ", "٦، یەکلق"], ["ئەنتێنا", "١ جووت"], ["جەستە", "٣ بەش: سەر / سنگ / سک"], ["نموونە", "Formicidae، Papilio، Musca"]],
         ar: [["الأرجل", "٦ (hexapod)"], ["قرون الاستشعار", "زوج واحد"], ["الجسم", "٣ tagmata"], ["أمثلة", "Formicidae، Papilio، Musca"]],
         en: [["Legs", "6 (hexapod, uniramous)"], ["Antennae", "1 pair"], ["Body", "3 tagmata: head / thorax / abdomen"], ["Examples", "Formicidae, Papilio, Musca"]],
       },
@@ -126,7 +126,7 @@ function ClassExplorer({ lang }) {
       id: "arachnida", name: "Arachnida",
       title: { ku: "جاڵجاڵۆکەییەکان", ar: "العنكبيات", en: "Arachnids" },
       rows: {
-        ku: [["قاچ", "٨ (٤ جووت)"], ["ئەنتێنا", "نییە؛ pedipalps + chelicerae"], ["جەستە", "prosoma + opisthosoma"], ["نموونە", "Araneae، Scorpiones"]],
+        ku: [["قاچ", "٨ (٤ جووت)"], ["ئەنتێنا", "نییە؛ ملماس و چەناگەی تایبەت"], ["جەستە", "پێشەوە و دواوە"], ["نموونە", "جاڵجاڵۆکە، دووپشک"]],
         ar: [["الأرجل", "٨"], ["قرون الاستشعار", "لا؛ ملامس وكلاّبات"], ["الجسم", "prosoma وopisthosoma"], ["أمثلة", "Araneae، Scorpiones"]],
         en: [["Legs", "8 (4 pairs)"], ["Antennae", "none; pedipalps + chelicerae"], ["Body", "prosoma + opisthosoma"], ["Examples", "Araneae, Scorpiones"]],
       },
@@ -135,7 +135,7 @@ function ClassExplorer({ lang }) {
       id: "crustacea", name: "Crustacea",
       title: { ku: "قڕژاڵییەکان", ar: "القشريات", en: "Crustaceans" },
       rows: {
-        ku: [["قاچ", "زۆرجار biramous، چەند جووت"], ["ئەنتێنا", "٢ جووت (antennules + antennae)"], ["جەستە", "زۆرجار cephalothorax + abdomen"], ["نموونە", "Decapoda، Isopoda"]],
+        ku: [["قاچ", "زۆرجار دوولق، چەند جووت"], ["ئەنتێنا", "٢ جووت"], ["جەستە", "زۆرجار سەرسینگ و سک"], ["نموونە", "Decapoda، Isopoda"]],
         ar: [["الأرجل", "غالباً biramous"], ["قرون الاستشعار", "زوجان"], ["الجسم", "رأسصدري وبطن"], ["أمثلة", "Decapoda، Isopoda"]],
         en: [["Legs", "often biramous, several pairs"], ["Antennae", "2 pairs"], ["Body", "often cephalothorax + abdomen"], ["Examples", "Decapoda, Isopoda"]],
       },
@@ -144,7 +144,7 @@ function ClassExplorer({ lang }) {
       id: "myriapoda", name: "Myriapoda",
       title: { ku: "هەزارپێ و سەپێ", ar: "ذوات الألف رجل", en: "Myriapods" },
       rows: {
-        ku: [["قاچ", "زۆر / سێگمێنت (Diplopoda ٢ جووت؛ Chilopoda ١)"], ["ئەنتێنا", "١ جووت"], ["جەستە", "سەر + trunkی فرەسێگمێنت"], ["نموونە", "Diplopoda، Chilopoda"]],
+        ku: [["قاچ", "زۆر لەسەر سێگمێنت (هەزارپێ ٢ جووت؛ سەپێ ١)"], ["ئەنتێنا", "١ جووت"], ["جەستە", "سەر و تەنێکی فرەسێگمێنت"], ["نموونە", "هەزارپێ، سەپێ"]],
         ar: [["الأرجل", "كثيرة (زوجان/قطعة في الدبلوبودا)"], ["قرون الاستشعار", "زوج واحد"], ["الجسم", "رأس وجذع متعدد القطع"], ["أمثلة", "Diplopoda، Chilopoda"]],
         en: [["Legs", "many (2 pairs/segment in Diplopoda; 1 in Chilopoda)"], ["Antennae", "1 pair"], ["Body", "head + multi-segment trunk"], ["Examples", "Diplopoda, Chilopoda"]],
       },
@@ -164,7 +164,7 @@ function ClassExplorer({ lang }) {
       </div>
       <p className="ento-body">
         {lang === "ku"
-          ? "چوار کلادی سەرەکیی Arthropoda (لێرە وەک پۆلی فێرکاری): Insecta، Arachnida، Crustacea، Myriapoda. گروپێک هەڵبژێرە — جیاوازییەکان لەسەر appendages و tagmosis وەستاون."
+          ? "چوار کلادی سەرەکیی Arthropoda (لێرە وەک پۆلی فێرکاری): Insecta، Arachnida، Crustacea، Myriapoda. گروپێک هەڵبژێرە — جیاوازییەکان لەسەر لقی جومگەدار و تاگمۆسیس وەستاون."
           : lang === "ar"
           ? "أربع مجموعات تعليمية من مفصليات الأرجل. الفرق في الزوائد وتقسيم الجسم."
           : "Four teaching-grade arthropod groups. Contrasts rest on appendages and tagmosis."}

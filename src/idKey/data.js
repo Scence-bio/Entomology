@@ -8,7 +8,7 @@ export const ORDERS = {
     image: "/images/plates/ch5-machaon.jpg",
     name: { ku: "پەپوولە / پەپوولەی شەو", ar: "فراشة / عثة", en: "Butterfly or moth" },
     tip: {
-      ku: "Scalesی کایتین لەسەر باڵ؛ siphoning proboscis؛ Holometabola (لارڤا ≠ گەورە + پوپا).",
+      ku: "قاوی کایتین لەسەر باڵ؛ خرطومی مژەری؛ گۆڕانەپەڕەی تەواو (لارڤا ≠ گەورە + پیت).",
       ar: "حراشف كيتينية وخرطوم ماص؛ تحول كامل.",
       en: "Chitinous scales on wings; siphoning proboscis; holometabolous (larva ≠ adult + pupa).",
     },
@@ -21,7 +21,7 @@ export const ORDERS = {
     image: "/images/plates/ch6-bee.jpg",
     name: { ku: "مێروولە، هەنگ یان زەنبوور", ar: "نمل أو نحل أو زنابير", en: "Ant, bee or wasp" },
     tip: {
-      ku: "Petiole (wasp-waist)؛ hamuli؛ زۆرجار haplodiploidy؛ کارگەری Formicidae بێباڵە.",
+      ku: "کەمەری باریک؛ چنگی بەستنی باڵ؛ زۆرجار هاپلۆدیپلۆیدی؛ کارگەری Formicidae بێباڵە.",
       ar: "خصر petiole وhamuli؛ شغالة النمل بلا أجنحة؛ haplodiploidy شائع.",
       en: "Petiole waist; hamuli couple the wings; often haplodiploid; Formicidae workers apterous.",
     },
@@ -34,7 +34,7 @@ export const ORDERS = {
     image: "/images/plates/ch7-ladybird.jpg",
     name: { ku: "قوڕقوڕە", ar: "خنفساء", en: "Beetle" },
     tip: {
-      ku: "Elytraی sclerotized + sutureی mid-dorsal؛ hindwingی membranous؛ Holometabola.",
+      ku: "قاوغباڵی ڕەق + درزی ناوەڕاستی پشت؛ باڵی دواوەی پەردەیی؛ گۆڕانەپەڕەی تەواو.",
       ar: "أغماد متصلبة على خط ظهري؛ جناح طيران غشائي؛ تحول كامل.",
       en: "Sclerotized elytra with mid-dorsal suture; membranous hindwings; holometabolous.",
     },
@@ -47,7 +47,7 @@ export const ORDERS = {
     image: "/images/plates/ch8-mosquito.jpg",
     name: { ku: "مێش یان مێشوولە", ar: "ذبابة أو بعوضة", en: "Fly or mosquito" },
     tip: {
-      ku: "یەک جووت باڵی فڕین + halteresی gyroscopic؛ لارڤا زۆرجار apodous.",
+      ku: "یەک جووت باڵی فڕین + هەڵتەری هاوسەنگی؛ لارڤا زۆرجار بێقاچە.",
       ar: "زوج طيران واحد وhalteres؛ اليرقة غالباً بلا أرجل ظاهرة.",
       en: "One flight pair + gyroscopic halteres; larvae often apodous maggots.",
     },
@@ -60,7 +60,7 @@ export const ORDERS = {
     image: "/images/plates/ch10-bug.jpg",
     name: { ku: "شەتەک یان سنە", ar: "من أو بق", en: "Aphid or true bug" },
     tip: {
-      ku: "Rostrumی piercing-sucking؛ hemelytra لە Heteroptera؛ Hemimetabola؛ Aphididae زۆرجار بێباڵ.",
+      ku: "دەمی کونکەر-مژەر؛ باڵی نیوەقاوغ لە Heteroptera؛ گۆڕانەپەڕەی ناتەواو؛ Aphididae زۆرجار بێباڵ.",
       ar: "فم ثاقب ماص؛ أجنحة نصفية في البق؛ تحول ناقص؛ المن غالباً بلا جناح.",
       en: "Piercing-sucking rostrum; hemelytra in Heteroptera; hemimetabolous; aphids often wingless.",
     },
@@ -73,7 +73,7 @@ export const ORDERS = {
     image: "/images/plates/ch11-dragon.jpg",
     name: { ku: "جڕوشک یان سیسرک", ar: "جندب أو صرصار الليل", en: "Grasshopper or cricket" },
     tip: {
-      ku: "Hind femurی saltatorial؛ tegmina؛ زۆرجار stridulation؛ Hemimetabola.",
+      ku: "ڕانی دواوەی گەورە بۆ بازدان؛ باڵی پێشەوەی چەرمین؛ زۆرجار دەنگی جووتبوون؛ گۆڕانەپەڕەی ناتەواو.",
       ar: "فخذ خلفي للقفز وصرير شائع؛ تحول ناقص.",
       en: "Saltatorial hind femora; often tegmina and stridulation; hemimetabolous.",
     },
@@ -86,7 +86,7 @@ export const ORDERS = {
     image: "/images/plates/ch3-dragonfly.jpg",
     name: { ku: "مێرووی ئاو", ar: "رعاش", en: "Dragonfly or damselfly" },
     tip: {
-      ku: "چاوی ئاڵۆزی گەورە؛ باڵی net-veined؛ aerial predator؛ naiadی ئاوی + labial mask.",
+      ku: "چاوی ئاڵۆزی گەورە؛ باڵی تۆڕئاسا؛ نێچیرگری ئاسمانی؛ نەمفی ئاوی لەگەڵ دەمامکی چەناگە.",
       ar: "عين مركبة كبيرة وأجنحة شبكية؛ حورية مائية بفك مندفع.",
       en: "Huge compound eyes; net-veined wings; aerial adult; aquatic naiad with labial mask.",
     },
@@ -99,7 +99,7 @@ export const ORDERS = {
     image: "/images/plates/ch13-lacewing.jpg",
     name: { ku: "تۆڕباڵ", ar: "أسد المن", en: "Lacewing or antlion" },
     tip: {
-      ku: "باڵی soft net-veined؛ بێ scales/elytra/petiole؛ لارڤای aphidophagous؛ Holometabola.",
+      ku: "باڵی نەرمی تۆڕئاسا؛ بێ قاو و بێ قاوغباڵ و بێ کەمەری باریک؛ لارڤای شەتەکخۆر؛ گۆڕانەپەڕەی تەواو.",
       ar: "جناح شبكي لين بلا حراشف ولا خصر؛ يرقة تفترس المن؛ تحول كامل.",
       en: "Soft net-veined wings; no scales, elytra or petiole; aphidophagous larva; holometabolous.",
     },
@@ -116,7 +116,7 @@ export const TRAITS = [
   { id: "halteres", ku: "هەڵتەر لە پشت باڵ", ar: "دبابيس توازن", en: "Halteres behind the wings" },
   { id: "hemelytra", ku: "باڵی نیوە قاوغ", ar: "جناح نصفه صلب", en: "Half-hard forewings" },
   { id: "narrow_waist", ku: "کەمەری باریک", ar: "خصر ضيق", en: "Narrow waist" },
-  { id: "no_waist", ku: "بێ کەمەری باریک", ar: "بلا خصر ضيق", en: "No narrow waist" },
+  { id: "no_waist", ku: "بێکەمەری باریک", ar: "بلا خصر ضيق", en: "No narrow waist" },
   { id: "piercing_beak", ku: "دەمی کونکەر", ar: "فم ثاقب ماص", en: "Piercing-sucking beak" },
   { id: "proboscis", ku: "خرطومی پێچراو", ar: "خرطوم ملفوف", en: "Coiled drinking proboscis" },
   { id: "jumping_legs", ku: "قاچی دواوە بۆ باز", ar: "أرجل خلفية للقفز", en: "Hind legs built for jumping" },
@@ -159,7 +159,7 @@ export const KEY_NODES = {
       en: "If it looks like a small adult → incomplete. If it is a different larva or a pupa → complete.",
     },
     choices: [
-      { label: { ku: "لە گەورەکەی دەچێت (بێ پیت)", ar: "تشبه البالغ (بلا شرنقة)", en: "Looks like a small adult (no pupa)" }, next: "nymph_kind", icon: "body" },
+      { label: { ku: "لە گەورەکەی دەچێت (بێپیت)", ar: "تشبه البالغ (بلا شرنقة)", en: "Looks like a small adult (no pupa)" }, next: "nymph_kind", icon: "body" },
       { label: { ku: "کرم / کۆڵۆک یان پیتی جیاواز", ar: "يرقة أو شرنقة مختلفة", en: "A larva or distinct pupa" }, next: "larva_kind", icon: "stage" },
     ],
   },
@@ -187,7 +187,7 @@ export const KEY_NODES = {
       { label: { ku: "کۆڵۆکی ڕاوەکەر؛ شەتەک دەخوات", ar: "يرقة مفترسة تأكل المن", en: "Predatory larva that eats aphids" }, next: "neuroptera", icon: "hunt" },
       { label: { ku: "پیتی سەوز یان قاوغدار (پەپوولە)", ar: "شرنقة خضراء أو حرشفية", en: "Chrysalis / moth pupa" }, next: "lepidoptera", icon: "stage" },
       { label: { ku: "کۆڵۆکی ناو خاک / قاوغ — قوڕقوڕە", ar: "يرقة في التربة أو غلاف — خنفساء", en: "Soil / grub larva — beetle" }, next: "coleoptera", icon: "body" },
-      { label: { ku: "ماگۆت یان کۆڵۆکی بێ قاچ — مێش", ar: "يرقة بلا أرجل ظاهرة — ذبابة", en: "Maggot-like larva — fly" }, next: "diptera", icon: "wing" },
+      { label: { ku: "ماگۆت یان کۆڵۆکی بێقاچ — مێش", ar: "يرقة بلا أرجل ظاهرة — ذبابة", en: "Maggot-like larva — fly" }, next: "diptera", icon: "wing" },
       { label: { ku: "لە ناو خانەی هەنگ / زەنبوور", ar: "داخل خلية نحل أو زنابير", en: "Inside a bee or wasp nest cell" }, next: "hymenoptera", icon: "waist" },
     ],
   },
@@ -238,7 +238,7 @@ export const KEY_NODES = {
       { label: { ku: "قاوغی ڕەق؛ هێڵێکی ڕاست لەسەر پشت", ar: "غمد صلب وخط مستقيم على الظهر", en: "Hard covers; straight line on the back" }, next: "coleoptera", icon: "shell" },
       { label: { ku: "نیوە قاوغ، نیوە پەردە", ar: "نصفه صلب ونصفه غشاء", en: "Half hard, half membrane" }, next: "hemiptera", icon: "beak" },
       { label: { ku: "پۆشراو بە قاوی ڕەنگاوڕەنگ", ar: "مغطى بحراشف ملونة", en: "Covered in colourful scales" }, next: "lep_check", icon: "scale" },
-      { label: { ku: "پەردەیی / تۆڕاوی، بێ قاو", ar: "غشائي أو شبكي بلا حراشف", en: "Membranous or netted, no scales" }, next: "membrane", icon: "net" },
+      { label: { ku: "پەردەیی / تۆڕاوی، بێقاو", ar: "غشائي أو شبكي بلا حراشف", en: "Membranous or netted, no scales" }, next: "membrane", icon: "net" },
     ],
   },
   lep_check: {
@@ -270,7 +270,7 @@ export const KEY_NODES = {
       { label: { ku: "کەمەری باریک + باڵی پەردەیی", ar: "خصر ضيق + أجنحة غشائية", en: "Narrow waist + membranous wings" }, next: "hymenoptera", icon: "waist" },
       { label: { ku: "قاچی دواوە درێژ بۆ باز", ar: "أرجل خلفية للقفز", en: "Long hind legs for jumping" }, next: "orthoptera", icon: "jump" },
       { label: { ku: "چاوی گەورە؛ باڵ کراوە یان تاودراو", ar: "عين كبيرة؛ أجنحة مفتوحة أو مطوية", en: "Huge eyes; wings open or folded" }, next: "odonata", icon: "eye" },
-      { label: { ku: "باڵی تۆڕاوی نەرم، بێ کەمەر", ar: "جناح شبكي لين بلا خصر", en: "Soft netted wings, no waist" }, next: "neuroptera", icon: "net" },
+      { label: { ku: "باڵی تۆڕاوی نەرم، بێکەمەر", ar: "جناح شبكي لين بلا خصر", en: "Soft netted wings, no waist" }, next: "neuroptera", icon: "net" },
     ],
   },
 };

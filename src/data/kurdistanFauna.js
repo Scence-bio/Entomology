@@ -211,7 +211,7 @@ export const FAUNAL_STUDIES = [
       en: "Fourteen Ichneumonidae species new to Iraq from Kurdistan",
     },
     finding: {
-      ku: "پێشتر تەنها ١٨ جۆری ناسراو لە عێراق هەبوون. بە تەڵەی مالایز لە هەولێر ١٤ جۆر بۆ یەکەمجار بۆ وڵات تۆمار کران، لەوانە Campoletis و Pimpla و Diadromus. نمونەکان لە مۆزەخانەی مێژووی سروشتیی لەندەن (NHMUK) پارێزراون — نموونەیەکی کلاسیکی پارازیتۆید بۆ وانەی کۆنترۆڵی زیندوو.",
+      ku: "پێشتر تەنها ١٨ جۆری ناسراو لە عێراق هەبوون. بە تەڵەی مالایز لە هەولێر ١٤ جۆر بۆ یەکەمجار بۆ وڵات تۆمار کران، لەوانە Campoletis و Pimpla و Diadromus. نمونەکان لە مۆزەخانەی مێژووی سروشتیی لەندەن (NHMUK) پارێزراون — نموونەیەکی کلاسیکی پارازیتۆید بۆ وانەی کۆنترۆڵی زیندەیی.",
       ar: "كان العراق يعرف ١٨ نوعاً فقط. بمصيدة مالايز في أربيل سُجّل ١٤ نوعاً لأول مرة للبلد (منها Campoletis وPimpla وDiadromus). العينات محفوظة في متحف التاريخ الطبيعي بلندن (NHMUK) — مثال كلاسيكي للطفيليات في تدريس المكافحة الحيوية.",
       en: "Iraq previously held only 18 identified ichneumonids. A Malaise-trap survey near Erbil adds 14 first country records (including Campoletis, Pimpla, Diadromus). Specimens deposited at NHMUK — a canonical parasitoid case for biocontrol teaching.",
     },
@@ -316,7 +316,7 @@ export const ACADEMIC_LEXICON = [
   },
   {
     term: "IPM",
-    ku: "بەڕێوەبردنی تێکەڵاوی زیانبەخش — چاودێری، ئاستی زیانی ئابووری، کۆنترۆڵی زیندوو، و کیمیایی وەک دوا هەنگاو.",
+    ku: "بەڕێوەبردنی تێکەڵاوی زیانبەخش — چاودێری، ئاستی زیانی ئابووری، کۆنترۆڵی زیندەیی، و کیمیایی وەک دوا هەنگاو.",
     ar: "الإدارة المتكاملة للآفات — الرصد والعتبة الاقتصادية والمكافحة الحيوية ثم الكيمياء كآخر خيار.",
     en: "Integrated Pest Management — monitoring, economic thresholds, biocontrol, with chemistry as a last resort.",
   },

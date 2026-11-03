@@ -144,7 +144,7 @@ const HYMENOPTERA = {
       num: "٠١ · 01",
       title: { ku: "پێناسە", ar: "التعريف", en: "What they are" },
       body: {
-        ku: "Hymenoptera یەکێک لە گەورەترین ئۆردەرەکانە (Symphyta + Apocrita). ناوی hymen «پەردە» + pteron «باڵ»: دوو جووت باڵی membranous؛ لە Apocritaـدا hamuli باڵی پێش و دواوە دەبەستێتەوە بۆ یەک ڕووی فڕین. propodeum و petiole کەمەری باریک (wasp-waist) دروست دەکەن. گۆڕانەپەڕە holometabolousـە. Aculeata (هەنگ، زەنبوور، مێروولە) ovipositorیان بووە بە نیشتر؛ Parasitica زۆربەیان parasitoidن. haplodiploidy: نێر لە هێلکەی unfertilized (haploid)، مێ لە fertilized (diploid) — بنەمای تیۆری kin selection بۆ eusociality. ئیکۆلۆجی: pollination، predation، parasitism و bioturbation.",
+        ku: "Hymenoptera یەکێکە لە گەورەترین ئۆردەرەکان و دوو کلادی سەرەکی دەگرێتەوە: Symphyta و Apocrita. ناوەکە لە hymen «پەردە» و pteron «باڵ»ەوە هاتووە و دوو جووت باڵی پەردەیی هەیە. لە Apocritaـدا hamuli، چنگی بچووکی سەر لێواری باڵ، باڵی پێشەوە و باڵی دواوە دەیبەستنەوە، بۆ ئەوەی یەک ڕووی فڕین دروست ببێت. propodeum و petiole پێکەوە کەمەری باریک دروست دەکەن، ئەو کەمەرەی کە بە کەمەری زەنبوور ناسراوە. گۆڕانەپەڕەکەی تەواوە. لە Aculeata (هەنگ، زەنبوور و مێروولە) ovipositor، واتە ئامێری هێلکەدانان، بووە بە نیشتر؛ لە Parasitica زۆربەیان پارازیتۆیدن. لە هاپلۆدیپلۆیدیدا نێر لە هێلکەی نەپیتێنراوی هاپلۆید دەر دەکەوێت و مێ لە هێلکەی پیتێنراوی دیپلۆید دەر دەکەوێت؛ بنەمای تیۆریی هەڵبژاردنی خزم، بۆ ڕوونکردنەوەی کۆمەڵایەتیی ڕاستەقینە، هەر ئەم ڕێکخستنەیە. لە ڕووی ئیکۆلۆجییەوە ڕۆڵیان بریتییە لە پەیتاندن، نێچیرگری، پارازیتیزم و هەڵگەڕانی خاک.",
         ar: "Hymenoptera من أكبر الرتب (Symphyta وApocrita). جناحان غشائيان مع hamuli في Apocrita وخصر petiole. تحول كامل. Aculeata ذات حمة؛ كثير من Parasitica طفيليات. haplodiploidy يفسر جزئياً eusociality. أدوار: تلقيح وافتراس وتطفل وتهوية تربة.",
         en: "Hymenoptera is among the largest orders (Symphyta + Apocrita). The name means membrane-wing: two membranous pairs; Apocrita couple them with hamuli. A petiole creates the narrow waist. Development is holometabolous. Aculeata have a sting derived from the ovipositor; many Parasitica are parasitoids. Haplodiploidy (haploid males, diploid females) underpins kin-selection models of eusociality. Roles: pollination, predation, parasitism and soil bioturbation.",
       },
@@ -154,7 +154,7 @@ const HYMENOPTERA = {
       num: "٠٢ · 02",
       title: { ku: "سێ خێزان", ar: "ثلاث فصائل", en: "Three families" },
       body: {
-        ku: "سێ خێزانی Apocrita: eusocial Formicidae، pollinatorی Apidae، و parasitoidی Ichneumonidae — هەمان ئۆردەر، nicheی جیاواز.",
+        ku: "سێ خێزانی Apocrita: Formicidaeـی خاوەن کۆمەڵایەتیی ڕاستەقینە، Apidaeـی پەیتێنەر، و Ichneumonidaeـی پارازیتۆید. هەمان ئۆردەرە، بەڵام نیچی ئیکۆلۆجییان جیاوازە.",
         ar: "ثلاث فصائل: نمل اجتماعي ونحل ملقّح وزنابير طفيلية.",
         en: "Three Apocrita families: eusocial ants, pollinating bees and parasitoid wasps — one order, divergent niches.",
       },
@@ -164,7 +164,7 @@ const HYMENOPTERA = {
           name: "Formicidae",
           title: { ku: "مێروولە", ar: "النمل", en: "Ants" },
           rows: {
-            ku: [["باڵ", "کارگەر apterous؛ alate تەنها بۆ nest founding"], ["کۆمەڵگە", "eusocial: queen / workers / males؛ caste polymorphism"], ["کار", "bioturbation، granivory (Messor)، predation/tending"]],
+            ku: [["باڵ", "کارگەر بێباڵە؛ باڵدار تەنها بۆ دامەزراندنی هێلانە دەر دەکەوێت"], ["کۆمەڵگە", "کۆمەڵایەتیی ڕاستەقینە: شا، کارگەر و نێر؛ شێوەی چینەکان جیاوازە"], ["کار", "هەڵگەڕانی خاک، دانەخۆری (Messor)، نێچیرگری و چاودێریی شەتەک"]],
             ar: [["الأجنحة", "الشغالة بلا جناح"], ["المستعمرة", "eusocial: ملكة وشغالة وذكور"], ["العمل", "تهوية تربة وبذور وافتراس"]],
             en: [["Wings", "workers apterous; alates for dispersal"], ["Colony", "eusocial castes: queen, workers, males"], ["Work", "bioturbation, granivory, predation"]],
           },
@@ -174,7 +174,7 @@ const HYMENOPTERA = {
           name: "Apidae",
           title: { ku: "هەنگ", ar: "النحل", en: "Bees" },
           rows: {
-            ku: [["موو", "plumose hairs + corbicula/scopa بۆ pollen"], ["خۆراک", "nectar + pollen (گەورە و لارڤا)"], ["نموونە", "Apis mellifera، Bombus، Xylocopa"]],
+            ku: [["موو", "مووی لقڵق؛ corbicula یان scopa بۆ گەردی گوڵ"], ["خۆراک", "شیلەی گوڵ و گەردی گوڵ، بۆ گەورە و بۆ لارڤا"], ["نموونە", "Apis mellifera، Bombus، Xylocopa"]],
             ar: [["الشعر", "شعيرات متفرعة وسلة لقاح"], ["الغذاء", "رحيق وحبوب لقاح"], ["أمثلة", "Apis وBombus وXylocopa"]],
             en: [["Hair", "plumose hairs; corbicula/scopa for pollen"], ["Food", "nectar and pollen"], ["Examples", "Apis mellifera, Bombus, Xylocopa"]],
           },
@@ -184,7 +184,7 @@ const HYMENOPTERA = {
           name: "Ichneumonidae",
           title: { ku: "زەنبووری پارازیتۆید", ar: "الزنابير الطفيلية", en: "Parasitoid wasps" },
           rows: {
-            ku: [["ئامراز", "ovipositorی درێژ (endo/ecto-parasitoid)"], ["کار", "هێلکە لە/لەسەر host larva → host دەکوژرێت"], ["بەکارهێنان", "classical & augmentative biocontrol"]],
+            ku: [["ئامراز", "ovipositorـی درێژ؛ پارازیتۆیدی ناوەکی یان دەرەکی"], ["کار", "هێلکە لەناو لارڤای میوان یان لەسەری دادەنرێت و میوان دەکوژرێت"], ["بەکارهێنان", "کۆنترۆڵی زیندەیی لە شێوازی کلاسیک و زیادکراودا"]],
             ar: [["الأداة", "حامل بيض طويل"], ["العمل", "طفيل يقتل العائل"], ["الاستعمال", "مكافحة حيوية"]],
             en: [["Tool", "elongate ovipositor"], ["Work", "egg in/on host larva; host usually dies"], ["Use", "classical and augmentative biocontrol"]],
           },
@@ -216,7 +216,7 @@ const COLEOPTERA = {
   focus: "center 42%",
   num: { ku: "چاپتەری شەشەم", ar: "الفصل السادس", en: "Chapter 6" },
   title: { ku: "قوڕقوڕەکان", ar: "الخنافس", en: "Beetles" },
-  subtitle: { ku: "Elytra · Coccinellidae · Carabidae", ar: "الأغماد · Coccinellidae · Carabidae", en: "Elytra · Coccinellidae · Carabidae" },
+  subtitle: { ku: "قاوغباڵ · Coccinellidae · Carabidae", ar: "الأغماد · Coccinellidae · Carabidae", en: "Elytra · Coccinellidae · Carabidae" },
   alt: { ku: "خاڵخاڵۆکەی حەوت خاڵ", ar: "دعسوقة ذات سبع نقاط", en: "Seven-spot ladybird" },
   blocks: [
     {
@@ -224,7 +224,7 @@ const COLEOPTERA = {
       num: "٠١ · 01",
       title: { ku: "پێناسە", ar: "التعريف", en: "What they are" },
       body: {
-        ku: "Coleoptera گەورەترین ئۆردەری Insectaـیە (~٤٠٠٠٠٠ جۆری وەسفکراو). coleos «قاوغ» + pteron «باڵ»: forewing بووە بە elytraی sclerotized کە لە mesothoraxـەوە دێن و لەسەر خطی mid-dorsal (suture) یەک دەگرن؛ hindwingی membranous بۆ فڕین دەپارێزرێت. pronotum گەورەیە؛ گۆڕانەپەڕە holometabolousـە (لارڤای campodeiform یان scarabaeiform). خێزانەکان: Coccinellidae (پێشەنگی biocontrolی شەتەک)، Carabidae (زەوی)، Scarabaeidae، Curculionidae (زیانبەخشی کشتوکاڵی). elytra ڕێگە دەدات بژیون لە ژینگەی وشک و ژێر قەڵبەدا.",
+        ku: "Coleoptera گەورەترین ئۆردەری Insectaـیە و نزیکەی ٤٠٠٠٠٠ جۆری وەسفکراو دەگرێتەوە. ناوەکە لە coleos «قاوغ» و pteron «باڵ»ەوە هاتووە: باڵەکانی پێشەوە بوون بە قاوغباڵی ڕەقبوو، لە mesothoraxـەوە دێن و لەسەر هێڵی ناوەڕاستی پشت، لە درزی suture، یەک دەگرن؛ باڵی دواوەی پەردەیی بۆ فڕین لەژێریان دەپارێزرێت. pronotum، واتە پارچەی پشتی سەنگی پێشەوە، گەورەیە. گۆڕانەپەڕەکەی تەواوە و لارڤاکەی campodeiform یان scarabaeiformـە. خێزانە سەرەکییەکان ئەمانەن: Coccinellidae، پێشەنگی کۆنترۆڵی زیندەیی دژ بە شەتەک؛ Carabidae، قوڕقوڕەی زەوی؛ Scarabaeidae؛ و Curculionidae، زیانبەخشی کشتوکاڵ. قاوغباڵ ڕێگە دەدات لە شوێنی ژیانی وشک و شاراوەدا بژین، لەوانە لەژێر قەڵبەدا.",
         ar: "Coleoptera أكبر رتبة (~٤٠٠ ألف نوع). الأغماد elytra تحمي جناح الطيران. تحول كامل. Coccinellidae للمكافحة الحيوية؛ Curculionidae آفات مهمة.",
         en: "Coleoptera is the largest insect order (~400,000 described species). Forewings are sclerotized elytra meeting at a mid-dorsal suture and shielding membranous hindwings. Development is holometabolous (campodeiform or scarabaeiform larvae). Key families: Coccinellidae (aphid biocontrol), Carabidae, Scarabaeidae, Curculionidae (major crop pests). Elytra enable life in dry and cryptic habitats.",
       },
@@ -234,7 +234,7 @@ const COLEOPTERA = {
       num: "٠٢ · 02",
       title: { ku: "سێ خێزان", ar: "ثلاث فصائل", en: "Three families" },
       body: {
-        ku: "قاوغەکە هەمان شتە. شێوە و خۆراکەکە جیاوازە.",
+        ku: "قاوغباڵەکە هەمان شتە. شێوە و خۆراکەکە جیاوازە.",
         ar: "الغمد واحد. الشكل والطعام يختلفان.",
         en: "The hard cover is the shared mark. Shape and food are not.",
       },
@@ -244,7 +244,7 @@ const COLEOPTERA = {
           name: "Coccinellidae",
           title: { ku: "خاڵخاڵۆکە", ar: "الدعسوقيات", en: "Ladybirds" },
           rows: {
-            ku: [["شێوە", "hemispherical؛ aposematic spots"], ["خۆراک", "لارڤا و گەورە زۆرجار aphidophagous"], ["کار", "predator لە IPM / biocontrol"]],
+            ku: [["شێوە", "نیوەگۆیی؛ خاڵی ئاگادارکەرەوە"], ["خۆراک", "لارڤا و گەورە زۆرجار شەتەکخۆرن"], ["کار", "نێچیرگرن لە بەڕێوەبردنی تێکەڵاوی زیانبەخش و لە کۆنترۆڵی زیندەییدا"]],
             ar: [["الشكل", "نصف كروي ومنقّط"], ["الطعام", "المن غالباً"], ["العمل", "مفترس في المكافحة الحيوية"]],
             en: [["Shape", "hemispherical; often aposematic"], ["Food", "larvae and adults often aphidophagous"], ["Work", "key predators in IPM"]],
           },
@@ -254,7 +254,7 @@ const COLEOPTERA = {
           name: "Carabidae",
           title: { ku: "قوڕقوڕەی زەوی", ar: "الخنافس الأرضية", en: "Ground beetles" },
           rows: {
-            ku: [["قاچ", "cursorial؛ زۆرجار nocturnal cursorial predators"], ["خۆراک", "زۆربە predatory (generalist)"], ["نموونە", "Calosoma sycophanta → Lepidoptera larvae"]],
+            ku: [["قاچ", "قاچی ڕاکەر؛ زۆرجار نێچیرگری شەوانەی ڕاکەرن"], ["خۆراک", "زۆربەیان نێچیرگری گشتین، بێ تایبەتمەندیی تەسک"], ["نموونە", "Calosoma sycophanta → لارڤای Lepidoptera"]],
             ar: [["الأرجل", "عدّاءة"], ["الطعام", "مفترسات عامة غالباً"], ["مثال", "Calosoma على يرقات الفراش"]],
             en: [["Legs", "cursorial runners"], ["Food", "mostly generalist predators"], ["Example", "Calosoma on lepidopteran larvae"]],
           },
@@ -264,7 +264,7 @@ const COLEOPTERA = {
           name: "Scarabaeidae",
           title: { ku: "قوڕقوڕەی قاوغ", ar: "الجعليات", en: "Scarabs" },
           rows: {
-            ku: [["ئەنتێنا", "lamellate club"], ["خۆراک", "dung / roots / floral resources (guild جیاواز)"], ["نموونە", "Cetonia aurata — floricolous"]],
+            ku: [["ئەنتێنا", "گۆچانی پەڕەپەڕ"], ["خۆراک", "سرگین، ڕەگ، یان سەرچاوەی گوڵ، بەپێی دەستەی ئیکۆلۆجی"], ["نموونە", "Cetonia aurata — گوڵنشین"]],
             ar: [["القرون", "صولجان صفائحي"], ["الطعام", "روث أو جذور أو أزهار"], ["مثال", "Cetonia على الأزهار"]],
             en: [["Antennae", "lamellate club"], ["Food", "dung, roots or flowers by guild"], ["Example", "Cetonia aurata on flowers"]],
           },
@@ -303,7 +303,7 @@ const DIPTERA = {
       num: "٠١ · 01",
       title: { ku: "پێناسە", ar: "التعريف", en: "What they are" },
       body: {
-        ku: "Diptera («دوو-باڵ») تەنها یەک جووت باڵی فڕینی کارکردن هەیە لەسەر mesothorax؛ metathoracic wings بوونەتە halteres — هەستەوەری gyroscopic بۆ هاوسەنگی فڕین. گۆڕانەپەڕە holometabolousـە؛ لارڤا زۆرجار apodousـە (maggot). دەم جۆراوجۆرە: piercing-sucking (Culicidaeی مێینە)، sponging (Musca)، یان sucking لەسەر nectar (Syrphidae). Nematocera (مێشوولە و هاوشێوە) و Brachycera (مێشی ماڵ و گوڵ) دوو کلادی گەورەن. Culicidae: Anopheles → Plasmodium؛ Aedes → dengue/Zika؛ Culex → هەندێک arbovirus. forensic و pollination و veterinary entomology زۆر پشتی پێ دەبەستن.",
+        ku: "Diptera («دووباڵ») تەنها یەک جووت باڵی فڕینی کارکردووی هەیە و ئەویش لەسەر mesothorax؛ باڵی metathorax بووە بە halteres، هەستەوەرێکی خولەکی بۆ هاوسەنگی فڕین. گۆڕانەپەڕەکەی تەواوە؛ لارڤا زۆرجار بێقاچە و بە کرمۆکە ناسراوە. دەمەکان جۆراوجۆرن: کونکەر-مژەر لە مێینەی Culicidae، ئاسفەنجی لە Musca، یان مژەر لەسەر شیلەی گوڵ لە Syrphidae. Nematocera (مێشوولە و هاوشێوەکانی) و Brachycera (مێشی ماڵ و مێشی گوڵ) دوو کلادی گەورەن. لە Culicidaeـدا Anopheles گەیەنەری Plasmodiumـە؛ Aedes گەیەنەری دێنگ و زیکایە؛ Culex گەیەنەری هەندێک ئاربۆڤایرۆسە. مێرووناسیی دادوەری، پەیتاندن و مێرووناسیی ڤێتێرنەری زۆر پشتی پێ دەبەستن.",
         ar: "Diptera زوج طيران واحد وhalteres للتوازن. تحول كامل ويرقة غالباً بلا أرجل. أنوفثيلة تنقل الملاريا وأيدس الضنك والزيكا. أقسام Nematocera وBrachycera.",
         en: "Diptera (‘two wings’) retain one functional flight pair; hindwings are gyroscopic halteres. Holometabolous; larvae often apodous maggots. Mouthparts range from piercing-sucking (female Culicidae) to sponging (Musca) or nectar-feeding (Syrphidae). Major clades: Nematocera and Brachycera. Medically: Anopheles–Plasmodium, Aedes–dengue/Zika. Critical for forensic, veterinary and pollination science.",
       },
@@ -323,7 +323,7 @@ const DIPTERA = {
           name: "Culicidae",
           title: { ku: "مێشوولە", ar: "البعوض", en: "Mosquitoes" },
           rows: {
-            ku: [["دەم", "proboscisی piercing-sucking؛ نێر nectar"], ["مێینە", "anautogeny: خوێن بۆ yolk"], ["نەخۆشی", "Anopheles–Plasmodium؛ Aedes–dengue/Zika"]],
+            ku: [["دەم", "بۆریی کونکەر-مژەر (proboscis)؛ نێر زۆرجار شیلەی گوڵ دەمژێت"], ["مێینە", "ئانائۆتۆجینی: خوێن پێویستە بۆ زەردەی هێلکە"], ["نەخۆشی", "Anopheles گەیەنەری Plasmodiumـە؛ Aedes گەیەنەری دێنگ و زیکایە"]],
             ar: [["الفم", "خرطوم ثاقب ماص"], ["الأنثى", "دم لتشكيل البيض"], ["المرض", "Anopheles ملاريا؛ Aedes دنج/زيكا"]],
             en: [["Mouth", "piercing-sucking; males often nectar"], ["Female", "blood meal for egg yolk (anautogeny)"], ["Disease", "Anopheles–Plasmodium; Aedes–dengue/Zika"]],
           },
@@ -333,7 +333,7 @@ const DIPTERA = {
           name: "Muscidae",
           title: { ku: "مێشی ماڵەوە", ar: "الذباب المنزلي", en: "House flies" },
           rows: {
-            ku: [["دەم", "sponging labellum (pseudotracheae)"], ["گەز", "M. domestica non-biting؛ Stomoxys دەگەزێت"], ["زیان", "mechanical vectorی pathogens لەسەر tarsi/labellum"]],
+            ku: [["دەم", "labellumـی ئاسفەنجی (pseudotracheae)"], ["گەز", "M. domestica ناگەزێت؛ Stomoxys دەگەزێت"], ["زیان", "گەیەنەری میکانیکیی نەخۆشخەرەکان لەسەر tarsi و labellum"]],
             ar: [["الفم", "إسفنجي"], ["اللسع", "المنزلية لا تلسع"], ["الضرر", "ناقل آلي للجراثيم"]],
             en: [["Mouth", "sponging labellum"], ["Bite", "M. domestica non-biting; stable flies bite"], ["Harm", "mechanical pathogen vector on tarsi/mouth"]],
           },
@@ -343,7 +343,7 @@ const DIPTERA = {
           name: "Syrphidae",
           title: { ku: "مێشی گوڵ", ar: "ذباب الأزهار", en: "Hoverflies" },
           rows: {
-            ku: [["شێوە", "Batesian mimicryی Apidae/Vespidae؛ ١ جووت باڵ + halteres"], ["گەورە", "pollinatorی کارا"], ["لارڤا", "زۆر aphidophagous (IPM)"]],
+            ku: [["شێوە", "لاساییکردنەوەی بێتسی دەرهەق بە Apidae و Vespidae؛ یەک جووت باڵ و halteres"], ["گەورە", "پەیتێنەرێکی کارا"], ["لارڤا", "زۆریان شەتەکخۆرن، لە بەڕێوەبردنی تێکەڵاوی زیانبەخشدا"]],
             ar: [["الشكل", "تشبه النحل وبزوج واحد"], ["البالغ", "ملقّح"], ["اليرقة", "كثيرها يفترس المن"]],
             en: [["Look", "bee/wasp mimic; one wing pair + halteres"], ["Adult", "active pollinator"], ["Larva", "many aphidophagous (IPM)"]],
           },
@@ -355,7 +355,7 @@ const DIPTERA = {
       num: "٠٣ · 03",
       title: { ku: "جۆرە باوەکانی ناوچەکە", ar: "أنواع شائعة في المنطقة", en: "Common species of the region" },
       body: {
-        ku: "Anopheles superpictus Grassi, 1899 لە ئەدەبیاتی پزیشکی باکووری عێراق (Sulaymaniyah / Kirkuk، ڕووبار و برنج) وەک vectorی Plasmodium تۆمار کراوە؛ لەگەڵ A. sacharovi لە هەڵمەتی WHO–Iraqـی ساڵانی ١٩٥٠دا. لە GBIFـی عێراق ئێستا تۆماری occurrenceی کەمە — کەمیی داتای دیجیتاڵ ≠ کەمیی مێژووی نەخۆشی. Musca domestica و Eristalis tenax نموونەی mechanical vector و pollinator / Batesian mimicـن.",
+        ku: "Anopheles superpictus Grassi, 1899 لە ئەدەبیاتی پزیشکیی باکووری عێراق (Sulaymaniyah / Kirkuk، ڕووبار و کێڵگەی برنج) وەک گەیەنەری Plasmodium تۆمار کراوە، لەگەڵ A. sacharovi لە هەڵمەتی WHO–Iraqـی ساڵانی ١٩٥٠دا. لە GBIFـی عێراقدا ئێستا تۆماری ڕوودان کەمە — کەمیی داتای دیجیتاڵ ≠ کەمیی مێژووی نەخۆشی. Musca domestica نموونەی گەیەنەری میکانیکییە، و Eristalis tenax نموونەی پەیتێنەر و لاسایکەرەوەی بێتسییە.",
         ar: "Anopheles superpictus Grassi, 1899 موثّق في الأدبيات الطبية لشمال العراق (السليمانية/كركوك) كناقل لـPlasmodium مع A. sacharovi في حملة WHO. قلة سجلات GBIF لا تنفي التاريخ الطبي. Musca وEristalis يمثلان ناقلاً آلياً وملقّحاً/محاكياً.",
         en: "Anopheles superpictus Grassi, 1899 is documented in N. Iraq medical entomology (Sulaymaniyah/Kirkuk rivers and rice) as a Plasmodium vector alongside A. sacharovi in the mid-century WHO–Iraq campaign. Sparse modern GBIF occurrences do not erase that history. Musca domestica and Eristalis tenax illustrate mechanical vectors versus pollinator/mimic roles.",
       },
@@ -371,7 +371,7 @@ const DIPTERA = {
 function FieldChapter({ lang, quiz }) {
   const pins = [
     { id: "lep", name: "Lepidoptera", where: { ku: "لە ناوەڕاستی سنگ", ar: "في وسط الصدر", en: "Through the middle of the thorax" } },
-    { id: "col", name: "Coleoptera", where: { ku: "لە ئیلیترۆنی ڕاست، نزیک شانە", ar: "في الغمد الأيمن، قرب الكتف", en: "Through the right elytron, near the shoulder" } },
+    { id: "col", name: "Coleoptera", where: { ku: "لە قاوغباڵی ڕاست، نزیک شانە", ar: "في الغمد الأيمن، قرب الكتف", en: "Through the right elytron, near the shoulder" } },
     { id: "hym", name: "Hymenoptera", where: { ku: "لە سنگ، کەمێک بۆ لای ڕاست", ar: "في الصدر، مائلاً قليلاً إلى اليمين", en: "Through the thorax, a little to the right" } },
     { id: "dip", name: "Diptera", where: { ku: "لە سنگ", ar: "في الصدر", en: "Through the thorax" } },
   ];
@@ -414,7 +414,7 @@ function FieldChapter({ lang, quiz }) {
           </div>
           <p className="ento-body">
             {lang === "ku"
-              ? "sweep net / aerial net بۆ Rhopalocera و Apidae لەسەر گوڵ؛ beating tray یان گەڵابینین بۆ Coccinellidae و Aphididae؛ pitfall trap (دەفری نوقم لە خاک، زۆرجار + preservative) بۆ Carabidaeی epigeic. بۆ Culicidae: larval dipping لە ئاو؛ بۆ parasitoid: rearing لە host. protocolی voucher: GPS/ناوچە، elevation، habitat، host plant، collector، date (Roman month). sample size بچووک بێت (ethics + conservation)؛ بێ locality و date تەنها وێنەیە، نەک museum record."
+              ? "تۆڕی ڕاکێشان و تۆڕی هەوایی بۆ Rhopalocera و Apidae لەسەر گوڵ؛ سینی لێدان یان پشکنینی گەڵا بۆ Coccinellidae و Aphididae؛ تەڵەی چاڵ (دەفرێک کە لە خاکدا نوقم دەکرێت، زۆرجار لەگەڵ ماددەی پارێزەر) بۆ Carabidaeـی سەر ڕووی خاک. بۆ Culicidae، لارڤا بە دەفر لە ئاو دەر دەهێنرێت؛ بۆ پارازیتۆید، لەسەر میوان پەروەردە دەکرێت. پرۆتۆکۆڵی نمونەی سەرچاوە: جی پی ئێس یان ناوچە، بەرزی، شوێنی ژیان، ڕووەکی میوان، کۆکەرەوە، و بەروار (ڕۆژ.مانگی ڕۆمی.ساڵ). ژمارەی نمونە دەبێت بچووک بێت، لەبەر ڕەوشتی کۆکردنەوە و پاراستن؛ بەبێ شوێن و بەروار تەنها وێنەیە، نەک تۆماری مۆزەخانە."
               : lang === "ar"
               ? "شبكة هوائية للفراش والنحل؛ فحص أوراق للمن والدعسوقة؛ مصيدة pitfall لخنافس الأرض. سجّل الإحداثيات والموطن والنبات العائل والجامع والتاريخ. بلا موقع وتاريخ ليست عينة علمية."
               : "Aerial/sweep nets for butterflies and bees; leaf inspection or beating for ladybirds and aphids; pitfall traps for epigeic Carabidae. Mosquito work often uses larval dipping; parasitoids via host rearing. A voucher needs locality (ideally GPS), habitat, host plant, collector and date (day–Roman month–year). Without locality and date it is an image, not a museum record."}
@@ -430,7 +430,7 @@ function FieldChapter({ lang, quiz }) {
           </div>
           <p className="ento-body">
             {lang === "ku"
-              ? "entomological pin (زۆرجار #2–#3) لە لای ڕاستی mid-line تێدەچێت تا charactersی diagnostic (elytra suture، scutellum، wing venation، genitalia) نەشاردرێن. double-mount / minuten بۆ نمونەی زۆر بچووک. ئۆردەرێک هەڵبژێرە."
+              ? "دەرزەی مێرووناسی (زۆرجار ژمارە ٢–٣) لە لای ڕاستی هێڵی ناوەڕاست تێ دەچێت، بۆ ئەوەی نیشانەکانی ناسینەوە نەشاردرێن: درزی قاوغباڵ، scutellum، دەمارەکانی باڵ، و ئەندامی زایەند. بۆ نمونەی زۆر بچووک، دانان لەسەر کارت یان دەرزی minuten بەکاردێت. ئۆردەرێک هەڵبژێرە."
               : lang === "ar"
               ? "الدبوس يمر يمين الخط الوسطي دون إخفاء الصفات التشخيصية. للعينة الدقيقة يُستخدم حامل صغير. اختر رتبة."
               : "A standard entomological pin (often #2–#3) pierces right of the midline so diagnostic characters stay visible. Tiny specimens use minuten or card points. Choose an order."}
@@ -454,7 +454,7 @@ function FieldChapter({ lang, quiz }) {
           </div>
           <p className="ento-body">
             {lang === "ku"
-              ? "labelی standardization: (١) locality + وڵات/ناوچە، (٢) date وەک 12.v.2026 (ڕۆژ.مانگی ڕۆمی.ساڵ)، (٣) habitat / microhabitat، (٤) collector. identification labelی جیا: Genus species Author, Family — لاتینی italic. determination و revision دەتوانن labelی دووەم بن. ئەم کارتە teaching exampleـە، نەک voucherی ڕاستەقینە؛ هەر ئەم خانانە خشتەی پەپوولەی کوردستان پڕ دەکەنەوە."
+              ? "نیشانەی ستاندارد: (١) شوێن لەگەڵ وڵات و ناوچە، (٢) بەروار وەک 12.v.2026 (ڕۆژ.مانگی ڕۆمی.ساڵ)، (٣) شوێنی ژیان و شوێنی ژیانی ورد، (٤) کۆکەرەوە. نیشانەی ناسینەوەی جیا: Genus species Author, Family — بە لاتینیی لار. دیاریکردن و پیاچوونەوە دەتوانن نیشانەی دووەم بن. ئەم کارتە نموونەی فێرکارییە، نەک نمونەی سەرچاوەی ڕاستەقینە؛ هەر ئەم خانانە خشتەی پەپوولەی کوردستان پڕ دەکەنەوە."
               : lang === "ar"
               ? "بطاقة قياسية: المكان والتاريخ (يوم.شهر روماني.سنة) والموطن والجامع؛ ثم الاسم العلمي مائلاً والفصيلة. هذه للتدريس لا كعينة حقيقية."
               : "Standard data label: locality, date as day.Roman-month.year (e.g. 12.v.2026), habitat, collector. A separate ID label carries Genus species Author and Family in italic Latin. Det. slips record later revisions. This card is a teaching mock-up; the same fields power the Kurdistan butterfly table."}
@@ -497,7 +497,7 @@ const HEMIPTERA = {
       num: "٠١ · 01",
       title: { ku: "پێناسە", ar: "التعريف", en: "What they are" },
       body: {
-        ku: "Hemiptera (true bugs sensu lato) هەموویان rostrumی piercing-suckingیان هەیە (styletـەکان لە maxilla/mandible). دوو کلادی گەورە: Heteroptera (سنە — forewing = hemelytron: بنکە coriaceous و نووک membranous) و Sternorrhyncha/Auchenorrhyncha (شەتەک، زنجرە، whitefly). گۆڕانەپەڕە hemimetabolousـە. Aphididae زۆرجار parthenogenesis و telescoping generations؛ honeydew → sooty mold و گواستنەوەی plant virus. Pentatomidae وەک Nezara viridula زیانبەخشی کشتوکاڵین. شەتەک نێچیری سەرەکیی Coccinellidae، Chrysopidae و Syrphidaeـیە لە biocontrolدا.",
+        ku: "Hemiptera (سنەی ڕاستەقینە، sensu lato) هەموویان خرتومێکی کونکەر-مژەریان هەیە (rostrum)؛ ستایلێتەکان لە maxilla و mandible دروست دەبن. دوو کلادی گەورە هەیە: Heteroptera (سنە — باڵی پێشەوە hemelytronـە: بنکەکەی چەرمینە و نووکێکی پەردەیی هەیە) و Sternorrhyncha و Auchenorrhyncha (شەتەک، زنجرە و مێشی سپی). گۆڕانەپەڕەکەی ناتەواوە. لە Aphididae زۆرجار پارسێنۆجێنێسیس هەیە، واتە زاوزێ لە هێلکەی نەپیتێنراو، و نەوە لەناو نەوەدایە، واتە کچ لەناو جەستەی دایکدا هەڵدەگیرێت؛ شیلەی شیرین دەبێتە هۆی کەڕووی ڕەش، و ڤایرۆسی ڕووەک دەگوازنەوە. Pentatomidae، وەک Nezara viridula، زیانبەخشی کشتوکاڵین. شەتەک نێچیری سەرەکیی Coccinellidae، Chrysopidae و Syrphidaeـیە لە کۆنترۆڵی زیندەییدا.",
         ar: "Hemiptera ذات فم ثاقب ماص. Heteroptera بأجنحة نصفية؛ المن غالباً توالد بكري وينقل فيروسات نباتية. فريسة رئيسية للمكافحة الحيوية.",
         en: "Hemiptera share a piercing-sucking rostrum. Heteroptera have hemelytra; Sternorrhyncha include aphids with frequent parthenogenesis, honeydew and plant-virus transmission. Hemimetabolous. Aphids are prime prey for Coccinellidae, Chrysopidae and syrphid larvae in biocontrol; stink bugs such as Nezara viridula are major crop pests.",
       },
@@ -517,7 +517,7 @@ const HEMIPTERA = {
           name: "Aphididae",
           title: { ku: "شەتەک", ar: "المن", en: "Aphids" },
           rows: {
-            ku: [["قەبارە", "بچووک؛ زۆرجار apterous + alate morphs"], ["خۆراک", "phloem sap → honeydew → sooty mold؛ virus vectors"], ["زۆربوون", "parthenogenesis + telescoping generations"]],
+            ku: [["قەبارە", "بچووک؛ زۆرجار شێوەی بێباڵ و شێوەی باڵدار"], ["خۆراک", "شیرەی فلۆئێم → شیلەی شیرین → کەڕووی ڕەش؛ گەیەنەری ڤایرۆسی ڕووەک"], ["زۆربوون", "پارسێنۆجێنێسیس (زاوزێی نەپیتێنراو)؛ نەوە لەناو نەوە"]],
             ar: [["الحجم", "صغير؛ غالباً بلا جناح"], ["الطعام", "عصارة ولسنا عسلية وفيروسات"], ["التكاثر", "توالد بكري سريع"]],
             en: [["Size", "small; apterous and alate morphs"], ["Food", "phloem sap, honeydew, plant viruses"], ["Increase", "parthenogenesis; telescoping generations"]],
           },
@@ -527,7 +527,7 @@ const HEMIPTERA = {
           name: "Pentatomidae",
           title: { ku: "سنەی قەڵغان", ar: "البق الدرعي", en: "Shield bugs" },
           rows: {
-            ku: [["شێوە", "scutellumی گەورە → شێوەی shield"], ["باڵ", "hemelytra (Heteroptera)"], ["بۆن", "metathoracic scent glands (alarm / defence)"]],
+            ku: [["شێوە", "scutellumـی گەورە → شێوەی قەڵغان"], ["باڵ", "hemelytra (Heteroptera)"], ["بۆن", "ڕژێنی بۆنی metathorax (ئاگادارکردنەوە و بەرگری)"]],
             ar: [["الشكل", "درع بخمس زوايا"], ["الجناح", "أجنحة نصفية"], ["الرائحة", "غدد صدرية دفاعية"]],
             en: [["Shape", "enlarged scutellum — shield outline"], ["Wing", "hemelytra"], ["Scent", "metathoracic defensive glands"]],
           },
@@ -537,7 +537,7 @@ const HEMIPTERA = {
           name: "Cicadellidae",
           title: { ku: "مێرووی گەڵا", ar: "نطاطات الأوراق", en: "Leafhoppers" },
           rows: {
-            ku: [["جووڵە", "saltatorial hind legs (Auchenorrhyncha)"], ["خۆراک", "xylem/phloem sap لە گەڵا"], ["زیان", "vectorی phytoplasma / bacteriaی ڕووەک"]],
+            ku: [["جووڵە", "قاچی دواوەی بازدەر (Auchenorrhyncha)"], ["خۆراک", "شیرەی زایلێم و فلۆئێم لە گەڵا"], ["زیان", "گەیەنەری فایتۆپلازما و بەکتریاکانی ڕووەک"]],
             ar: [["الحركة", "قفز"], ["الطعام", "عصارة الورق"], ["الضرر", "نواقل أمراض نباتية"]],
             en: [["Movement", "saltatorial hoppers"], ["Food", "leaf xylem/phloem sap"], ["Harm", "vectors of phytoplasmas and plant bacteria"]],
           },
@@ -576,7 +576,7 @@ const JUMPERS = {
       num: "٠١ · 01",
       title: { ku: "دوو ئۆردەر، یەک گۆڕان", ar: "رتبتان وتحول واحد", en: "Two orders, one kind of change" },
       body: {
-        ku: "Orthoptera و Odonata هەردووکیان hemimetabolousـن (بێ پوپا)، بەڵام ئیکۆلۆجی و مۆرفۆلۆجییان جیاوازە. Orthoptera: hind femurی گەورە بۆ saltatorial jump؛ forewing زۆرجار tegmenی چەرمین؛ زۆر جۆر stridulation بۆ دۆزینەوەی هاوسەر. nymph لە گەورە دەچێت بە wing padی کورت. Odonata: دوو جووت باڵی net-veined یەکسان؛ چاوی ئاڵۆزی زۆر گەورە؛ گەورە aerial predatorـە. naiad/nymphی ئاوی labiumی پێشەوەی extendable (mask) بۆ نێچیر بەکاردەهێنێت — لە گەورەی فڕیو ناچێت، بەڵام هەر بێ پیت دەمێنێتەوە. Anisoptera باڵ کراوە ڕادەگرێت؛ Zygoptera باڵ لەسەر پشت کۆدەکاتەوە.",
+        ku: "Orthoptera و Odonata هەردووکیان گۆڕانەپەڕەی ناتەواویان هەیە (بێپوپا)، بەڵام ئیکۆلۆجی و مۆرفۆلۆجییان جیاوازە. لە Orthoptera ڕانی دواوە گەورەیە بۆ بازدان؛ باڵی پێشەوە زۆرجار tegmenـێکی چەرمینە؛ زۆر جۆر بە خشاندنی باڵ دەنگ دروست دەکەن بۆ دۆزینەوەی هاوسەر. نەمف لە گەورە دەچێت و گۆپکەی باڵی کورت هەیە. لە Odonata دوو جووت باڵی تۆڕدەمار و یەکسان هەیە؛ چاوی ئاڵۆز زۆر گەورەیە؛ گەورەکە لە هەوادا نێچیرگرە. نەمفی ئاوی (naiad) labiumـی پێشخەر، کە پێی دەوترێت دەمامک، بۆ گرتنی نێچیر بەکاردەهێنێت — لە گەورەی فڕیو ناچێت، بەڵام هەر بێپیت دەمێنێتەوە. Anisoptera باڵ کراوە ڕادەگرێت؛ Zygoptera باڵ لەسەر پشت کۆدەکاتەوە.",
         ar: "رتبتان بتحول ناقص. Orthoptera تقفز بفخذ خلفي وقد تصرصر. Odonata صياد جوي بعين كبيرة؛ حوريته مائية بفك مندفع. الرعاشات الكبيرة تبقي الجناح مفتوحاً والرعاشات الصغيرة تطويه.",
         en: "Both orders are hemimetabolous but ecologically distinct. Orthoptera: enlarged hind femora for jumping, often tegmina and stridulation; nymphs resemble adults. Odonata: two equal net-veined wing pairs, huge compound eyes, aerial predators; aquatic nymphs capture prey with an extensible labial mask and do not look like adults, yet still lack a pupa. Anisoptera rest with wings open; Zygoptera fold them over the abdomen.",
       },
@@ -596,7 +596,7 @@ const JUMPERS = {
           name: "Acrididae",
           title: { ku: "جڕوشک", ar: "الجراد", en: "Short-horned grasshoppers" },
           rows: {
-            ku: [["ئەنتێنا", "کورت (< قاچی جەستە) — Caelifera"], ["کات", "زۆرجار diurnal؛ phase polyphenism لە locusts"], ["نموونە", "Schistocerca gregaria (solitary ↔ gregarious)"]],
+            ku: [["ئەنتێنا", "کورت (کورتتر لە درێژیی قاچی جەستە) — Caelifera"], ["کات", "زۆرجار ڕۆژانە؛ دوو شێوەی قۆناغ لە مەڵەشەدا"], ["نموونە", "Schistocerca gregaria (قۆناغی تاک ↔ قۆناغی گەل)"]],
             ar: [["القرون", "قصيرة"], ["الوقت", "نهاري؛ للجراد طوران"], ["مثال", "Schistocerca gregaria"]],
             en: [["Antennae", "short (Caelifera)"], ["Time", "often diurnal; locust phase polyphenism"], ["Example", "Schistocerca gregaria"]],
           },
@@ -606,7 +606,7 @@ const JUMPERS = {
           name: "Gryllidae",
           title: { ku: "سیسرک", ar: "الصراصير", en: "Crickets" },
           rows: {
-            ku: [["ئەنتێنا", "درێژ — Ensifera"], ["دەنگ", "stridulation (tegmen file + scraper)"], ["کات", "زۆرجار nocturnal calling song"]],
+            ku: [["ئەنتێنا", "درێژ — Ensifera"], ["دەنگ", "خشاندنی tegmen (ڕندە و خراشێنەر)"], ["کات", "زۆرجار گۆرانیی بانگکردنی شەوانە"]],
             ar: [["القرون", "طويلة"], ["الصوت", "صرير بالأجنحة"], ["الوقت", "غالباً ليلي"]],
             en: [["Antennae", "long (Ensifera)"], ["Sound", "tegmen stridulation"], ["Time", "often nocturnal song"]],
           },
@@ -616,7 +616,7 @@ const JUMPERS = {
           name: "Libellulidae",
           title: { ku: "مێرووی ئاوی باڵکراوە", ar: "الرعاشات الكبيرة", en: "Dragonflies" },
           rows: {
-            ku: [["باڵ", "Anisoptera: باڵ کراوە لە rest"], ["چاو", "compound eyes زۆر گەورە؛ aerial hunter"], ["naiad", "aquatic + labial mask؛ rectal gills"]],
+            ku: [["باڵ", "Anisoptera: لە کاتی پشوودا باڵ کراوە دەمێنێتەوە"], ["چاو", "چاوی ئاڵۆزی زۆر گەورە؛ نێچیرگری هەوایی"], ["نەمف", "ئاوییە؛ دەمامکی labium؛ ڕیشووی کۆم"]],
             ar: [["الجناح", "مفتوح عند الراحة"], ["العين", "كبيرة جداً"], ["الحورية", "مائية بفك مندفع"]],
             en: [["Wings", "Anisoptera rest open"], ["Eyes", "huge; aerial predators"], ["Naiad", "aquatic labial mask; rectal gills"]],
           },
@@ -626,7 +626,7 @@ const JUMPERS = {
           name: "Coenagrionidae",
           title: { ku: "مێرووی ئاوی باریک", ar: "الرعاشات الصغيرة", en: "Damselflies" },
           rows: {
-            ku: [["باڵ", "Zygoptera: باڵ لەسەر abdomen کۆدەبێتەوە"], ["جەستە", "باریک؛ چاو جیاوازتر لە Anisoptera"], ["naiad", "aquatic؛ زۆرجار caudal gillsی دەرەکی"]],
+            ku: [["باڵ", "Zygoptera: باڵ لەسەر سک کۆدەبێتەوە"], ["جەستە", "باریک؛ کەلێنی نێوان چاوەکان گەورەترە لە هی Anisoptera"], ["نەمف", "ئاوییە؛ زۆرجار ڕیشووی کلکی دەرەکی هەیە"]],
             ar: [["الجناح", "مطوي فوق البطن"], ["الجسم", "رفيع"], ["الحورية", "مائية بخياشيم ذيلية غالباً"]],
             en: [["Wings", "Zygoptera fold over abdomen"], ["Body", "slender; eyes more separated"], ["Naiad", "aquatic; often external caudal gills"]],
           },
@@ -714,7 +714,7 @@ function MetaChapter({ lang, quiz }) {
           </div>
           <p className="ento-body">
             {lang === "ku"
-              ? "Holometabola (Endopterygota): egg → larva (جیاواز لە گەورە) → pupa (histolysis/histogenesis، imaginal discs) → imago. Hemimetabola (Exopterygota): egg → nymph (لە گەورە دەچێت، wing pads دەرەکین) → adult، بێ پوپا. جیاوازییەکە تەنها ژمارەی قۆناغ نییە — پلانی گەشە و ژینگەی لارڤا جیاوازە. وێنەکە chrysalisی Danaus plexippusـە (نموونەی جیهانی؛ لە لیستی کوردستانیی ئەم ئەتڵەسەدا نییە)."
+              ? "Holometabola (Endopterygota): هێلکە → لارڤا (جیاواز لە گەورە) → پیت (تواونەوەی شانەی لارڤا و دروستبوونی شانەی گەورە، لە ڕێگەی دیسکی سەرەتایی) → گەورە (imago). Hemimetabola (Exopterygota): هێلکە → نەمف (لە گەورە دەچێت و گۆپکەی باڵی دەرەکی هەیە) → گەورە، بێپوپا. جیاوازییەکە تەنها ژمارەی قۆناغ نییە — پلانی گەشە و ژینگەی لارڤا جیاوازە. وێنەکە پیتی ڕووتی Danaus plexippusـە (نموونەی جیهانی؛ لە لیستی کوردستانیی ئەم ئەتڵەسەدا نییە)."
               : lang === "ar"
               ? "Holometabola: بيضة ويرقة مختلفة وعذراء ثم بالغ. Hemimetabola: بيضة وحورية تشبه البالغ ثم بالغ بلا عذراء. الصورة شرنقة Danaus plexippus كمثال عالمي."
               : "Holometabola (Endopterygota): egg → dissimilar larva → pupa (imaginal discs) → imago. Hemimetabola (Exopterygota): egg → nymph with external wing pads → adult, no pupa. The split is developmental architecture, not mere stage count. Image: Danaus plexippus chrysalis (global example, not on this atlas’s Kurdistan shortlist)."}
@@ -745,7 +745,7 @@ function MetaChapter({ lang, quiz }) {
           </div>
           <p className="ento-body" style={{ marginBottom: 0 }}>
             {lang === "ku"
-              ? "nymphی Orthoptera/Hemiptera terrestrialـە و لە imago دەچێت (external wing pads). naiadی Odonata aquaticـە؛ labiumی prehensile (mask) بۆ prey capture؛ rectal/ caudal gills بۆ هەناسە. emergence: exuvia لەسەر ڕووەک یان بەرد دەمێنێتەوە و imago دەر دەچێت — هێشتا بێ pupa (hemimetabolous)، بەڵام ecological nicheی nymph ≠ adult."
+              ? "نەمفی Orthoptera و Hemiptera لە وشکانییە و لە گەورە (imago) دەچێت؛ گۆپکەی باڵی دەرەکی هەیە. نەمفی ئاوی Odonata (naiad) ئاوییە؛ labiumـی گرتەیی (دەمامک) بۆ گرتنی نێچیر بەکاردەهێنێت؛ ڕیشووی کۆم یان ڕیشووی کلک بۆ هەناسەیە. exuvia لەسەر ڕووەک یان بەرد دەمێنێتەوە و گەورەکە لێی دەر دەچێت — هێشتا بێپوپایە (گۆڕانەپەڕەی ناتەواو)، بەڵام نیچی ئیکۆلۆجیی نەمف ≠ نیچی گەورە."
               : lang === "ar"
               ? "حورية الجندب والبق تشبه البالغ. حورية الرعاش مائية بفك مندفع وخياشيم؛ تخرج من جلد الانسلاخ بلا عذراء، لكن بيئتها تختلف عن البالغ."
               : "Orthoptera/Hemiptera nymphs are terrestrial and adult-like with external wing pads. Odonata naiads are aquatic predators with a labial mask and gills; the imago emerges from an exuvia — still no pupa, yet nymph and adult niches differ sharply."}
@@ -771,7 +771,7 @@ const NEUROPTERA = {
       num: "٠١ · 01",
       title: { ku: "پێناسە", ar: "التعريف", en: "What they are" },
       body: {
-        ku: "Neuroptera («تۆڕ-باڵ») دوو جووت باڵی membranousی net-veinedی نەرم هەیە، بێ scales و بێ elytra؛ کەمەری باریکی Hymenopteraیان نییە. گۆڕانەپەڕە holometabolousـە. لارڤا campodeiform و زۆرجار piercing-sucking mandiblesی هەیە بۆ مژینی نێچیر — Chrysoperla carnea شەتەک دەخوات (biocontrol). Myrmeleontidae (شێری مێروولە) لارڤای pit-building لە لم. گەورە زۆرجار crepuscularـە و شهد/پەلکە دەخوات. لەگەڵ Megaloptera و Raphidioptera کلادی Neuropterida پێک دەهێنن.",
+        ku: "Neuroptera («تۆڕباڵ») دوو جووت باڵی نەرم، پەردەیی و تۆڕدەمار هەیە، بێقاو و بێقاوغباڵ؛ کەمەری باریکی Hymenopteraـیان نییە. گۆڕانەپەڕەکەی تەواوە. لارڤا campodeiformـە و زۆرجار چەناگەی کونکەر-مژەر هەیە بۆ مژینی نێچیر — Chrysoperla carnea شەتەک دەخوات و لە کۆنترۆڵی زیندەییدا بەکاردێت. Myrmeleontidae (شێری مێروولە) لارڤایەکی چاڵکەر هەیە کە لە لم چاڵ دەکەنێت. گەورە زۆرجار شەوبەیانییە و شیلەی گوڵ و گەردی گوڵ دەخوات. لەگەڵ Megaloptera و Raphidioptera کلادی Neuropterida پێک دەهێنن.",
         ar: "Neuroptera زوجان من أجنحة شبكية لينة بلا حراشف ولا أغماد ولا خصر نحل. تحول كامل. يرقة Chrysoperla تفترس المن؛ Myrmeleontidae تبني حفراً في الرمل. مع Megaloptera وRaphidioptera تكوّن Neuropterida.",
         en: "Neuroptera have two soft net-veined wing pairs, without scales, elytra or a wasp waist. Holometabolous. Chrysoperla larvae are aphid predators (biocontrol); Myrmeleontidae larvae dig sand pits. With Megaloptera and Raphidioptera they form Neuropterida.",
       },
@@ -791,7 +791,7 @@ const NEUROPTERA = {
           name: "Chrysopidae",
           title: { ku: "تۆڕباڵی سەوز", ar: "أسد المن الأخضر", en: "Green lacewings" },
           rows: {
-            ku: [["شێوە", "باڵی green net-veined؛ چاوی زێڕین (golden eyes)"], ["لارڤا", "campodeiform؛ sickle mandibles → Aphididae"], ["کار", "augmentative biocontrol (Chrysoperla)"]],
+            ku: [["شێوە", "باڵی سەوزی تۆڕدەمار؛ چاوی زێڕین"], ["لارڤا", "campodeiform؛ چەناگەی داسئاسا → Aphididae"], ["کار", "کۆنترۆڵی زیندەیی بە شێوازی زیادکراو (Chrysoperla)"]],
             ar: [["الشكل", "جناح أخضر شبكي وعين ذهبية"], ["اليرقة", "تفترس المن بفك منجلي"], ["الدور", "مكافحة حيوية"]],
             en: [["Look", "green net-veined wings; golden eyes"], ["Larva", "campodeiform; sickle jaws on aphids"], ["Role", "augmentative biocontrol"]],
           },
@@ -801,7 +801,7 @@ const NEUROPTERA = {
           name: "Myrmeleontidae",
           title: { ku: "شێری مێروولە", ar: "أسد النمل", en: "Antlions" },
           rows: {
-            ku: [["شێوە", "باڵی درێژ net-veined؛ لە Odonata دەچێت بەڵام لاوازترە"], ["لارڤا", "pit-building لە لم؛ ants وەک prey"], ["شوێن", "sandy / dry soil microhabitats"]],
+            ku: [["شێوە", "باڵی درێژی تۆڕدەمار؛ لە Odonata دەچێت بەڵام لاوازترە"], ["لارڤا", "لە لم چاڵ دەکەنێت؛ نێچیرەکەی مێروولەیە"], ["شوێن", "شوێنی ژیانی وردی لمین و خاکی وشک"]],
             ar: [["الشكل", "جناح طويل شبكي"], ["اليرقة", "حفرة رملية تفترس النمل"], ["الموطن", "رمل وتربة جافة"]],
             en: [["Look", "long net-veined wings; soft dragonfly-like"], ["Larva", "sand-pit ambush on ants"], ["Where", "sandy dry microhabitats"]],
           },

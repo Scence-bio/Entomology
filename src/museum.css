@@ -11,7 +11,9 @@
   --shadow-card:0 14px 36px rgba(48,36,18,0.09);
   --radius-card:2px;
   --ease-out:cubic-bezier(0.16, 1, 0.3, 1);
-  --font-arabic:'IBM Plex Sans Arabic','Noto Kufi Arabic',Tahoma,sans-serif;
+  /* Noto Sans Arabic first: full Kurdish letters ڕ ڵ ێ ە ۆ ڤ */
+  --font-ku:'Noto Sans Arabic','IBM Plex Sans Arabic','Noto Naskh Arabic',Tahoma,sans-serif;
+  --font-arabic:var(--font-ku);
   --font-serif:'Source Serif 4',Georgia,serif;
   --font-mono:'Space Mono',monospace;
   --safe-top:env(safe-area-inset-top,0px);
@@ -52,7 +54,7 @@ input, textarea, button { caret-color:var(--accent); }
 }
 
 .ento-root {
-  font-family:var(--font-arabic);
+  font-family:var(--font-ku);
   overflow-x:hidden;
   min-height:100dvh;
   background:var(--bg-page);
@@ -62,6 +64,23 @@ input, textarea, button { caret-color:var(--accent); }
   scroll-behavior:smooth;
   display:flex;
   flex-direction:column;
+}
+/* Kurdish (ckb): clearer joining for ڕ ڵ ێ ە ۆ */
+html[lang="ckb"] .ento-root,
+html[lang="ckb"] .ento-root button,
+html[lang="ckb"] .ento-root input,
+html[lang="ckb"] .ento-root textarea {
+  font-family:var(--font-ku);
+  font-feature-settings:"locl" 1;
+  word-spacing:0.02em;
+  line-height:1.75;
+}
+html[lang="ckb"] .ento-hero-title-brand,
+html[lang="ckb"] .ento-ch1-title,
+html[lang="ckb"] .ento-prospectus-title {
+  font-family:var(--font-ku);
+  font-weight:800;
+  letter-spacing:-0.01em;
 }
 .ento-app .ento-main {
   flex:1 0 auto;

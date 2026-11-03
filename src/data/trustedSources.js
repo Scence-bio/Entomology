@@ -196,7 +196,7 @@ export const SPECIES = {
     order: "Coleoptera",
     family: "Coccinellidae",
     note: {
-      ku: "نێچیرگری شەتەک؛ لە ناوچەی Palearctic و لە کۆنترۆڵی زیندوودا باوە.",
+      ku: "نێچیرگری شەتەک؛ لە ناوچەی Palearctic و لە کۆنترۆڵی زیندەییدا باوە.",
       ar: "مفترس للمن؛ بالياركتي وشائع في المكافحة الحيوية.",
       en: "Aphid predator; Palearctic and common in biocontrol.",
     },
@@ -264,7 +264,7 @@ export const SPECIES = {
     order: "Neuroptera",
     family: "Chrysopidae",
     note: {
-      ku: "لارڤاکەی شەتەک دەخوات؛ لە کۆنترۆڵی زیندووی زیادکراودا بەکاردێت.",
+      ku: "لارڤاکەی شەتەک دەخوات؛ لە کۆنترۆڵی زیندەییی زیادکراودا بەکاردێت.",
       ar: "يرقتها تفترس المن؛ تُستخدم في المكافحة الحيوية التعزيزية.",
       en: "Aphidophagous larva; used in augmentative biocontrol.",
     },

@@ -14,12 +14,12 @@ const SECTIONS = [
     numEn: "01",
     icon: "",
     titles: {
-      ku: "پێناسەی وردی ئێنتۆمۆلۆجی",
+      ku: "پێناسەی وردی مێرووناسی",
       ar: "التعريف الأكاديمي لعلم الحشرات",
       en: "Advanced Definition",
     },
     body: {
-      ku: `ئێنتۆمۆلۆجی (Entomology) لقێکی زانستی زیندەوەرە کە مێرووەکان (Insecta) دەخوێنێتەوە: شێوەناسی، فیزیۆلۆجی، ژینگەناسی، ڕەفتار، پۆلێن و سیستماتیک، پەرەسەندن، و کارلێکیان لەگەڵ مرۆڤ و کشتوکاڵ. وشەکە لە یۆنانیی کۆنەوە هاتووە: ἔντομον (éntomon) «بڕدراو/مێروو» و -λογία «زانست». مێروو لەناو فایلەمی Arthropoda دان و بە تاگمۆسیس جیا دەکرێنەوە: سێ تاگماتا — سەر، سنگ و سک؛ شەش قاچ (hexapod)؛ یەک جووت ئەنتێنا؛ و زۆرجار باڵ لەسەر سنگە ناوەندی و دواوە. هەناسەدان بە بۆریی هەوا و کونی هەناسە دەبێت؛ سوڕی خوێن کراوەیە؛ پێستەکە لە کایتین و پرۆتینی ڕەقکراو پێک دێت. بەپێی Stork (٢٠١٨) نزیکەی ١ ملیۆن جۆر وەسف کراوە، بەڵام خەمڵاندنی جیهانی ~${(GLOBAL.stork2018.insectsEstimated / 1e6).toFixed(1)} ملیۆن مێروو و ~${GLOBAL.stork2018.undescribedPctApprox}٪ هێشتا نەدۆزراوەتەوە — بۆیە «یەک ملیۆن» تەنها کۆتاییی وەسفە، نەک کۆتاییی سروشت.`,
+      ku: `مێرووناسی (Entomology) لقێکی زانستی زیندەوەرە کە مێرووەکان (Insecta) دەخوێنێتەوە: شێوەناسی، فیزیۆلۆجی، ژینگەناسی، ڕەفتار، پۆلێن و سیستماتیک، پەرەسەندن، و کارلێکیان لەگەڵ مرۆڤ و کشتوکاڵ. وشەکە لە یۆنانیی کۆنەوە هاتووە: ἔντομον (éntomon) «بڕدراو/مێروو» و -λογία «زانست». مێروو لەناو فایلەمی Arthropoda دان و بە تاگمۆسیس جیا دەکرێنەوە: سێ تاگماتا — سەر، سنگ و سک؛ شەش قاچ (hexapod)؛ یەک جووت ئەنتێنا؛ و زۆرجار باڵ لەسەر سنگە ناوەندی و دواوە. هەناسەدان بە بۆریی هەوا و کونی هەناسە دەبێت؛ سوڕی خوێن کراوەیە؛ پێستەکە لە کایتین و پرۆتینی ڕەقکراو پێک دێت. بەپێی Stork (٢٠١٨) نزیکەی ١ ملیۆن جۆر وەسف کراوە، بەڵام خەمڵاندنی جیهانی ~${(GLOBAL.stork2018.insectsEstimated / 1e6).toFixed(1)} ملیۆن مێروو و ~${GLOBAL.stork2018.undescribedPctApprox}٪ هێشتا نەدۆزراوەتەوە — بۆیە «یەک ملیۆن» تەنها کۆتاییی وەسفە، نەک کۆتاییی سروشت.`,
       ar: `علم الحشرات يدرس Insecta: الشكل والوظيفة والبيئة والسلوك والتصنيف والتطور وعلاقتها بالإنسان والزراعة. من اليونانية ἔντομον و-λογία. ضمن Arthropoda بثلاث tagmata وست أرجل وزوج قرون. تنفس قصبي ودوران مفتوح وكيوتيكل من الكايتين. وفق Stork (٢٠١٨) وُصف نحو مليون نوع، لكن التقدير العالمي ~${(GLOBAL.stork2018.insectsEstimated / 1e6).toFixed(1)} مليون حشرة وما زال ~${GLOBAL.stork2018.undescribedPctApprox}٪ غير مكتشف.`,
       en: `Entomology studies Insecta — morphology, physiology, ecology, behaviour, taxonomy/systematics, phylogeny, and human–agricultural interactions. From Greek ἔντομον + -λογία. Insects are arthropods with three tagmata, six uniramous legs, one antennal pair, tracheal gas exchange, open hemolymph circulation and a chitin–sclerotin cuticle. Stork (2018) places ~1 million described insect species against a global estimate of ~${(GLOBAL.stork2018.insectsEstimated / 1e6).toFixed(1)} million (~${GLOBAL.stork2018.undescribedPctApprox}% still undescribed) — so “one million” is the named fraction, not the biota.`,
     },
@@ -78,7 +78,7 @@ const SECTIONS = [
     numEn: "04",
     icon: "",
     titles: {
-      ku: "ئێنتۆمۆلۆجی لە کوردستان",
+      ku: "مێرووناسی لە کوردستان",
       ar: "علم الحشرات في كردستان",
       en: "Regional Entomology in Kurdistan",
     },
@@ -115,7 +115,7 @@ const SECTIONS = [
         "نیشاندەری EPT — کوالێتی ئاو",
         "مێرووناسیی دادوەری — کاتی مردن و کۆی پلەی گەرمی",
         "پەیتاندن — Apis · هەنگی تەنها · Syrphidae",
-        "بەڕێوەبردنی تێکەڵ — ئاستی زیانی ئابووری و کۆنترۆڵی زیندوو",
+        "بەڕێوەبردنی تێکەڵ — ئاستی زیانی ئابووری و کۆنترۆڵی زیندەیی",
         "ئاوریشم و مێرووی خۆراکی — پرۆتین",
       ],
       ar: [
@@ -186,12 +186,12 @@ const SECTIONS = [
     numEn: "08",
     icon: "",
     titles: {
-      ku: "کۆنترۆڵی بایۆلۆجی",
+      ku: "کۆنترۆڵی زیندەیی",
       ar: "المكافحة الحيوية",
       en: "Biological Control",
     },
     body: {
-      ku: "کۆنترۆڵی بایۆلۆجی (biological control) بەکارهێنانی دوژمنی سروشتییە بۆ کەمکردنەوەی چڕیی pest، نەک تەنها xenobiotic. سێ مۆدێلی کلاسیک: classical (هێنانی دوژمن بۆ invasive pest)، augmentative (زیادکردنی ژمارە)، و conservation (پاراستنی دوژمنی ناوخۆیی). Predator: Coccinella septempunctata و Adalia bipunctata شەتەک (Aphididae) دەخۆن؛ لارڤای Chrysoperla carnea هەر شەتەک دەخوات (mandiblesی کونکەر-مژەر). Parasitoid: زۆربەی Ichneumonoidea و Chalcidoidea هێلکە لەناو/لەسەر خانەخوێ دادەنێن؛ endoparasitoid لەناو جەستە گەشە دەکات و خانەخوێ دەکوژێت. Pathogen: Beauveria bassiana و Bacillus thuringiensis (Bt toxins لەسەر midgut receptors). لە IPMـدا biocontrol لەگەڵ monitoring و economic threshold و selective chemistry تێکەڵ دەکرێت.",
+      ku: "کۆنترۆڵی زیندەیی بەکارهێنانی دوژمنی سروشتییە بۆ کەمکردنەوەی چڕیی زیانبەخش، نەک تەنها ماددەی دەرەکی. سێ شێوازی کلاسیک هەیە: کلاسیک، واتە هێنانی دوژمن بۆ زیانبەخشی داگیرکەر؛ زیادکراو، واتە زیادکردنی ژمارە؛ و پارێزەری، واتە پاراستنی دوژمنی ناوخۆیی. نێچیرگر: Coccinella septempunctata و Adalia bipunctata شەتەک (Aphididae) دەخۆن؛ لارڤای Chrysoperla carnea هەر شەتەک دەخوات، بە چەناگەی کونکەر-مژەر. پارازیتۆید: زۆربەی Ichneumonoidea و Chalcidoidea هێلکە لەناو میوان یان لەسەری دادەنێن؛ پارازیتۆیدی ناوەکی لەناو جەستە گەشە دەکات و میوان دەکوژێت. نەخۆشخەر: Beauveria bassiana و Bacillus thuringiensis، کە ژەهرەکەی لەسەر وەرگری ڕیخۆڵەی ناوەند کار دەکات. لە بەڕێوەبردنی تێکەڵدا کۆنترۆڵی زیندەیی لەگەڵ چاودێری، ئاستی زیانی ئابووری و کیمیایی هەڵبژێردراو تێکەڵ دەکرێت.",
       ar: "المكافحة الحيوية استخدام أعداء طبيعيين لتقليل كثافة الآفة. ثلاثة أنماط: كلاسيكية وتعزيزية وحفظ. مفترسات مثل Coccinella وChrysoperla؛ طفيليات Ichneumonoidea؛ مسببات مرض مثل Beauveria وBt. تُدمج في IPM مع الرصد والعتبة الاقتصادية.",
       en: "Biological control uses natural enemies to lower pest density. Classical, augmentative and conservation modes apply. Predators include Coccinella septempunctata and Chrysoperla carnea larvae on aphids; parasitoids (Ichneumonoidea, Chalcidoidea) develop in or on hosts; pathogens include Beauveria bassiana and Bt Cry toxins at midgut receptors. In IPM these tools join monitoring, economic thresholds and selective chemistry.",
     },
@@ -208,7 +208,7 @@ const SECTIONS = [
       en: "Ants — Formicidae",
     },
     body: {
-      ku: "Formicidae (ئۆردەر Hymenoptera، کلاد Aculeata) زیاتر لە ١٧٠٠٠–٢٠٠٠٠+ جۆری وەسفکراوی هەیە و نمونەی eusocialityی تەواوە: دابەشکردنی کار (queen / workers / males)، نەوەی هاوپێچ، و چاودێریی هاوبەشی brood. پەیوەندیی کۆلۆنی بە pheromone دەبێت (trail، alarm، queen substance). کارگەر بێباڵە (apterous)؛ باڵ تەنها لە alatesی زایەندا دەردەکەوێت. لە ئیکۆسیستەمدا: bioturbationی خاک، myrmecochory (بڵاوکردنەوەی تۆو)، predation و tendingی شەتەک (trophobiosis). Attiniی گەڵابڕ (fungus-farming) هی Neotropicsـە و لە فەونای کوردستان نییە؛ لێرە Messor (harvester ants) و جۆرەکانی Formicinae / Myrmicinae باون. Myrmecology لقێکی تایبەتی ئێنتۆمۆلۆجییە بۆ لێکۆڵینەوەی مێروولە.",
+      ku: "Formicidae (ئۆردەری Hymenoptera، کلادی Aculeata) زیاتر لە ١٧٠٠٠–٢٠٠٠٠+ جۆری وەسفکراوی هەیە و نمونەیەکی تەواوی کۆمەڵایەتیی ڕاستەقینەیە: دابەشکردنی کار (شا، کارگەر، نێر)، نەوەی هاوپێچ، و چاودێریی هاوبەشی نەوە. پەیوەندیی کۆلۆنی بە فرۆمۆن دەبێت: ڕێچکە، ئاگاداری و ماددەی شا. کارگەر بێباڵە؛ باڵ تەنها لە باڵدارەکانی زایەندا دەر دەکەوێت. لە ئیکۆسیستەمدا: هەڵگەڕانی خاک، بڵاوکردنەوەی تۆو، نێچیرگری، و چاودێریی شەتەک. مێروولەی گەڵابڕی Attini هی ناوچەی گەرمی ئەمریکان و لە فەونای کوردستان نییە؛ لێرە Messor و جۆرەکانی Formicinae و Myrmicinae باون. مێروولەناسی لقێکی تایبەتی مێرووناسییە بۆ لێکۆڵینەوەی مێروولە.",
       ar: "Formicidae من Hymenoptera Aculeata؛ أكثر من ١٧ ألف نوع ونموذج eusociality كامل مع فيرومونات. الشغالة بلا أجنحة. بيئياً: تهوية تربة ونشر بذور وافتراس. نمل Attini القاطع استوائي أمريكي؛ في كردستان يسود Messor وغيره. علم النمل يدعى Myrmecology.",
       en: "Formicidae (Hymenoptera: Aculeata) comprises 17,000–20,000+ described species and classic eusociality — castes, overlapping generations, cooperative brood care — coordinated by pheromones. Workers are apterous; winged alates appear in nuptial flights. Ecologically they bioturbate soil, disperse seeds (myrmecochory), prey on arthropods and may tend aphids. Leafcutter Attini are Neotropical, not Kurdistan’s fauna; regional genera include Messor and other Formicinae/Myrmicinae. Myrmecology is the specialist study of ants.",
     },
@@ -225,17 +225,17 @@ const SECTIONS = [
       en: "Insect Conservation",
     },
     body: {
-      ku: "توێژینەوە جیهانییەکان (وەک لە «insect apocalypse» و meta-analysesی biomass) دەریان خستووە کە لە زۆر ناوچەدا چڕی و هەمەجۆریی مێروو دادەبەزێت — هەندێک خەمڵاندن باس لە نزیکەی ٤٠٪ی جۆرە مەترسیدارەکان دەکەن، بەپێی گروپ و میتۆد جیاوازە. هۆکارە سەرەکییەکان: لەناوچوونی habitat، monoculture، insecticideی فراوان، light pollution، گۆڕانی کەشوهەوا و invasive species. پاراستن واتایەتی: پارکی گوڵی ناوخۆیی بۆ pollinators، کەمکردنەوەی سم بە IPM، کریدۆری ژینگەیی، و monitoringی درێژخایەن (transect، Malaise، light traps). بێ مێروو: پەیتاندن، تەرخانکردنی ماددەی ئۆرگانی، و زنجیرەی خۆراکی باڵندە و هێلکەدەرەکان لاواز دەبن.",
+      ku: "توێژینەوە جیهانییەکان دەریان خستووە کە لە زۆر ناوچەدا چڕی و هەمەجۆریی مێروو دادەبەزێت — هەندێک خەمڵاندن باس لە نزیکەی ٤٠٪ی جۆرە مەترسیدارەکان دەکەن، بەپێی گروپ و ڕێباز جیاوازە. هۆکارە سەرەکییەکان: لەناوچوونی شوێنی ژیان، کشتوکاڵی یەکجۆر، سمی فراوان، پیسبوونی ڕووناکی، گۆڕانی کەشوهەوا و جۆری داگیرکەر. پاراستن واتایەتی: گوڵی ناوخۆیی بۆ پەیتێنەر، کەمکردنەوەی سم بە بەڕێوەبردنی تێکەڵ، کریدۆری ژینگەیی، و چاودێریی درێژخایەن بە تەڵەی مالایز، تەڵەی ڕووناکی و هێڵی ڕووپێوی. بێمێروو، پەیتاندن و شیبوونەوەی ماددەی ئۆرگانی و زنجیرەی خۆراکی باڵندە و خشۆکەکان لاواز دەبن.",
       ar: "تشير دراسات عالمية إلى تراجع كثافة وتنوع الحشرات في مناطق كثيرة؛ تقديرات الخطر تقارب ٤٠٪ حسب المجموعة والمنهج. الأسباب: فقدان الموائل، الزراعة الأحادية، المبيدات واسعة الطيف، تلوث الضوء، تغير المناخ والأنواع الغازية. الحل: نباتات محلية للملقحات، IPM، ممرات بيئية ورصد طويل الأمد (مصائد مالِيز والضوء).",
       en: "Global analyses show declines in insect abundance and diversity in many regions; ~40% of species may be threatened depending on taxon and method. Drivers: habitat loss, monocultures, broad-spectrum insecticides, light pollution, climate change and invasives. Responses: native floral resources, IPM, ecological corridors and long-term monitoring (Malaise, light and transect surveys).",
     },
     apps: {
       ku: [
-        "پاراستنی habitatی سروشتی، دارستان و گوڵی ناوخۆیی بۆ pollinators",
-        "کەمکردنەوەی insecticideی فراوان و جێگیرکردنی IPM لە کشتوکاڵدا",
-        "بەرەنگاربوونەوەی گۆڕانی کەشوهەوا و light pollution",
-        "توێژینەوە و monitoringی درێژخایەن (Malaise، light trap، transect)",
-        "هۆشیارکردنەوەی کۆمەڵگە و فێرکردنی قوتابیان لەسەر ڕۆڵی مێروو",
+        "پاراستنی شوێنی ژیانی سروشتی، دارستان و گوڵی ناوخۆیی بۆ پەیتێنەر",
+        "کەمکردنەوەی سمی فراوان و جێگیرکردنی بەڕێوەبردنی تێکەڵ لە کشتوکاڵدا",
+        "بەرەنگاربوونەوەی گۆڕانی کەشوهەوا و پیسبوونی ڕووناکی",
+        "توێژینەوە و چاودێریی درێژخایەن (تەڵەی مالایز، تەڵەی ڕووناکی، هێڵی ڕووپێوی)",
+        "هۆشیارکردنەوەی کۆمەڵگە و فێرکردنی خوێندکار لەسەر ڕۆڵی مێروو",
       ],
       ar: [
         "حماية الموائل والغابات والنباتات المحلية للملقحات",
@@ -382,7 +382,7 @@ function SectionCard({ section, delay = 0, lang }) {
           />
           <p className="ento-map-caption">
             {lang === "ku"
-              ? "کوردستان — ناوچەی ئیکۆلۆجی، Irano-Anatolian hotspot و جێگای مێروو"
+              ? "کوردستان — ناوچە ژینگەییەکان، هەمەجۆریی Irano-Anatolian و شوێنی ژیانی مێروو"
               : lang === "ar"
               ? "كردستان — المناطق البيئية ونقطة Irano-Anatolian وموائل الحشرات"
               : "Kurdistan — ecological zones, Irano-Anatolian hotspot and insect habitats"}
@@ -462,8 +462,8 @@ const INTRO = {
   ku: {
     title: "پێشەکیی چاپتەر",
     lead: "ئەم چاپتەرە بنەمای زانستی مێرووناسی دەخاتە ڕوو: پێناسە، مێژوو، ناوچە، گرنگی، ئاڵۆزی و پاراستن.",
-    p1: "مێروو (Insecta) زیاتر لە هەموو پۆلەکانی تری ئاژەڵ پێکەوە جۆری وەسفکراویان هەیە — نزیکەی یەک ملیۆن. لە ژێر بەرد، لە نێوان گەڵا، لە خاک و ئاو و هەوادا، سیستەمی ئیکۆلۆجی بەبێ دەنگ ڕادەگرن: پەیتاندن، decomposition، predation، و گواستنەوەی نەخۆشی.",
-    p2: "لێرەدا ئێنتۆمۆلۆجی وەک زانستی ئەکادیمی دەخوێنرێتەوە: لە پێناسەی tagmosis و hexapodyەوە تا Linnaeus و DNA barcoding؛ لە فەونای کوردستان و Irano-Anatolian hotspotەوە تا IPM، biocontrol و پاراستنی habitat. ئامانج ئەوەیە خوێندکار بتوانێت مێروو وەک pollinator، pest، vector یان bioindicator جیا بکاتەوە.",
+    p1: "مێروو (Insecta) زیاتر لە هەموو پۆلەکانی تری ئاژەڵ پێکەوە جۆری وەسفکراویان هەیە — نزیکەی یەک ملیۆن. لەژێر بەرد، لە نێوان گەڵا، لە خاک و ئاو و هەوادا، سیستەمی ژینگەیی بەبێ دەنگ ڕادەگرن: پەیتاندن، شیبوونەوە، نێچیرگری، و گواستنەوەی نەخۆشی.",
+    p2: "لێرەدا مێرووناسی وەک زانستێکی ئەکادیمی دەخوێنرێتەوە: لە پێناسەی تاگمۆسیس و شەشقاچییەوە تا Linnaeus و بارکۆدی دی ئێن ئەی؛ لە فەونای کوردستان و ناوچەی هەمەجۆریی Irano-Anatolianـەوە تا بەڕێوەبردنی تێکەڵ، کۆنترۆڵی زیندەیی و پاراستنی شوێنی ژیان. ئامانج ئەوەیە خوێندکار بتوانێت مێروو وەک پەیتێنەر، زیانبەخش، گەیەنەری نەخۆشی یان نیشاندەری زیندوو جیا بکاتەوە.",
     p3: "دوای ئەم چاپتەرە، چاپتەری سێیەم (Arthropoda) پێکهاتەی جەستە قووڵتر دەکات؛ ئینجا ئۆردەرەکان (Lepidoptera، Hymenoptera، Coleoptera و هی دیکە) نموونەی ناوچەیی دەهێنن.",
   },
   ar: {

@@ -41,8 +41,8 @@ const APP_LINKS = [
 const RESOURCES = [
   {
     href: "https://scence-bio.github.io/Biology/",
-    ku: "BioGuide",
-    ar: "BioGuide",
+    ku: "ڕێبەری زیندەیی",
+    ar: "الدليل الحيوي",
     en: "BioGuide",
   },
   {
