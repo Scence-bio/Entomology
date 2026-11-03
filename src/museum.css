@@ -19,7 +19,8 @@
   --safe-top:env(safe-area-inset-top,0px);
   --safe-bottom:env(safe-area-inset-bottom,0px);
   --appbar-h:56px;
-  --dock-h:64px;
+  --dock-h:62px;
+  --nav-count:5;
   --chrome:#0f1410;
   --chrome-elevated:#171d16;
   --chrome-line:rgba(224,181,106,.16);
@@ -144,16 +145,21 @@ html[lang="ckb"] .ento-prospectus-title {
 }
 .ento-desk-nav {
   display:none;
-  align-items:center; gap:2px;
-  flex:1; justify-content:center;
+  align-items:center; justify-content:center; gap:1px;
+  flex:1 1 auto; min-width:0;
+  overflow-x:auto; overscroll-behavior-x:contain;
+  scrollbar-width:none; -ms-overflow-style:none;
+  mask-image:linear-gradient(90deg, transparent, #000 8px, #000 calc(100% - 8px), transparent);
+  -webkit-mask-image:linear-gradient(90deg, transparent, #000 8px, #000 calc(100% - 8px), transparent);
 }
+.ento-desk-nav::-webkit-scrollbar { display:none; width:0; height:0; }
 .ento-desk-nav-link {
   color:rgba(246,241,230,.62);
   text-decoration:none;
-  font-size:.8rem; font-weight:600;
+  font-size:.76rem; font-weight:600;
   font-family:var(--font-arabic);
-  padding:8px 12px; border-radius:999px;
-  white-space:nowrap;
+  padding:7px 10px; border-radius:999px;
+  white-space:nowrap; flex:0 0 auto;
   transition:color .18s, background .18s;
 }
 .ento-desk-nav-link:hover { color:#fff; background:rgba(255,255,255,.06); }
@@ -165,10 +171,10 @@ html[lang="ckb"] .ento-prospectus-title {
   .ento-desk-nav-link.is-active:hover { color:#1a140c; background:#e0b56a; }
 }
 .ento-appbar-start {
-  display:flex; align-items:center; gap:10px; min-width:0; flex:1;
+  display:flex; align-items:center; gap:8px; min-width:0; flex:1 1 auto;
 }
 .ento-appbar-end {
-  display:flex; align-items:center; gap:6px; flex-shrink:0;
+  display:flex; align-items:center; gap:4px; flex:0 0 auto;
 }
 .ento-appbar-mark {
   width:36px; height:36px; border-radius:12px;
@@ -1719,55 +1725,78 @@ html[lang="en"] .ento-chapter-hero-title {
 }
 .ento-tabs-inner {
   height:var(--dock-h);
-  max-width:560px;
+  width:100%;
+  max-width:640px;
   margin:0 auto;
   display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-template-columns:repeat(var(--nav-count),minmax(0,1fr));
   gap:0;
-  padding:4px 6px 6px;
+  padding:3px 4px 5px;
   box-sizing:border-box;
 }
 @media (min-width: 900px) {
   .ento-tabs { display:none; }
   .ento-desk-nav { display:flex; }
   .ento-app .ento-main { padding-bottom:28px; }
-  .ento-appbar-inner { max-width:1100px; }
-  .ento-appbar-title { max-width:min(28vw, 320px); }
+  .ento-appbar-inner { max-width:1100px; gap:10px; }
+  .ento-appbar-start { flex:0 1 240px; max-width:min(32vw,260px); }
+  .ento-appbar-title { max-width:100%; }
+  .ento-appbar-kicker { display:block; }
   .ento-install { bottom:22px; }
   .ento-chapter-nav,
   .ento-home,
   .ento-footer-inner,
   .ento-footer-bottom { max-width:1100px; }
 }
+@media (max-width:899px) {
+  .ento-appbar-inner { gap:6px; padding:0 10px; }
+  .ento-appbar-kicker { display:none; }
+  .ento-appbar-title {
+    margin:0; font-size:.84rem; line-height:1.2;
+    max-width:min(46vw, 11.5rem);
+  }
+  .ento-appbar-mark, .ento-appbar-back { width:34px; height:34px; border-radius:10px; }
+  .ento-lang-btn { min-width:30px; height:26px; padding:0 6px; font-size:.64rem; }
+  .ento-theme-btn { width:32px; height:32px; border-radius:9px; }
+}
+@media (max-width:360px) {
+  .ento-appbar-title { max-width:38vw; font-size:.78rem; }
+  .ento-tab { font-size:.58rem; }
+  .ento-tab-label { letter-spacing:-.01em; }
+}
 .ento-tab {
   position:relative;
-  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
   text-decoration:none;
   color:rgba(246,241,230,.46);
-  font-size:.68rem; font-weight:700; font-family:var(--font-arabic);
-  border-radius:14px;
-  min-height:52px;
+  font-size:.62rem; font-weight:700; font-family:var(--font-arabic);
+  border-radius:11px;
+  min-width:0;
+  min-height:0;
+  height:100%;
+  padding:4px 2px 3px;
+  box-sizing:border-box;
   transition:color .16s var(--ease-out), background .16s var(--ease-out);
   -webkit-tap-highlight-color:transparent;
   touch-action:manipulation;
 }
 .ento-tab::before {
   content:"";
-  position:absolute; top:4px; left:50%;
-  width:18px; height:3px; border-radius:999px;
+  position:absolute; top:3px; left:50%;
+  width:16px; height:2px; border-radius:999px;
   background:transparent;
   transform:translateX(-50%);
   transition:background .16s;
 }
 .ento-tab-icon {
-  width:26px; height:26px;
-  display:grid; place-items:center;
+  width:22px; height:22px;
+  display:grid; place-items:center; flex-shrink:0;
 }
-.ento-tab-icon svg { width:20px; height:20px; stroke-width:1.55; }
+.ento-tab-icon svg { width:18px; height:18px; stroke-width:1.55; }
 .ento-tab-label {
-  line-height:1; max-width:100%;
+  line-height:1.1; max-width:100%;
   overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
-  padding:0 2px;
+  padding:0 1px;
 }
 .ento-tab.is-active { color:var(--tab-active); background:rgba(224,181,106,.1); }
 .ento-tab.is-active::before { background:var(--tab-active); }

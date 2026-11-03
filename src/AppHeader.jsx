@@ -23,9 +23,9 @@ function pageTitle(lang, page) {
   if (page === "notfound") return t(lang, { ku: "نەدۆزرایەوە", ar: "غير موجود", en: "Not found" });
   if (page === "ledger") {
     return t(lang, {
-      ku: "تۆماری فەونای کوردستان",
-      ar: "سجل فونة كردستان",
-      en: "Kurdistan faunal ledger",
+      ku: "تۆماری فەونا",
+      ar: "سجل الفونة",
+      en: "Faunal ledger",
     });
   }
   const chapter = chapterById(page);
@@ -50,28 +50,28 @@ export const NAV_ITEMS = [
     href: "#/#chapters",
     mark: "book",
     match: isChapterBrowse,
-    label: { ku: "بەشەکان", ar: "الفصول", en: "Chapters" },
+    label: { ku: "بەشەکان", ar: "فصول", en: "Chapters" },
   },
   {
     id: "ledger",
     href: "#/ledger",
     mark: "pin",
     match: (page) => page === "ledger",
-    label: { ku: "فەونا", ar: "الفونة", en: "Fauna" },
+    label: { ku: "فەونا", ar: "فونة", en: "Fauna" },
   },
   {
     id: "key",
     href: "#/ch14",
     mark: "key",
     match: (page) => page === "ch14",
-    label: { ku: "کلیل", ar: "المفتاح", en: "Key" },
+    label: { ku: "کلیل", ar: "مفتاح", en: "Key" },
   },
   {
     id: "quiz",
     href: "#/ch4",
     mark: "check",
     match: (page) => page === "ch4",
-    label: { ku: "کویز", ar: "الاختبار", en: "Quiz" },
+    label: { ku: "کویز", ar: "اختبار", en: "Quiz" },
   },
 ];
 
