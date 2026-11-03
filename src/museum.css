@@ -1942,7 +1942,7 @@ html[lang="en"] .ento-chapter-hero-title {
   text-align:start;
   align-items:stretch;
 }
-@media (min-width:1280px){
+@media (min-width:1400px){
   .ento-path-grid { grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; }
 }
 @media (max-width:720px){
